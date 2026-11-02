@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.md
+    - wiki/**/*.md
+
+website:
+  title: "Clinical Stats Wiki"
+  search: true
+  navbar:
+    left:
+      - href: index.md
+        text: 首页
+      - href: wiki/index.md
+        text: 索引
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - wiki/index.md
+      - section: "概念与方法"
+        contents: "wiki/concepts/*.md"
+      - section: "坑与易错点"
+        contents: "wiki/gotchas/*.md"
+      - section: "指南与文献"
+        contents: "wiki/references/*.md"
+      # 有了第一张 TLF- 卡片后取消下面两行注释
+      # - section: "TLF 呈现"
+      #   contents: "wiki/tlf-patterns/*.md"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-copy: true
+    lang: zh

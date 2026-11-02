@@ -1,0 +1,1 @@
+我想建一个project，专门收集clinical的统计的知识点， 我希望Claude 能总结成skill以便我日后咨询，另外把知识点规整成wiki,便于我查看
