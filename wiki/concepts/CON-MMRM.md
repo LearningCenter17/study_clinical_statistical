@@ -2,10 +2,10 @@
 id: CON-MMRM
 title: 重复测量混合模型（Mixed Model for Repeated Measures, MMRM）
 categories: [continuous, longitudinal, missing-data, mixed-model]
-related: [CON-estimand, GOT-mmrm-convergence]
+related: [CON-estimand, GOT-mmrm-convergence, CON-missing-data, CON-sensitivity-analysis, CON-t-test-pvalue, CON-p-value, CON-degrees-of-freedom]
 sources: [REF-ICH-E9R1]
 status: draft
-updated: 2026-11-02
+updated: 2026-11-05
 ---
 
 ## 一句话定义

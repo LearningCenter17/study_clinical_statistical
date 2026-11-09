@@ -1,6 +1,6 @@
 ---
 id: CON-XXX
-title: 中文名（English Name）
+title: "中文名（English Name）"
 categories: [tag1, tag2]
 related: []
 sources: []
