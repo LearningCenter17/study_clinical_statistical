@@ -2,10 +2,10 @@
 id: GOT-ni-hypothesis-direction
 title: "非劣效假设的方向写反（Non-inferiority H₀ Direction）"
 categories: [non-inferiority, null-hypothesis, confidence-interval, design, sap, forest-plot]
-related: [CON-null-hypothesis, CON-hazard-ratio, CON-p-value]
+related: [CON-null-hypothesis, CON-hazard-ratio, CON-p-value, CON-type-I-II-error, CON-confidence-interval]
 sources: ["Claude 对话（inbox: ni_h0_direction.md）"]
 status: draft
-updated: 2026-11-09
+updated: 2026-11-10
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: ni_h0_direction.md），属 AI 生成内容，未引用原始文献。需对照 FDA *Non-Inferiority Clinical Trials to Establish Effectiveness* (2016)、ICH E10 等核实。
@@ -48,6 +48,7 @@ updated: 2026-11-09
 
 ## 相关卡片
 
+- [CON-type-I-II-error](../concepts/CON-type-I-II-error.md)：不显著 ≠ 无效，证明"差不多"需要非劣效 / 等效设计
 - [CON-null-hypothesis](../concepts/CON-null-hypothesis.md)
 - [CON-hazard-ratio](../concepts/CON-hazard-ratio.md)
 - [CON-p-value](../concepts/CON-p-value.md)

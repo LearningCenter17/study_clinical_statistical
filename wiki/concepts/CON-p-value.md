@@ -1,14 +1,14 @@
 ---
 id: CON-p-value
 title: "P 值的定义与计算条件（P-value）"
-categories: [inference, p-value, hypothesis-testing, null-distribution, nonparametric, permutation-test]
-related: [CON-null-hypothesis, CON-t-test-pvalue, CON-hazard-ratio, CON-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family]
-sources: ["Claude 对话（inbox: p_value_requirement.md）"]
+categories: [inference, p-value, hypothesis-testing, null-distribution, nonparametric, permutation-test, test-selection, software, effect-size]
+related: [CON-null-hypothesis, CON-t-test-pvalue, CON-hazard-ratio, CON-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection]
+sources: ["Claude 对话（inbox: p_value_requirement.md）", "Claude 对话（inbox: calculate_p_value.md）"]
 status: draft
-updated: 2026-11-09
+updated: 2026-11-10
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: p_value_requirement.md），属 AI 生成内容，未引用原始文献。
+> 出处待补：本卡内容来自 Claude 对话（inbox: p_value_requirement.md、calculate_p_value.md），属 AI 生成内容，未引用原始文献。
 
 ## 一句话定义
 
@@ -62,8 +62,65 @@ t 检验是这套流程的一个具体实例 → [CON-t-test-pvalue](CON-t-test-
 P 值 = P(T 至少和 T_obs 一样极端 | H₀ 为真)
 ```
 
+展开成四个基本步骤（来源：calculate_p_value.md）：
+
+1. **设定假设**：H₀ 通常表示"无差异 / 无效应 / 无关联"（如两组药效没有区别）；备择假设 H₁（或 Hₐ）表示"有差异 / 有效应"。
+2. **选择合适的统计检验方法**：根据数据类型、分布特征和样本量选择（见下表）。
+3. **计算检验统计量**：把样本数据代入公式，算出 t、z、F 或 χ² 值。
+4. **通过概率分布计算 P 值**：根据统计量及其自由度（[df](CON-degrees-of-freedom.md)），在对应的概率分布（标准正态、t、χ² 等，见 [CON-distribution-family](CON-distribution-family.md)）上算尾部面积；双侧检验算两侧尾部面积之和。
+
+### 选哪种检验
+
+按数据类型（连续正态 / 分类 / 非参数）和比较组数选：两组连续用 t 检验，多组用 ANOVA；分类用卡方，小样本用 Fisher；非参数用 Mann-Whitney U、Kruskal-Wallis。完整选择表、临床例子和代码见 [CON-test-selection](CON-test-selection.md)。
+
+## 实现：软件里怎么算
+
+实际分析中极少手动查表，而是直接调用统计函数（来源：calculate_p_value.md，同一组示例数据）：
+
+```python
+# Python (scipy.stats)
+from scipy import stats
+group1 = [115, 120, 125, 130, 128]
+group2 = [105, 110, 108, 112, 109]
+t_stat, p_value = stats.ttest_ind(group1, group2)
+print(f"P 值: {p_value:.4f}")
+```
+
+```r
+# R
+group1 <- c(115, 120, 125, 130, 128)
+group2 <- c(105, 110, 108, 112, 109)
+result <- t.test(group1, group2)
+print(result$p.value)
+```
+
+```sas
+/* SAS */
+proc ttest data=mydata;
+  class group;
+  var response;
+run;
+```
+
+SAS 输出中的 `Pr > |t|` 即为双侧检验的 P 值。
+
+> 补充（Claude）：**同一组数据，上面三段代码给出的 P 值并不相同**：Python 默认 Student t 检验（P = 0.0011），R 默认 Welch t 检验（P = 0.0034），SAS 两行都输出。原因与对齐方法见 [GOT-ttest-student-vs-welch](../gotchas/GOT-ttest-student-vs-welch.md)。
+
+## 怎么解读
+
+（来源：calculate_p_value.md）
+
+- **P < 0.05**（通常标准）：拒绝 H₀，认为结果具有**统计学显著性**（observed difference is unlikely due to chance alone）。
+- **P ≥ 0.05**：没有足够证据拒绝 H₀，差异可能由随机误差引起。这不等于证明了"没有差异"，见 [CON-type-I-II-error](CON-type-I-II-error.md#最重要的解读原则不显著--无效)。
+- **P 值不代表效应量（effect size）的大小**，也不直接等同于临床上的实际意义；临床意义要看效应估计值和置信区间，并与 MCID 比较（见 [CON-sample-size-power](CON-sample-size-power.md#δ-的选择假设的治疗差值assumed-treatment-difference)）。
+
+> 补充（Claude）：0.05 是事先设定的 α，比较规则必须在 SAP 中预先写明（见 [CON-null-hypothesis](CON-null-hypothesis.md)）。P 值的更多常见误解（如"P 值是 H₀ 为真的概率"）计划单独成卡，待建。
+
 ## 相关卡片
 
+- [CON-test-selection](CON-test-selection.md)：选哪种检验、临床示例与代码
+- [CON-confidence-interval](CON-confidence-interval.md)：CI 与 P 值的对应关系
+- [CON-type-I-II-error](CON-type-I-II-error.md)：α、β 与 power
 - [CON-null-hypothesis](CON-null-hypothesis.md)
 - [CON-t-test-pvalue](CON-t-test-pvalue.md)
 - [CON-hazard-ratio](CON-hazard-ratio.md)：log-rank / Cox 中的 H₀：HR = 1
@@ -72,3 +129,4 @@ P 值 = P(T 至少和 T_obs 一样极端 | H₀ 为真)
 ## 出处
 
 - Claude 对话（inbox: p_value_requirement.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: calculate_p_value.md；AI 生成，原始出处待补）

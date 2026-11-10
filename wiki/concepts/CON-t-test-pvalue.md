@@ -2,13 +2,13 @@
 id: CON-t-test-pvalue
 title: "t 检验与 P 值（t-test and P-value）"
 categories: [inference, p-value, t-test, hypothesis-testing, degrees-of-freedom, standard-error, z-test]
-related: [CON-MMRM, CON-p-value, CON-null-hypothesis, CON-test-statistic, CON-t-distribution, CON-degrees-of-freedom]
-sources: ["Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: t_example_correction.md）", "Claude 对话（inbox: t_conception.md）"]
+related: [CON-MMRM, CON-p-value, CON-null-hypothesis, CON-test-statistic, CON-t-distribution, CON-degrees-of-freedom, CON-type-I-II-error, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection]
+sources: ["Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: t_example_correction.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: summary_p.md）"]
 status: draft
-updated: 2026-11-09
+updated: 2026-11-10
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: PValue_ttest.md、t_test_mean.md、t_example_correction.md、t_conception.md），属 AI 生成内容，未引用原始文献。文中表格的数值已由 Claude 按 t 分布复核（见文末）。
+> 出处待补：本卡内容来自 Claude 对话（inbox: PValue_ttest.md、t_test_mean.md、t_example_correction.md、t_conception.md、summary_p.md），属 AI 生成内容，未引用原始文献。文中表格的数值已由 Claude 按 t 分布复核（见文末）。
 
 ## 一句话定义
 
@@ -157,11 +157,38 @@ SAS 输出里的 `t Value` 和 `Pr > |t|` 就是这一对：前者是第一步�
 > t.test(chg ~ trt01pn, data = adeff, var.equal = TRUE)  # 合并方差 t 检验
 > ```
 >
-> - SAS PROC TTEST 会同时输出 Pooled（等方差）和 Satterthwaite（不等方差，Welch）两行，自由度和 P 值不同；R 的 `t.test()` 默认是 Welch（`var.equal = FALSE`）。比对 SAS 与 R 结果时先确认用的是哪一行。
+> - SAS PROC TTEST 会同时输出 Pooled（等方差）和 Satterthwaite（不等方差，Welch）两行，自由度和 P 值不同；R 的 `t.test()` 默认是 Welch，Python `ttest_ind()` 默认是 Student。比对结果时先确认用的是哪一种，详见 [GOT-ttest-student-vs-welch](../gotchas/GOT-ttest-student-vs-welch.md)。
 > - 同样的 `t Value` / `Pr > |t|` 也出现在 PROC MIXED 等模型的固定效应和 LS mean 差检验中，此时自由度由模型的自由度方法决定（如 [MMRM](CON-MMRM.md) 中的 Kenward-Roger）。
+
+### SAS PROC TTEST 输出的四张表
+
+（来源：summary_p.md）
+
+| 表 | 内容 | 备注 |
+|---|---|---|
+| 1. Statistics | 各组 N、均值、SD、SE | |
+| 2. Confidence Limits | 均值和均值差的 95% CI | CI 的读法见 [CON-confidence-interval](CON-confidence-interval.md) |
+| 3. T-Tests | Pooled 和 Satterthwaite 各一行 | **最关键**；看 Method 列，取哪一行见 [GOT-ttest-student-vs-welch](../gotchas/GOT-ttest-student-vs-welch.md) |
+| 4. Equality of Variances | Folded F 检验 | 仅作参考，不要用它来选方法 |
+
+QC 时可以用 `ods output TTests=...` 把结果抽出来，和 R 逐行比对。
+
+> 补充（Claude）：示例写法如下，待 Li 核实（ODS 表名可用 `ods trace on;` 确认）：
+>
+> ```sas
+> ods output Statistics=stat ConfLimits=cl TTests=tt Equality=eqv;
+> proc ttest data=adeff;
+>   class trt01pn;
+>   var chg;
+> run;
+> ```
+>
+> 注意 Confidence Limits 表中 Pooled 与 Satterthwaite 的均值差 CI 也各有一行，报告时与 T-Tests 表取同一种方法。
 
 ## 相关卡片
 
+- [GOT-ttest-student-vs-welch](../gotchas/GOT-ttest-student-vs-welch.md)：Student vs Welch 默认设置不同导致 P 值对不上
+- [CON-type-I-II-error](CON-type-I-II-error.md)：α、β 与 power
 - [CON-MMRM](CON-MMRM.md)：模型中的 t 检验与自由度方法
 - [CON-p-value](CON-p-value.md)：P 值的一般定义与计算条件
 - [CON-null-hypothesis](CON-null-hypothesis.md)
@@ -172,5 +199,6 @@ SAS 输出里的 `t Value` 和 `Pr > |t|` 就是这一对：前者是第一步�
 - Claude 对话（inbox: t_test_mean.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: t_example_correction.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: t_conception.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: summary_p.md；AI 生成，原始出处待补）
 
 > 数值复核（Claude）：按 t 分布计算，df = 4 时 t = 1, 2, 3.67, 4.60 的双侧 P 值分别约为 0.374、0.116、0.021、0.010，临界值 t₀.₀₂₅,₄ = 2.776；df → ∞ 时 t = 2 的双侧 P ≈ 0.0455。与材料一致。

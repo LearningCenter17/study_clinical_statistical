@@ -16,15 +16,30 @@ title: 知识库索引
 
 ## 2. 统计推断核心概念
 
-- [CON-null-hypothesis](concepts/CON-null-hypothesis.md) — H₀ 的四要素（终点、人群、参数、方向）、不同终点的写法、非劣效 H₀、须事先指定
-- [CON-p-value](concepts/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验
-- [CON-test-statistic](concepts/CON-test-statistic.md) — 检验统计量的共同骨架；t、χ²、log-rank 各适用什么数据，以及它们的"亲戚关系"
-- [CON-t-test-pvalue](concepts/CON-t-test-pvalue.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t vs z
-- [CON-t-distribution](concepts/CON-t-distribution.md) — t 分布只由自由度决定、随 df 的形状变化、与正态分布对比
-- [CON-degrees-of-freedom](concepts/CON-degrees-of-freedom.md) — 自由度的含义、方差分母为何是 n − 1、临界 t 值随 df 变化、常见检验的 df
-- [CON-distribution-family](concepts/CON-distribution-family.md) — 伯努利 → 二项 → 正态 → Z → t / χ² / F 的演化关系、各分布特点与在检验中的用途
+### 2.1 推断基础与核心假设
 
-待建：P 值的常见误解、置信区间（与 P 值 / H₀ 的对应关系）、功效（power）、I 类错误 / II 类错误、单侧 vs 双侧检验的独立卡片
+- [CON-null-hypothesis](concepts/CON-null-hypothesis.md) — H₀ 的四要素（终点、人群、参数、方向）、不同终点的写法、非劣效 H₀、须事先指定
+- [CON-degrees-of-freedom](concepts/CON-degrees-of-freedom.md) — 自由度的含义、方差分母为何是 n − 1、临界 t 值随 df 变化、常见检验的 df
+- [CON-type-I-II-error](concepts/CON-type-I-II-error.md) — 第一类错误（α）与第二类错误（β）、power = 1 − β、影响 β 的因素、多重比较使 α 膨胀、不显著 ≠ 无效
+
+### 2.2 核心统计量与分布族
+
+- [CON-test-statistic](concepts/CON-test-statistic.md) — 检验统计量的共同骨架；t、χ²、log-rank 各适用什么数据，以及它们的"亲戚关系"
+- [CON-distribution-family](concepts/CON-distribution-family.md) — 伯努利 → 二项 → 正态 → Z → t / χ² / F 的演化关系、各分布特点；F = 组间 / 组内变异及其用途（ANOVA、Type III 检验）
+- [CON-t-distribution](concepts/CON-t-distribution.md) — t 分布只由自由度决定、随 df 的形状变化、与正态分布对比
+
+### 2.3 检验方法的选择与计算
+
+- [CON-p-value](concepts/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验；计算四步、Python / R / SAS 实现、怎么解读
+- [CON-test-selection](concepts/CON-test-selection.md) — 快速选择表（连续 / 分类 / 非参数 × 两组 / 多组 / 配对）；t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态
+- [CON-t-test-pvalue](concepts/CON-t-test-pvalue.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t vs z、SAS PROC TTEST 四张输出表
+- [GOT-ttest-student-vs-welch](gotchas/GOT-ttest-student-vs-welch.md) — 同一数据 Python / R / SAS 的 t 检验 P 值不同：Student（等方差）vs Welch（不等方差）默认设置；n 不等时差异可达数十倍；为什么不建议先检验方差齐性再选
+
+### 2.4 常见误区与结果解读
+
+- [CON-confidence-interval](concepts/CON-confidence-interval.md) — 95% CI 与双侧 α = 0.05 检验的等价关系、0（或 1）在不在 CI 内、不显著 ≠ 没差别、结果报告示例
+
+待建：P 值的常见误解（2.4）、单侧 vs 双侧检验辨析（2.4）
 
 ## 3. 连续型终点：ANCOVA → MMRM
 
@@ -61,9 +76,10 @@ title: 知识库索引
 
 ## 8. 样本量与成组序贯设计
 
+- [CON-sample-size-power](concepts/CON-sample-size-power.md) — power 与样本量计算：两个钟形曲线、输入（α、power、δ、σ）、n 公式手算、δ（假设的治疗差值）的选择与 MCID、δ 减半 n 变 4 倍、post-hoc power 误区、生存终点看事件数
 - [GOT-ni-hypothesis-direction](gotchas/GOT-ni-hypothesis-direction.md) — 非劣效 H₀ 的 ≤ / ≥ 取决于终点"好"的方向；CI 上限 / 下限与 Δ 的比较
 
-待建：样本量与把握度计算、非劣效界值 Δ 的确定、期中分析与 alpha spending（O'Brien-Fleming、Pocock、Lan-DeMets）
+待建：二分类与生存终点的样本量公式、非劣效界值 Δ 的确定、期中分析与 alpha spending（O'Brien-Fleming、Pocock、Lan-DeMets）
 
 ## 大纲外主题
 

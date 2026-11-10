@@ -2,10 +2,10 @@
 id: CON-hazard-ratio
 title: "风险比（Hazard Ratio, HR）"
 categories: [survival, hazard-ratio, cox, log-rank, null-hypothesis]
-related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox]
+related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-sample-size-power, CON-confidence-interval]
 sources: ["Claude 对话（inbox: h0_hr.md）", "Claude 对话（inbox: logrank_vs_cox.md）"]
 status: draft
-updated: 2026-11-09
+updated: 2026-11-10
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: h0_hr.md），属 AI 生成内容，未引用原始文献。
@@ -58,6 +58,7 @@ SAS 中一般用 `PROC PHREG`（Cox 回归）估计 HR 及 95% CI，用 `PROC LI
 
 ## 相关卡片
 
+- [CON-confidence-interval](CON-confidence-interval.md)：CI 与 P 值的对应关系
 - [CON-null-hypothesis](CON-null-hypothesis.md)
 - [CON-p-value](CON-p-value.md)：log-rank 统计量作为检验统计量的例子
 - [CON-logrank-vs-cox](CON-logrank-vs-cox.md)：log-rank 与 Cox 的分工

@@ -2,13 +2,13 @@
 id: CON-distribution-family
 title: "常用概率分布的家族关系（Bernoulli → Binomial → Normal → Z / t / χ² / F）"
 categories: [inference, distribution, bernoulli, binomial, normal, z-distribution, t-distribution, chi-square, f-distribution, null-distribution]
-related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, CON-t-test-pvalue]
-sources: ["Claude 对话（inbox: distribution.md）"]
+related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, CON-t-test-pvalue, CON-MMRM, GOT-ttest-student-vs-welch, CON-test-selection]
+sources: ["Claude 对话（inbox: distribution.md）", "Claude 对话（inbox: F_distribution.md）"]
 status: draft
-updated: 2026-11-09
+updated: 2026-11-10
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: distribution.md，附图 distribution.png），属 AI 生成内容，未引用原始文献。
+> 出处待补：本卡内容来自 Claude 对话（inbox: distribution.md，附图 distribution.png；F_distribution.md），属 AI 生成内容，未引用原始文献。
 
 ## 一句话定义
 
@@ -61,10 +61,30 @@ updated: 2026-11-09
 ### F 分布
 
 - 两个独立 χ² 各除以自由度后的比值。
-- 只在 0 右侧取值、右偏；由**分子自由度、分母自由度**两个参数共同决定。
-- 材料列出的用途：方差分析、回归显著性检验，以及"比较两个总体的方差是否相等（比如方差分析）"。
+- 只在 0 右侧取值、右偏；由**分子自由度、分母自由度**两个参数共同决定，记作 F(df₁, df₂)。
 
-> 补充（Claude）：最后一句容易误解。**方差分析（ANOVA）检验的是多组均值是否相等**，只是做法是比较"组间变异 / 组内变异"这两个方差估计的比值，所以用 F 分布；它不是在检验两个总体方差是否相等。检验两总体方差是否相等的是另一个 F 检验（如 SAS PROC TTEST 输出的 "Equality of Variances" 折叠 F 检验）。临床试验输出中常见的 F 还包括 PROC MIXED / PROC GLM 的 Type III 固定效应检验（`F Value`、`Num DF`、`Den DF`）。待 Li 核实。
+**直观理解**（来源：F_distribution.md）：F 比较的是"两种变异的比值"，回答"这些组之间的差异，是真的有差异，还是只是随机噪音？"
+
+> **F = 组间变异 / 组内变异**
+
+- **分子：信号**，各组均值之间差多远。
+- **分母：噪音**，组内个体本身有多分散。
+
+如果各组其实没区别，分子分母都在估计同一个噪音，比值应在 1 附近；F 远大于 1，说明组间差异超出了噪音能解释的范围。F 分布给出"没有效应时 F 有多大概率这么大"，即 P 值。这和 t 值"信噪比"的思路一样（见 [CON-t-test-pvalue](CON-t-test-pvalue.md#t-值是信噪比)）。
+
+**主要用途**（来源：F_distribution.md）：
+
+| 用途 | 回答的问题 | 软件里在哪 |
+|---|---|---|
+| 方差分析（ANOVA） | 3 个及以上组的**均值**整体上有没有差别（如安慰剂、低剂量、高剂量），之后再做两两比较 | — |
+| 回归模型整体检验 | 所有自变量合起来对因变量有没有解释力 | R `summary(lm())` 最后一行的 F-statistic |
+| 嵌套模型比较 | 加了某些变量后模型是否显著变好 | R `anova(model1, model2)` |
+| **ANCOVA / MMRM 各效应的检验**（临床最常碰到） | 治疗、访视、治疗×访视交互是否有效应 | SAS PROC GLM / PROC MIXED 的 "Type III Tests of Fixed Effects" 表；MMRM 用 Kenward-Roger 调整的就是**分母自由度**（见 [CON-MMRM](CON-MMRM.md)） |
+| 比较两组方差是否相等 | 两个总体方差是否相等（两个样本方差之比） | 经典 F 检验对非正态很敏感，实际更常用 Levene 检验 |
+
+> 更正记录：distribution.md 原文写"主要用于比较两个总体的方差是否相等（比如方差分析）"，把两件事混在了一起。按 F_distribution.md：方差分析检验的是**均值**，只是借用两种变异的比值；比较两总体方差只是 F 分布的用途之一，且实际中不常用。
+>
+> 补充（Claude）：SAS PROC TTEST 输出的 "Equality of Variances" 就是上表最后一行的折叠 F 检验；Type III 表中的列为 `Num DF`（分子自由度）、`Den DF`（分母自由度）、`F Value`、`Pr > F`。待 Li 核实。
 
 ## 和检验统计量的对应
 
@@ -83,7 +103,9 @@ updated: 2026-11-09
 - [CON-degrees-of-freedom](CON-degrees-of-freedom.md)：t、χ²、F 的自由度怎么算
 - [CON-test-statistic](CON-test-statistic.md)：t、χ²、log-rank 统计量及其"亲戚关系"
 - [CON-p-value](CON-p-value.md)：零分布在 P 值计算中的角色
+- [CON-MMRM](CON-MMRM.md)：Type III 固定效应 F 检验与 Kenward-Roger 分母自由度
 
 ## 出处
 
 - Claude 对话（inbox: distribution.md，附图 distribution.png；AI 生成，原始出处待补）
+- Claude 对话（inbox: F_distribution.md；AI 生成，原始出处待补）

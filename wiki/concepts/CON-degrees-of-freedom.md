@@ -2,10 +2,10 @@
 id: CON-degrees-of-freedom
 title: "自由度（Degrees of Freedom, df）"
 categories: [inference, degrees-of-freedom, t-distribution, chi-square, variance]
-related: [CON-t-distribution, CON-t-test-pvalue, CON-test-statistic, CON-MMRM, CON-distribution-family]
+related: [CON-t-distribution, CON-t-test-pvalue, CON-test-statistic, CON-MMRM, CON-distribution-family, CON-p-value, GOT-ttest-student-vs-welch, CON-test-selection]
 sources: ["Claude 对话（inbox: degreeOfFreedom.md）"]
 status: draft
-updated: 2026-11-09
+updated: 2026-11-10
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: degreeOfFreedom.md），属 AI 生成内容，未引用原始文献。临界值表已由 Claude 复核（见文末）。
@@ -62,7 +62,7 @@ updated: 2026-11-09
 > 补充（Claude）：
 >
 > - χ² 列联表的 df 不是"样本量 − 参数数"，而是"格子数 − 约束数"：行合计和列合计固定后，(r − 1)(c − 1) 个格子可以自由填。思路相同（约束用掉自由度），但计数对象是格子而不是受试者。
-> - 自由度不一定是整数：方差不齐时的 Welch / Satterthwaite t 检验（SAS PROC TTEST 的 Satterthwaite 行），以及 [MMRM](CON-MMRM.md) 中的 Kenward-Roger 方法，都用近似公式算出非整数 df。所以 SAS 与 R 结果的 P 值差异，常要先核对 df 方法（见 [CON-t-test-pvalue](CON-t-test-pvalue.md#实现)）。
+> - 自由度不一定是整数：方差不齐时的 Welch / Satterthwaite t 检验（SAS PROC TTEST 的 Satterthwaite 行），以及 [MMRM](CON-MMRM.md) 中的 Kenward-Roger 方法，都用近似公式算出非整数 df。所以 SAS 与 R 结果的 P 值差异，常要先核对 df 方法（t 检验的例子见 [GOT-ttest-student-vs-welch](../gotchas/GOT-ttest-student-vs-welch.md)）。
 > - 待 Li 核实。
 
 ## 相关卡片

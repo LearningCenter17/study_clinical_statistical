@@ -2,10 +2,10 @@
 id: CON-null-hypothesis
 title: "零假设的定义（Null Hypothesis, H₀）"
 categories: [inference, hypothesis-testing, null-hypothesis, superiority, non-inferiority, design]
-related: [CON-p-value, CON-t-test-pvalue, CON-hazard-ratio, CON-estimand, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic]
+related: [CON-p-value, CON-t-test-pvalue, CON-hazard-ratio, CON-estimand, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-type-I-II-error, GOT-ttest-student-vs-welch, CON-confidence-interval]
 sources: ["Claude 对话（inbox: p_value_h0.md）", "Claude 对话（inbox: ni_h0_direction.md）"]
 status: draft
-updated: 2026-11-09
+updated: 2026-11-10
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: p_value_h0.md、ni_h0_direction.md），属 AI 生成内容，未引用原始文献。
@@ -80,6 +80,7 @@ $$
 
 ## 相关卡片
 
+- [CON-type-I-II-error](CON-type-I-II-error.md)：α、β 与 power
 - [CON-p-value](CON-p-value.md)：H₀ 是计算 P 值的第一个要素
 - [CON-t-test-pvalue](CON-t-test-pvalue.md)
 - [CON-hazard-ratio](CON-hazard-ratio.md)
