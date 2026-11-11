@@ -32,21 +32,24 @@ title: 知识库索引
 
 - [CON-p-value](concepts/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验；计算四步、Python / R / SAS 实现、怎么解读
 - [CON-test-selection](concepts/CON-test-selection.md) — 快速选择表（连续 / 分类 / 非参数 × 两组 / 多组 / 配对）；t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态
+- [CON-parametric-vs-nonparametric](concepts/CON-parametric-vs-nonparametric.md) — 参数方法（假设分布、比较参数）vs 非参数方法（基于秩次、分布无关）：优缺点、秩次为何对离群值稳健、对应关系、"非参数 ≠ 无假设"
 - [CON-t-test-pvalue](concepts/CON-t-test-pvalue.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t vs z、SAS PROC TTEST 四张输出表
 - [GOT-ttest-student-vs-welch](gotchas/GOT-ttest-student-vs-welch.md) — 同一数据 Python / R / SAS 的 t 检验 P 值不同：Student（等方差）vs Welch（不等方差）默认设置；n 不等时差异可达数十倍；为什么不建议先检验方差齐性再选
 
 ### 2.4 常见误区与结果解读
 
 - [CON-confidence-interval](concepts/CON-confidence-interval.md) — 95% CI 与双侧 α = 0.05 检验的等价关系、0（或 1）在不在 CI 内、不显著 ≠ 没差别、结果报告示例
+- [GOT-skewed-small-sample](gotchas/GOT-skewed-small-sample.md) — 小样本偏态（CRP 例子）：均值本身不可靠，Welch 也救不了；log 转换（几何均数比）或 Mann-Whitney；方法须预先指定
 
 待建：P 值的常见误解（2.4）、单侧 vs 双侧检验辨析（2.4）
 
 ## 3. 连续型终点：ANCOVA → MMRM
 
+- [CON-covariate](concepts/CON-covariate.md) — 协变量是什么、为什么调整（降低噪音提高功效、校正组间不平衡）、ANOVA → ANCOVA、常见协变量（基线值、分层因素）、须预先指定
 - [CON-MMRM](concepts/CON-MMRM.md) — 重复测量混合模型：设定、SAS/R 实现、TLF 呈现
 - [GOT-mmrm-convergence](gotchas/GOT-mmrm-convergence.md) — UN 协方差不收敛时的预设备选顺序
 
-待建：ANCOVA（基线调整、LS mean）、ANCOVA 与 MMRM 的关系
+待建：ANCOVA 独立卡片（LS mean、模型假设、SAS / R 实现）、ANCOVA 与 MMRM 的关系
 
 ## 4. 二分类终点：CMH、logistic、率差置信区间
 
@@ -85,4 +88,6 @@ title: 知识库索引
 
 暂不属于以上 8 章的主题先放这里，后续再决定归属。
 
-待建：亚组分析与森林图
+- [CON-dose-escalation-design](concepts/CON-dose-escalation-design.md) — 一期剂量递增设计：MTD 与目标毒性率；3+3（规则）、CRM / BLRM / EWOC（模型）、BOIN（模型辅助，查表执行）对比；Project Optimus；一期其他统计分析与 R 包
+
+待建：亚组分析与森林图、一期 PK 统计（NCA、剂量比例性 power model、浓度-QTc）

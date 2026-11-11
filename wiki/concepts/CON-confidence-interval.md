@@ -2,10 +2,10 @@
 id: CON-confidence-interval
 title: "置信区间与 P 值的对应关系（Confidence Interval）"
 categories: [inference, confidence-interval, p-value, hypothesis-testing, effect-size, reporting]
-related: [CON-p-value, CON-type-I-II-error, CON-t-test-pvalue, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis]
+related: [CON-p-value, CON-type-I-II-error, CON-t-test-pvalue, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample]
 sources: ["Claude 对话（inbox: summary_p.md）"]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-11
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: summary_p.md），属 AI 生成内容，未引用原始文献。示例数值已由 Claude 在 R 4.5.2 中复核。

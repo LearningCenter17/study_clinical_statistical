@@ -2,10 +2,10 @@
 id: CON-p-value
 title: "P 值的定义与计算条件（P-value）"
 categories: [inference, p-value, hypothesis-testing, null-distribution, nonparametric, permutation-test, test-selection, software, effect-size]
-related: [CON-null-hypothesis, CON-t-test-pvalue, CON-hazard-ratio, CON-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection]
+related: [CON-null-hypothesis, CON-t-test-pvalue, CON-hazard-ratio, CON-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, GOT-skewed-small-sample]
 sources: ["Claude 对话（inbox: p_value_requirement.md）", "Claude 对话（inbox: calculate_p_value.md）"]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-11
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: p_value_requirement.md、calculate_p_value.md），属 AI 生成内容，未引用原始文献。
@@ -46,7 +46,7 @@ t 检验是这套流程的一个具体实例 → [CON-t-test-pvalue](CON-t-test-
 
 ## 分布假设靠不住时：从数据里构造零分布
 
-- **非参数检验**：如 Wilcoxon、Mann-Whitney，基于秩，不要求正态。
+- **非参数检验**：如 Wilcoxon、Mann-Whitney，基于秩，不要求正态（详见 [CON-parametric-vs-nonparametric](CON-parametric-vs-nonparametric.md)）。
 - **置换检验（permutation test）**：H₀ 下组别标签可以互换，把标签随机打乱成千上万次，每次算一个统计量，得到经验零分布，再看实际值排在第几。非常直观，前提只是随机化本身。
 - **精确检验**：如 Fisher 精确检验，在小样本、频数少的列联表中直接枚举所有可能的情况。
 

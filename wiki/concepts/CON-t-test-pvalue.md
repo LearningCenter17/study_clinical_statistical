@@ -2,10 +2,10 @@
 id: CON-t-test-pvalue
 title: "t 检验与 P 值（t-test and P-value）"
 categories: [inference, p-value, t-test, hypothesis-testing, degrees-of-freedom, standard-error, z-test]
-related: [CON-MMRM, CON-p-value, CON-null-hypothesis, CON-test-statistic, CON-t-distribution, CON-degrees-of-freedom, CON-type-I-II-error, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection]
+related: [CON-MMRM, CON-p-value, CON-null-hypothesis, CON-test-statistic, CON-t-distribution, CON-degrees-of-freedom, CON-type-I-II-error, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric]
 sources: ["Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: t_example_correction.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: summary_p.md）"]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-11
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: PValue_ttest.md、t_test_mean.md、t_example_correction.md、t_conception.md、summary_p.md），属 AI 生成内容，未引用原始文献。文中表格的数值已由 Claude 按 t 分布复核（见文末）。

@@ -2,10 +2,10 @@
 id: CON-MMRM
 title: 重复测量混合模型（Mixed Model for Repeated Measures, MMRM）
 categories: [continuous, longitudinal, missing-data, mixed-model]
-related: [CON-estimand, GOT-mmrm-convergence, CON-missing-data, CON-sensitivity-analysis, CON-t-test-pvalue, CON-p-value, CON-degrees-of-freedom, CON-distribution-family, CON-test-selection]
+related: [CON-estimand, GOT-mmrm-convergence, CON-missing-data, CON-sensitivity-analysis, CON-t-test-pvalue, CON-p-value, CON-degrees-of-freedom, CON-distribution-family, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate]
 sources: [REF-ICH-E9R1]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-11
 ---
 
 ## 一句话定义
@@ -28,7 +28,7 @@ updated: 2026-11-10
 ## 典型模型设定
 
 - 因变量：CHG（相对基线变化）
-- 固定效应：治疗、访视、治疗×访视、基线值、基线×访视，以及分层因素
+- 固定效应：治疗、访视、治疗×访视、基线值、基线×访视，以及分层因素（为什么调整基线和分层因素见 [CON-covariate](CON-covariate.md)）
 - 重复效应：访视，受试者内，协方差结构 UN
 - 自由度：Kenward-Roger（常见于 SAP），调整的是 Type III 固定效应 F 检验和 LS mean 差 t 检验的分母自由度（F 检验见 [CON-distribution-family](CON-distribution-family.md#f-分布)）
 

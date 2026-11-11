@@ -2,10 +2,10 @@
 id: CON-sample-size-power
 title: "Power 与样本量计算（Power and Sample Size Calculation）"
 categories: [sample-size, power, design, type-ii-error, mcid, dropout, assumed-treatment-difference, target-difference]
-related: [CON-type-I-II-error, CON-t-test-pvalue, CON-hazard-ratio, CON-logrank-vs-cox, CON-null-hypothesis, CON-p-value]
+related: [CON-type-I-II-error, CON-t-test-pvalue, CON-hazard-ratio, CON-logrank-vs-cox, CON-null-hypothesis, CON-p-value, CON-covariate, CON-dose-escalation-design]
 sources: ["Claude 对话（inbox: power.md）", "Claude 对话（inbox: power_correction.md）", "Claude 对话（inbox: assumed_treatment_difference.md）"]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-11
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: power.md、power_correction.md、assumed_treatment_difference.md），属 AI 生成内容，未引用原始文献。文中数值已由 Claude 在 R 4.5.2 中复核（见文末）。

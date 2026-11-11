@@ -2,10 +2,10 @@
 id: CON-type-I-II-error
 title: "第一类错误、第二类错误与检验效能（Type I / Type II Error and Power）"
 categories: [inference, type-i-error, type-ii-error, alpha, beta, power, sample-size, multiplicity, hypothesis-testing]
-related: [CON-null-hypothesis, CON-p-value, CON-t-test-pvalue, GOT-ni-hypothesis-direction, CON-test-statistic, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection]
+related: [CON-null-hypothesis, CON-p-value, CON-t-test-pvalue, GOT-ni-hypothesis-direction, CON-test-statistic, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-covariate]
 sources: ["Claude 对话（inbox: type_I_error.md）", "Claude 对话（inbox: type_II_error.md）"]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-11
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: type_I_error.md、type_II_error.md），属 AI 生成内容，未引用原始文献。文中 R 结果已由 Claude 在 R 4.5.2 中实际运行复核（见文末）。

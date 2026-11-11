@@ -2,10 +2,10 @@
 id: CON-test-selection
 title: "常用统计检验的选择与临床示例（Choosing a Statistical Test）"
 categories: [inference, test-selection, t-test, anova, chi-square, fisher-exact, mann-whitney, wilcoxon, kruskal-wallis, nonparametric, normality]
-related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, CON-t-test-pvalue, CON-distribution-family, CON-degrees-of-freedom, CON-MMRM, CON-type-I-II-error]
+related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, CON-t-test-pvalue, CON-distribution-family, CON-degrees-of-freedom, CON-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate]
 sources: ["Claude 对话（inbox: sample_test_statistic.md）", "Claude 对话（inbox: calculate_p_value.md）"]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-11
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: sample_test_statistic.md；快速选择表的雏形来自 calculate_p_value.md），属 AI 生成内容，未引用原始文献。示例中的 P 值已由 Claude 在 R 4.5.2 中复核。临床例子均为示意数据。
@@ -52,7 +52,7 @@ library(multcomp)
 summary(glht(fit, linfct = mcp(TRT01P = "Dunnett")))  # 各剂量 vs 安慰剂
 ```
 
-实际注册试验中更常用 **ANCOVA**（基线值作协变量）或 **MMRM**（重复测量），单因素 ANOVA 是它们的基础。ANOVA 的 F 检验原理见 [CON-distribution-family](CON-distribution-family.md#f-分布)；事后比较属于多重性问题（第 7 章待建）。
+实际注册试验中更常用 **ANCOVA**（基线值作协变量，见 [CON-covariate](CON-covariate.md)）或 **MMRM**（重复测量），单因素 ANOVA 是它们的基础。ANOVA 的 F 检验原理见 [CON-distribution-family](CON-distribution-family.md#f-分布)；事后比较属于多重性问题（第 7 章待建）。
 
 ## 二、分类变量 / 计数数据
 
@@ -103,6 +103,8 @@ fisher.test(matrix(c(5, 15, 1, 19), nrow = 2, byrow = TRUE))
 
 ## 三、非参数检验（不满足正态，或为等级 / 有序数据）
 
+参数与非参数方法的区别、秩次为何对离群值稳健、对应关系见 [CON-parametric-vs-nonparametric](CON-parametric-vs-nonparametric.md)。
+
 ### 5. Mann-Whitney U 检验（Wilcoxon 秩和检验）
 
 **适用**：两组独立样本；数据严重偏态、有离群值、样本量小，或为有序等级数据。比较的是**分布 / 中位数位置**。
@@ -139,6 +141,7 @@ dunnTest(AVAL ~ SEVERITY, data = adbm_il6, method = "holm")
 
 ## 相关卡片
 
+- [GOT-skewed-small-sample](../gotchas/GOT-skewed-small-sample.md)：偏态 CRP 例子，log 转换 vs 非参数
 - [CON-p-value](CON-p-value.md)：P 值计算四步
 - [CON-test-statistic](CON-test-statistic.md)：t、χ²、log-rank 统计量
 - [GOT-ttest-student-vs-welch](../gotchas/GOT-ttest-student-vs-welch.md)：Student vs Welch

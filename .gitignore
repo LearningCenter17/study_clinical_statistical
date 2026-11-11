@@ -4,3 +4,7 @@ _site/
 
 /.quarto/
 **/*.quarto_ipynb
+
+# 单独渲染时 Quarto 在源文件旁生成的 HTML
+/index.html
+wiki/**/*.html
