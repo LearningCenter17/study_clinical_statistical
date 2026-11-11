@@ -2,7 +2,7 @@
 id: CON-parametric-vs-nonparametric
 title: "参数方法与非参数方法（Parametric vs Nonparametric Methods）"
 categories: [inference, parametric, nonparametric, rank-test, mann-whitney, wilcoxon, robustness, outlier, hodges-lehmann]
-related: [CON-test-selection, CON-p-value, CON-distribution-family, CON-t-test-pvalue, CON-MMRM, CON-confidence-interval, GOT-skewed-small-sample, CON-covariate]
+related: [CON-test-selection, CON-p-value, CON-distribution-family, CON-t-test-pvalue, CON-MMRM, CON-confidence-interval, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview]
 sources: ["Claude 对话（inbox: parametric.md）"]
 status: draft
 updated: 2026-11-11

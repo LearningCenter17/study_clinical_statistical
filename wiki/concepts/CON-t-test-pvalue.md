@@ -2,7 +2,7 @@
 id: CON-t-test-pvalue
 title: "t 检验与 P 值（t-test and P-value）"
 categories: [inference, p-value, t-test, hypothesis-testing, degrees-of-freedom, standard-error, z-test]
-related: [CON-MMRM, CON-p-value, CON-null-hypothesis, CON-test-statistic, CON-t-distribution, CON-degrees-of-freedom, CON-type-I-II-error, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric]
+related: [CON-MMRM, CON-p-value, CON-null-hypothesis, CON-test-statistic, CON-t-distribution, CON-degrees-of-freedom, CON-type-I-II-error, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, CON-confirmatory-methods-overview]
 sources: ["Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: t_example_correction.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: summary_p.md）"]
 status: draft
 updated: 2026-11-11

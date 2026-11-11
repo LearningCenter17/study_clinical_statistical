@@ -32,6 +32,7 @@ title: 知识库索引
 
 - [CON-p-value](concepts/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验；计算四步、Python / R / SAS 实现、怎么解读
 - [CON-test-selection](concepts/CON-test-selection.md) — 快速选择表（连续 / 分类 / 非参数 × 两组 / 多组 / 配对）；t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态
+- [CON-confirmatory-methods-overview](concepts/CON-confirmatory-methods-overview.md) — 导航页：确证性试验最常用的十种方法（ANCOVA、MMRM、KM、log-rank、Cox、CMH、logistic、Fisher、卡方、Wilcoxon）、按治疗领域的分布、描述统计占 TLF 大头、SAS / R 对齐重点
 - [CON-parametric-vs-nonparametric](concepts/CON-parametric-vs-nonparametric.md) — 参数方法（假设分布、比较参数）vs 非参数方法（基于秩次、分布无关）：优缺点、秩次为何对离群值稳健、对应关系、"非参数 ≠ 无假设"
 - [CON-t-test-pvalue](concepts/CON-t-test-pvalue.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t vs z、SAS PROC TTEST 四张输出表
 - [GOT-ttest-student-vs-welch](gotchas/GOT-ttest-student-vs-welch.md) — 同一数据 Python / R / SAS 的 t 检验 P 值不同：Student（等方差）vs Welch（不等方差）默认设置；n 不等时差异可达数十倍；为什么不建议先检验方差齐性再选
@@ -55,7 +56,7 @@ title: 知识库索引
 
 （暂无卡片）
 
-待建：CMH 检验、logistic 回归与 odds ratio、率差（risk difference）置信区间方法（Wald、Newcombe、Miettinen-Nurminen）
+待建：CMH 检验、logistic 回归与 odds ratio、率差（risk difference）置信区间方法（Wald、Newcombe、Miettinen-Nurminen）、单组率的 Clopper-Pearson 精确 CI（单臂试验 ORR）、非应答者填补（NRI）
 
 ## 5. 生存分析：KM、log-rank、Cox
 
@@ -90,4 +91,4 @@ title: 知识库索引
 
 - [CON-dose-escalation-design](concepts/CON-dose-escalation-design.md) — 一期剂量递增设计：MTD 与目标毒性率；3+3（规则）、CRM / BLRM / EWOC（模型）、BOIN（模型辅助，查表执行）对比；Project Optimus；一期其他统计分析与 R 包
 
-待建：亚组分析与森林图、一期 PK 统计（NCA、剂量比例性 power model、浓度-QTc）
+待建：亚组分析与森林图、计数终点的负二项回归（如呼吸领域急性加重率）、一期 PK 统计（NCA、剂量比例性 power model、浓度-QTc）

@@ -2,7 +2,7 @@
 id: CON-sensitivity-analysis
 title: "敏感性分析与补充分析（Sensitivity Analysis vs Supplementary Analysis）"
 categories: [sensitivity-analysis, supplementary-analysis, estimand, ich-e9r1, missing-data]
-related: [CON-estimand, CON-missing-data, CON-MMRM, REF-ICH-E9R1]
+related: [CON-estimand, CON-missing-data, CON-MMRM, REF-ICH-E9R1, CON-confirmatory-methods-overview]
 sources: ["Claude 对话（inbox: sensitivity_analysis1.md）"]
 status: draft
 updated: 2026-11-05

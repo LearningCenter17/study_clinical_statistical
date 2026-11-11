@@ -2,7 +2,7 @@
 id: CON-test-selection
 title: "常用统计检验的选择与临床示例（Choosing a Statistical Test）"
 categories: [inference, test-selection, t-test, anova, chi-square, fisher-exact, mann-whitney, wilcoxon, kruskal-wallis, nonparametric, normality]
-related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, CON-t-test-pvalue, CON-distribution-family, CON-degrees-of-freedom, CON-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate]
+related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, CON-t-test-pvalue, CON-distribution-family, CON-degrees-of-freedom, CON-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview]
 sources: ["Claude 对话（inbox: sample_test_statistic.md）", "Claude 对话（inbox: calculate_p_value.md）"]
 status: draft
 updated: 2026-11-11
@@ -22,6 +22,8 @@ updated: 2026-11-11
 **注册试验的检验方法应当在 SAP 中预先指定**，而不是看完数据后再挑选。
 
 > 补充（Claude）：临床试验的主要分析通常不是上表中的简单检验，而是调整基线和分层因素的 ANCOVA / [MMRM](CON-MMRM.md)、分层的 CMH 检验等（第 3、4 章）；上表的方法多用于次要终点、安全性和探索性分析。待 Li 核实。
+>
+> 后续材料 most_pop_stat_test.md 支持这一说法："t 检验……在注册试验的主分析中通常被 ANCOVA 取代"。确证性试验实际常用方法的排行和领域分布见 [CON-confirmatory-methods-overview](CON-confirmatory-methods-overview.md)。
 
 ## 一、连续变量（近似正态）
 

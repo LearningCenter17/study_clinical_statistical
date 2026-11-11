@@ -2,7 +2,7 @@
 id: CON-hazard-ratio
 title: "风险比（Hazard Ratio, HR）"
 categories: [survival, hazard-ratio, cox, log-rank, null-hypothesis]
-related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-sample-size-power, CON-confidence-interval]
+related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-sample-size-power, CON-confidence-interval, CON-confirmatory-methods-overview]
 sources: ["Claude 对话（inbox: h0_hr.md）", "Claude 对话（inbox: logrank_vs_cox.md）"]
 status: draft
 updated: 2026-11-10
