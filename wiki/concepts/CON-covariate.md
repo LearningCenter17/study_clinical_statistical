@@ -2,10 +2,10 @@
 id: CON-covariate
 title: "协变量与协变量调整（Covariate Adjustment）"
 categories: [continuous, covariate, baseline, ancova, stratification-factor, power, prespecification]
-related: [CON-MMRM, CON-test-selection, CON-type-I-II-error, CON-distribution-family, CON-parametric-vs-nonparametric, CON-sample-size-power, CON-confirmatory-methods-overview]
+related: [CON-MMRM, CON-test-selection, CON-type-I-II-error, CON-distribution-family, CON-parametric-vs-nonparametric, CON-sample-size-power, CON-confirmatory-methods-overview, CON-ordinal-data, CON-CMH, CON-proportional-odds-model]
 sources: ["Claude 对话（inbox: covariate.md）"]
 status: draft
-updated: 2026-11-11
+updated: 2026-11-12
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: covariate.md），属 AI 生成内容，未引用原始文献。

@@ -54,9 +54,12 @@ title: 知识库索引
 
 ## 4. 二分类终点：CMH、logistic、率差置信区间
 
-（暂无卡片）
+- [CON-ordinal-data](concepts/CON-ordinal-data.md) — 有序分类数据：能排序但不能做算术；临床例子（CTCAE、RECIST、mRS、CGI）；描述用 n (%)，比较用 CMH（row mean scores）/ Wilcoxon / proportional odds model；多级总分量表常当连续处理
+- [CON-CMH](concepts/CON-CMH.md) — PROC FREQ 的 CMH 三个统计量怎么选（Nonzero Correlation / Row Mean Scores / General Association）、`SCORES=` 选项（table、rank ≈ Kruskal-Wallis / Wilcoxon、modridit = van Elteren）、行列顺序与排序注意事项
+- [CON-proportional-odds-model](concepts/CON-proportional-odds-model.md) — 比例优势模型（有序 logistic）：累积 logit、共同 OR；比例优势假设的 score test 及其局限、partial PO（`UNEQUALSLOPES` / `nominal =`）；R（polr / clm）与 SAS 实现
+- [GOT-ordinal-or-direction](gotchas/GOT-ordinal-or-direction.md) — SAS 默认对 P(Y ≤ k) 建模、R polr / clm 参数化带减号，OR 互为倒数；看 "Probabilities modeled…" 那行；加不加 `DESCENDING` 取决于哪端是好结局
 
-待建：CMH 检验、logistic 回归与 odds ratio、率差（risk difference）置信区间方法（Wald、Newcombe、Miettinen-Nurminen）、单组率的 Clopper-Pearson 精确 CI（单臂试验 ORR）、非应答者填补（NRI）
+待建：CMH 用于二分类（共同 OR / RR、MH 率差、Breslow-Day）、logistic 回归与 odds ratio、率差（risk difference）置信区间方法（Wald、Newcombe、Miettinen-Nurminen）、单组率的 Clopper-Pearson 精确 CI（单臂试验 ORR）、非应答者填补（NRI）
 
 ## 5. 生存分析：KM、log-rank、Cox
 

@@ -2,10 +2,10 @@
 id: CON-test-selection
 title: "常用统计检验的选择与临床示例（Choosing a Statistical Test）"
 categories: [inference, test-selection, t-test, anova, chi-square, fisher-exact, mann-whitney, wilcoxon, kruskal-wallis, nonparametric, normality]
-related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, CON-t-test-pvalue, CON-distribution-family, CON-degrees-of-freedom, CON-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview]
+related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, CON-t-test-pvalue, CON-distribution-family, CON-degrees-of-freedom, CON-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview, CON-ordinal-data, CON-CMH]
 sources: ["Claude 对话（inbox: sample_test_statistic.md）", "Claude 对话（inbox: calculate_p_value.md）"]
 status: draft
-updated: 2026-11-11
+updated: 2026-11-12
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: sample_test_statistic.md；快速选择表的雏形来自 calculate_p_value.md），属 AI 生成内容，未引用原始文献。示例中的 P 值已由 Claude 在 R 4.5.2 中复核。临床例子均为示意数据。
@@ -118,6 +118,8 @@ wilcox.test(LOS ~ TRT, data = adhosp)
 ```
 
 另一个常见场景：疼痛 VAS 评分、改良 Rankin 量表（mRS）等**有序评分**。
+
+> ⚠ 存在分歧（轻微）：ordinal_data.md 认为，0–10 NRS 这类多级疼痛评分实际中常当作连续变量，用 MMRM / ANCOVA 分析；mRS 作为主要终点时也常用 proportional odds model。详见 [CON-ordinal-data](CON-ordinal-data.md#容易混淆多级总分量表)，待 Li 裁定。
 
 > 补充（Claude）：Mann-Whitney 严格检验的是"一组的值倾向于大于另一组"（P(X > Y) ≠ 0.5），只有当两组分布形状相同、仅位置平移时，才能解释为"中位数不同"。SAS 用 `PROC NPAR1WAY` 的 `wilcoxon` 选项；与位置差对应的点估计和 CI 是 Hodges-Lehmann 估计（`hl` 选项）。待 Li 核实。
 

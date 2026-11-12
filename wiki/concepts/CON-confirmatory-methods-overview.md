@@ -2,10 +2,10 @@
 id: CON-confirmatory-methods-overview
 title: "确证性试验最常用的统计方法总览（Common Methods in Confirmatory Trials）"
 categories: [overview, confirmatory-trial, ancova, mmrm, kaplan-meier, log-rank, cox, cmh, logistic, fisher-exact, chi-square, wilcoxon, negative-binomial, clopper-pearson, risk-difference, therapeutic-area, statistical-programming]
-related: [CON-test-selection, CON-covariate, CON-MMRM, CON-logrank-vs-cox, CON-hazard-ratio, CON-parametric-vs-nonparametric, CON-missing-data, CON-sensitivity-analysis, CON-t-test-pvalue]
+related: [CON-test-selection, CON-covariate, CON-MMRM, CON-logrank-vs-cox, CON-hazard-ratio, CON-parametric-vs-nonparametric, CON-missing-data, CON-sensitivity-analysis, CON-t-test-pvalue, CON-ordinal-data, CON-CMH, CON-proportional-odds-model]
 sources: ["Claude 对话（inbox: most_pop_stat_test.md）"]
 status: draft
-updated: 2026-11-11
+updated: 2026-11-12
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: most_pop_stat_test.md），属 AI 生成内容，未引用原始文献。**排序是按行业惯例给的大致印象，不是统计出来的排名**，不同治疗领域的侧重点会不一样。
@@ -21,7 +21,7 @@ updated: 2026-11-11
 | 3 | Kaplan-Meier 法 | Kaplan-Meier | 时间-事件 | 生存曲线、中位 OS / PFS | 第 5 章，待建 |
 | 4 | Log-rank 检验 | Log-rank test | 时间-事件 | 肿瘤试验 OS / PFS 主要终点的检验 | [CON-logrank-vs-cox](CON-logrank-vs-cox.md) |
 | 5 | Cox 比例风险模型 | Cox PH model | 时间-事件 | 风险比（HR）及 95% CI | [CON-hazard-ratio](CON-hazard-ratio.md)、[CON-logrank-vs-cox](CON-logrank-vs-cox.md) |
-| 6 | CMH 检验 | Cochran-Mantel-Haenszel | 二分类 | 分层比较应答率（如 PASI 75、ACR20） | 第 4 章，待建 |
+| 6 | CMH 检验 | Cochran-Mantel-Haenszel | 二分类 | 分层比较应答率（如 PASI 75、ACR20） | [CON-CMH](CON-CMH.md)（第 4 章；二分类部分待补） |
 | 7 | Logistic 回归 | Logistic regression | 二分类 | 调整协变量后的比值比（OR） | 第 4 章，待建 |
 | 8 | Fisher 确切概率法 | Fisher's exact test | 二分类 | 小样本、AE / SAE 发生率比较 | [CON-test-selection](CON-test-selection.md) |
 | 9 | 卡方检验 | Chi-square test | 分类 | 大样本时的率比较、基线特征比较 | [CON-test-selection](CON-test-selection.md) |

@@ -2,10 +2,10 @@
 id: CON-MMRM
 title: 重复测量混合模型（Mixed Model for Repeated Measures, MMRM）
 categories: [continuous, longitudinal, missing-data, mixed-model]
-related: [CON-estimand, GOT-mmrm-convergence, CON-missing-data, CON-sensitivity-analysis, CON-t-test-pvalue, CON-p-value, CON-degrees-of-freedom, CON-distribution-family, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-confirmatory-methods-overview]
+related: [CON-estimand, GOT-mmrm-convergence, CON-missing-data, CON-sensitivity-analysis, CON-t-test-pvalue, CON-p-value, CON-degrees-of-freedom, CON-distribution-family, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-confirmatory-methods-overview, CON-ordinal-data]
 sources: [REF-ICH-E9R1]
 status: draft
-updated: 2026-11-11
+updated: 2026-11-12
 ---
 
 ## 一句话定义

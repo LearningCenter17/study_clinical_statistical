@@ -2,10 +2,10 @@
 id: CON-parametric-vs-nonparametric
 title: "参数方法与非参数方法（Parametric vs Nonparametric Methods）"
 categories: [inference, parametric, nonparametric, rank-test, mann-whitney, wilcoxon, robustness, outlier, hodges-lehmann]
-related: [CON-test-selection, CON-p-value, CON-distribution-family, CON-t-test-pvalue, CON-MMRM, CON-confidence-interval, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview]
+related: [CON-test-selection, CON-p-value, CON-distribution-family, CON-t-test-pvalue, CON-MMRM, CON-confidence-interval, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview, CON-ordinal-data, CON-CMH]
 sources: ["Claude 对话（inbox: parametric.md）"]
 status: draft
-updated: 2026-11-11
+updated: 2026-11-12
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: parametric.md），属 AI 生成内容，未引用原始文献。
@@ -62,7 +62,7 @@ updated: 2026-11-11
 
 > 补充（Claude）：
 > - "约 95%"指渐近相对效率（asymptotic relative efficiency, ARE）：数据正态时 Wilcoxon 秩和检验相对 t 检验的 ARE = 3/π ≈ 0.955，即大约需要多 5% 的样本量达到同样功效。对任意连续分布，这个 ARE 不低于 0.864；在重尾分布下可以大于 1，即非参数方法反而功效更高。
-> - "不容易调整协变量"：分层可用 van Elteren 检验（分层 Wilcoxon，SAS `PROC NPAR1WAY` 无直接选项，常用 `PROC FREQ` 的 `cmh2 scores=modridit` 实现）；调整连续协变量常改用秩 ANCOVA 或对变换后的数据做参数模型。
+> - "不容易调整协变量"：分层可用 van Elteren 检验（分层 Wilcoxon，SAS `PROC NPAR1WAY` 无直接选项，常用 `PROC FREQ` 的 `cmh2 scores=modridit` 实现，见 [CON-CMH](CON-CMH.md)）；调整连续协变量常改用秩 ANCOVA 或对变换后的数据做参数模型。
 > - 效应量：SAS `PROC NPAR1WAY` 的 `hl` 选项给出 Hodges-Lehmann 位置差估计及 CI。
 >
 > 以上待 Li 核实。
