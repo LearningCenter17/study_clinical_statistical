@@ -2,7 +2,7 @@
 id: CON-sample-size-power
 title: "Power 与样本量计算（Power and Sample Size Calculation）"
 categories: [sample-size, power, design, type-ii-error, mcid, dropout, assumed-treatment-difference, target-difference]
-related: [CON-type-I-II-error, CON-t-test-pvalue, CON-hazard-ratio, CON-logrank-vs-cox, CON-null-hypothesis, CON-p-value, CON-covariate, CON-dose-escalation-design]
+related: [CON-type-I-II-error, CON-t-test-pvalue, CON-hazard-ratio, CON-logrank-vs-cox, CON-null-hypothesis, CON-p-value, CON-covariate, CON-dose-escalation-design, CON-normal-distribution]
 sources: ["Claude 对话（inbox: power.md）", "Claude 对话（inbox: power_correction.md）", "Claude 对话（inbox: assumed_treatment_difference.md）"]
 status: draft
 updated: 2026-11-11

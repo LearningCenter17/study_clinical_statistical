@@ -2,10 +2,10 @@
 id: CON-distribution-family
 title: "常用概率分布的家族关系（Bernoulli → Binomial → Normal → Z / t / χ² / F）"
 categories: [inference, distribution, bernoulli, binomial, normal, z-distribution, t-distribution, chi-square, f-distribution, null-distribution]
-related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, CON-t-test-pvalue, CON-MMRM, GOT-ttest-student-vs-welch, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-dose-escalation-design]
+related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, CON-t-test-pvalue, CON-MMRM, GOT-ttest-student-vs-welch, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-dose-escalation-design, CON-normal-distribution]
 sources: ["Claude 对话（inbox: distribution.md）", "Claude 对话（inbox: F_distribution.md）"]
 status: draft
-updated: 2026-11-11
+updated: 2026-11-13
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: distribution.md，附图 distribution.png；F_distribution.md），属 AI 生成内容，未引用原始文献。
@@ -43,6 +43,8 @@ updated: 2026-11-11
 ### Z 分布
 
 不同正态分布的均值、标准差各不相同，没法直接比较；标准化 Z = (X − μ) / σ 后都变成均值 0、标准差 1 的同一条曲线。
+
+μ 和 σ 怎样决定曲线、标准化的例子、1.96 是什么以及怎么算出来，见 [CON-normal-distribution](CON-normal-distribution.md)。
 
 ### t 分布
 

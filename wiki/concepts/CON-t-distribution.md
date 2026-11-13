@@ -2,7 +2,7 @@
 id: CON-t-distribution
 title: "t 分布（Student's t Distribution）"
 categories: [inference, t-distribution, degrees-of-freedom, null-distribution]
-related: [CON-t-test-pvalue, CON-p-value, CON-test-statistic, CON-degrees-of-freedom, CON-distribution-family]
+related: [CON-t-test-pvalue, CON-p-value, CON-test-statistic, CON-degrees-of-freedom, CON-distribution-family, CON-normal-distribution]
 sources: ["Claude 对话（inbox: t_distribution.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: distribution.md）"]
 status: draft
 updated: 2026-11-09

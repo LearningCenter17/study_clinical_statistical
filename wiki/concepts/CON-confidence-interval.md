@@ -2,7 +2,7 @@
 id: CON-confidence-interval
 title: "置信区间与 P 值的对应关系（Confidence Interval）"
 categories: [inference, confidence-interval, p-value, hypothesis-testing, effect-size, reporting]
-related: [CON-p-value, CON-type-I-II-error, CON-t-test-pvalue, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample]
+related: [CON-p-value, CON-type-I-II-error, CON-t-test-pvalue, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution]
 sources: ["Claude 对话（inbox: summary_p.md）"]
 status: draft
 updated: 2026-11-11

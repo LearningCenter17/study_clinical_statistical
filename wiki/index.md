@@ -26,6 +26,7 @@ title: 知识库索引
 
 - [CON-test-statistic](concepts/CON-test-statistic.md) — 检验统计量的共同骨架；t、χ²、log-rank 各适用什么数据，以及它们的"亲戚关系"
 - [CON-distribution-family](concepts/CON-distribution-family.md) — 伯努利 → 二项 → 正态 → Z → t / χ² / F 的演化关系、各分布特点；F = 组间 / 组内变异及其用途（ANOVA、Type III 检验）
+- [CON-normal-distribution](concepts/CON-normal-distribution.md) — 标准正态 N(0, 1) 只有一条、μ 定位置 σ 定胖瘦、标准化 z = (x − μ) / σ；1.96 是 97.5% 分位数及其数值求法（`qnorm`、`integrate` + `uniroot`）；1.96 vs t 临界值
 - [CON-t-distribution](concepts/CON-t-distribution.md) — t 分布只由自由度决定、随 df 的形状变化、与正态分布对比
 
 ### 2.3 检验方法的选择与计算
