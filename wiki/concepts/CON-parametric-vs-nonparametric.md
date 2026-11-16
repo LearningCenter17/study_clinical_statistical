@@ -3,12 +3,12 @@ id: CON-parametric-vs-nonparametric
 title: "参数方法与非参数方法（Parametric vs Nonparametric Methods）"
 categories: [inference, parametric, nonparametric, rank-test, mann-whitney, wilcoxon, robustness, outlier, hodges-lehmann]
 related: [CON-test-selection, CON-p-value, CON-distribution-family, CON-t-test-pvalue, CON-MMRM, CON-confidence-interval, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview, CON-ordinal-data, CON-CMH]
-sources: ["Claude 对话（inbox: parametric.md）"]
+sources: ["Claude 对话（inbox: parametric.md）", "Claude 对话（inbox: rank-sum_test.md）"]
 status: draft
-updated: 2026-11-12
+updated: 2026-11-13
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: parametric.md），属 AI 生成内容，未引用原始文献。
+> 出处待补：本卡内容来自 Claude 对话（inbox: parametric.md、rank-sum_test.md），属 AI 生成内容，未引用原始文献。
 
 ## 一句话定义
 
@@ -53,6 +53,27 @@ updated: 2026-11-12
 
 各方法的适用条件、临床例子和代码见 [CON-test-selection](CON-test-selection.md)。
 
+## 术语对照：秩和检验
+
+（来源：rank-sum_test.md）秩和检验的英文是 **rank-sum test**，最常见的全称是 **Wilcoxon rank-sum test**。
+
+| 中文 | 英文 |
+|---|---|
+| 秩和检验 | rank-sum test |
+| Wilcoxon 秩和检验 | Wilcoxon rank-sum test |
+| Mann-Whitney U 检验 | Mann-Whitney U test |
+| 合称 | Wilcoxon-Mann-Whitney test（WMW test） |
+| 符号秩检验（配对） | Wilcoxon signed-rank test |
+| 秩 | rank |
+| 秩和 | rank sum / sum of ranks |
+| 结（并列） | ties |
+
+SAP 或 CSR 里常见的写法是 "**Wilcoxon rank-sum test**"。SAS 里对应 `PROC NPAR1WAY` 加 `WILCOXON` 选项。
+
+> 补充（Claude）：
+> - **rank-sum 和 signed-rank 只差一个词，但用途不同**：前者用于两组独立样本，后者用于配对数据。读 SAP 时要看清楚。R 里两者都是 `wilcox.test()`，区别只在 `paired = TRUE`。
+> - **同一个检验，统计量数值可能不同**：Wilcoxon 秩和 W 与 Mann-Whitney U 只差一个常数，U = W − n₁(n₁ + 1)/2，P 值相同。R `wilcox.test()` 输出的 "W" 实际上是 U。Claude 用 [GOT-skewed-small-sample](../gotchas/GOT-skewed-small-sample.md) 的 CRP 数据在 R 4.5.2 中复核：Drug 组秩和 = 66，R 输出 W = 11 = 66 − 10 × 11 / 2。SAS `PROC NPAR1WAY` 输出的统计量 S 是秩和本身。所以做 SAS / R 双重编程时，统计量对不上不一定是错，先比 P 值。SAS 取哪一组的秩和（通常是样本量较小的那组），待 Li 核实。
+
 ## 容易误解的地方
 
 - **"非参数"不等于没有任何假设。** 例如 Mann-Whitney U 仍然假设两组独立；要把结果解释为"中位数不同"，还需要两组分布形状相似。它只是不要求数据服从正态分布。
@@ -76,3 +97,4 @@ updated: 2026-11-12
 ## 出处
 
 - Claude 对话（inbox: parametric.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: rank-sum_test.md；AI 生成，原始出处待补）

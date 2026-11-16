@@ -2,13 +2,13 @@
 id: CON-p-value
 title: "P 值的定义与计算条件（P-value）"
 categories: [inference, p-value, hypothesis-testing, null-distribution, nonparametric, permutation-test, test-selection, software, effect-size]
-related: [CON-null-hypothesis, CON-t-test-pvalue, CON-hazard-ratio, CON-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, GOT-skewed-small-sample]
-sources: ["Claude 对话（inbox: p_value_requirement.md）", "Claude 对话（inbox: calculate_p_value.md）"]
+related: [CON-null-hypothesis, CON-t-test-pvalue, CON-hazard-ratio, CON-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution]
+sources: ["Claude 对话（inbox: p_value_requirement.md）", "Claude 对话（inbox: calculate_p_value.md）", "Claude 对话（inbox: calculate_pvalue.md）"]
 status: draft
-updated: 2026-11-11
+updated: 2026-11-13
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: p_value_requirement.md、calculate_p_value.md），属 AI 生成内容，未引用原始文献。
+> 出处待补：本卡内容来自 Claude 对话（inbox: p_value_requirement.md、calculate_p_value.md、calculate_pvalue.md），属 AI 生成内容，未引用原始文献。
 
 ## 一句话定义
 
@@ -68,6 +68,72 @@ P 值 = P(T 至少和 T_obs 一样极端 | H₀ 为真)
 2. **选择合适的统计检验方法**：根据数据类型、分布特征和样本量选择（见下表）。
 3. **计算检验统计量**：把样本数据代入公式，算出 t、z、F 或 χ² 值。
 4. **通过概率分布计算 P 值**：根据统计量及其自由度（[df](CON-degrees-of-freedom.md)），在对应的概率分布（标准正态、t、χ² 等，见 [CON-distribution-family](CON-distribution-family.md)）上算尾部面积；双侧检验算两侧尾部面积之和。
+
+**核心一句话**（来源：calculate_pvalue.md）：计算 P 值，要先把结果变成一个"**在 H₀ 下分布已知**"的检验统计量，再去查那个分布的**尾巴面积**。标准正态是最常见的一种，但不是唯一的。
+
+### 手算示例：z 检验三步
+
+（来源：calculate_pvalue.md）药物组比安慰剂组多降 **6 mmHg**，差值的 **SE = 2.5**，H₀ 是"真实差值 = 0"。
+
+**第一步：标准化，得到检验统计量**
+
+z = (观察值 − H₀ 下的值) / SE = (6 − 0) / 2.5 = **2.4**
+
+即观察到的差异相当于 2.4 个标准误。
+
+**第二步：在标准正态下找尾巴面积**
+
+双侧 P 值 = 比 ±2.4 更极端的两个尾巴的面积之和：
+
+```r
+2 * pnorm(-2.4)   # 0.0164
+```
+
+```text
+           ╭───╮
+         ╱       ╲
+       ╱           ╲
+  ░░  ╱             ╲  ░░   ← 两块阴影加起来 = 0.0164
+ ─░┴─┴───────┬───────┴─┴░─
+  −2.4       0       +2.4
+```
+
+**第三步：和 α 比较**
+
+0.0164 < 0.05 → 显著。
+
+> 数值复核（Claude，R 4.5.2）：6 / 2.5 = 2.4；`2 * pnorm(-2.4)` = 0.01640。与材料一致。
+
+### 标准化不是数学上必须的
+
+不标准化也能算：直接在"H₀ 下差值的分布" N(0, 2.5²) 上找尾巴面积，结果完全一样。
+
+```r
+2 * pnorm(-6, mean = 0, sd = 2.5)   # 0.0164
+```
+
+标准化的好处是**统一**：不管原来的单位是 mmHg、kg 还是天数，都换算成"几个 SE"，只用一张表、一套临界值（1.96）就能判断。在没有电脑、靠查表的年代这一点尤其重要；现在它也让结果更容易比较和解释。标准化与 1.96 的来历见 [CON-normal-distribution](CON-normal-distribution.md)。
+
+### 不同检验用不同的参照分布
+
+思路都一样：构造统计量，再查对应分布的尾巴。只是参照分布不同（来源：calculate_pvalue.md）：
+
+| 检验 | 检验统计量 | H₀ 下的分布 | R 求 P 值 |
+|---|---|---|---|
+| z 检验 | 估计值 / SE（σ 已知或大样本） | 标准正态 | `2*pnorm(-abs(z))` |
+| t 检验 | 估计值 / SE（σ 用样本估计） | t 分布（df） | `2*pt(-abs(t), df)` |
+| ANOVA / ANCOVA 的 F 检验 | 组间 / 组内变异 | F 分布（df₁, df₂） | `pf(F, df1, df2, lower.tail=FALSE)` |
+| 卡方检验 | Σ(观察 − 期望)² / 期望 | χ² 分布（df） | `pchisq(x, df, lower.tail=FALSE)` |
+
+- 严格地说，t 检验是把结果"标准化"成 **t 分布**，而不是标准正态。
+- **F 和 χ² 检验只看右尾**，因为统计量只会是正数。
+- 各分布的来历与用途见 [CON-distribution-family](CON-distribution-family.md#和检验统计量的对应)。
+
+也有不依赖这类分布、**不需要标准化**的方法：Fisher 精确检验直接按组合概率计算，置换检验用模拟构造 H₀ 下的分布（见下文"[分布假设靠不住时](#分布假设靠不住时从数据里构造零分布)"）。
+
+> **一句话总结**：P 值 = 在 H₀ 成立时，得到"至少这么极端"结果的概率；标准化只是把结果放到一个已知分布上，方便算这个概率。
+
+> 补充（Claude）：表中 `2*pt(-abs(t), df)` 的写法默认零分布对称，所以双侧 P 值 = 单侧尾巴 × 2。F 和 χ² 是非对称分布，它们的"双侧"在常规用法里就是右尾，不需要乘 2。待 Li 核实。
 
 ### 选哪种检验
 
@@ -130,3 +196,4 @@ SAS 输出中的 `Pr > |t|` 即为双侧检验的 P 值。
 
 - Claude 对话（inbox: p_value_requirement.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: calculate_p_value.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: calculate_pvalue.md；AI 生成，原始出处待补）

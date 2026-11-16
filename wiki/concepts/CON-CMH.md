@@ -2,7 +2,7 @@
 id: CON-CMH
 title: "CMH 检验：PROC FREQ 三个统计量与 SCORES= 选项（Cochran-Mantel-Haenszel）"
 categories: [categorical, cmh, stratification, ordinal, van-elteren, wilcoxon, kruskal-wallis, sas, proc-freq, scores]
-related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, CON-proportional-odds-model]
+related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, CON-proportional-odds-model, CON-response-rate]
 sources: ["Claude 对话（inbox: cmh_statistics.md）"]
 status: draft
 updated: 2026-11-12

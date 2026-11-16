@@ -31,16 +31,16 @@ title: 知识库索引
 
 ### 2.3 检验方法的选择与计算
 
-- [CON-p-value](concepts/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验；计算四步、Python / R / SAS 实现、怎么解读
+- [CON-p-value](concepts/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验；计算四步、z 检验手算示例、各检验的参照分布与 R 函数（pnorm / pt / pf / pchisq）、Python / R / SAS 实现、怎么解读
 - [CON-test-selection](concepts/CON-test-selection.md) — 快速选择表（连续 / 分类 / 非参数 × 两组 / 多组 / 配对）；t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态
 - [CON-confirmatory-methods-overview](concepts/CON-confirmatory-methods-overview.md) — 导航页：确证性试验最常用的十种方法（ANCOVA、MMRM、KM、log-rank、Cox、CMH、logistic、Fisher、卡方、Wilcoxon）、按治疗领域的分布、描述统计占 TLF 大头、SAS / R 对齐重点
-- [CON-parametric-vs-nonparametric](concepts/CON-parametric-vs-nonparametric.md) — 参数方法（假设分布、比较参数）vs 非参数方法（基于秩次、分布无关）：优缺点、秩次为何对离群值稳健、对应关系、"非参数 ≠ 无假设"
+- [CON-parametric-vs-nonparametric](concepts/CON-parametric-vs-nonparametric.md) — 参数方法（假设分布、比较参数）vs 非参数方法（基于秩次、分布无关）：优缺点、秩次为何对离群值稳健、对应关系、秩和检验中英术语对照（rank-sum vs signed-rank、R 的 W 即 U）、"非参数 ≠ 无假设"
 - [CON-t-test-pvalue](concepts/CON-t-test-pvalue.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t vs z、SAS PROC TTEST 四张输出表
 - [GOT-ttest-student-vs-welch](gotchas/GOT-ttest-student-vs-welch.md) — 同一数据 Python / R / SAS 的 t 检验 P 值不同：Student（等方差）vs Welch（不等方差）默认设置；n 不等时差异可达数十倍；为什么不建议先检验方差齐性再选
 
 ### 2.4 常见误区与结果解读
 
-- [CON-confidence-interval](concepts/CON-confidence-interval.md) — 95% CI 与双侧 α = 0.05 检验的等价关系、0（或 1）在不在 CI 内、不显著 ≠ 没差别、结果报告示例
+- [CON-confidence-interval](concepts/CON-confidence-interval.md) — CI 的定义与三个组成部分（估计值 ± 临界值 × SE）；1.96 vs t 临界值、不同统计量的 CI 构造（均值用 t、比例用精确 / score 法、HR / OR 在 log 尺度用 z）；"95%"的正确含义（重复试验的覆盖率，套圈类比）；置信区间 vs 贝叶斯可信区间（CrI）；CI 宽度由什么决定（SD、n、方法、率大小；生存终点看事件数 SE ≈ 2/√D）、窄 CI ≠ 结论可靠；95% CI 与双侧 α = 0.05 检验的等价关系、0（或 1）在不在 CI 内、不显著 ≠ 没差别、结果报告示例
 - [GOT-skewed-small-sample](gotchas/GOT-skewed-small-sample.md) — 小样本偏态（CRP 例子）：均值本身不可靠，Welch 也救不了；log 转换（几何均数比）或 Mann-Whitney；方法须预先指定
 
 待建：P 值的常见误解（2.4）、单侧 vs 双侧检验辨析（2.4）
@@ -55,6 +55,7 @@ title: 知识库索引
 
 ## 4. 二分类终点：CMH、logistic、率差置信区间
 
+- [CON-response-rate](concepts/CON-response-rate.md) — 应答的定义与各领域标准（RECIST、ACR20、PASI 75）；应答概率 p（真值）vs 应答率 p̂（估计）、ORR 与 CI 示例；RECIST 1.1 判定 PR / CR 的三个条件与确认（confirmation）；抛硬币 / `rbinom` 类比；同样适用于 AE 发生率；中英术语（response rate、responder analysis）；ADRS 参数（OVRLRESP / BOR / CBOR）与 ORR 算法
 - [CON-ordinal-data](concepts/CON-ordinal-data.md) — 有序分类数据：能排序但不能做算术；临床例子（CTCAE、RECIST、mRS、CGI）；描述用 n (%)，比较用 CMH（row mean scores）/ Wilcoxon / proportional odds model；多级总分量表常当连续处理
 - [CON-CMH](concepts/CON-CMH.md) — PROC FREQ 的 CMH 三个统计量怎么选（Nonzero Correlation / Row Mean Scores / General Association）、`SCORES=` 选项（table、rank ≈ Kruskal-Wallis / Wilcoxon、modridit = van Elteren）、行列顺序与排序注意事项
 - [CON-proportional-odds-model](concepts/CON-proportional-odds-model.md) — 比例优势模型（有序 logistic）：累积 logit、共同 OR；比例优势假设的 score test 及其局限、partial PO（`UNEQUALSLOPES` / `nominal =`）；R（polr / clm）与 SAS 实现

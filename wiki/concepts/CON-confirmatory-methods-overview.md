@@ -2,7 +2,7 @@
 id: CON-confirmatory-methods-overview
 title: "确证性试验最常用的统计方法总览（Common Methods in Confirmatory Trials）"
 categories: [overview, confirmatory-trial, ancova, mmrm, kaplan-meier, log-rank, cox, cmh, logistic, fisher-exact, chi-square, wilcoxon, negative-binomial, clopper-pearson, risk-difference, therapeutic-area, statistical-programming]
-related: [CON-test-selection, CON-covariate, CON-MMRM, CON-logrank-vs-cox, CON-hazard-ratio, CON-parametric-vs-nonparametric, CON-missing-data, CON-sensitivity-analysis, CON-t-test-pvalue, CON-ordinal-data, CON-CMH, CON-proportional-odds-model]
+related: [CON-test-selection, CON-covariate, CON-MMRM, CON-logrank-vs-cox, CON-hazard-ratio, CON-parametric-vs-nonparametric, CON-missing-data, CON-sensitivity-analysis, CON-t-test-pvalue, CON-ordinal-data, CON-CMH, CON-proportional-odds-model, CON-response-rate]
 sources: ["Claude 对话（inbox: most_pop_stat_test.md）"]
 status: draft
 updated: 2026-11-12

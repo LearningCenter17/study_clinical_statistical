@@ -2,7 +2,7 @@
 id: CON-ordinal-data
 title: "有序分类数据（Ordinal Data）"
 categories: [data-type, ordinal, categorical, ctcae, recist, mrs, cmh, wilcoxon, proportional-odds, ordinal-logistic, adam, avalc]
-related: [CON-test-selection, CON-parametric-vs-nonparametric, CON-confirmatory-methods-overview, CON-MMRM, CON-covariate, CON-CMH, CON-proportional-odds-model, GOT-ordinal-or-direction]
+related: [CON-test-selection, CON-parametric-vs-nonparametric, CON-confirmatory-methods-overview, CON-MMRM, CON-covariate, CON-CMH, CON-proportional-odds-model, GOT-ordinal-or-direction, CON-response-rate]
 sources: ["Claude 对话（inbox: ordinal_data.md）", "Claude 对话（inbox: ordinal_data_adam_correction.md）", "Claude 对话（inbox: cmh_statistics.md）"]
 status: draft
 updated: 2026-11-12

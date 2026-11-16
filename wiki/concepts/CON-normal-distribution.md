@@ -2,7 +2,7 @@
 id: CON-normal-distribution
 title: "正态分布、标准正态分布与 1.96（Normal Distribution, Standardization and 1.96）"
 categories: [inference, distribution, normal, standard-normal, z-score, standardization, critical-value, qnorm, confidence-interval]
-related: [CON-distribution-family, CON-t-distribution, CON-degrees-of-freedom, CON-confidence-interval, CON-t-test-pvalue, CON-sample-size-power, CON-test-statistic]
+related: [CON-distribution-family, CON-t-distribution, CON-degrees-of-freedom, CON-confidence-interval, CON-t-test-pvalue, CON-sample-size-power, CON-test-statistic, CON-p-value]
 sources: ["Claude 对话（inbox: normal_distribution.md）"]
 status: draft
 updated: 2026-11-13
