@@ -2,7 +2,7 @@
 id: CON-confidence-interval
 title: "置信区间（Confidence Interval）：含义、构成、解读及与 P 值的对应"
 categories: [inference, confidence-interval, p-value, hypothesis-testing, effect-size, reporting, point-estimate, standard-error, coverage, credible-interval, bayesian, precision, event-count]
-related: [CON-p-value, CON-type-I-II-error, CON-t-test-pvalue, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CON-response-rate, CON-t-distribution, CON-degrees-of-freedom, CON-dose-escalation-design, CON-covariate, CON-sample-size-power, CON-missing-data]
+related: [CON-p-value, CON-type-I-II-error, CON-t-test-pvalue, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CON-response-rate, CON-t-distribution, CON-degrees-of-freedom, CON-dose-escalation-design, CON-covariate, CON-sample-size-power, CON-missing-data, CON-logrank-vs-cox]
 sources: ["Claude 对话（inbox: summary_p.md）", "Claude 对话（inbox: CI_1.md）", "Claude 对话（inbox: CI_1_correction.md）", "Claude 对话（inbox: CI_bayesian.md）", "Claude 对话（inbox: CI_width.md）"]
 status: draft
 updated: 2026-11-16
@@ -190,7 +190,7 @@ CI 能提供的信息比 P 值多：
 - **效应有多大**：看中心位置。
 - **估计得有多准**：看区间宽度。宽度由什么决定见下一节。
 
-> 补充（Claude）：这种等价要求 CI 和检验**出自同一方法**（同一 SE、同一自由度、同一分布）。例如 t 检验的 Welch CI 对应 Welch 检验、Pooled CI 对应 Pooled 检验；混用时（如 Wald CI 配 score 检验、Hodges-Lehmann CI 配 Wilcoxon 检验、Cox 的 Wald CI 配 log-rank P 值）边界附近可能出现"CI 不含 0 但 p 略大于 0.05"之类不一致。待 Li 核实。
+> 补充（Claude）：这种等价要求 CI 和检验**出自同一方法**（同一 SE、同一自由度、同一分布）。例如 t 检验的 Welch CI 对应 Welch 检验、Pooled CI 对应 Pooled 检验；混用时（如 Wald CI 配 score 检验、Hodges-Lehmann CI 配 Wilcoxon 检验、Cox 的 Wald CI 配 log-rank P 值）边界附近可能出现"CI 不含 0 但 p 略大于 0.05"之类不一致。待 Li 核实。（Cox Wald CI 配 log-rank P 值这一例，后续对话 CI_HR.md 已确认"偶尔不一致是正常的"，见 [CON-logrank-vs-cox](CON-logrank-vs-cox.md#临床试验中的常见做法)。）
 
 ## CI 宽度由什么决定
 

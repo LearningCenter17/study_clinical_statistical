@@ -2,10 +2,10 @@
 id: CON-logrank-vs-cox
 title: "log-rank 检验与 Cox 模型的分工（Log-rank Test vs Cox Model）"
 categories: [survival, log-rank, cox, hazard-ratio, proportional-hazards, sas]
-related: [CON-hazard-ratio, CON-null-hypothesis, CON-p-value, CON-test-statistic, CON-confirmatory-methods-overview]
-sources: ["Claude 对话（inbox: logrank_vs_cox.md）"]
+related: [CON-hazard-ratio, CON-null-hypothesis, CON-p-value, CON-test-statistic, CON-confirmatory-methods-overview, CON-confidence-interval]
+sources: ["Claude 对话（inbox: logrank_vs_cox.md）", "Claude 对话（inbox: CI_HR.md）"]
 status: draft
-updated: 2026-11-09
+updated: 2026-11-16
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: logrank_vs_cox.md），属 AI 生成内容，未引用原始文献。需对照生存分析教材（如 Collett、Klein & Moeschberger）及 SAS PROC LIFETEST / PHREG 文档核实。
@@ -44,6 +44,10 @@ SAP 里通常写：
 - **HR 及其 95% CI**：来自（分层）Cox 模型，`PROC PHREG`
 - **检查 PH 假设**：log(−log S(t)) 图、Schoenfeld 残差或时间交互项，作为 HR 解释是否合理的依据
 
+**P 值与 CI 偶尔"打架"是正常的**（来源：CI_HR.md）：P 值来自 log-rank，HR 的 CI 来自 Cox（Wald），两者方法不同，偶尔会出现 p 略大于 0.05、但 CI 刚好不包含 1 的情况。SAP 一般会写明各自用哪个方法。CI 与检验"同方法才严格等价"的一般原则见 [CON-confidence-interval](CON-confidence-interval.md#ci-与-p-值的对应)。
+
+> log-rank 的计算思路（来源：CI_HR.md，与上文"方法类型"一致）：在每个事件时间点比较每组"实际发生的事件数"和"两组没差别时预期的事件数"，再把所有时间点加总。
+
 ## 实现
 
 ### SAS
@@ -66,6 +70,25 @@ run;
 
 > 补充（Claude）：分层时，LIFETEST 用 `strata stratvar / group=trt test=logrank;`，PHREG 在 MODEL 后加 `strata stratvar;`。待核实。
 
+### R
+
+来源：CI_HR.md。
+
+```r
+library(survival)
+
+# 分层 Cox：HR 及 95% CI
+fit <- coxph(Surv(AVAL, 1 - CNSR) ~ TRT01P + strata(STRAT1), data = adtte)
+summary(fit)   # 输出列含义见 CON-hazard-ratio 的"实现"一节
+
+# 分层 log-rank 检验：P 值
+survdiff(Surv(AVAL, 1 - CNSR) ~ TRT01P + strata(STRAT1), data = adtte)
+```
+
+ADTTE 中 CNSR = 1 表示删失，所以 R 的事件指示变量是 `1 - CNSR`（SAS 写 `cnsr(1)`）。
+
+> 补充（Claude）：`coxph()` 默认 ties = Efron（与 SAS PHREG 默认 Breslow 不同，见上文）。`summary(fit)` 底部还会给出似然比、Wald、score（logrank）三个整体检验；单组别协变量、未分层时，score 检验与 `survdiff()` 的 log-rank 接近。待 Li 核实。
+
 ## 常见坑
 
 - 把 log-rank 说成"检验 HR = 1"：不严谨。log-rank 不估计 HR，只在 PH 下与 Cox score 检验等价（本知识库 [CON-hazard-ratio](CON-hazard-ratio.md) 的原始材料就曾这样表述，已据本卡更正）。
@@ -80,3 +103,4 @@ run;
 ## 出处
 
 - Claude 对话（inbox: logrank_vs_cox.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: CI_HR.md；AI 生成，原始出处待补）

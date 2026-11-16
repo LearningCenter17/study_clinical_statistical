@@ -65,8 +65,8 @@ title: 知识库索引
 
 ## 5. 生存分析：KM、log-rank、Cox
 
-- [CON-hazard-ratio](concepts/CON-hazard-ratio.md) — HR 的含义、HR = 1 作为 H₀、报告怎么读、HR ≠ 事件人数比例
-- [CON-logrank-vs-cox](concepts/CON-logrank-vs-cox.md) — log-rank（曲线相同、给 P 值）与 Cox（HR = 1、给 HR 和 CI）的 H₀、分工与 SAS 代码
+- [CON-hazard-ratio](concepts/CON-hazard-ratio.md) — HR 的含义（瞬时速率之比）、HR = 1 作为 H₀；为什么在 log 尺度分析；CI 与 Wald P 值算例、CI 不对称及 TLF QC（log 尺度等距、四舍五入导致的偏差、用全精度 β / SE 反算比对）；报告怎么读、HR ≠ 事件人数比例；R `summary(coxph)` 输出列对照
+- [CON-logrank-vs-cox](concepts/CON-logrank-vs-cox.md) — log-rank（曲线相同、给 P 值）与 Cox（HR = 1、给 HR 和 CI）的 H₀、分工、P 值与 CI 偶尔不一致的原因；SAS / R（分层 coxph、survdiff）代码
 
 待建：Kaplan-Meier、Cox 模型细节（分层、协变量、ties）、比例风险假设检验方法、删失（censoring）规则
 
