@@ -49,7 +49,7 @@ updated: 2026-11-12
 | 方法 | 说明 |
 |---|---|
 | **CMH 检验**（row mean scores） | 可按分层因素调整 |
-| **Wilcoxon rank-sum**（Mann-Whitney U） | 基于秩次，见 [CON-test-selection](CON-test-selection.md#mann-whitney-u-检验wilcoxon-秩和检验)、[CON-parametric-vs-nonparametric](CON-parametric-vs-nonparametric.md) |
+| **Wilcoxon rank-sum**（Mann-Whitney U） | 基于秩次，见 [CON-test-selection](CON-test-selection.md#5-mann-whitney-u-检验wilcoxon-秩和检验)、[CON-parametric-vs-nonparametric](CON-parametric-vs-nonparametric.md) |
 | **Proportional odds model**（ordinal logistic regression） | mRS、WHO ordinal scale 这类**主要终点**常用 |
 
 **CMH 用哪个统计量**：治疗组是无序行、应答是有序列，所以看 **Row Mean Scores Differ**。分层时用 `scores=modridit`，就是 van Elteren 检验（分层 Wilcoxon）。三个统计量怎么选、`SCORES=` 各选项、代码与注意事项见 [CON-CMH](CON-CMH.md)。

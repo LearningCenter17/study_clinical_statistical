@@ -1,0 +1,66 @@
+site_name: Clinical Stats Wiki
+site_description: 临床试验统计知识库
+docs_dir: wiki
+site_dir: site
+
+# Quarto 渲染时留下的文件，不进网站
+exclude_docs: |
+  *_files/
+  *.html
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色
+
+plugins:
+  - search:
+      lang: zh
+
+hooks:
+  - hooks/card_meta.py
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+      # 保留中文锚点（MkDocs 默认会丢掉非 ASCII 字符），与 Quarto 生成的锚点一致
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+    unrecognized_links: warn

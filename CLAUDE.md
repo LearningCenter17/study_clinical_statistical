@@ -49,4 +49,5 @@ skill 只负责检索和引用，不复制知识内容。
 
 - `/kb-ingest` 处理 inbox 中的新材料
 - `/kb-lint` 检查断链、孤立卡片、缺失字段
-- `quarto preview` 本地预览 wiki 网站；`quarto render` 生成到 `_site/`
+- `C:\ProgramData\miniconda3\python.exe -m mkdocs serve` 本地预览 wiki 网站；`... -m mkdocs build` 生成到 `site/`（配置见 `mkdocs.yml`，`hooks/card_meta.py`）。
+  链接锚点按 MkDocs 规则生成：保留中文、`₀` 等字符和标题开头的编号（如 `#5-mann-whitney-u-检验wilcoxon-秩和检验`）；build 无 WARNING 才算链接全部有效。
