@@ -11,7 +11,8 @@ theme:
   name: material
   language: zh
   features:
-    - navigation.sections
+    # 不用 navigation.sections：它会把顶层主题固定展开、不能折叠，侧边栏太长。
+    # 去掉后每个主题都可以折叠，默认收起，只自动展开当前页面所在的主题。
     - navigation.top
     - navigation.indexes
     - search.highlight
