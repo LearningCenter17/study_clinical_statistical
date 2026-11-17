@@ -2,7 +2,7 @@
 id: CON-normal-distribution
 title: "正态分布、标准正态分布与 1.96（Normal Distribution, Standardization and 1.96）"
 categories: [inference, distribution, normal, standard-normal, z-score, standardization, critical-value, qnorm, confidence-interval]
-related: [CON-distribution-family, CON-t-distribution, CON-degrees-of-freedom, CON-confidence-interval, MTH-t-test, CON-sample-size-power, CON-test-statistic, CON-p-value]
+related: [CON-distribution-family, CON-t-distribution, CON-degrees-of-freedom, CON-confidence-interval, MTH-t-test, CON-sample-size-power, CON-test-statistic, CON-p-value, WF-sample-size-calc]
 sources: ["Claude 对话（inbox: normal_distribution.md）"]
 status: draft
 updated: 2026-11-13
@@ -74,7 +74,7 @@ t 分布有一个参数**自由度**，所以是一族曲线：df = 5 和 df = 1
 
 - 双侧 α = 0.05 检验的临界值；
 - 95% CI 公式"**估计值 ± 1.96 × SE**"里的那个数（CI 见 [CON-confidence-interval](CON-confidence-interval.md)）；
-- 样本量公式里的 z₁₋α/₂（见 [CON-sample-size-power](../design/CON-sample-size-power.md)）。
+- 样本量公式里的 z₁₋α/₂（见 [WF-sample-size-calc](../design/WF-sample-size-calc.md)）。
 
 ## 1.96 是怎么算出来的
 
@@ -119,7 +119,7 @@ uniroot(function(c) area(c) - 0.975, c(0, 3))$root   # 1.959964
 - [CON-distribution-family](CON-distribution-family.md)：正态分布在伯努利 → 二项 → 正态 → Z → t / χ² / F 链条中的位置
 - [CON-t-distribution](CON-t-distribution.md)：t 分布随自由度变化，逼近标准正态
 - [CON-confidence-interval](CON-confidence-interval.md)：估计值 ± 1.96 × SE
-- [CON-sample-size-power](../design/CON-sample-size-power.md)：样本量公式中的 1.96 和 1.28
+- [WF-sample-size-calc](../design/WF-sample-size-calc.md)：样本量公式中的 1.96 和 1.28
 
 ## 出处
 

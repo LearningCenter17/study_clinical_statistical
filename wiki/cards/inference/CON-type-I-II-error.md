@@ -2,7 +2,7 @@
 id: CON-type-I-II-error
 title: "第一类错误、第二类错误与检验效能（Type I / Type II Error and Power）"
 categories: [inference, type-i-error, type-ii-error, alpha, beta, power, sample-size, multiplicity, hypothesis-testing]
-related: [CON-null-hypothesis, CON-p-value, MTH-t-test, GOT-ni-hypothesis-direction, CON-test-statistic, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-covariate]
+related: [CON-null-hypothesis, CON-p-value, MTH-t-test, GOT-ni-hypothesis-direction, CON-test-statistic, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-covariate, WF-sample-size-calc]
 sources: ["Claude 对话（inbox: type_I_error.md）", "Claude 对话（inbox: type_II_error.md）"]
 status: draft
 updated: 2026-11-11
@@ -110,7 +110,7 @@ power.t.test(delta = 0.5, sd = 1, power = 0.9)  # 理论计算：每组约 86 �
 
 > 运行复核（Claude，R 4.5.2）：第一段输出 0.0504；1 − 0.95¹⁰ = 0.401。第二段模拟输出 0.323 / 0.695 / 0.904，`power.t.test()` 理论值 0.338 / 0.697 / 0.903；90% power 所需 n = 85.03，向上取整为每组 86 人（80% power 时为 63.8 → 64 人）。模拟值随随机种子略有波动，与材料一致。
 
-> 补充（Claude）：SAS 中对应的样本量 / power 计算是 `PROC POWER`，示例见 [CON-sample-size-power](../design/CON-sample-size-power.md)。待 Li 核实。
+> 补充（Claude）：SAS 中对应的样本量 / power 计算是 `PROC POWER`，示例见 [WF-sample-size-calc](../design/WF-sample-size-calc.md)。待 Li 核实。
 
 ## 记住两句话
 

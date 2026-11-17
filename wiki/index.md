@@ -85,7 +85,10 @@ title: 知识库索引
 
 ## 8. 样本量与成组序贯设计
 
-- [CON-sample-size-power](cards/design/CON-sample-size-power.md) — power 与样本量计算：两个钟形曲线、输入（α、power、δ、σ）、n 公式手算、δ（假设的治疗差值）的选择与 MCID、δ 减半 n 变 4 倍、post-hoc power 误区；术语（sample size determination / justification）、完整输入（分配比例、检验类型、脱落率）；二分类公式、Schoenfeld 事件数公式、非劣效 Δ = 真实差异到 H₀ 边界的距离（δ + M 的符号陷阱、SAS nullmeandiff / sides）、不等分配 k:1（总人数倍数 (1 + k)² / 4k；二分类 ASAS40 1:2 算例、Fleiss 连续性校正、方案写法）、脱落调整；84 / 85 / 86 人的来源；R（power.t.test、power.prop.test、gsDesign::nSurv）；多重性、期中分析、分层对样本量的影响
+- [CON-sample-size-power](cards/design/CON-sample-size-power.md) — power 与样本量计算的概念：两个钟形曲线、需要哪些输入及从哪来、术语（sample size determination / justification）；δ（假设的治疗差值）的选择与 MCID、δ 减半 n 变 4 倍；post-hoc power 等常见误区；多重性、期中分析、分层对样本量的影响
+- [WF-sample-size-calc](cards/design/WF-sample-size-calc.md) — 样本量计算的步骤；连续终点手算例子与 84 / 85 / 86 人的来源（向上取整、精确分位数、t 分布）；脱落调整；二分类公式、Schoenfeld 事件数公式；R（power.t.test、power.prop.test、gsDesign::nSurv）、SAS PROC POWER
+- [CON-ni-sample-size](cards/design/CON-ni-sample-size.md) — 非劣效样本量：Δ = 真实差异到 H₀ 边界的距离（越高越好时 δ + M）；符号写反人数差好几倍且 δ = 0 时不暴露；SAS nullmeandiff / sides、R 写法
+- [CON-unequal-allocation](cards/design/CON-unequal-allocation.md) — 不等分配 k:1：连续终点公式与 2:1 共 192 人例子；总人数是 1:1 的 (1 + k)² / 4k 倍；生存终点系数；二分类 ASAS40 1:2 算例、Fleiss 连续性校正、脱落调整与方案写法
 - [GOT-ni-hypothesis-direction](cards/design/GOT-ni-hypothesis-direction.md) — 非劣效 H₀ 的 ≤ / ≥ 取决于终点"好"的方向；CI 上限 / 下限与 Δ 的比较
 - [CON-stratified-randomization](cards/design/CON-stratified-randomization.md) — 分层随机化不增加样本量（样本量为合并后的整体比较而算）；分层什么时候真正有用（大样本下大不均衡本就罕见；小样本、亚组、analyze as randomized、提高精确度）；过度分层的三个真正问题（不完整区组致均衡变差、稀疏单元格、误分层）；限制层数、合并类别、minimization、协变量调整；总层数 ≪ N / 区组大小；亚组须单独证明疗效时才加人
 - [CON-prognostic-factor](cards/design/CON-prognostic-factor.md) — 预后因素（不论治疗都影响结局的基线特征）的例子与判断依据；强预后因素为何要分层（分期不均衡扭曲疗效的例子）；预后因素 vs 预测因素（HER2）及各自在设计中的用途

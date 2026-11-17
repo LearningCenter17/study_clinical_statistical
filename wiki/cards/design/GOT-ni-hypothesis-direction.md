@@ -2,7 +2,7 @@
 id: GOT-ni-hypothesis-direction
 title: "非劣效假设的方向写反（Non-inferiority H₀ Direction）"
 categories: [non-inferiority, null-hypothesis, confidence-interval, design, sap, forest-plot]
-related: [CON-null-hypothesis, CON-hazard-ratio, CON-p-value, CON-type-I-II-error, CON-confidence-interval, CON-sample-size-power]
+related: [CON-null-hypothesis, CON-hazard-ratio, CON-p-value, CON-type-I-II-error, CON-confidence-interval, CON-sample-size-power, CON-ni-sample-size]
 sources: ["Claude 对话（inbox: ni_h0_direction.md）"]
 status: draft
 updated: 2026-11-10
@@ -39,7 +39,7 @@ updated: 2026-11-10
 
 1. **在 SAP 里明确写出终点的方向**：例如"收缩压变化值，负值表示改善"；或直接把终点定义为"下降量"，统一成越大越好。
 2. **用置信区间判断，并和 Δ 画在一起**：越小越好看 CI 上限，越大越好看 CI 下限。TLF 里画森林图时，非劣效界值线画在哪一侧也据此确定。
-3. **样本量计算也有同样的方向陷阱**：公式里的 Δ 是"真实差异到 H₀ 边界的距离"，越大越好时是 δ + M，不是 δ − M。写反了每组人数可差好几倍，而 δ = 0 时错误不会暴露。见 [CON-sample-size-power](CON-sample-size-power.md) 的"非劣效设计"一节。
+3. **样本量计算也有同样的方向陷阱**：公式里的 Δ 是"真实差异到 H₀ 边界的距离"，越大越好时是 δ + M，不是 δ − M。写反了每组人数可差好几倍，而 δ = 0 时错误不会暴露。见 [CON-ni-sample-size](CON-ni-sample-size.md)。
 
 > 补充（Claude）：
 >
@@ -53,7 +53,7 @@ updated: 2026-11-10
 - [CON-null-hypothesis](../inference/CON-null-hypothesis.md)
 - [CON-hazard-ratio](../methods/tte/CON-hazard-ratio.md)
 - [CON-p-value](../inference/CON-p-value.md)
-- [CON-sample-size-power](CON-sample-size-power.md)：非劣效样本量中 Δ 的符号
+- [CON-ni-sample-size](CON-ni-sample-size.md)：非劣效样本量中 Δ 的符号
 
 ## 出处
 

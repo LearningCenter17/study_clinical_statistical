@@ -2,7 +2,7 @@
 id: CON-stratified-randomization
 title: "分层随机化与过度分层（Stratified Randomization and Over-stratification）"
 categories: [design, randomization, stratification, stratified-randomization, over-stratification, block-randomization, minimization, sample-size, irt, subgroup]
-related: [CON-sample-size-power, CON-covariate, MTH-CMH, CON-logrank-vs-cox, CON-sensitivity-analysis, CON-prognostic-factor]
+related: [CON-sample-size-power, CON-covariate, MTH-CMH, CON-logrank-vs-cox, CON-sensitivity-analysis, CON-prognostic-factor, CON-unequal-allocation]
 sources: ["Claude 对话（inbox: stratification_sample.md）", "Claude 对话（inbox: stratification_example_check.md）", "Claude 对话（inbox: stratification_imbalance_correction.md）"]
 status: draft
 updated: 2026-11-17
@@ -28,7 +28,7 @@ updated: 2026-11-17
 
 **192 人从哪来**（来源：stratification_example_check.md）：Δ = 5、σ = 10、双侧 α = 0.05、power 90%，按 **2:1 分配**计算，安慰剂组 64 人、药物组 128 人，共 192 人。
 
-计算过程（不等分配公式、与 1:1 的比较、R 代码）见 [CON-sample-size-power](CON-sample-size-power.md) 的"不等分配（k:1）"一节。
+计算过程（不等分配公式、与 1:1 的比较、R 代码）见 [CON-unequal-allocation](CON-unequal-allocation.md)。
 
 样本量计算本身见 [CON-sample-size-power](CON-sample-size-power.md)（"分层随机基本不进入这个计算"一条即回答的是本卡的问题）。各分层方法：CMH 见 [MTH-CMH](../methods/binary/MTH-CMH.md)，分层 log-rank / Cox 见 [CON-logrank-vs-cox](../methods/tte/CON-logrank-vs-cox.md)，协变量调整见 [CON-covariate](../methods/continuous/CON-covariate.md)。
 

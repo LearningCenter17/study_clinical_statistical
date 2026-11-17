@@ -2,7 +2,7 @@
 id: CON-confidence-interval
 title: "置信区间（Confidence Interval）：含义、构成、解读及与 P 值的对应"
 categories: [inference, confidence-interval, p-value, hypothesis-testing, effect-size, reporting, point-estimate, standard-error, coverage, credible-interval, bayesian, precision, event-count]
-related: [CON-p-value, CON-type-I-II-error, MTH-t-test, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CON-response-rate, CON-t-distribution, CON-degrees-of-freedom, CON-dose-escalation-design, CON-covariate, CON-sample-size-power, CON-missing-data, CON-logrank-vs-cox]
+related: [CON-p-value, CON-type-I-II-error, MTH-t-test, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CON-response-rate, CON-t-distribution, CON-degrees-of-freedom, CON-dose-escalation-design, CON-covariate, CON-sample-size-power, CON-missing-data, CON-logrank-vs-cox, WF-sample-size-calc, CON-unequal-allocation]
 sources: ["Claude 对话（inbox: summary_p.md）", "Claude 对话（inbox: CI_1.md）", "Claude 对话（inbox: CI_1_correction.md）", "Claude 对话（inbox: CI_bayesian.md）", "Claude 对话（inbox: CI_width.md）"]
 status: draft
 updated: 2026-11-16
@@ -236,7 +236,7 @@ hr_ci(0.70, D = 300)    # (0.56, 0.88)  不含 1
 | 事件数 | 30（随访短、事件少） | 150 |
 | HR 的 CI | **宽** | **窄** |
 
-试验 A 人多，CI 反而更宽。所以肿瘤试验 SAP 里期中分析和最终分析都按**事件数**触发（如"观察到 200 个 PFS 事件时进行最终分析"），而不是按入组人数或日历时间。同样的道理在样本量计算里的体现见 [CON-sample-size-power](../design/CON-sample-size-power.md)（power 取决于事件数、Schoenfeld 公式）。
+试验 A 人多，CI 反而更宽。所以肿瘤试验 SAP 里期中分析和最终分析都按**事件数**触发（如"观察到 200 个 PFS 事件时进行最终分析"），而不是按入组人数或日历时间。同样的道理在样本量计算里的体现见 [WF-sample-size-calc](../design/WF-sample-size-calc.md#各终点的公式两组11-分配)（power 取决于事件数、Schoenfeld 公式）。
 
 > 数值复核（Claude，R 4.5.2）：上面三个 `hr_ci()` 结果与材料一致。若 HR 同为 0.70，试验 A（D = 30）为 (0.34, 1.43)，试验 B（D = 150）为 (0.51, 0.96)。
 >
