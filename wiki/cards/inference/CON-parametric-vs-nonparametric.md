@@ -90,7 +90,7 @@ SAP 或 CSR 里常见的写法是 "**Wilcoxon rank-sum test**"。SAS 里对应 `
 
 ## 相关卡片
 
-- [CON-test-selection](CON-test-selection.md)：快速选择表与各检验的临床示例
+- [CON-test-selection](CON-test-selection.md)：各检验的临床示例；怎么选见 [检验方法选择树](../../decision-tree.md)
 - [CON-p-value](CON-p-value.md)：分布假设靠不住时从数据里构造零分布（非参数 / 置换 / 精确）
 - [CON-distribution-family](CON-distribution-family.md)：分布及其参数
 

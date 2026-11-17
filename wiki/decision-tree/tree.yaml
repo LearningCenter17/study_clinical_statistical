@@ -94,15 +94,15 @@ root:
                       - answer: 近似正态
                         result:
                           method: 配对 t 检验 / 重复测量 ANOVA / MMRM
-                          card: CON-test-selection
-                          anchor: 快速选择表
+                          card: null
                           from: CON-test-selection
+                          note: 原在 CON-test-selection 快速选择表；MMRM 见 MTH-MMRM，配对 t 检验和重复测量 ANOVA 尚无卡片
                       - answer: 非正态或等级数据
                         result:
                           method: Wilcoxon 符号秩检验 / Friedman 检验
-                          card: CON-test-selection
-                          anchor: 快速选择表
+                          card: null
                           from: CON-test-selection
+                          note: 原在 CON-test-selection 快速选择表
 
     - answer: 二分类（应答 / 未应答）
       next:
@@ -147,12 +147,19 @@ root:
                     card: CON-test-selection
                     anchor: 4-fisher-确切概率法
                     from: CON-test-selection
+          - answer: 三组及以上比较，不分层
+            result:
+              method: 卡方检验（R×C）；小样本用 Fisher 确切概率法（R×C）
+              card: CON-test-selection
+              anchor: 3-卡方检验
+              from: CON-test-selection
+              note: 原在 CON-test-selection 快速选择表
           - answer: 配对设计
             result:
               method: McNemar 检验（小样本用精确 McNemar）
-              card: CON-test-selection
-              anchor: 快速选择表
+              card: null
               from: CON-test-selection
+              note: 原在 CON-test-selection 快速选择表
 
     - answer: 有序分类（如 mRS、CGI-I）
       next:

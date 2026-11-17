@@ -7,7 +7,7 @@ title: 知识库索引
 
 - 卡片状态 `draft` = 未核对，`reviewed` = 已对照原始出处核对。
 - 新知识：放入 `inbox/`，在 Claude Code 中运行 `/kb-ingest`。
-- 中英术语对照见 [术语表](glossary.md)。
+- 中英术语对照见 [术语表](glossary.md)；按终点类型选检验方法见 [检验方法选择树](decision-tree.md)。
 
 ## 1. 估计目标（Estimand）框架
 
@@ -36,7 +36,7 @@ title: 知识库索引
 ### 2.3 检验方法的选择与计算
 
 - [CON-p-value](cards/inference/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验；计算四步、z 检验手算示例、标准化不是数学上必须的、怎么解读
-- [CON-test-selection](cards/inference/CON-test-selection.md) — 快速选择表（连续 / 分类 / 非参数 × 两组 / 多组 / 配对）；t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态
+- [CON-test-selection](cards/inference/CON-test-selection.md) — t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态；怎么选见 [检验方法选择树](decision-tree.md)
 - [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) — 导航页：确证性试验最常用的十种方法（ANCOVA、MMRM、KM、log-rank、Cox、CMH、logistic、Fisher、卡方、Wilcoxon）、按治疗领域的分布、描述统计占 TLF 大头、SAS / R 对齐重点
 - [CON-parametric-vs-nonparametric](cards/inference/CON-parametric-vs-nonparametric.md) — 参数方法（假设分布、比较参数）vs 非参数方法（基于秩次、分布无关）：优缺点、秩次为何对离群值稳健、对应关系、秩和检验中英术语对照（rank-sum vs signed-rank、R 的 W 即 U）、"非参数 ≠ 无假设"
 - [MTH-t-test](cards/methods/continuous/MTH-t-test.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t 与 P 的对应（t 越大 P 越小、df 影响翻译、一一对应的条件）及报告写法 t(df) = …，P = …

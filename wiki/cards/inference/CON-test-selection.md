@@ -5,19 +5,16 @@ categories: [inference, test-selection, t-test, anova, chi-square, fisher-exact,
 related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, MTH-t-test, CON-distribution-family, CON-degrees-of-freedom, MTH-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview, CON-ordinal-data, MTH-CMH, CON-response-rate]
 sources: ["Claude 对话（inbox: sample_test_statistic.md）", "Claude 对话（inbox: calculate_p_value.md）"]
 status: draft
-updated: 2026-11-12
+updated: 2026-11-17
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: sample_test_statistic.md；快速选择表的雏形来自 calculate_p_value.md），属 AI 生成内容，未引用原始文献。示例中的 P 值已由 Claude 在 R 4.5.2 中复核。临床例子均为示意数据。
+> 出处待补：本卡内容来自 Claude 对话（inbox: sample_test_statistic.md；原快速选择表的雏形来自 calculate_p_value.md，该表已并入检验方法选择树），属 AI 生成内容，未引用原始文献。示例中的 P 值已由 Claude 在 R 4.5.2 中复核。临床例子均为示意数据。
 
-## 快速选择表
+## 怎么选：见检验方法选择树
 
-| 数据类型 | 两组 | 多组（≥ 3） | 配对 / 重复测量 |
-|---|---|---|---|
-| 连续 · 正态 | t 检验（默认 Welch） | ANOVA | 配对 t 检验 / 重复测量 ANOVA / MMRM |
-| 连续 · 非正态 / 等级 | Mann-Whitney U | Kruskal-Wallis | Wilcoxon 符号秩检验 / Friedman |
-| 分类 · 大样本 | 卡方检验 | 卡方检验（R×C） | McNemar 检验 |
-| 分类 · 小样本 | Fisher 确切检验 | Fisher（R×C） | 精确 McNemar |
+按数据类型（连续正态 / 连续非正态或等级 / 分类大样本 / 分类小样本）和比较方式（两组 / 多组 / 配对）选检验，见 [检验方法选择树](../../decision-tree.md)。本卡下文逐个讲常用检验的适用条件、临床例子和代码。
+
+> 整理记录（2026-11-17）：本节原有的"快速选择表"（4 种数据类型 × 两组 / 多组 / 配对，雏形来源：calculate_p_value.md，完善于 sample_test_statistic.md）已全部并入 `wiki/decision-tree/tree.yaml`，作为检验选择的唯一数据源，表中 12 格逐一对应树中的叶子，内容未改。
 
 **注册试验的检验方法应当在 SAP 中预先指定**，而不是看完数据后再挑选。
 
@@ -155,4 +152,4 @@ dunnTest(AVAL ~ SEVERITY, data = adbm_il6, method = "holm")
 ## 出处
 
 - Claude 对话（inbox: sample_test_statistic.md；AI 生成，原始出处待补）
-- Claude 对话（inbox: calculate_p_value.md；快速选择表雏形）
+- Claude 对话（inbox: calculate_p_value.md；原快速选择表雏形，该表已并入检验方法选择树）
