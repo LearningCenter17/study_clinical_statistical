@@ -2,7 +2,7 @@
 id: CON-dose-escalation-design
 title: "一期剂量递增设计（Dose-Escalation Designs: 3+3、CRM / BLRM、BOIN）"
 categories: [phase-1, dose-escalation, mtd, dlt, 3+3, crm, blrm, ewoc, boin, model-assisted, project-optimus, bayesian]
-related: [CON-distribution-family, GOT-skewed-small-sample, CON-sample-size-power, CON-confidence-interval]
+related: [CON-distribution-family, GOT-skewed-small-sample, CON-sample-size-power, CON-confidence-interval, CON-credible-interval]
 sources: ["Claude 对话（inbox: phaseI_stat.md）"]
 status: draft
 updated: 2026-11-11

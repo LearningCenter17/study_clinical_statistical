@@ -2,7 +2,7 @@
 id: WF-sample-size-calc
 title: "样本量计算流程与各终点公式（Sample Size Calculation Workflow）"
 categories: [sample-size, power, workflow, formula, rounding, dropout, binary-endpoint, survival, schoenfeld, proc-power, gsdesign]
-related: [CON-sample-size-power, CON-ni-sample-size, CON-unequal-allocation, CON-type-I-II-error, CON-normal-distribution, MTH-t-test, CON-hazard-ratio, CON-logrank-vs-cox, CON-confidence-interval]
+related: [CON-sample-size-power, CON-ni-sample-size, CON-unequal-allocation, CON-type-I-II-error, CON-normal-distribution, MTH-t-test, CON-hazard-ratio, CON-logrank-vs-cox, CON-confidence-interval, CON-ci-width]
 sources: ["Claude 对话（inbox: power.md）", "Claude 对话（inbox: sample_size.md）", "Claude 对话（inbox: sample_size_rounding.md）"]
 status: draft
 updated: 2026-11-17
@@ -91,7 +91,7 @@ $$n_{\text{每组}} = \frac{\left[z_{1-\alpha/2}\sqrt{2\bar p(1-\bar p)} + z_{1-
 
 $$D = \frac{4\,(z_{1-\alpha/2} + z_{1-\beta})^2}{(\ln HR)^2}$$
 
-再根据入组期、随访期和事件发生率，把事件数换算成总人数。D 与 HR 的 CI 精度（SE ≈ 2/√D）同源，见 [CON-confidence-interval](../inference/CON-confidence-interval.md#生存终点看事件数)。
+再根据入组期、随访期和事件发生率，把事件数换算成总人数。D 与 HR 的 CI 精度（SE ≈ 2/√D）同源，见 [CON-ci-width](../inference/CON-ci-width.md#生存终点看事件数)。
 
 > 更正记录（2026-11-16）：Schoenfeld 公式原为 Claude 补充，sample_size.md 给出了相同公式，改为正文。原补充中"二分类 SAS 用 `PROC POWER` 的 `twosamplefreq`，生存用 `twosamplesurvival`"仍为 Claude 补充，待 Li 核实。
 

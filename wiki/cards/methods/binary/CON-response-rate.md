@@ -2,7 +2,7 @@
 id: CON-response-rate
 title: "应答、应答概率与应答率（Response, Response Probability, Response Rate）"
 categories: [binary-endpoint, response, response-rate, responder, orr, binomial, estimation, confidence-interval, adam, adrs, asas40]
-related: [CON-distribution-family, CON-confidence-interval, CON-ordinal-data, MTH-CMH, CON-test-statistic, CON-confirmatory-methods-overview, CON-estimand, CON-test-selection, CON-sample-size-power, CON-unequal-allocation]
+related: [CON-distribution-family, CON-confidence-interval, CON-ordinal-data, MTH-CMH, CON-test-statistic, CON-confirmatory-methods-overview, CON-estimand, CON-test-selection, CON-sample-size-power, CON-unequal-allocation, MTH-ci-construction, CON-credible-interval]
 sources: ["Claude 对话（inbox: response_rate.md）", "Claude 对话（inbox: response_rate_recist_correction.md）", "Claude 对话（inbox: calculcate_sample_size.md）"]
 status: draft
 updated: 2026-11-17
@@ -74,7 +74,7 @@ $$
 
 换一批病人重做，可能是 42%，也可能是 48%，所以要给它配一个 CI，比如 **45%（95% CI：32%，58%）**。CI 的含义见 [CON-confidence-interval](../../inference/CON-confidence-interval.md)。
 
-> 数值复核（Claude，R 4.5.2）：27/60 的 Wald CI = 32.4%–57.6%；Clopper-Pearson 精确 CI（`binom.test(27, 60)`）= 32.1%–58.4%。两者取整后都约为 32%–58%。材料没说用的是哪种方法。单臂试验 ORR 通常报 Clopper-Pearson（见 [CON-confirmatory-methods-overview](../CON-confirmatory-methods-overview.md)），各 CI 方法的对比待建卡片。
+> 数值复核（Claude，R 4.5.2）：27/60 的 Wald CI = 32.4%–57.6%；Clopper-Pearson 精确 CI（`binom.test(27, 60)`）= 32.1%–58.4%。两者取整后都约为 32%–58%。材料没说用的是哪种方法。单臂试验 ORR 通常报 Clopper-Pearson（见 [CON-confirmatory-methods-overview](../CON-confirmatory-methods-overview.md)）。各统计量的 CI 构造方法见 [MTH-ci-construction](../../inference/MTH-ci-construction.md)，各方法的详细对比待建卡片。
 
 ## 抛硬币类比与模拟
 

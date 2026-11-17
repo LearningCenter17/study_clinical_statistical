@@ -2,7 +2,7 @@
 id: CON-hazard-ratio
 title: "风险比（Hazard Ratio, HR）"
 categories: [survival, hazard-ratio, cox, log-rank, null-hypothesis]
-related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-sample-size-power, CON-confidence-interval, CON-confirmatory-methods-overview, WF-sample-size-calc]
+related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-sample-size-power, CON-confidence-interval, CON-confirmatory-methods-overview, WF-sample-size-calc, MTH-ci-construction, CON-ci-width]
 sources: ["Claude 对话（inbox: h0_hr.md）", "Claude 对话（inbox: logrank_vs_cox.md）", "Claude 对话（inbox: CI_HR.md）", "Claude 对话（inbox: CI_HR_rounding.md）"]
 status: draft
 updated: 2026-11-16
@@ -85,7 +85,7 @@ QC 做法：
 >
 > 补充（Claude）："零点零几"的容差和 HR 大小有关：log 的舍入误差约为 0.005 / 数值本身，所以数值越小误差越大。例如下限为 0.10 时，±0.005 在 log 尺度上约为 ±0.05。HR 或 CI 端点很小时，做法 1 或 3 更可靠。待 Li 核实。
 
-CI 构造的一般规则（不同统计量用 t 还是 z、为什么 HR 用 1.96）见 [CON-confidence-interval](../../inference/CON-confidence-interval.md#不同统计量的-ci-构造方法)。HR 的 CI 宽度几乎只取决于**事件数**（1:1 随机时 SE(log HR) ≈ 2/√D），见 [CON-confidence-interval](../../inference/CON-confidence-interval.md#生存终点看事件数)。
+CI 构造的一般规则（不同统计量用 t 还是 z、为什么 HR 用 1.96）见 [MTH-ci-construction](../../inference/MTH-ci-construction.md#不同统计量的-ci-构造方法)。HR 的 CI 宽度几乎只取决于**事件数**（1:1 随机时 SE(log HR) ≈ 2/√D），见 [CON-ci-width](../../inference/CON-ci-width.md#生存终点看事件数)。
 
 ## 怎么读报告
 
@@ -121,7 +121,7 @@ R `summary(coxph(...))` 输出列与本卡概念的对应：
 
 ## 相关卡片
 
-- [CON-confidence-interval](../../inference/CON-confidence-interval.md)：CI 与 P 值的对应关系、CI 构造方法、事件数决定 CI 宽度
+- [CON-confidence-interval](../../inference/CON-confidence-interval.md)：CI 与 P 值的对应关系；构造方法见 [MTH-ci-construction](../../inference/MTH-ci-construction.md)，事件数决定 CI 宽度见 [CON-ci-width](../../inference/CON-ci-width.md)
 - [CON-null-hypothesis](../../inference/CON-null-hypothesis.md)
 - [CON-p-value](../../inference/CON-p-value.md)：log-rank 统计量作为检验统计量的例子
 - [CON-logrank-vs-cox](CON-logrank-vs-cox.md)：log-rank 与 Cox 的分工

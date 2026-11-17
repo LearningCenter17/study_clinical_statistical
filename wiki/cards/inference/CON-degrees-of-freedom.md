@@ -2,7 +2,7 @@
 id: CON-degrees-of-freedom
 title: "自由度（Degrees of Freedom, df）"
 categories: [inference, degrees-of-freedom, t-distribution, chi-square, variance]
-related: [CON-t-distribution, MTH-t-test, CON-test-statistic, MTH-MMRM, CON-distribution-family, CON-p-value, GOT-ttest-student-vs-welch, CON-test-selection, CON-normal-distribution, CON-confidence-interval]
+related: [CON-t-distribution, MTH-t-test, CON-test-statistic, MTH-MMRM, CON-distribution-family, CON-p-value, GOT-ttest-student-vs-welch, CON-test-selection, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction]
 sources: ["Claude 对话（inbox: degreeOfFreedom.md）"]
 status: draft
 updated: 2026-11-10

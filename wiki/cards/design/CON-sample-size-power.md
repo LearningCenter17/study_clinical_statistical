@@ -2,7 +2,7 @@
 id: CON-sample-size-power
 title: "Power 与样本量计算（Power and Sample Size Calculation）"
 categories: [sample-size, power, design, type-ii-error, mcid, dropout, assumed-treatment-difference, target-difference]
-related: [WF-sample-size-calc, CON-ni-sample-size, CON-unequal-allocation, CON-type-I-II-error, MTH-t-test, CON-hazard-ratio, CON-logrank-vs-cox, CON-null-hypothesis, CON-p-value, CON-covariate, CON-dose-escalation-design, CON-normal-distribution, CON-confidence-interval, GOT-ni-hypothesis-direction, CON-response-rate, CON-stratified-randomization, CON-prognostic-factor]
+related: [WF-sample-size-calc, CON-ni-sample-size, CON-unequal-allocation, CON-type-I-II-error, MTH-t-test, CON-hazard-ratio, CON-logrank-vs-cox, CON-null-hypothesis, CON-p-value, CON-covariate, CON-dose-escalation-design, CON-normal-distribution, CON-confidence-interval, GOT-ni-hypothesis-direction, CON-response-rate, CON-stratified-randomization, CON-prognostic-factor, CON-ci-width]
 sources: ["Claude 对话（inbox: power.md）", "Claude 对话（inbox: power_correction.md）", "Claude 对话（inbox: assumed_treatment_difference.md）", "Claude 对话（inbox: sample_size.md）"]
 status: draft
 updated: 2026-11-17

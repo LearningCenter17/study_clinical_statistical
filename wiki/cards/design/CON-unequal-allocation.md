@@ -2,7 +2,7 @@
 id: CON-unequal-allocation
 title: "不等分配（k:1）的样本量（Unequal Allocation）"
 categories: [sample-size, unequal-allocation, allocation-ratio, binary-endpoint, survival, continuity-correction, dropout, asas40]
-related: [CON-sample-size-power, WF-sample-size-calc, CON-stratified-randomization, CON-response-rate, CON-confidence-interval]
+related: [CON-sample-size-power, WF-sample-size-calc, CON-stratified-randomization, CON-response-rate, CON-confidence-interval, CON-ci-width]
 sources: ["Claude 对话（inbox: stratification_example_check.md）", "Claude 对话（inbox: calculcate_sample_size.md）"]
 status: draft
 updated: 2026-11-17
@@ -42,7 +42,7 @@ Schoenfeld 公式的系数 4 换成 (1 + k)² / k（k = 1 时为 4）：
 
 $$D = \frac{(1+k)^2}{k} \cdot \frac{(z_{1-\alpha/2} + z_{1-\beta})^2}{(\ln HR)^2}$$
 
-这与 HR 的 CI 精度 SE(log HR) ≈ (1 + k)/√(k·D) 同源，见 [CON-confidence-interval](../inference/CON-confidence-interval.md#生存终点看事件数)。
+这与 HR 的 CI 精度 SE(log HR) ≈ (1 + k)/√(k·D) 同源，见 [CON-ci-width](../inference/CON-ci-width.md#生存终点看事件数)。
 
 ## 软件
 

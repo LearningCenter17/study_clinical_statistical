@@ -40,7 +40,10 @@ title: 知识库索引
 
 ### 2.4 常见误区与结果解读
 
-- [CON-confidence-interval](cards/inference/CON-confidence-interval.md) — CI 的定义与三个组成部分（估计值 ± 临界值 × SE）；1.96 vs t 临界值、不同统计量的 CI 构造（均值用 t、比例用精确 / score 法、HR / OR 在 log 尺度用 z）；"95%"的正确含义（重复试验的覆盖率，套圈类比）；置信区间 vs 贝叶斯可信区间（CrI）；CI 宽度由什么决定（SD、n、方法、率大小；生存终点看事件数 SE ≈ 2/√D）、窄 CI ≠ 结论可靠；95% CI 与双侧 α = 0.05 检验的等价关系、0（或 1）在不在 CI 内、不显著 ≠ 没差别、结果报告示例
+- [CON-confidence-interval](cards/inference/CON-confidence-interval.md) — CI 的定义与三个组成部分（估计值 ± 临界值 × SE）；"95%"的正确含义（重复试验的覆盖率，套圈类比）；95% CI 与双侧 α = 0.05 检验的等价关系、0（或 1）在不在 CI 内、不显著 ≠ 没差别、结果报告示例
+- [MTH-ci-construction](cards/inference/MTH-ci-construction.md) — CI 怎么构造：1.96 vs t 临界值（小样本用 1.96 覆盖率不足）；不同统计量的方法（均值用 t、比例用 Clopper-Pearson / Wilson / Newcombe、HR / OR 在 log 尺度用 z）及 HR 算例
+- [CON-credible-interval](cards/inference/CON-credible-interval.md) — 置信区间 vs 贝叶斯可信区间（CrI）：两派对"概率"的理解、先验与后验、27/60 应答率的两种区间（`binom.test` vs `qbeta`）、临床试验中何时用 CrI 及 CSR 的规范写法
+- [CON-ci-width](cards/inference/CON-ci-width.md) — CI 宽度由什么决定（SD、n、置信水平、分析方法、率的大小、事件数）；生存终点看事件数 SE(log HR) ≈ 2/√D；窄 CI ≠ 结论可靠（偏倚、临床意义）
 - [GOT-skewed-small-sample](cards/methods/continuous/GOT-skewed-small-sample.md) — 小样本偏态（CRP 例子）：均值本身不可靠，Welch 也救不了；log 转换（几何均数比）或 Mann-Whitney；方法须预先指定
 
 待建：P 值的常见误解（2.4）、单侧 vs 双侧检验辨析（2.4）
