@@ -2,7 +2,7 @@
 id: CON-covariate
 title: "协变量与协变量调整（Covariate Adjustment）"
 categories: [continuous, covariate, baseline, ancova, stratification-factor, power, prespecification]
-related: [CON-MMRM, CON-test-selection, CON-type-I-II-error, CON-distribution-family, CON-parametric-vs-nonparametric, CON-sample-size-power, CON-confirmatory-methods-overview, CON-ordinal-data, CON-CMH, CON-proportional-odds-model, CON-confidence-interval]
+related: [CON-MMRM, CON-test-selection, CON-type-I-II-error, CON-distribution-family, CON-parametric-vs-nonparametric, CON-sample-size-power, CON-confirmatory-methods-overview, CON-ordinal-data, CON-CMH, CON-proportional-odds-model, CON-confidence-interval, CON-stratified-randomization, CON-prognostic-factor]
 sources: ["Claude 对话（inbox: covariate.md）"]
 status: draft
 updated: 2026-11-12
@@ -59,7 +59,7 @@ fit <- lm(chg ~ trt + base, data = adsl)
 ## 临床试验里常见的协变量
 
 - **基线值**：最常见，ADaM 里的 `BASE`。
-- **分层因素**：如中心、地区、疾病严重程度，通常是随机化时用过的。
+- **分层因素**：如中心、地区、疾病严重程度，通常是随机化时用过的。这些一般是强预后因素，见 [CON-prognostic-factor](CON-prognostic-factor.md)。
 - 有时也会加年龄、性别等。
 
 **协变量一般要在 SAP 里提前规定好**，不能看完数据再挑哪个让结果更显著，否则有操纵结果的嫌疑（同样的道理见 [GOT-ttest-student-vs-welch](../gotchas/GOT-ttest-student-vs-welch.md#为什么不建议先检验方差齐性再选-student--welch)、[GOT-skewed-small-sample](../gotchas/GOT-skewed-small-sample.md#分析方法必须预先指定)）。

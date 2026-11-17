@@ -3,12 +3,12 @@ id: CON-t-test-pvalue
 title: "t 检验与 P 值（t-test and P-value）"
 categories: [inference, p-value, t-test, hypothesis-testing, degrees-of-freedom, standard-error, z-test]
 related: [CON-MMRM, CON-p-value, CON-null-hypothesis, CON-test-statistic, CON-t-distribution, CON-degrees-of-freedom, CON-type-I-II-error, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, CON-confirmatory-methods-overview, CON-normal-distribution]
-sources: ["Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: t_example_correction.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: summary_p.md）"]
+sources: ["Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: t_example_correction.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: summary_p.md）", "Claude 对话（inbox: pvalue_tvalue.md）"]
 status: draft
-updated: 2026-11-11
+updated: 2026-11-17
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: PValue_ttest.md、t_test_mean.md、t_example_correction.md、t_conception.md、summary_p.md），属 AI 生成内容，未引用原始文献。文中表格的数值已由 Claude 按 t 分布复核（见文末）。
+> 出处待补：本卡内容来自 Claude 对话（inbox: PValue_ttest.md、t_test_mean.md、t_example_correction.md、t_conception.md、summary_p.md、pvalue_tvalue.md），属 AI 生成内容，未引用原始文献。文中表格的数值已由 Claude 按 t 分布复核（见文末）。
 
 ## 一句话定义
 
@@ -124,6 +124,32 @@ P 值不是 t 检验独有的：卡方检验、log-rank 检验最后也都输出
 
 样本少时标准误本身估得不准，t 分布的"尾巴"更厚，要求的证据更强，P 值偏大。样本多了 t 分布趋近正态分布——所以"t 大于约 2 就显著"是**大样本下**的经验。t 分布形状随自由度的变化见 [CON-t-distribution](CON-t-distribution.md)。
 
+更细的 df 梯度（来源：pvalue_tvalue.md），同样 t = 2.0、双侧：
+
+| 自由度 | 双侧 P 值 | 双侧 0.05 的 t 临界值 |
+|---|---|---|
+| 5 | ≈ 0.102 | 2.571 |
+| 10 | ≈ 0.073 | 2.228 |
+| 30 | ≈ 0.055 | 2.042 |
+| ∞（正态） | ≈ 0.046 | 1.960 |
+
+临界值随 df 的完整对照见 [CON-degrees-of-freedom](CON-degrees-of-freedom.md)。df 怎么来：独立样本 t 检验约为 n₁ + n₂ − 2；Welch 检验的 df 另行计算，通常不是整数，见 [GOT-ttest-student-vs-welch](../gotchas/GOT-ttest-student-vs-welch.md)。
+
+## t 值与 P 值什么时候一一对应
+
+（来源：pvalue_tvalue.md）**自由度和单侧 / 双侧都确定之后，t 值和 P 值一一对应**。两个条件缺一个，就不能直接对应：
+
+- **自由度**：同一个 t，df 不同，P 不同（见上表）。
+- **方向**：
+  - 双侧检验的 P 只看 |t|，t = 2.0 与 t = −2.0 的 P 相同，所以严格说是 **|t|** 与 P 一一对应。
+  - 单侧检验的 P 是双侧的一半（前提是效应方向与假设一致），如 df = 30、t = 2.0 时单侧 P ≈ 0.027。单侧 P 的条件和方向相反时的情况见 [CON-p-value](CON-p-value.md)。
+
+固定 df 和方向后，t 越大 P 越小，严格单调。**P 值只是把 t 换算到"概率"尺度，本身不提供额外信息。**
+
+所以报告时写成 **t(df) = 2.0，P = 0.055**，把 df 一起写出来，别人才能核对 P 值。
+
+> 数值复核（Claude，R 4.5.2）：`2*pt(-2, df)` 在 df = 5、10、30、∞ 时分别为 0.1019、0.0734、0.0546、0.0455；`qt(0.975, df)` 为 2.571、2.228、2.042、1.960；`pt(-2, 30)` = 0.0273。与材料一致。
+
 ## 记住三句话
 
 1. **t 值**：差异是噪声的几倍，衡量"信号有多强"。
@@ -200,5 +226,6 @@ QC 时可以用 `ods output TTests=...` 把结果抽出来，和 R 逐行比对�
 - Claude 对话（inbox: t_example_correction.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: t_conception.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: summary_p.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: pvalue_tvalue.md；AI 生成，原始出处待补）
 
 > 数值复核（Claude）：按 t 分布计算，df = 4 时 t = 1, 2, 3.67, 4.60 的双侧 P 值分别约为 0.374、0.116、0.021、0.010，临界值 t₀.₀₂₅,₄ = 2.776；df → ∞ 时 t = 2 的双侧 P ≈ 0.0455。与材料一致。

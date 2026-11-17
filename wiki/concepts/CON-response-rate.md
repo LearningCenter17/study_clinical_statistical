@@ -1,14 +1,14 @@
 ---
 id: CON-response-rate
 title: "应答、应答概率与应答率（Response, Response Probability, Response Rate）"
-categories: [binary-endpoint, response, response-rate, responder, orr, binomial, estimation, confidence-interval, adam, adrs]
-related: [CON-distribution-family, CON-confidence-interval, CON-ordinal-data, CON-CMH, CON-test-statistic, CON-confirmatory-methods-overview, CON-estimand, CON-test-selection]
-sources: ["Claude 对话（inbox: response_rate.md）", "Claude 对话（inbox: response_rate_recist_correction.md）"]
+categories: [binary-endpoint, response, response-rate, responder, orr, binomial, estimation, confidence-interval, adam, adrs, asas40]
+related: [CON-distribution-family, CON-confidence-interval, CON-ordinal-data, CON-CMH, CON-test-statistic, CON-confirmatory-methods-overview, CON-estimand, CON-test-selection, CON-sample-size-power]
+sources: ["Claude 对话（inbox: response_rate.md）", "Claude 对话（inbox: response_rate_recist_correction.md）", "Claude 对话（inbox: calculcate_sample_size.md）"]
 status: draft
-updated: 2026-11-16
+updated: 2026-11-17
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: response_rate.md、response_rate_recist_correction.md），属 AI 生成内容，未引用原始文献。示例 CI 已由 Claude 在 R 4.5.2 中复核（见下文）。
+> 出处待补：本卡内容来自 Claude 对话（inbox: response_rate.md、response_rate_recist_correction.md、calculcate_sample_size.md），属 AI 生成内容，未引用原始文献。示例 CI 已由 Claude 在 R 4.5.2 中复核（见下文）。
 
 ## 一句话定义
 
@@ -25,6 +25,7 @@ updated: 2026-11-16
 | 类风湿关节炎 | ACR20：关节症状改善 ≥ 20% |
 | 银屑病 | PASI 75：皮损评分改善 ≥ 75% |
 | 抑郁症 | 量表评分较基线下降 ≥ 50% |
+| 中轴型脊柱关节炎（含强直性脊柱炎） | ASAS40：ASAS 评估的 4 个方面中至少 3 个改善 ≥ 40%（且绝对值改善至少 2 分），其余方面没有恶化（来源：calculcate_sample_size.md） |
 
 表中都是简化说法。ACR20、PASI 75 等的完整定义要看各自的评估标准和 SAP（来源：response_rate_recist_correction.md）。
 
@@ -154,4 +155,5 @@ PARAMCD 的名称各公司不同（如 `BESTRSP`、`CBESTRSP`），以项目的 
 
 - Claude 对话（inbox: response_rate.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: response_rate_recist_correction.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: calculcate_sample_size.md；AI 生成，原始出处待补）
 - 建议对照：RECIST 1.1（Eisenhauer et al., Eur J Cancer 2009）；CDISC ADaMIG 及 ADaM 肿瘤示例

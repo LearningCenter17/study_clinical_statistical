@@ -35,7 +35,7 @@ title: 知识库索引
 - [CON-test-selection](concepts/CON-test-selection.md) — 快速选择表（连续 / 分类 / 非参数 × 两组 / 多组 / 配对）；t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态
 - [CON-confirmatory-methods-overview](concepts/CON-confirmatory-methods-overview.md) — 导航页：确证性试验最常用的十种方法（ANCOVA、MMRM、KM、log-rank、Cox、CMH、logistic、Fisher、卡方、Wilcoxon）、按治疗领域的分布、描述统计占 TLF 大头、SAS / R 对齐重点
 - [CON-parametric-vs-nonparametric](concepts/CON-parametric-vs-nonparametric.md) — 参数方法（假设分布、比较参数）vs 非参数方法（基于秩次、分布无关）：优缺点、秩次为何对离群值稳健、对应关系、秩和检验中英术语对照（rank-sum vs signed-rank、R 的 W 即 U）、"非参数 ≠ 无假设"
-- [CON-t-test-pvalue](concepts/CON-t-test-pvalue.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t vs z、SAS PROC TTEST 四张输出表
+- [CON-t-test-pvalue](concepts/CON-t-test-pvalue.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t vs z、t 与 P 一一对应的条件（df + 单 / 双侧）及报告写法 t(df) = …，P = …、SAS PROC TTEST 四张输出表
 - [GOT-ttest-student-vs-welch](gotchas/GOT-ttest-student-vs-welch.md) — 同一数据 Python / R / SAS 的 t 检验 P 值不同：Student（等方差）vs Welch（不等方差）默认设置；n 不等时差异可达数十倍；为什么不建议先检验方差齐性再选
 
 ### 2.4 常见误区与结果解读
@@ -55,7 +55,7 @@ title: 知识库索引
 
 ## 4. 二分类终点：CMH、logistic、率差置信区间
 
-- [CON-response-rate](concepts/CON-response-rate.md) — 应答的定义与各领域标准（RECIST、ACR20、PASI 75）；应答概率 p（真值）vs 应答率 p̂（估计）、ORR 与 CI 示例；RECIST 1.1 判定 PR / CR 的三个条件与确认（confirmation）；抛硬币 / `rbinom` 类比；同样适用于 AE 发生率；中英术语（response rate、responder analysis）；ADRS 参数（OVRLRESP / BOR / CBOR）与 ORR 算法
+- [CON-response-rate](concepts/CON-response-rate.md) — 应答的定义与各领域标准（RECIST、ACR20、PASI 75）；应答概率 p（真值）vs 应答率 p̂（估计）、ORR 与 CI 示例；RECIST 1.1 判定 PR / CR 的三个条件与确认（confirmation）；抛硬币 / `rbinom` 类比；同样适用于 AE 发生率；中英术语（response rate、responder analysis）、ASAS40 定义；ADRS 参数（OVRLRESP / BOR / CBOR）与 ORR 算法
 - [CON-ordinal-data](concepts/CON-ordinal-data.md) — 有序分类数据：能排序但不能做算术；临床例子（CTCAE、RECIST、mRS、CGI）；描述用 n (%)，比较用 CMH（row mean scores）/ Wilcoxon / proportional odds model；多级总分量表常当连续处理
 - [CON-CMH](concepts/CON-CMH.md) — PROC FREQ 的 CMH 三个统计量怎么选（Nonzero Correlation / Row Mean Scores / General Association）、`SCORES=` 选项（table、rank ≈ Kruskal-Wallis / Wilcoxon、modridit = van Elteren）、行列顺序与排序注意事项
 - [CON-proportional-odds-model](concepts/CON-proportional-odds-model.md) — 比例优势模型（有序 logistic）：累积 logit、共同 OR；比例优势假设的 score test 及其局限、partial PO（`UNEQUALSLOPES` / `nominal =`）；R（polr / clm）与 SAS 实现
@@ -85,10 +85,12 @@ title: 知识库索引
 
 ## 8. 样本量与成组序贯设计
 
-- [CON-sample-size-power](concepts/CON-sample-size-power.md) — power 与样本量计算：两个钟形曲线、输入（α、power、δ、σ）、n 公式手算、δ（假设的治疗差值）的选择与 MCID、δ 减半 n 变 4 倍、post-hoc power 误区、生存终点看事件数
+- [CON-sample-size-power](concepts/CON-sample-size-power.md) — power 与样本量计算：两个钟形曲线、输入（α、power、δ、σ）、n 公式手算、δ（假设的治疗差值）的选择与 MCID、δ 减半 n 变 4 倍、post-hoc power 误区；术语（sample size determination / justification）、完整输入（分配比例、检验类型、脱落率）；二分类公式、Schoenfeld 事件数公式、非劣效 Δ = 真实差异到 H₀ 边界的距离（δ + M 的符号陷阱、SAS nullmeandiff / sides）、不等分配 k:1（总人数倍数 (1 + k)² / 4k；二分类 ASAS40 1:2 算例、Fleiss 连续性校正、方案写法）、脱落调整；84 / 85 / 86 人的来源；R（power.t.test、power.prop.test、gsDesign::nSurv）；多重性、期中分析、分层对样本量的影响
 - [GOT-ni-hypothesis-direction](gotchas/GOT-ni-hypothesis-direction.md) — 非劣效 H₀ 的 ≤ / ≥ 取决于终点"好"的方向；CI 上限 / 下限与 Δ 的比较
+- [CON-stratified-randomization](concepts/CON-stratified-randomization.md) — 分层随机化不增加样本量（样本量为合并后的整体比较而算）；分层什么时候真正有用（大样本下大不均衡本就罕见；小样本、亚组、analyze as randomized、提高精确度）；过度分层的三个真正问题（不完整区组致均衡变差、稀疏单元格、误分层）；限制层数、合并类别、minimization、协变量调整；总层数 ≪ N / 区组大小；亚组须单独证明疗效时才加人
+- [CON-prognostic-factor](concepts/CON-prognostic-factor.md) — 预后因素（不论治疗都影响结局的基线特征）的例子与判断依据；强预后因素为何要分层（分期不均衡扭曲疗效的例子）；预后因素 vs 预测因素（HER2）及各自在设计中的用途
 
-待建：二分类与生存终点的样本量公式、非劣效界值 Δ 的确定、期中分析与 alpha spending（O'Brien-Fleming、Pocock、Lan-DeMets）
+待建：事件数换算成总人数（入组 / 随访 / 脱落假设）、非劣效界值 Δ 的确定、期中分析与 alpha spending（O'Brien-Fleming、Pocock、Lan-DeMets）
 
 ## 大纲外主题
 
