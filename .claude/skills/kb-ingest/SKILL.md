@@ -11,7 +11,9 @@ description: Process raw material in inbox/ into knowledge base cards. Use when 
 
 1. **盘点**：列出 `inbox/` 下所有文件（忽略 `inbox/archive/`）。没有文件就告诉用户并结束。
 2. **拆分知识点**：逐个文件读，拆成独立知识点。一个知识点 = 一张卡片能讲清楚的内容。
-   判断归类：概念/方法 → `CON-`；坑/易错点 → `GOT-`；指南/文献 → `REF-`；TLF 呈现 → `TLF-`。
+   判断类型（前缀）：概念 → `CON-`；可运行的统计方法 → `MTH-`；操作流程 → `WF-`；R/SAS 代码 → `CODE-`；
+   TLF 呈现 → `TLF-`；坑/易错点 → `GOT-`；指南/文献 → `REF-`。
+   再判断主题，决定放进 `wiki/cards/` 下哪个文件夹（见 `CLAUDE.md` 的主题表）。
 3. **查重**：每个知识点先在 `wiki/` 里 grep 关键词和同义词（中英文都查）。
    - 已有卡片 → **合并**进现有卡片的对应小节，不新建；更新 `updated` 日期。
    - 没有 → 用 `templates/card-template.md` 新建。

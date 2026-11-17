@@ -15,7 +15,7 @@ description: Answer clinical trial statistics questions from Li's curated knowle
 1. **定位**：先读 `{{KB_ROOT}}/wiki/index.md`，找出相关卡片 ID。
    index 不够时，在 `{{KB_ROOT}}/wiki/` 下按关键词 grep 卡片正文和 `categories`。
 2. **读卡**：只读相关的卡片（通常 1–4 张），顺着 `related` 最多再展开一层。
-3. **回答**：基于卡片内容回答，用 `[CON-MMRM]` 这样的形式标注出处。
+3. **回答**：基于卡片内容回答，用 `[MTH-MMRM]` 这样的形式标注出处。
    - 卡片 `status: draft` 时，在引用处标注"（未审核）"。
    - 卡片里没有、需要用你自己的知识补充的部分，单独放在"卡片外补充"小节，
      并说明可信度。不要把卡片外内容伪装成知识库内容。
