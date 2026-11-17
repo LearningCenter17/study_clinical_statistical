@@ -7,6 +7,7 @@ title: 知识库索引
 
 - 卡片状态 `draft` = 未核对，`reviewed` = 已对照原始出处核对。
 - 新知识：放入 `inbox/`，在 Claude Code 中运行 `/kb-ingest`。
+- 中英术语对照见 [术语表](glossary.md)。
 
 ## 1. 估计目标（Estimand）框架
 
