@@ -67,8 +67,11 @@ estimand 相关内容不单设前缀，按类型取前缀、放进 `estimand/` �
 - `status`：`draft`（Claude 生成或未核对）/ `reviewed`（Li 已对照原始出处核对）。
   **Claude 永远不要自己把卡片改成 `reviewed`。**
 - 卡片之间用标准 Markdown 相对链接，如 `[MMRM](../methods/continuous/MTH-MMRM.md)`（路径相对于当前卡片所在文件夹），
-  不要用 `[[wikilink]]`（Quarto 渲染不了）。
-- 一个知识点只写在一张卡片里；其他卡片链接过去，不复述。
+  不要用 `[[wikilink]]`（MkDocs 渲染不了）。
+- 一个知识点只写在一张卡片里；其他卡片链接过去，不复述。表格和数值也一样：同一张对照表只放在主卡里。
+- 卡片超过约 200 行、或讲了两个以上可以独立引用的知识点时，考虑拆分；拆分前先给 Li 看拆分方案。
+- 内容从一张卡搬到另一张时只搬不改写，原处留一句话加链接，并在两边写
+  `> 拆分记录（日期）：` 或 `> 整理记录（日期）：` 说明去向；同步更新指向原小节的锚点链接。
 - 每次新增或删除卡片，同步更新 `wiki/index.md`。
 - 统计结论要写出处（`sources` 指向 REF- 卡片或原文献）；不确定的内容明确写"待核实"。
 - 语言：正文中文为主，术语保留英文原文（如 intercurrent event、treatment policy strategy）。
@@ -76,6 +79,7 @@ estimand 相关内容不单设前缀，按类型取前缀、放进 `estimand/` �
 ## 常用命令
 
 - `/kb-ingest` 处理 inbox 中的新材料
-- `/kb-lint` 检查断链、孤立卡片、缺失字段
-- `C:\ProgramData\miniconda3\python.exe -m mkdocs serve` 本地预览 wiki 网站；`... -m mkdocs build` 生成到 `site/`（配置见 `mkdocs.yml`，`hooks/card_meta.py`）。
+- `/kb-lint` 检查断链、孤立卡片、缺失字段、类型与位置、过长和重复的卡片
+- `C:\ProgramData\miniconda3\python.exe -m mkdocs serve` 本地预览 wiki 网站；`... -m mkdocs build --strict` 生成到 `site/`（配置见 `mkdocs.yml`，`hooks/card_meta.py`，依赖版本见 `requirements.txt`）。
   链接锚点按 MkDocs 规则生成：保留中文、`₀` 等字符和标题开头的编号（如 `#5-mann-whitney-u-检验wilcoxon-秩和检验`）；build 无 WARNING 才算链接全部有效。
+- 推送到 GitHub `main` 后，`.github/workflows/publish.yml` 用 `mkdocs build --strict` 构建并发布到 GitHub Pages；有 WARNING 时构建失败，网站不更新。

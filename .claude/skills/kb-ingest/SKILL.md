@@ -23,6 +23,9 @@ description: Process raw material in inbox/ into knowledge base cards. Use when 
    - 只写材料支持的内容。你自己补充的背景知识用 `> 补充（Claude）：` 引用块标出。
    - 补全 `related`，并在对方卡片的 `related` 里加回链。
 5. **更新索引**：在 `wiki/index.md` 对应分类下加入新卡片，一行一个：`- [ID](相对路径) — 一句话`。
+   新建了主题文件夹时，同步在 `hooks/card_meta.py` 的 `SECTIONS` 里登记中文名和顺序。
+   然后运行 `C:\ProgramData\miniconda3\python.exe -m mkdocs build --strict`（设 `NO_MKDOCS_2_WARNING=1`），
+   确认没有 WARNING（断链、失效锚点）。
 6. **归档**：把处理完的源文件移到 `inbox/archive/`，文件名前加日期 `YYYYMMDD_`。
 7. **汇报**：列出新建了哪些卡片、合并进了哪些卡片、有哪些内容不确定需要 Li 核对。
 
@@ -30,3 +33,4 @@ description: Process raw material in inbox/ into knowledge base cards. Use when 
 
 - 材料之间、材料与现有卡片之间有矛盾时，不要自行裁决：两种说法都写进卡片，标"⚠ 存在分歧"并在汇报中列出。
 - 不要把卡片改成 `reviewed`。
+- 合并进现有卡片后，如果那张卡已超过约 200 行或混了几个独立知识点，在汇报中提出拆分建议（不要自行拆分）。

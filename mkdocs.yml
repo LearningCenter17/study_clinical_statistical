@@ -3,11 +3,6 @@ site_description: 临床试验统计知识库
 docs_dir: wiki
 site_dir: site
 
-# Quarto 渲染时留下的文件，不进网站
-exclude_docs: |
-  *_files/
-  *.html
-
 theme:
   name: material
   language: zh
