@@ -25,6 +25,8 @@ description: Process raw material in inbox/ into knowledge base cards. Use when 
 5. **更新索引**：在 `wiki/index.md` 对应分类下加入新卡片，一行一个：`- [ID](相对路径) — 一句话`。
    新建了主题文件夹时，同步在 `hooks/card_meta.py` 的 `SECTIONS` 里登记中文名和顺序。
    材料引入了术语表里还没有的术语时，在 `wiki/glossary.md` 对应章节加一行（规则见 `CLAUDE.md`）。
+   新建的卡片讲的是决策树里标为待建（`card: null`）的方法时，把那个叶子改成新卡片 ID；
+   材料给出了新的"什么情况用什么方法"的推荐时，在汇报中建议怎么加进 `wiki/decision-tree/tree.yaml`（不要自行改树的结构）。
    然后运行 `C:\ProgramData\miniconda3\python.exe -m mkdocs build --strict`（设 `NO_MKDOCS_2_WARNING=1`），
    确认没有 WARNING（断链、失效锚点）。
 6. **归档**：把处理完的源文件移到 `inbox/archive/`，文件名前加日期 `YYYYMMDD_`。

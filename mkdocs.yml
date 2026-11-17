@@ -3,6 +3,10 @@ site_description: 临床试验统计知识库
 docs_dir: wiki
 site_dir: site
 
+# 决策树的数据文件只供 hooks/decision_tree.py 读取，不作为网站文件发布
+exclude_docs: |
+  decision-tree/
+
 theme:
   name: material
   language: zh
@@ -33,13 +37,19 @@ plugins:
 
 hooks:
   - hooks/card_meta.py
+  - hooks/decision_tree.py   # 由 wiki/decision-tree/tree.yaml 生成"检验方法选择树"页面
 
 markdown_extensions:
   - tables
   - admonition
   - attr_list
   - md_in_html
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        # Mermaid 流程图（决策树页面用），Material 主题会自动加载 mermaid.js
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.arithmatex:

@@ -75,6 +75,9 @@ estimand 相关内容不单设前缀，按类型取前缀、放进 `estimand/` �
 - 每次新增或删除卡片，同步更新 `wiki/index.md`。
 - `wiki/glossary.md` 是中英术语对照，只写"中文｜English｜缩写｜主卡"，不写定义。卡片引入新术语时加一行；
   只在卡片中出现一种语言、另一种由 Claude 补充的译名标 †（待 Li 核实）。
+- `wiki/decision-tree/tree.yaml` 是检验方法选择树的唯一数据源，网站页面由 `hooks/decision_tree.py` 生成，不要手写。
+  只放决策结构（问题、分支、方法名、一句提示）；每个叶子必须写 `from`（推荐出自哪张卡片）。
+  新建了某个方法的卡片时，把树里对应叶子的 `card: null` 改成卡片 ID。
 - 统计结论要写出处（`sources` 指向 REF- 卡片或原文献）；不确定的内容明确写"待核实"。
 - 语言：正文中文为主，术语保留英文原文（如 intercurrent event、treatment policy strategy）。
 

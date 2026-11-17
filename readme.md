@@ -43,6 +43,9 @@
 ```
 inbox/              待收录材料（处理后归档到 inbox/archive/）
 wiki/index.md       总索引 + 待建卡片清单
+wiki/glossary.md    中英术语对照（只做翻译和索引，指向主卡）
+wiki/decision-tree/tree.yaml
+                    检验方法选择树的数据源；网站页面由 hooks/decision_tree.py 自动生成
 wiki/cards/<主题>/  卡片，按主题分文件夹（estimand、inference、methods/…、missing-data、design、regulatory）
                     文件名前缀表示类型：CON 概念 / MTH 方法 / WF 流程 / CODE 代码 / TLF / GOT 坑 / REF 文献
 mkdocs.yml, hooks/  网站配置；hooks/card_meta.py 定义侧边栏主题的中文名和顺序

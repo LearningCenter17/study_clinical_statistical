@@ -65,7 +65,8 @@ def _tidy(items):
     items.sort(key=key)
 
 
-_TYPE_ORDER = ["index.md", "CON", "MTH", "WF", "CODE", "TLF", "GOT", "REF"]
+# 顶层页面：索引 → 术语表 → 决策树（"decision" 取自 decision-tree.md）；文件夹内：按卡片类型
+_TYPE_ORDER = ["index.md", "glossary.md", "decision", "CON", "MTH", "WF", "CODE", "TLF", "GOT", "REF"]
 
 
 def on_nav(nav, config, files):
