@@ -3,12 +3,12 @@ id: CON-normal-distribution
 title: "正态分布、标准正态分布与 1.96（Normal Distribution, Standardization and 1.96）"
 categories: [inference, distribution, normal, standard-normal, z-score, standardization, critical-value, qnorm, confidence-interval]
 related: [CON-distribution-family, CON-t-distribution, CON-degrees-of-freedom, CON-confidence-interval, MTH-t-test, CON-sample-size-power, CON-test-statistic, CON-p-value, WF-sample-size-calc, MTH-ci-construction]
-sources: ["Claude 对话（inbox: normal_distribution.md）"]
+sources: ["Claude 对话（inbox: normal_distribution.md）", "Claude 对话（inbox: calculate_pvalue.md）"]
 status: draft
-updated: 2026-11-13
+updated: 2026-11-17
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: normal_distribution.md），属 AI 生成内容，未引用原始文献。文中数值已由 Claude 在 R 4.5.2 中逐项复核。
+> 出处待补：本卡内容来自 Claude 对话（inbox: normal_distribution.md、calculate_pvalue.md），属 AI 生成内容，未引用原始文献。文中数值已由 Claude 在 R 4.5.2 中逐项复核。
 
 ## 标准正态分布只有一条
 
@@ -52,6 +52,10 @@ pnorm(2)                          # 0.977，完全一样
 ```
 
 **这就是为什么只需要记一套数字（如 1.96），就能用于所有正态分布的问题。** 这也是检验统计量要写成"**估计值 / SE**"的原因：先标准化，再和统一的临界值比较（见 [CON-test-statistic](CON-test-statistic.md)、[MTH-t-test](../methods/continuous/MTH-t-test.md#t-值是信噪比)）。
+
+算 P 值时也是这个道理（来源：calculate_pvalue.md）：标准化的好处是**统一**：不管原来的单位是 mmHg、kg 还是天数，都换算成"几个 SE"，只用一张表、一套临界值（1.96）就能判断。在没有电脑、靠查表的年代这一点尤其重要；现在它也让结果更容易比较和解释。标准化在数学上并不是必须的，不标准化直接算也得到同样的 P 值，见 [CON-p-value](CON-p-value.md#标准化不是数学上必须的)。
+
+> 整理记录（2026-11-17）：上一段原在 CON-p-value"标准化不是数学上必须的"一节，与本节论点相同，移到这里合并。
 
 ## 对比：t 分布不是唯一的
 
@@ -124,3 +128,4 @@ uniroot(function(c) area(c) - 0.975, c(0, 3))$root   # 1.959964
 ## 出处
 
 - Claude 对话（inbox: normal_distribution.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: calculate_pvalue.md；AI 生成，原始出处待补；标准化的好处一段，原在 CON-p-value）

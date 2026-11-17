@@ -3,12 +3,12 @@ id: CON-test-statistic
 title: "检验统计量：t、χ² 与 log-rank（Test Statistics）"
 categories: [inference, test-statistic, t-test, chi-square, log-rank, hypothesis-testing]
 related: [CON-p-value, MTH-t-test, CON-logrank-vs-cox, CON-null-hypothesis, CON-t-distribution, CON-degrees-of-freedom, CON-distribution-family, CON-type-I-II-error, CON-test-selection, CON-normal-distribution, CON-response-rate]
-sources: ["Claude 对话（inbox: Test_statistic.md）"]
+sources: ["Claude 对话（inbox: Test_statistic.md）", "Claude 对话（inbox: calculate_pvalue.md）"]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-17
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: Test_statistic.md），属 AI 生成内容，未引用原始文献。
+> 出处待补：本卡内容来自 Claude 对话（inbox: Test_statistic.md、calculate_pvalue.md），属 AI 生成内容，未引用原始文献。
 
 ## 一句话定义
 
@@ -47,6 +47,28 @@ updated: 2026-11-10
 
 > 补充（Claude）：第一条严格成立于 Pearson χ²（不加连续性校正）与合并方差的两比例 z 检验之间；SAS PROC FREQ 同时输出带 Yates 连续性校正的 χ²，数值不同。Mantel-Haenszel 的分层版本即 CMH 检验（第 4 章待建）。已由 Claude 按公式复核三条关系。
 
+## 统计量与零分布总表
+
+> 整理记录（2026-11-17）：本节合并了原先分散在三张卡片中的同类表格，作为"哪种检验用哪个零分布"的唯一出处，内容未改：
+>
+> - CON-p-value"不同检验用不同的参照分布"的表格与说明（来源：calculate_pvalue.md）→ 下表"检验统计量""H₀ 下的分布""R 求 P 值"三列及表后前两条说明
+> - CON-distribution-family"和检验统计量的对应"表（Claude 整理，非材料原文）→ 下表"作为零分布用于"一列
+
+思路都一样：构造统计量，再查对应分布的尾巴。只是参照分布不同（来源：calculate_pvalue.md）：
+
+| 检验 | 检验统计量 | H₀ 下的分布 | 作为零分布用于（Claude 整理） | R 求 P 值 |
+|---|---|---|---|---|
+| z 检验 | 估计值 / SE（σ 已知或大样本） | 标准正态 | 大样本比例检验、Wald 检验 | `2*pnorm(-abs(z))` |
+| t 检验 | 估计值 / SE（σ 用样本估计） | t 分布（df） | t 检验、回归 / 混合模型中单个系数或 LS mean 差的检验 | `2*pt(-abs(t), df)` |
+| ANOVA / ANCOVA 的 F 检验 | 组间 / 组内变异 | F 分布（df₁, df₂） | ANOVA、模型中的多自由度固定效应检验 | `pf(F, df1, df2, lower.tail=FALSE)` |
+| 卡方检验 | Σ(观察 − 期望)² / 期望 | χ² 分布（df） | 列联表检验、log-rank、似然比检验 | `pchisq(x, df, lower.tail=FALSE)` |
+
+- 严格地说，t 检验是把结果"标准化"成 **t 分布**，而不是标准正态。
+- **F 和 χ² 检验只看右尾**，因为统计量只会是正数。
+- 各分布的来历与构造关系见 [CON-distribution-family](CON-distribution-family.md)；用零分布算 P 值的完整流程见 [CON-p-value](CON-p-value.md#计算流程)。
+
+> 补充（Claude）：表中 `2*pt(-abs(t), df)` 的写法默认零分布对称，所以双侧 P 值 = 单侧尾巴 × 2。F 和 χ² 是非对称分布，它们的"双侧"在常规用法里就是右尾，不需要乘 2。待 Li 核实。
+
 ## TLF 中的对应
 
 做 TLF 时天天在用这个逻辑：
@@ -67,3 +89,4 @@ updated: 2026-11-10
 ## 出处
 
 - Claude 对话（inbox: Test_statistic.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: calculate_pvalue.md；AI 生成，原始出处待补；统计量与零分布总表，原在 CON-p-value）

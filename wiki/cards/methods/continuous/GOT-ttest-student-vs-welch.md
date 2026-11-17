@@ -12,7 +12,7 @@ updated: 2026-11-12
 
 ## 现象
 
-同一组数据，在 Python、R、SAS 里做"两独立样本 t 检验"，P 值对不上。例子来自 [CON-p-value](../../inference/CON-p-value.md#实现软件里怎么算)：
+同一组数据，在 Python、R、SAS 里做"两独立样本 t 检验"，P 值对不上。例子来自 [MTH-t-test](MTH-t-test.md#同一组数据python--r--sas)：
 
 ```
 group1 = 115, 120, 125, 130, 128

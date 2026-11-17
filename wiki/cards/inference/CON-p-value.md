@@ -5,7 +5,7 @@ categories: [inference, p-value, hypothesis-testing, null-distribution, nonparam
 related: [CON-null-hypothesis, MTH-t-test, CON-hazard-ratio, MTH-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution]
 sources: ["Claude 对话（inbox: p_value_requirement.md）", "Claude 对话（inbox: calculate_p_value.md）", "Claude 对话（inbox: calculate_pvalue.md）"]
 status: draft
-updated: 2026-11-13
+updated: 2026-11-17
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: p_value_requirement.md、calculate_p_value.md、calculate_pvalue.md），属 AI 生成内容，未引用原始文献。
@@ -112,28 +112,19 @@ z = (观察值 − H₀ 下的值) / SE = (6 − 0) / 2.5 = **2.4**
 2 * pnorm(-6, mean = 0, sd = 2.5)   # 0.0164
 ```
 
-标准化的好处是**统一**：不管原来的单位是 mmHg、kg 还是天数，都换算成"几个 SE"，只用一张表、一套临界值（1.96）就能判断。在没有电脑、靠查表的年代这一点尤其重要；现在它也让结果更容易比较和解释。标准化与 1.96 的来历见 [CON-normal-distribution](CON-normal-distribution.md)。
+标准化的好处是统一单位、只需一套临界值，见 [CON-normal-distribution](CON-normal-distribution.md#关键所有正态分布都能变成同一个标准正态)。
+
+> 整理记录（2026-11-17）：本段原文（来源：calculate_pvalue.md，"统一单位、一张表、查表年代"）已移到 CON-normal-distribution，与那里的同一论点合并。
 
 ### 不同检验用不同的参照分布
 
-思路都一样：构造统计量，再查对应分布的尾巴。只是参照分布不同（来源：calculate_pvalue.md）：
+思路都一样：构造统计量，再查对应分布的尾巴，只是参照分布不同（z → 标准正态，t → t 分布，F → F 分布，χ² → χ² 分布）。各检验的统计量、零分布和 R 求 P 值的函数见 [CON-test-statistic](CON-test-statistic.md#统计量与零分布总表)。
 
-| 检验 | 检验统计量 | H₀ 下的分布 | R 求 P 值 |
-|---|---|---|---|
-| z 检验 | 估计值 / SE（σ 已知或大样本） | 标准正态 | `2*pnorm(-abs(z))` |
-| t 检验 | 估计值 / SE（σ 用样本估计） | t 分布（df） | `2*pt(-abs(t), df)` |
-| ANOVA / ANCOVA 的 F 检验 | 组间 / 组内变异 | F 分布（df₁, df₂） | `pf(F, df1, df2, lower.tail=FALSE)` |
-| 卡方检验 | Σ(观察 − 期望)² / 期望 | χ² 分布（df） | `pchisq(x, df, lower.tail=FALSE)` |
-
-- 严格地说，t 检验是把结果"标准化"成 **t 分布**，而不是标准正态。
-- **F 和 χ² 检验只看右尾**，因为统计量只会是正数。
-- 各分布的来历与用途见 [CON-distribution-family](CON-distribution-family.md#和检验统计量的对应)。
+> 整理记录（2026-11-17）：本节原有的表格、表后说明和"双侧 = 单侧 × 2"的补充（来源：calculate_pvalue.md）已移到 CON-test-statistic，与 CON-distribution-family 的同类表合并。
 
 也有不依赖这类分布、**不需要标准化**的方法：Fisher 精确检验直接按组合概率计算，置换检验用模拟构造 H₀ 下的分布（见下文"[分布假设靠不住时](#分布假设靠不住时从数据里构造零分布)"）。
 
 > **一句话总结**：P 值 = 在 H₀ 成立时，得到"至少这么极端"结果的概率；标准化只是把结果放到一个已知分布上，方便算这个概率。
-
-> 补充（Claude）：表中 `2*pt(-abs(t), df)` 的写法默认零分布对称，所以双侧 P 值 = 单侧尾巴 × 2。F 和 χ² 是非对称分布，它们的"双侧"在常规用法里就是右尾，不需要乘 2。待 Li 核实。
 
 ### 选哪种检验
 
@@ -141,36 +132,9 @@ z = (观察值 − H₀ 下的值) / SE = (6 − 0) / 2.5 = **2.4**
 
 ## 实现：软件里怎么算
 
-实际分析中极少手动查表，而是直接调用统计函数（来源：calculate_p_value.md，同一组示例数据）：
+实际分析中极少手动查表，而是直接调用统计函数。同一组数据用 Python / R / SAS 做 t 检验的代码，以及三者 P 值为什么不同，见 [MTH-t-test](../methods/continuous/MTH-t-test.md#同一组数据python--r--sas)。
 
-```python
-# Python (scipy.stats)
-from scipy import stats
-group1 = [115, 120, 125, 130, 128]
-group2 = [105, 110, 108, 112, 109]
-t_stat, p_value = stats.ttest_ind(group1, group2)
-print(f"P 值: {p_value:.4f}")
-```
-
-```r
-# R
-group1 <- c(115, 120, 125, 130, 128)
-group2 <- c(105, 110, 108, 112, 109)
-result <- t.test(group1, group2)
-print(result$p.value)
-```
-
-```sas
-/* SAS */
-proc ttest data=mydata;
-  class group;
-  var response;
-run;
-```
-
-SAS 输出中的 `Pr > |t|` 即为双侧检验的 P 值。
-
-> 补充（Claude）：**同一组数据，上面三段代码给出的 P 值并不相同**：Python 默认 Student t 检验（P = 0.0011），R 默认 Welch t 检验（P = 0.0034），SAS 两行都输出。原因与对齐方法见 [GOT-ttest-student-vs-welch](../methods/continuous/GOT-ttest-student-vs-welch.md)。
+> 整理记录（2026-11-17）：本节原有的三段代码和补充（来源：calculate_p_value.md）全是 t 检验，已移到 MTH-t-test。
 
 ## 怎么解读
 

@@ -5,10 +5,10 @@ categories: [inference, degrees-of-freedom, t-distribution, chi-square, variance
 related: [CON-t-distribution, MTH-t-test, CON-test-statistic, MTH-MMRM, CON-distribution-family, CON-p-value, GOT-ttest-student-vs-welch, CON-test-selection, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction]
 sources: ["Claude 对话（inbox: degreeOfFreedom.md）"]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-17
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: degreeOfFreedom.md），属 AI 生成内容，未引用原始文献。临界值表已由 Claude 复核（见文末）。
+> 出处待补：本卡内容来自 Claude 对话（inbox: degreeOfFreedom.md），属 AI 生成内容，未引用原始文献。临界值表已移到 CON-t-distribution（见下文）。
 
 ## 一句话定义
 
@@ -35,17 +35,9 @@ updated: 2026-11-10
 - **自由度小**（样本少）：用样本标准差估计总体标准差不太靠谱，不确定性大，t 分布尾巴很胖，需要更大的 t 值才能拒绝 H₀；
 - **自由度大**（样本多）：估计越来越准，t 分布越来越接近正态分布。
 
-形状变化的细节见 [CON-t-distribution](CON-t-distribution.md)。双侧 P = 0.05 对应的临界 t 值：
+形状变化的细节，以及双侧 P = 0.05 对应的临界 t 值随 df 变化的数值表（df = 2 时 4.30，df → ∞ 时 1.96），见 [CON-t-distribution](CON-t-distribution.md#数值临界值与同一个-t-的-p-值)。
 
-| 自由度 | 临界 t 值 |
-|---|---|
-| 2 | 4.30 |
-| 5 | 2.57 |
-| 10 | 2.23 |
-| 30 | 2.04 |
-| ∞ | 1.96（就是正态） |
-
-样本很小时，t 要超过 4 才算显著；样本够大，接近 2 就够了。
+> 整理记录（2026-11-17）：本节原有的临界 t 值表（来源：degreeOfFreedom.md）已移到 CON-t-distribution，与其他卡片中的同类数值合并为一张表，避免重复。
 
 ## 常见检验的自由度
 
@@ -75,5 +67,3 @@ updated: 2026-11-10
 ## 出处
 
 - Claude 对话（inbox: degreeOfFreedom.md；AI 生成，原始出处待补）
-
-> 数值复核（Claude）：双侧 α = 0.05 的 t 临界值 t₀.₉₇₅,df：df = 2 → 4.303，5 → 2.571，10 → 2.228，30 → 2.042，∞ → 1.960。与材料一致。

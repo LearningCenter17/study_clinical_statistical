@@ -19,23 +19,23 @@ title: 知识库索引
 ### 2.1 推断基础与核心假设
 
 - [CON-null-hypothesis](cards/inference/CON-null-hypothesis.md) — H₀ 的四要素（终点、人群、参数、方向）、不同终点的写法、非劣效 H₀、须事先指定
-- [CON-degrees-of-freedom](cards/inference/CON-degrees-of-freedom.md) — 自由度的含义、方差分母为何是 n − 1、临界 t 值随 df 变化、常见检验的 df
+- [CON-degrees-of-freedom](cards/inference/CON-degrees-of-freedom.md) — 自由度的含义、方差分母为何是 n − 1、df 决定零分布形状、常见检验的 df（临界值表见 CON-t-distribution）
 - [CON-type-I-II-error](cards/inference/CON-type-I-II-error.md) — 第一类错误（α）与第二类错误（β）、power = 1 − β、影响 β 的因素、多重比较使 α 膨胀、不显著 ≠ 无效
 
 ### 2.2 核心统计量与分布族
 
-- [CON-test-statistic](cards/inference/CON-test-statistic.md) — 检验统计量的共同骨架；t、χ²、log-rank 各适用什么数据，以及它们的"亲戚关系"
+- [CON-test-statistic](cards/inference/CON-test-statistic.md) — 检验统计量的共同骨架；t、χ²、log-rank 各适用什么数据，以及它们的"亲戚关系"；**统计量与零分布总表**（z / t / F / χ² 各用哪个分布、用于哪些检验、R 求 P 值的函数 pnorm / pt / pf / pchisq）
 - [CON-distribution-family](cards/inference/CON-distribution-family.md) — 伯努利 → 二项 → 正态 → Z → t / χ² / F 的演化关系、各分布特点；F = 组间 / 组内变异及其用途（ANOVA、Type III 检验）
 - [CON-normal-distribution](cards/inference/CON-normal-distribution.md) — 标准正态 N(0, 1) 只有一条、μ 定位置 σ 定胖瘦、标准化 z = (x − μ) / σ；1.96 是 97.5% 分位数及其数值求法（`qnorm`、`integrate` + `uniroot`）；1.96 vs t 临界值
-- [CON-t-distribution](cards/inference/CON-t-distribution.md) — t 分布只由自由度决定、随 df 的形状变化、与正态分布对比
+- [CON-t-distribution](cards/inference/CON-t-distribution.md) — t 分布只由自由度决定、随 df 的形状变化；**各 df 的临界值与 t = 2 时 P 值对照表**；t 与 z 的区别（σ 未知、Gosset）及"n ≥ 30 当 Z 用"的分歧；与正态分布对比
 
 ### 2.3 检验方法的选择与计算
 
-- [CON-p-value](cards/inference/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验；计算四步、z 检验手算示例、各检验的参照分布与 R 函数（pnorm / pt / pf / pchisq）、Python / R / SAS 实现、怎么解读
+- [CON-p-value](cards/inference/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验；计算四步、z 检验手算示例、标准化不是数学上必须的、怎么解读
 - [CON-test-selection](cards/inference/CON-test-selection.md) — 快速选择表（连续 / 分类 / 非参数 × 两组 / 多组 / 配对）；t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态
 - [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) — 导航页：确证性试验最常用的十种方法（ANCOVA、MMRM、KM、log-rank、Cox、CMH、logistic、Fisher、卡方、Wilcoxon）、按治疗领域的分布、描述统计占 TLF 大头、SAS / R 对齐重点
 - [CON-parametric-vs-nonparametric](cards/inference/CON-parametric-vs-nonparametric.md) — 参数方法（假设分布、比较参数）vs 非参数方法（基于秩次、分布无关）：优缺点、秩次为何对离群值稳健、对应关系、秩和检验中英术语对照（rank-sum vs signed-rank、R 的 W 即 U）、"非参数 ≠ 无假设"
-- [MTH-t-test](cards/methods/continuous/MTH-t-test.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t vs z、t 与 P 一一对应的条件（df + 单 / 双侧）及报告写法 t(df) = …，P = …、SAS PROC TTEST 四张输出表
+- [MTH-t-test](cards/methods/continuous/MTH-t-test.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t 与 P 的对应（t 越大 P 越小、df 影响翻译、一一对应的条件）及报告写法 t(df) = …，P = …；同一组数据的 Python / R / SAS 代码、SAS PROC TTEST 四张输出表
 - [GOT-ttest-student-vs-welch](cards/methods/continuous/GOT-ttest-student-vs-welch.md) — 同一数据 Python / R / SAS 的 t 检验 P 值不同：Student（等方差）vs Welch（不等方差）默认设置；n 不等时差异可达数十倍；为什么不建议先检验方差齐性再选
 
 ### 2.4 常见误区与结果解读

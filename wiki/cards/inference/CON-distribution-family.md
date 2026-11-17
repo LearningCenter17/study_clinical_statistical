@@ -5,7 +5,7 @@ categories: [inference, distribution, bernoulli, binomial, normal, z-distributio
 related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, MTH-t-test, MTH-MMRM, GOT-ttest-student-vs-welch, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-dose-escalation-design, CON-normal-distribution, CON-response-rate, CON-credible-interval]
 sources: ["Claude 对话（inbox: distribution.md）", "Claude 对话（inbox: F_distribution.md）"]
 status: draft
-updated: 2026-11-13
+updated: 2026-11-17
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: distribution.md，附图 distribution.png；F_distribution.md），属 AI 生成内容，未引用原始文献。
@@ -90,14 +90,9 @@ updated: 2026-11-13
 
 ## 和检验统计量的对应
 
-| 分布 | 作为零分布用于 |
-|---|---|
-| Z（标准正态） | 大样本比例检验、Wald 检验 |
-| t | t 检验、回归 / 混合模型中单个系数或 LS mean 差的检验 |
-| χ² | 列联表检验、log-rank、似然比检验 |
-| F | ANOVA、模型中的多自由度固定效应检验 |
+Z、t、χ²、F 分别作为哪些检验的零分布，以及 R 中怎么求 P 值，见 [CON-test-statistic](CON-test-statistic.md#统计量与零分布总表)。
 
-> 补充（Claude）：本表为 Claude 整理，非材料原文。这几个分布就是 [CON-p-value](CON-p-value.md) 中"零分布"的常见选择。
+> 整理记录（2026-11-17）：本节原有的对照表（Claude 整理，非材料原文）已移到 CON-test-statistic，与 CON-p-value 的同类表合并为一张。
 
 ## 相关卡片
 

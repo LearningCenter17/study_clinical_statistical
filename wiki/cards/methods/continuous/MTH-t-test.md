@@ -1,14 +1,14 @@
 ---
 id: MTH-t-test
-title: "t 检验与 P 值（t-test and P-value）"
-categories: [inference, p-value, t-test, hypothesis-testing, degrees-of-freedom, standard-error, z-test]
+title: "t 检验：从 t 值到 P 值（t-test）"
+categories: [inference, p-value, t-test, hypothesis-testing, degrees-of-freedom, standard-error, proc-ttest, software]
 related: [MTH-MMRM, CON-p-value, CON-null-hypothesis, CON-test-statistic, CON-t-distribution, CON-degrees-of-freedom, CON-type-I-II-error, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, CON-confirmatory-methods-overview, CON-normal-distribution, WF-sample-size-calc, MTH-ci-construction]
-sources: ["Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: t_example_correction.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: summary_p.md）", "Claude 对话（inbox: pvalue_tvalue.md）"]
+sources: ["Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: t_example_correction.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: summary_p.md）", "Claude 对话（inbox: pvalue_tvalue.md）", "Claude 对话（inbox: calculate_p_value.md）"]
 status: draft
 updated: 2026-11-17
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: PValue_ttest.md、t_test_mean.md、t_example_correction.md、t_conception.md、summary_p.md、pvalue_tvalue.md），属 AI 生成内容，未引用原始文献。文中表格的数值已由 Claude 按 t 分布复核（见文末）。
+> 出处待补：本卡内容来自 Claude 对话（inbox: PValue_ttest.md、t_test_mean.md、t_example_correction.md、t_conception.md、summary_p.md、pvalue_tvalue.md、calculate_p_value.md），属 AI 生成内容，未引用原始文献。文中表格的数值已由 Claude 按 t 分布复核（见文末）。
 
 ## 一句话定义
 
@@ -55,7 +55,7 @@ P 值（药没用时，出现这么大 t 值的概率）
 
 ## t 值是信噪比
 
-（来源：t_test_mean.md）**t 值 = 差异是"噪音"的多少倍**，更准确地说：观察到的差异相当于几个标准误。两组比较时：
+（来源：t_test_mean.md）**t 值 = 差异是"噪音"的多少倍**，更准确地说：观察到的差异相当于几个标准误。这是所有检验统计量共同骨架在 t 检验里的样子（骨架见 [CON-test-statistic](../../inference/CON-test-statistic.md#一句话定义)）。两组比较时：
 
 > t =（两组均值差）/ 均值差的标准误
 
@@ -91,7 +91,9 @@ P 值（药没用时，出现这么大 t 值的概率）
 
 ## 为什么叫 t 不叫 z
 
-如果总体标准差已知，这个比值就是 z 值，服从标准正态分布。实际中总体标准差未知，只能用样本标准差估计，多引入一层不确定性（样本小时尤甚），所以它服从尾巴稍"胖"的 **t 分布**；自由度越大越接近正态（与下文"规律 2"一致）。名字来自 Student's t——Gosset 在健力士（Guinness）啤酒厂工作时提出。
+总体标准差未知、只能用样本标准差估计，所以这个比值服从 t 分布而不是标准正态。详见 [CON-t-distribution](../../inference/CON-t-distribution.md#t-与-z-的区别)。
+
+> 整理记录（2026-11-17）：本节原文（来源：t_test_mean.md，含 Gosset 的来历）已移到 CON-t-distribution，作为 t 与 z 关系的唯一出处。
 
 P 值不是 t 检验独有的：卡方检验、log-rank 检验最后也都输出 P 值，只是中间算的统计量和查的分布不一样。P 值的一般定义和计算条件见 [CON-p-value](../../inference/CON-p-value.md)，H₀ 的写法见 [CON-null-hypothesis](../../inference/CON-null-hypothesis.md)。
 
@@ -101,7 +103,9 @@ P 值不是 t 检验独有的：卡方检验、log-rank 检验最后也都输出
 - **t = 6 ÷ 1.63 ≈ 3.67**：差异约为正常抖动的 3.7 倍
 - 查自由度 4 的 t 分布：药没用时 |t| ≥ 3.67 的概率约 **0.02**，即 P 值
 
-## 规律 1：t 越大，P 越小
+## t 值与 P 值的对应
+
+### 规律 1：t 越大，P 越小
 
 自由度 4（每组 3 人）：
 
@@ -113,42 +117,28 @@ P 值不是 t 检验独有的：卡方检验、log-rank 检验最后也都输出
 | 3.67 | 上面的例子 | 0.02 |
 | 4.60 | — | 0.01 |
 
-## 规律 2：自由度（样本量）影响"翻译"
+### 规律 2：自由度（样本量）影响"翻译"
 
-同样 t = 2：
+同样 t = 2，df = 4（每组 3 人）时双侧 P = 0.12，不显著；df → ∞ 时 P = 0.046，显著。样本少时 t 分布尾巴更厚，要求的证据更强。各 df 下的临界值和 P 值对照表见 [CON-t-distribution](../../inference/CON-t-distribution.md#数值临界值与同一个-t-的-p-值)。
 
-| 每组人数 | 自由度 | t = 2 时的双侧 P 值 |
-|---|---|---|
-| 3 | 4 | 0.12（不显著） |
-| 很多 | → ∞ | 0.046（显著） |
+df 怎么来：独立样本 t 检验约为 n₁ + n₂ − 2；Welch 检验的 df 另行计算，通常不是整数，见 [GOT-ttest-student-vs-welch](GOT-ttest-student-vs-welch.md)。
 
-样本少时标准误本身估得不准，t 分布的"尾巴"更厚，要求的证据更强，P 值偏大。样本多了 t 分布趋近正态分布——所以"t 大于约 2 就显著"是**大样本下**的经验。t 分布形状随自由度的变化见 [CON-t-distribution](../../inference/CON-t-distribution.md)。
+> 整理记录（2026-11-17）：本节原有两张表（来源：PValue_ttest.md 的 df = 4 与 ∞ 对比；pvalue_tvalue.md 的 df 梯度表）和关于尾巴厚度的解释已移到 CON-t-distribution，与 CON-degrees-of-freedom 的临界值表合并。
 
-更细的 df 梯度（来源：pvalue_tvalue.md），同样 t = 2.0、双侧：
-
-| 自由度 | 双侧 P 值 | 双侧 0.05 的 t 临界值 |
-|---|---|---|
-| 5 | ≈ 0.102 | 2.571 |
-| 10 | ≈ 0.073 | 2.228 |
-| 30 | ≈ 0.055 | 2.042 |
-| ∞（正态） | ≈ 0.046 | 1.960 |
-
-临界值随 df 的完整对照见 [CON-degrees-of-freedom](../../inference/CON-degrees-of-freedom.md)。df 怎么来：独立样本 t 检验约为 n₁ + n₂ − 2；Welch 检验的 df 另行计算，通常不是整数，见 [GOT-ttest-student-vs-welch](GOT-ttest-student-vs-welch.md)。
-
-## t 值与 P 值什么时候一一对应
+### 什么时候一一对应
 
 （来源：pvalue_tvalue.md）**自由度和单侧 / 双侧都确定之后，t 值和 P 值一一对应**。两个条件缺一个，就不能直接对应：
 
-- **自由度**：同一个 t，df 不同，P 不同（见上表）。
+- **自由度**：同一个 t，df 不同，P 不同（见规律 2）。
 - **方向**：
   - 双侧检验的 P 只看 |t|，t = 2.0 与 t = −2.0 的 P 相同，所以严格说是 **|t|** 与 P 一一对应。
   - 单侧检验的 P 是双侧的一半（前提是效应方向与假设一致），如 df = 30、t = 2.0 时单侧 P ≈ 0.027。单侧 P 的条件和方向相反时的情况见 [CON-p-value](../../inference/CON-p-value.md)。
 
-固定 df 和方向后，t 越大 P 越小，严格单调。**P 值只是把 t 换算到"概率"尺度，本身不提供额外信息。**
+固定 df 和方向后，t 越大 P 越小，严格单调（即规律 1）。**P 值只是把 t 换算到"概率"尺度，本身不提供额外信息。**
 
 所以报告时写成 **t(df) = 2.0，P = 0.055**，把 df 一起写出来，别人才能核对 P 值。
 
-> 数值复核（Claude，R 4.5.2）：`2*pt(-2, df)` 在 df = 5、10、30、∞ 时分别为 0.1019、0.0734、0.0546、0.0455；`qt(0.975, df)` 为 2.571、2.228、2.042、1.960；`pt(-2, 30)` = 0.0273。与材料一致。
+> 数值复核（Claude，R 4.5.2）：`pt(-2, 30)` = 0.0273（单侧）。各 df 下的双侧 P 值与临界值复核见 CON-t-distribution。
 
 ## 记住三句话
 
@@ -169,6 +159,43 @@ SAS 输出里的 `t Value` 和 `Pr > |t|` 就是这一对：前者是第一步�
 过去没有电脑时，就是翻教科书后面的 t 分布表来查。
 
 （数值已由 Claude 复核：df = 38 时双侧 0.01 / 0.005 临界值约 2.71 / 2.98，t = 2.8 的 P 落在两者之间，≈ 0.008。）
+
+### 同一组数据：Python / R / SAS
+
+> 整理记录（2026-11-17）：本节原在 CON-p-value 的"实现：软件里怎么算"一节（来源：calculate_p_value.md）。那一节的代码全是 t 检验，移到这里，内容未改。
+
+实际分析中极少手动查表，而是直接调用统计函数（来源：calculate_p_value.md，同一组示例数据）：
+
+```python
+# Python (scipy.stats)
+from scipy import stats
+group1 = [115, 120, 125, 130, 128]
+group2 = [105, 110, 108, 112, 109]
+t_stat, p_value = stats.ttest_ind(group1, group2)
+print(f"P 值: {p_value:.4f}")
+```
+
+```r
+# R
+group1 <- c(115, 120, 125, 130, 128)
+group2 <- c(105, 110, 108, 112, 109)
+result <- t.test(group1, group2)
+print(result$p.value)
+```
+
+```sas
+/* SAS */
+proc ttest data=mydata;
+  class group;
+  var response;
+run;
+```
+
+SAS 输出中的 `Pr > |t|` 即为双侧检验的 P 值。
+
+> 补充（Claude）：**同一组数据，上面三段代码给出的 P 值并不相同**：Python 默认 Student t 检验（P = 0.0011），R 默认 Welch t 检验（P = 0.0034），SAS 两行都输出。原因与对齐方法见 [GOT-ttest-student-vs-welch](GOT-ttest-student-vs-welch.md)。这组数据的完整报告写法见 [CON-confidence-interval](../../inference/CON-confidence-interval.md#报告示例)。
+
+### 项目数据的写法
 
 > 补充（Claude）：以下代码非材料原文，待 Li 核实。
 >
@@ -227,5 +254,6 @@ QC 时可以用 `ods output TTests=...` 把结果抽出来，和 R 逐行比对�
 - Claude 对话（inbox: t_conception.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: summary_p.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: pvalue_tvalue.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: calculate_p_value.md；AI 生成，原始出处待补；Python / R / SAS 代码，原在 CON-p-value）
 
 > 数值复核（Claude）：按 t 分布计算，df = 4 时 t = 1, 2, 3.67, 4.60 的双侧 P 值分别约为 0.374、0.116、0.021、0.010，临界值 t₀.₀₂₅,₄ = 2.776；df → ∞ 时 t = 2 的双侧 P ≈ 0.0455。与材料一致。
