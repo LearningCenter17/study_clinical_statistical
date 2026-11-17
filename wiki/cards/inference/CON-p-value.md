@@ -2,7 +2,7 @@
 id: CON-p-value
 title: "P 值的定义与计算条件（P-value）"
 categories: [inference, p-value, hypothesis-testing, null-distribution, nonparametric, permutation-test, test-selection, software, effect-size]
-related: [CON-null-hypothesis, MTH-t-test, CON-hazard-ratio, MTH-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution]
+related: [CON-null-hypothesis, MTH-t-test, CON-hazard-ratio, MTH-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CODE-ttest-sas-r-python]
 sources: ["Claude 对话（inbox: p_value_requirement.md）", "Claude 对话（inbox: calculate_p_value.md）", "Claude 对话（inbox: calculate_pvalue.md）"]
 status: draft
 updated: 2026-11-17
@@ -132,7 +132,7 @@ z = (观察值 − H₀ 下的值) / SE = (6 − 0) / 2.5 = **2.4**
 
 ## 实现：软件里怎么算
 
-实际分析中极少手动查表，而是直接调用统计函数。同一组数据用 Python / R / SAS 做 t 检验的代码，以及三者 P 值为什么不同，见 [MTH-t-test](../methods/continuous/MTH-t-test.md#同一组数据python--r--sas)。
+实际分析中极少手动查表，而是直接调用统计函数。同一组数据用 Python / R / SAS 做 t 检验的代码，以及三者 P 值为什么不同，见 [CODE-ttest-sas-r-python](../methods/continuous/CODE-ttest-sas-r-python.md#同一组数据python--r--sas)。
 
 > 整理记录（2026-11-17）：本节原有的三段代码和补充（来源：calculate_p_value.md）全是 t 检验，已移到 MTH-t-test。
 

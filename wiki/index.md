@@ -38,7 +38,8 @@ title: 知识库索引
 - [CON-test-selection](cards/inference/CON-test-selection.md) — 快速选择表（连续 / 分类 / 非参数 × 两组 / 多组 / 配对）；t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态
 - [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) — 导航页：确证性试验最常用的十种方法（ANCOVA、MMRM、KM、log-rank、Cox、CMH、logistic、Fisher、卡方、Wilcoxon）、按治疗领域的分布、描述统计占 TLF 大头、SAS / R 对齐重点
 - [CON-parametric-vs-nonparametric](cards/inference/CON-parametric-vs-nonparametric.md) — 参数方法（假设分布、比较参数）vs 非参数方法（基于秩次、分布无关）：优缺点、秩次为何对离群值稳健、对应关系、秩和检验中英术语对照（rank-sum vs signed-rank、R 的 W 即 U）、"非参数 ≠ 无假设"
-- [MTH-t-test](cards/methods/continuous/MTH-t-test.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t 与 P 的对应（t 越大 P 越小、df 影响翻译、一一对应的条件）及报告写法 t(df) = …，P = …；同一组数据的 Python / R / SAS 代码、SAS PROC TTEST 四张输出表
+- [MTH-t-test](cards/methods/continuous/MTH-t-test.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t 与 P 的对应（t 越大 P 越小、df 影响翻译、一一对应的条件）及报告写法 t(df) = …，P = …
+- [CODE-ttest-sas-r-python](cards/methods/continuous/CODE-ttest-sas-r-python.md) — t 检验的 SAS / R / Python 代码：同一组数据三种软件的写法及 P 值为何不同（Student vs Welch 默认）、项目数据（ADEFF）写法、SAS PROC TTEST 四张输出表与 ODS 抽取 QC
 - [GOT-ttest-student-vs-welch](cards/methods/continuous/GOT-ttest-student-vs-welch.md) — 同一数据 Python / R / SAS 的 t 检验 P 值不同：Student（等方差）vs Welch（不等方差）默认设置；n 不等时差异可达数十倍；为什么不建议先检验方差齐性再选
 
 ### 2.4 常见误区与结果解读
