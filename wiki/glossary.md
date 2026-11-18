@@ -77,6 +77,15 @@ title: 中英术语对照
 | Satterthwaite 近似自由度 | Satterthwaite | | [GOT-ttest-student-vs-welch](cards/methods/continuous/GOT-ttest-student-vs-welch.md) |
 | 协变量 / 协变量调整 | covariate / covariate adjustment | | [CON-covariate](cards/methods/continuous/CON-covariate.md) |
 | 协方差分析 | analysis of covariance | ANCOVA | [CON-covariate](cards/methods/continuous/CON-covariate.md) |
+| 回归 | regression |  | [CON-regression](cards/methods/CON-regression.md) |
+| 回归系数 | regression coefficient † | β | [CON-regression](cards/methods/CON-regression.md) |
+| 因变量 / 结局变量 | dependent / outcome variable † |  | [CON-regression](cards/methods/CON-regression.md) |
+| 自变量 / 预测变量 | independent / predictor variable † |  | [CON-regression](cards/methods/CON-regression.md) |
+| 线性回归 / 最小二乘法 | linear regression / ordinary least squares | OLS | [CON-regression](cards/methods/CON-regression.md) |
+| 逻辑回归 | logistic regression |  | [CON-regression](cards/methods/CON-regression.md) |
+| 广义线性模型 | generalized linear model † | GLM | [CON-regression](cards/methods/CON-regression.md) |
+| 回归均值 | regression toward the mean |  | [CON-regression](cards/methods/CON-regression.md) |
+| 率比 | rate ratio † | RR | [CON-regression](cards/methods/CON-regression.md) |
 | 重复测量混合模型 | mixed model for repeated measures | MMRM | [MTH-MMRM](cards/methods/continuous/MTH-MMRM.md) |
 | 非结构化协方差 | unstructured covariance † | UN | [MTH-MMRM](cards/methods/continuous/MTH-MMRM.md) |
 | Kenward-Roger 自由度 | Kenward-Roger | KR | [MTH-MMRM](cards/methods/continuous/MTH-MMRM.md) |
@@ -123,6 +132,7 @@ title: 中英术语对照
 | log-rank 检验 | log-rank test | | [CON-logrank-vs-cox](cards/methods/tte/CON-logrank-vs-cox.md) |
 | Cox 模型 | Cox proportional hazards model | | [CON-logrank-vs-cox](cards/methods/tte/CON-logrank-vs-cox.md) |
 | 删失 | censoring | CNSR | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
+| 似然 | likelihood | | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 结点（事件时间相同） | tied event times | | [CON-logrank-vs-cox](cards/methods/tte/CON-logrank-vs-cox.md) |
 | Kaplan-Meier 法 | Kaplan-Meier | KM | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md)（独立卡片待建） |
 | 生存分析 / 时间-事件分析 | survival analysis / time-to-event analysis | TTE | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |

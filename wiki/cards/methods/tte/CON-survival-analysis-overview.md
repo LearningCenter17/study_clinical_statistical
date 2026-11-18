@@ -2,13 +2,13 @@
 id: CON-survival-analysis-overview
 title: "生存分析概览：删失、核心函数、KM / log-rank / Cox 与 ADTTE（Survival Analysis Overview）"
 categories: [overview, survival, time-to-event, censoring, kaplan-meier, log-rank, cox, proportional-hazards, rmst, competing-risks, adtte, tern, statistical-programming]
-related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc]
-sources: ["Claude 对话（inbox: Survival Analysis.md）"]
+related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression]
+sources: ["Claude 对话（inbox: Survival Analysis.md）", "Claude 对话（inbox: regression.md）"]
 status: draft
 updated: 2026-11-18
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: Survival Analysis.md），属 AI 生成内容，未引用原始文献（如 Collett《Modelling Survival Data in Medical Research》、Klein & Moeschberger、SAS PROC LIFETEST / PHREG 文档、CDISC ADaM ADTTE 规范）。本卡是第 5 章的导航页，各方法的细节在链接的卡片里。
+> 出处待补：本卡内容来自 Claude 对话（inbox: Survival Analysis.md；"普通回归为什么处理不了删失"一节来自 regression.md），属 AI 生成内容，未引用原始文献（如 Collett《Modelling Survival Data in Medical Research》、Klein & Moeschberger、SAS PROC LIFETEST / PHREG 文档、CDISC ADaM ADTTE 规范）。本卡是第 5 章的导航页，各方法的细节在链接的卡片里。
 
 ## 名称
 
@@ -21,6 +21,35 @@ updated: 2026-11-18
 它和普通回归最大的区别在于**删失（censoring）**：研究结束时，有的受试者事件还没发生，或者中途失访、撤回同意。我们只知道他的事件时间**大于**某个值，不知道确切时间。删失的人不能直接扔掉，否则结果会偏；也不能当作"事件发生"，否则会低估生存时间。生存分析的方法就是为了正确利用这部分"不完整"的信息。
 
 最常见的是**右删失**：知道事件至少在某时间点之后才发生。另外还有左删失和区间删失，比如事件只在两次访视之间被发现，这在影像学评估进展时很常见。
+
+### 普通回归为什么处理不了删失
+
+> 以下来自 Claude 对话（inbox: regression.md），AI 生成，出处待补。回归本身是什么见 [CON-regression](../CON-regression.md)。
+
+普通回归本身无法处理删失。这不是"可以处理但没处理"，而是它的数学结构里根本没有表达"只知道 Y 大于某个数"的位置。不过回归这个思路是可以改造的，改造后就能处理删失。
+
+**为什么普通回归处理不了**
+
+线性回归（最小二乘法）的做法是：让每个人的预测值和真实值的差距（残差）平方和最小。
+
+> 残差 = 真实 Y − 预测 Y
+
+这要求每个人都有一个确切的 Y。删失的受试者只知道"Y > 24"，没有确切数值，残差算不出来。你只能硬填一个数（比如 24）或者把他删掉，前面说过这两种做法都会造成偏倚。
+
+逻辑回归也一样：它要求每个人的结局明确是"是"或"否"。中途失访的人两者都不是，同样没地方放。
+
+**怎么改造才能处理**
+
+关键在于换一种思路：不再"算差距"，而是改用似然（likelihood），也就是"在这个模型下，观察到这份数据的可能性有多大"。在这个框架下，两类人可以分开写：
+
+- 事件发生的人（确切知道 Y = 5）：贡献"恰好在 5 发生"的概率。
+- 删失的人（只知道 Y > 24）：贡献"超过 24 才发生"的概率，也就是 S(24)。
+
+这样删失的人就有了合理的位置：他们的信息是"至少撑到了这个时间"，这个信息被如实写进了模型，既没丢掉，也没被夸大。
+
+> 整理记录（2026-11-18）：材料原文写"删失的受试者 C"，C 是更早一段对话里的例子，这里去掉了代号；"前面说过"指本卡第 1 节"删失的人不能直接扔掉……也不能当作事件发生"。
+>
+> 补充（Claude）：写成公式，似然 L = ∏_{事件者} f(tᵢ) × ∏_{删失者} S(tᵢ)，f 为密度函数。参数模型（Weibull 等）直接最大化它；Cox 模型用的是只依赖事件时间排序的部分似然（partial likelihood），所以不必设定 h₀(t)。待 Li 核实。
 
 ## 2. 核心概念
 
@@ -112,3 +141,4 @@ cox.zph(cox)                                       # PH 假设检验
 ## 出处
 
 - Claude 对话（inbox: Survival Analysis.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: regression.md；AI 生成，原始出处待补；"普通回归为什么处理不了删失"一节）
