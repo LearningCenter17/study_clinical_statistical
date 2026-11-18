@@ -2,7 +2,7 @@
 id: CON-confirmatory-methods-overview
 title: "确证性试验最常用的统计方法总览（Common Methods in Confirmatory Trials）"
 categories: [overview, confirmatory-trial, ancova, mmrm, kaplan-meier, log-rank, cox, cmh, logistic, fisher-exact, chi-square, wilcoxon, negative-binomial, clopper-pearson, risk-difference, therapeutic-area, statistical-programming]
-related: [CON-test-selection, CON-covariate, MTH-MMRM, CON-logrank-vs-cox, CON-hazard-ratio, CON-parametric-vs-nonparametric, CON-missing-data, CON-sensitivity-analysis, MTH-t-test, CON-ordinal-data, MTH-CMH, MTH-proportional-odds-model, CON-response-rate]
+related: [CON-test-selection, CON-covariate, MTH-MMRM, CON-logrank-vs-cox, CON-hazard-ratio, CON-parametric-vs-nonparametric, CON-missing-data, CON-sensitivity-analysis, MTH-t-test, CON-ordinal-data, MTH-CMH, MTH-proportional-odds-model, CON-response-rate, MTH-chi-square]
 sources: ["Claude 对话（inbox: most_pop_stat_test.md）"]
 status: draft
 updated: 2026-11-18
@@ -24,7 +24,7 @@ updated: 2026-11-18
 | 6 | CMH 检验 | Cochran-Mantel-Haenszel | 二分类 | 分层比较应答率（如 PASI 75、ACR20） | [MTH-CMH](binary/MTH-CMH.md)（第 4 章） |
 | 7 | Logistic 回归 | Logistic regression | 二分类 | 调整协变量后的比值比（OR） | 第 4 章，待建 |
 | 8 | Fisher 确切概率法 | Fisher's exact test | 二分类 | 小样本、AE / SAE 发生率比较 | [CON-test-selection](../inference/CON-test-selection.md) |
-| 9 | 卡方检验 | Chi-square test | 分类 | 大样本时的率比较、基线特征比较 | [CON-test-selection](../inference/CON-test-selection.md) |
+| 9 | 卡方检验 | Chi-square test | 分类 | 大样本时的率比较、基线特征比较 | [MTH-chi-square](binary/MTH-chi-square.md)、[CON-test-selection](../inference/CON-test-selection.md) |
 | 10 | Wilcoxon 秩和检验 | Wilcoxon rank-sum / Mann-Whitney U | 连续 / 有序 | 偏态数据、敏感性分析 | [CON-parametric-vs-nonparametric](../inference/CON-parametric-vs-nonparametric.md)、[CON-sensitivity-analysis](../missing-data/CON-sensitivity-analysis.md) |
 
 ## 紧随其后的几个

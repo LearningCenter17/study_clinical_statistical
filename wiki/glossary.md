@@ -91,6 +91,10 @@ title: 中英术语对照
 | 最佳总体应答 | best overall response | BOR | [CON-response-rate](cards/methods/binary/CON-response-rate.md) |
 | 确认 | confirmation | | [CON-response-rate](cards/methods/binary/CON-response-rate.md) |
 | 应答者分析 | responder analysis | | [CON-response-rate](cards/methods/binary/CON-response-rate.md) |
+| 卡方检验 | chi-square test / Pearson's chi-squared test | χ² | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
+| 独立性检验 | test of independence | | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
+| 拟合优度检验 | goodness-of-fit test | | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
+| 观察频数 / 期望频数 | observed / expected frequency † | O / E | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
 | CMH 检验 | Cochran-Mantel-Haenszel test | CMH | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
 | MH 合并 OR | Mantel-Haenszel common odds ratio † | MH OR | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
 | Breslow-Day 检验 | Breslow-Day test | | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |

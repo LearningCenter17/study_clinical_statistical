@@ -2,7 +2,7 @@
 id: MTH-CMH
 title: "CMH 检验：分层比较应答率、三个统计量与 SCORES= 选项（Cochran-Mantel-Haenszel）"
 categories: [categorical, cmh, stratification, binary-endpoint, odds-ratio, mantel-haenszel, breslow-day, simpsons-paradox, ordinal, van-elteren, wilcoxon, kruskal-wallis, sas, proc-freq, scores]
-related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, MTH-proportional-odds-model, CON-response-rate, CON-stratified-randomization, CON-test-statistic]
+related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, MTH-proportional-odds-model, CON-response-rate, CON-stratified-randomization, CON-test-statistic, MTH-chi-square]
 sources: ["Claude 对话（inbox: cmh_statistics.md）", "Claude 对话（inbox: CMH1.md）"]
 status: draft
 updated: 2026-11-18

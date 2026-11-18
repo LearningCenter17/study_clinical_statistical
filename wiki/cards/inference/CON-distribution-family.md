@@ -2,10 +2,10 @@
 id: CON-distribution-family
 title: "常用概率分布的家族关系（Bernoulli → Binomial → Normal → Z / t / χ² / F）"
 categories: [inference, distribution, bernoulli, binomial, normal, z-distribution, t-distribution, chi-square, f-distribution, null-distribution]
-related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, MTH-t-test, MTH-MMRM, GOT-ttest-student-vs-welch, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-dose-escalation-design, CON-normal-distribution, CON-response-rate, CON-credible-interval]
+related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, MTH-t-test, MTH-MMRM, GOT-ttest-student-vs-welch, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-dose-escalation-design, CON-normal-distribution, CON-response-rate, CON-credible-interval, MTH-chi-square]
 sources: ["Claude 对话（inbox: distribution.md）", "Claude 对话（inbox: F_distribution.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: distribution.md，附图 distribution.png；F_distribution.md），属 AI 生成内容，未引用原始文献。

@@ -2,10 +2,10 @@
 id: CON-degrees-of-freedom
 title: "自由度（Degrees of Freedom, df）"
 categories: [inference, degrees-of-freedom, t-distribution, chi-square, variance]
-related: [CON-t-distribution, MTH-t-test, CON-test-statistic, MTH-MMRM, CON-distribution-family, CON-p-value, GOT-ttest-student-vs-welch, CON-test-selection, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction]
+related: [CON-t-distribution, MTH-t-test, CON-test-statistic, MTH-MMRM, CON-distribution-family, CON-p-value, GOT-ttest-student-vs-welch, CON-test-selection, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction, MTH-chi-square]
 sources: ["Claude 对话（inbox: degreeOfFreedom.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: degreeOfFreedom.md），属 AI 生成内容，未引用原始文献。临界值表已移到 CON-t-distribution（见下文）。

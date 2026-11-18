@@ -2,7 +2,7 @@
 id: CON-test-selection
 title: "常用统计检验的选择与临床示例（Choosing a Statistical Test）"
 categories: [inference, test-selection, t-test, anova, chi-square, fisher-exact, mann-whitney, wilcoxon, kruskal-wallis, nonparametric, normality]
-related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, MTH-t-test, CON-distribution-family, CON-degrees-of-freedom, MTH-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview, CON-ordinal-data, MTH-CMH, CON-response-rate]
+related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, MTH-t-test, CON-distribution-family, CON-degrees-of-freedom, MTH-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview, CON-ordinal-data, MTH-CMH, CON-response-rate, MTH-chi-square]
 sources: ["Claude 对话（inbox: sample_test_statistic.md）", "Claude 对话（inbox: calculate_p_value.md）"]
 status: draft
 updated: 2026-11-18
@@ -73,7 +73,7 @@ tab <- matrix(c(168, 32, 146, 54), nrow = 2, byrow = TRUE)
 chisq.test(tab, correct = FALSE)
 ```
 
-有分层因素（如中心、疾病严重程度）时通常用 **CMH 检验**（`mantelhaen.test()`，见 [MTH-CMH](../methods/binary/MTH-CMH.md#二分类终点分层比较应答率)）。卡方统计量的原理见 [CON-test-statistic](CON-test-statistic.md)。
+有分层因素（如中心、疾病严重程度）时通常用 **CMH 检验**（`mantelhaen.test()`，见 [MTH-CMH](../methods/binary/MTH-CMH.md#二分类终点分层比较应答率)）。卡方统计量的原理见 [CON-test-statistic](CON-test-statistic.md)；一张 2×2 表从期望频数到 P 值的逐格手算见 [MTH-chi-square](../methods/binary/MTH-chi-square.md)。
 
 > 数值复核（Claude）：`correct = FALSE` 时 p = 0.0074；R 默认带 Yates 连续性校正，p = 0.0106。所以同一张表"R 默认结果"和材料不同，要看是否加了 `correct = FALSE`。SAS PROC FREQ 的 `chisq` 选项两种都输出（"Chi-Square" 与 "Continuity Adj. Chi-Square"）。
 

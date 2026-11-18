@@ -65,6 +65,7 @@ title: 知识库索引
 
 - [CON-response-rate](cards/methods/binary/CON-response-rate.md) — 应答的定义与各领域标准（RECIST、ACR20、PASI 75）；应答概率 p（真值）vs 应答率 p̂（估计）、ORR 与 CI 示例；RECIST 1.1 判定 PR / CR 的三个条件与确认（confirmation）；抛硬币 / `rbinom` 类比；同样适用于 AE 发生率；中英术语（response rate、responder analysis）、ASAS40 定义；ADRS 参数（OVRLRESP / BOR / CBOR）与 ORR 算法
 - [CON-ordinal-data](cards/methods/ordinal/CON-ordinal-data.md) — 有序分类数据：能排序但不能做算术；临床例子（CTCAE、RECIST、mRS、CGI）；描述用 n (%)，比较用 CMH（row mean scores）/ Wilcoxon / proportional odds model；多级总分量表常当连续处理
+- [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) — 卡方检验（Pearson χ²）：名字由来、独立性检验与拟合优度检验、2×2 表逐格手算 (O − E)² / E（χ² = 9.09，df = 1，p = 0.0026）、为什么要除以 E、R 复核与 Yates 校正
 - [MTH-CMH](cards/methods/binary/MTH-CMH.md) — 二分类：分层比较应答率的思路、辛普森悖论算例（不分层 OR 0.57 vs CMH 合并 OR 1.63）、各层效应一致的前提与 Breslow-Day、SAS / R 写法（`correct = FALSE`）；有序：PROC FREQ 的 CMH 三个统计量怎么选（Nonzero Correlation / Row Mean Scores / General Association）、`SCORES=` 选项（table、rank ≈ Kruskal-Wallis / Wilcoxon、modridit = van Elteren）、行列顺序与排序注意事项
 - [MTH-proportional-odds-model](cards/methods/ordinal/MTH-proportional-odds-model.md) — 比例优势模型（有序 logistic）：累积 logit、共同 OR；比例优势假设的 score test 及其局限、partial PO（`UNEQUALSLOPES` / `nominal =`）；R（polr / clm）与 SAS 实现
 - [GOT-ordinal-or-direction](cards/methods/ordinal/GOT-ordinal-or-direction.md) — SAS 默认对 P(Y ≤ k) 建模、R polr / clm 参数化带减号，OR 互为倒数；看 "Probabilities modeled…" 那行；加不加 `DESCENDING` 取决于哪端是好结局
