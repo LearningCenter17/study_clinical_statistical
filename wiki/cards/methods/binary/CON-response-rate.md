@@ -2,7 +2,7 @@
 id: CON-response-rate
 title: "应答、应答概率与应答率（Response, Response Probability, Response Rate）"
 categories: [binary-endpoint, response, response-rate, responder, orr, binomial, estimation, confidence-interval, adam, adrs, asas40]
-related: [CON-distribution-family, CON-confidence-interval, CON-ordinal-data, MTH-CMH, CON-test-statistic, CON-confirmatory-methods-overview, CON-estimand, CON-test-selection, CON-sample-size-power, CON-unequal-allocation, MTH-ci-construction, CON-credible-interval, MTH-chi-square]
+related: [CON-distribution-family, CON-confidence-interval, CON-ordinal-data, MTH-CMH, CON-test-statistic, CON-confirmatory-methods-overview, CON-estimand, CON-test-selection, CON-sample-size-power, CON-unequal-allocation, MTH-ci-construction, CON-credible-interval, MTH-chi-square, CON-odds-ratio]
 sources: ["Claude 对话（inbox: response_rate.md）", "Claude 对话（inbox: response_rate_recist_correction.md）", "Claude 对话（inbox: calculcate_sample_size.md）"]
 status: draft
 updated: 2026-11-18

@@ -2,7 +2,7 @@
 id: MTH-CMH
 title: "CMH 检验：分层比较应答率、三个统计量与 SCORES= 选项（Cochran-Mantel-Haenszel）"
 categories: [categorical, cmh, stratification, binary-endpoint, odds-ratio, mantel-haenszel, breslow-day, simpsons-paradox, ordinal, van-elteren, wilcoxon, kruskal-wallis, sas, proc-freq, scores]
-related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, MTH-proportional-odds-model, CON-response-rate, CON-stratified-randomization, CON-test-statistic, MTH-chi-square, CON-continuity-correction, GOT-continuity-correction-r-vs-sas]
+related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, MTH-proportional-odds-model, CON-response-rate, CON-stratified-randomization, CON-test-statistic, MTH-chi-square, CON-continuity-correction, GOT-continuity-correction-r-vs-sas, CON-odds-ratio]
 sources: ["Claude 对话（inbox: cmh_statistics.md）", "Claude 对话（inbox: CMH1.md）"]
 status: draft
 updated: 2026-11-18
@@ -93,7 +93,7 @@ CMH 默认**各层的效应方向大致一致**，也就是药物在每一层里
 - 各层方差之和 ≈ 9.71 + 11.35 = 21.06
 - CMH 统计量 = 9.6² / 21.06 ≈ **4.38**，p ≈ **0.036**
 
-**第三步：合并的效应量（MH 合并 OR）。**
+**第三步：合并的效应量（MH 合并 OR）。**（OR 本身的定义和解读见 [CON-odds-ratio](CON-odds-ratio.md)。）
 
 - 第 1 层 OR = (48×72)/(12×168) ≈ 1.71
 - 第 2 层 OR = (96×42)/(144×18) ≈ 1.56

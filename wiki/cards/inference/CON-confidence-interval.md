@@ -2,10 +2,10 @@
 id: CON-confidence-interval
 title: "置信区间（Confidence Interval）：含义、构成、解读及与 P 值的对应"
 categories: [inference, confidence-interval, p-value, hypothesis-testing, effect-size, reporting, point-estimate, standard-error, coverage]
-related: [MTH-ci-construction, CON-credible-interval, CON-ci-width, CON-p-value, CON-type-I-II-error, MTH-t-test, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CON-response-rate, CON-t-distribution, CON-degrees-of-freedom, CON-dose-escalation-design, CON-covariate, CON-sample-size-power, CON-missing-data, CON-logrank-vs-cox, WF-sample-size-calc, CON-unequal-allocation, CODE-ttest-sas-r-python]
+related: [MTH-ci-construction, CON-credible-interval, CON-ci-width, CON-p-value, CON-type-I-II-error, MTH-t-test, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CON-response-rate, CON-t-distribution, CON-degrees-of-freedom, CON-dose-escalation-design, CON-covariate, CON-sample-size-power, CON-missing-data, CON-logrank-vs-cox, WF-sample-size-calc, CON-unequal-allocation, CODE-ttest-sas-r-python, CON-odds-ratio]
 sources: ["Claude 对话（inbox: summary_p.md）", "Claude 对话（inbox: CI_1.md）", "Claude 对话（inbox: CI_1_correction.md）", "Claude 对话（inbox: CI_bayesian.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: summary_p.md、CI_1.md、CI_1_correction.md、CI_bayesian.md），属 AI 生成内容，未引用原始文献。示例数值已由 Claude 在 R 4.5.2 中复核。
@@ -81,7 +81,7 @@ updated: 2026-11-17
 | **0 不在 CI 内** | p < 0.05 | "没差别"和数据不相容，结果显著 |
 | **0 在 CI 内** | p ≥ 0.05 | "没差别"排除不了，结果不显著 |
 
-"无差别值"对均值差、率差是 0；对 HR、OR 等比值是 1（见 [CON-hazard-ratio](../methods/tte/CON-hazard-ratio.md)）。
+"无差别值"对均值差、率差是 0；对 HR、OR 等比值是 1（见 [CON-hazard-ratio](../methods/tte/CON-hazard-ratio.md)、[CON-odds-ratio](../methods/binary/CON-odds-ratio.md)）。
 
 | 指标 | 无效值 | 举例 | 结论 |
 |---|---|---|---|

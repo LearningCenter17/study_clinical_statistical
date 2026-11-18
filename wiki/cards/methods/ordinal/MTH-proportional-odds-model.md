@@ -2,10 +2,10 @@
 id: MTH-proportional-odds-model
 title: "比例优势模型（Proportional Odds Model / Ordinal Logistic Regression）"
 categories: [ordinal, logistic, proportional-odds, cumulative-logit, odds-ratio, partial-proportional-odds, sas, proc-logistic, r, polr, clm]
-related: [CON-ordinal-data, GOT-ordinal-or-direction, MTH-CMH, CON-confirmatory-methods-overview, CON-covariate]
+related: [CON-ordinal-data, GOT-ordinal-or-direction, MTH-CMH, CON-confirmatory-methods-overview, CON-covariate, CON-odds-ratio]
 sources: ["Claude 对话（inbox: ordinal_data.md）", "Claude 对话（inbox: proportional_odds.md）"]
 status: draft
-updated: 2026-11-12
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: ordinal_data.md 与 proportional_odds.md），属 AI 生成内容，未引用原始文献。R 中的参数化方向已由 Claude 在 R 4.5.2 中用 `MASS::polr` 复核；本机未安装 `ordinal` 包，`clm` 相关代码未实际运行。
