@@ -2,10 +2,10 @@
 id: CON-t-distribution
 title: "t 分布（Student's t Distribution）"
 categories: [inference, t-distribution, degrees-of-freedom, null-distribution]
-related: [MTH-t-test, CON-p-value, CON-test-statistic, CON-degrees-of-freedom, CON-distribution-family, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction]
+related: [MTH-t-test, CON-p-value, CON-test-statistic, CON-degrees-of-freedom, CON-distribution-family, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction, GOT-ttest-student-vs-welch]
 sources: ["Claude 对话（inbox: t_distribution.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: distribution.md）", "Claude 对话（inbox: degreeOfFreedom.md）", "Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: pvalue_tvalue.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: t_distribution.md、t_conception.md、distribution.md、degreeOfFreedom.md、PValue_ttest.md、t_test_mean.md、pvalue_tvalue.md），属 AI 生成内容，未引用原始文献。

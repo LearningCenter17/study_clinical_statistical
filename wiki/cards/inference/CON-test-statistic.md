@@ -45,7 +45,9 @@ updated: 2026-11-18
 
 所以与其说"有这么多种统计量"，不如说是**同一个思想针对不同数据结构的不同实现**。
 
-> 补充（Claude）：第一条严格成立于 Pearson χ²（不加连续性校正）与合并方差的两比例 z 检验之间；SAS PROC FREQ 同时输出带 Yates 连续性校正的 χ²，数值不同。Mantel-Haenszel 的分层版本即 CMH 检验（第 4 章待建）。已由 Claude 按公式复核三条关系。
+> 补充（Claude）：第一条严格成立于 Pearson χ²（不加连续性校正）与合并方差的两比例 z 检验之间；带 Yates 连续性校正的 χ² 数值不同，R / SAS 的默认设置见 [MTH-chi-square](../methods/binary/MTH-chi-square.md#r-与-sasyates-连续性校正)。Mantel-Haenszel 的分层版本即 CMH 检验，见 [MTH-CMH](../methods/binary/MTH-CMH.md)。已由 Claude 按公式复核三条关系。
+>
+> 整理记录（2026-11-18）：原句"SAS PROC FREQ 同时输出带 Yates 连续性校正的 χ²"已归入 [MTH-chi-square](../methods/binary/MTH-chi-square.md#r-与-sasyates-连续性校正)，本处改为链接；"CMH 检验（第 4 章待建）"改为指向已建的 MTH-CMH。
 
 ## 统计量与零分布总表
 

@@ -2,7 +2,7 @@
 id: MTH-chi-square
 title: "卡方检验：名字由来、两种用法与 2×2 表手算（Pearson's Chi-squared Test）"
 categories: [binary-endpoint, chi-square, pearson-chi-square, contingency-table, test-of-independence, goodness-of-fit, expected-frequency, hypothesis-testing]
-related: [CON-test-statistic, CON-test-selection, CON-distribution-family, CON-degrees-of-freedom, CON-p-value, MTH-CMH, CON-response-rate]
+related: [CON-test-statistic, CON-test-selection, CON-distribution-family, CON-degrees-of-freedom, CON-p-value, MTH-CMH, CON-response-rate, CON-confirmatory-methods-overview]
 sources: ["Claude 对话（inbox: Chi-squared test_1.md）"]
 status: draft
 updated: 2026-11-18
@@ -108,7 +108,19 @@ res$expected                          # 27.5 / 22.5
 qchisq(0.95, df = 1)                  # 临界值 3.841
 ```
 
-> 数值复核（Claude）：R 4.5.2 结果与材料一致：χ² = 9.091，p = 0.0026，期望频数 27.5 / 22.5，临界值 3.841。不加 `correct = FALSE` 时 R 默认做 Yates 连续性校正，得 χ² = 7.92，p = 0.0049（同 [CON-test-selection](../../inference/CON-test-selection.md#3-卡方检验) 的说明）。两比例 z 检验（合并方差）得 z = 3.015，z² = 9.091，与 χ² 相等，印证 [CON-test-statistic](../../inference/CON-test-statistic.md) 中"2×2 表的 χ² = z²"。
+> 数值复核（Claude）：R 4.5.2 结果与材料一致：χ² = 9.091，p = 0.0026，期望频数 27.5 / 22.5，临界值 3.841。不加 `correct = FALSE` 时 R 默认做 Yates 连续性校正，得 χ² = 7.92，p = 0.0049（见下节）。两比例 z 检验（合并方差）得 z = 3.015，z² = 9.091，与 χ² 相等，印证 [CON-test-statistic](../../inference/CON-test-statistic.md) 中"2×2 表的 χ² = z²"。
+
+## R 与 SAS：Yates 连续性校正
+
+> 整理记录（2026-11-18）：本节从 [CON-test-selection](../../inference/CON-test-selection.md#3-卡方检验) 的数值复核原样移入（该处保留其算例的 P 值），作为 R / SAS 卡方默认设置的主卡。
+
+R 的 `chisq.test()` 对 2×2 表默认做 Yates 连续性校正（`correct = TRUE`）。
+
+> 数值复核（Claude，原写在 CON-test-selection 抗感染算例下）：所以同一张表"R 默认结果"和材料不同，要看是否加了 `correct = FALSE`。SAS PROC FREQ 的 `chisq` 选项两种都输出（"Chi-Square" 与 "Continuity Adj. Chi-Square"）。
+
+CMH 检验的连续性校正默认（R `mantelhaen.test()` 与 SAS 不同）见 [MTH-CMH](MTH-CMH.md#程序里怎么做)。
+
+## 拟合优度检验
 
 > 补充（Claude）：拟合优度检验在 R 中写作 `chisq.test(c(52, 48), p = c(0.5, 0.5))`（示意：随机化后两组 52 / 48 人，χ² = 0.16，p = 0.69）。自由度是类别数 − 1。待 Li 核实。
 

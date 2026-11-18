@@ -75,7 +75,9 @@ chisq.test(tab, correct = FALSE)
 
 有分层因素（如中心、疾病严重程度）时通常用 **CMH 检验**（`mantelhaen.test()`，见 [MTH-CMH](../methods/binary/MTH-CMH.md#二分类终点分层比较应答率)）。卡方统计量的原理见 [CON-test-statistic](CON-test-statistic.md)；一张 2×2 表从期望频数到 P 值的逐格手算见 [MTH-chi-square](../methods/binary/MTH-chi-square.md)。
 
-> 数值复核（Claude）：`correct = FALSE` 时 p = 0.0074；R 默认带 Yates 连续性校正，p = 0.0106。所以同一张表"R 默认结果"和材料不同，要看是否加了 `correct = FALSE`。SAS PROC FREQ 的 `chisq` 选项两种都输出（"Chi-Square" 与 "Continuity Adj. Chi-Square"）。
+> 数值复核（Claude）：`correct = FALSE` 时 p = 0.0074；R 默认带 Yates 连续性校正，p = 0.0106。R 与 SAS 默认设置的区别见 [MTH-chi-square](../methods/binary/MTH-chi-square.md#r-与-sasyates-连续性校正)。
+>
+> 整理记录（2026-11-18）：本条原有的"同一张表 R 默认结果与材料不同"及 SAS PROC FREQ 输出两种卡方的说明，已原样移到 [MTH-chi-square](../methods/binary/MTH-chi-square.md#r-与-sasyates-连续性校正)。
 
 ### 4. Fisher 确切概率法
 

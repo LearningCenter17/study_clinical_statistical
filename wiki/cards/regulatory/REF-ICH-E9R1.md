@@ -2,10 +2,10 @@
 id: REF-ICH-E9R1
 title: ICH E9(R1) 临床试验中的估计目标与敏感性分析
 categories: [guidance, ich, estimand]
-related: [CON-estimand, GOT-ice-reason-collection, CON-sensitivity-analysis]
+related: [CON-estimand, GOT-ice-reason-collection, CON-sensitivity-analysis, CON-missing-data]
 sources: [ICH E9(R1) Addendum, Step 4, 2019-11-20]
 status: draft
-updated: 2026-11-05
+updated: 2026-11-18
 ---
 
 ## 基本信息

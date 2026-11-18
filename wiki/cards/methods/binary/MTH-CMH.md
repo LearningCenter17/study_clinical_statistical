@@ -47,7 +47,7 @@ CMH 默认**各层的效应方向大致一致**，也就是药物在每一层里
 
 如果打算去掉分层，CMH 就会退化成普通的卡方检验或 Fisher 检验。不过如果随机化本身是分层做的，分析时把分层也去掉，通常需要在 SAP 里给出理由。
 
-> 补充（Claude）：R 的 `mantelhaen.test()` 默认 `correct = TRUE`（连续性校正），SAS `PROC FREQ` 的 CMH 统计量不做连续性校正。和 SAS 比对时，R 端要写 `correct = FALSE`（下文算例就是这样写的）。2×2×K 表时 SAS 会同时输出 MH 合并 OR / RR 和 Breslow-Day 检验。待 Li 核实。
+> 补充（Claude）：R 的 `mantelhaen.test()` 默认 `correct = TRUE`（连续性校正），SAS `PROC FREQ` 的 CMH 统计量不做连续性校正（普通卡方的 R / SAS 默认见 [MTH-chi-square](MTH-chi-square.md#r-与-sasyates-连续性校正)）。和 SAS 比对时，R 端要写 `correct = FALSE`（下文算例就是这样写的）。2×2×K 表时 SAS 会同时输出 MH 合并 OR / RR 和 Breslow-Day 检验。待 Li 核实。
 
 ### 算例：辛普森悖论
 

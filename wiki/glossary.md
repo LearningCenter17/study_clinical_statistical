@@ -64,7 +64,7 @@ title: 中英术语对照
 | Mann-Whitney U 检验 / Wilcoxon 秩和检验 | Mann-Whitney U test / Wilcoxon rank-sum test | | [CON-test-selection](cards/inference/CON-test-selection.md) |
 | Kruskal-Wallis 检验 | Kruskal-Wallis test | | [CON-test-selection](cards/inference/CON-test-selection.md) |
 | Fisher 精确检验 | Fisher's exact test | | [CON-test-selection](cards/inference/CON-test-selection.md) |
-| 连续性校正 | continuity correction (Yates) † | | [CON-test-statistic](cards/inference/CON-test-statistic.md) |
+| 连续性校正 | continuity correction (Yates) † | | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
 
 ## 3. 连续型终点
 
@@ -126,8 +126,8 @@ title: 中英术语对照
 | 随机缺失 | missing at random | MAR | [CON-missing-data](cards/missing-data/CON-missing-data.md) |
 | 非随机缺失 | missing not at random | MNAR | [CON-missing-data](cards/missing-data/CON-missing-data.md) |
 | 多重插补 | multiple imputation † | MI | [CON-missing-data](cards/missing-data/CON-missing-data.md) |
-| 模式混合模型 | pattern mixture model | PMM | [CON-missing-data](cards/missing-data/CON-missing-data.md) |
-| 临界点分析 | tipping point analysis † | | [CON-missing-data](cards/missing-data/CON-missing-data.md) |
+| 模式混合模型 | pattern mixture model | PMM | [CON-sensitivity-analysis](cards/missing-data/CON-sensitivity-analysis.md) |
+| 临界点分析 | tipping point analysis † | | [CON-sensitivity-analysis](cards/missing-data/CON-sensitivity-analysis.md) |
 | 跳至参照组 | jump to reference † | J2R | [CON-sensitivity-analysis](cards/missing-data/CON-sensitivity-analysis.md) |
 | 停药后数据 | retrieved dropout data | | [CON-missing-data](cards/missing-data/CON-missing-data.md) |
 | 敏感性分析 / 补充分析 | sensitivity analysis / supplementary analysis | | [CON-sensitivity-analysis](cards/missing-data/CON-sensitivity-analysis.md) |
