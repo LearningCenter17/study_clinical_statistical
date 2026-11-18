@@ -2,7 +2,7 @@
 id: CON-odds-ratio
 title: "优势比 OR：odds、OR 与率差 RD、相对危险度 RR 的区别（Odds Ratio）"
 categories: [binary-endpoint, odds, odds-ratio, relative-risk, risk-difference, cross-product-ratio, effect-measure, logistic, tlf]
-related: [CON-response-rate, MTH-CMH, MTH-chi-square, CON-confidence-interval, MTH-ci-construction, MTH-proportional-odds-model, GOT-ordinal-or-direction, CON-confirmatory-methods-overview, MTH-breslow-day]
+related: [CON-response-rate, MTH-CMH, MTH-chi-square, CON-confidence-interval, MTH-ci-construction, MTH-proportional-odds-model, GOT-ordinal-or-direction, CON-confirmatory-methods-overview, MTH-breslow-day, CON-regression]
 sources: ["Claude 对话（inbox: odds ratio.md）"]
 status: draft
 updated: 2026-11-18

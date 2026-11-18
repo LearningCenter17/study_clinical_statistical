@@ -57,6 +57,7 @@ title: 知识库索引
 
 ## 3. 连续型终点：ANCOVA → MMRM
 
+- [CON-regression](cards/methods/CON-regression.md) — 回归是什么：回归系数与预测、因变量 / 自变量；临床试验中 β₁ = 校正后的治疗效应（ANCOVA、MMRM 本质都是回归）；名字来自 Galton 的回归均值；按结局分家族（线性 → 均值差、logistic → OR、泊松 / 负二项 → 率比、Cox → HR）；普通回归 = OLS 线性回归
 - [CON-covariate](cards/methods/continuous/CON-covariate.md) — 协变量是什么、为什么调整（降低噪音提高功效、校正组间不平衡）、ANOVA → ANCOVA、常见协变量（基线值、分层因素）、须预先指定
 - [MTH-MMRM](cards/methods/continuous/MTH-MMRM.md) — 重复测量混合模型：设定、SAS/R 实现、TLF 呈现
 - [GOT-mmrm-convergence](cards/methods/continuous/GOT-mmrm-convergence.md) — UN 协方差不收敛时的预设备选顺序
@@ -79,7 +80,7 @@ title: 知识库索引
 
 ## 5. 生存分析：KM、log-rank、Cox
 
-- [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) — 导航页：生存分析的别名、删失（右 / 左 / 区间）、S(t) / h(t) / H(t) / 中位生存 / 在险人数；KM、log-rank、Cox 各管什么；PH 不成立时（RMST、分段 / 时变 Cox、加权 log-rank、MaxCombo、参数模型）；竞争风险（CIF、Gray、Fine–Gray）、非信息性删失、estimand；ADTTE 变量与 CNSR 方向、R `survival` / `tern` 代码、SAS vs R 的 CI 变换与 ties 默认
+- [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) — 导航页：生存分析的别名、删失（右 / 左 / 区间）、S(t) / h(t) / H(t) / 中位生存 / 在险人数；KM、log-rank、Cox 各管什么；PH 不成立时（RMST、分段 / 时变 Cox、加权 log-rank、MaxCombo、参数模型）；竞争风险（CIF、Gray、Fine–Gray）、非信息性删失、estimand；普通回归为什么处理不了删失、用似然（事件者贡献密度、删失者贡献 S(t)）改造；ADTTE 变量与 CNSR 方向、R `survival` / `tern` 代码、SAS vs R 的 CI 变换与 ties 默认
 - [CON-hazard-ratio](cards/methods/tte/CON-hazard-ratio.md) — HR 的含义（瞬时速率之比）、HR = 1 作为 H₀；为什么在 log 尺度分析；CI 与 Wald P 值算例、CI 不对称及 TLF QC（log 尺度等距、四舍五入导致的偏差、用全精度 β / SE 反算比对）；报告怎么读、HR ≠ 事件人数比例；R `summary(coxph)` 输出列对照
 - [CON-logrank-vs-cox](cards/methods/tte/CON-logrank-vs-cox.md) — log-rank（曲线相同、给 P 值）与 Cox（HR = 1、给 HR 和 CI）的 H₀、分工、P 值与 CI 偶尔不一致的原因；SAS / R（分层 coxph、survdiff）代码
 
