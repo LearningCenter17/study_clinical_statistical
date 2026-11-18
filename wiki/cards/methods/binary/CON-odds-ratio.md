@@ -2,7 +2,7 @@
 id: CON-odds-ratio
 title: "优势比 OR：odds、OR 与率差 RD、相对危险度 RR 的区别（Odds Ratio）"
 categories: [binary-endpoint, odds, odds-ratio, relative-risk, risk-difference, cross-product-ratio, effect-measure, logistic, tlf]
-related: [CON-response-rate, MTH-CMH, MTH-chi-square, CON-confidence-interval, MTH-ci-construction, MTH-proportional-odds-model, GOT-ordinal-or-direction, CON-confirmatory-methods-overview]
+related: [CON-response-rate, MTH-CMH, MTH-chi-square, CON-confidence-interval, MTH-ci-construction, MTH-proportional-odds-model, GOT-ordinal-or-direction, CON-confirmatory-methods-overview, MTH-breslow-day]
 sources: ["Claude 对话（inbox: odds ratio.md）"]
 status: draft
 updated: 2026-11-18
@@ -106,7 +106,7 @@ $$OR = \frac{a/b}{c/d} = \frac{a \times d}{b \times c}$$
 2. **数学性质好。** OR 的取值范围是 0 到无穷大，没有上限的问题；RR 会受限制，比如安慰剂组应答率已经 70%，RR 最大也只能是 1/0.7 ≈ 1.43。
 3. **对称性。** 把"应答"换成"不应答"来分析，OR 正好变成倒数（1.71 → 0.58），RR 就没有这个性质。
 4. **病例对照研究只能算 OR。** 这是流行病学里 OR 的主要来源。
-5. **CMH 和 Breslow-Day 都基于 OR**（见 [MTH-CMH](MTH-CMH.md#二分类终点分层比较应答率)）。
+5. **CMH 和 Breslow-Day 都基于 OR**（见 [MTH-CMH](MTH-CMH.md#二分类终点分层比较应答率)、[MTH-breslow-day](MTH-breslow-day.md)）。
 
 > 补充（Claude）：logistic 回归卡片待建（第 4 章）；有序终点的 OR（比例优势模型的共同 OR）见 [MTH-proportional-odds-model](../ordinal/MTH-proportional-odds-model.md)。
 

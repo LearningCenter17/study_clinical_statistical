@@ -2,7 +2,7 @@
 id: CON-chi-square-distribution
 title: "卡方分布：标准正态变量的平方和（Chi-square Distribution）"
 categories: [inference, distribution, chi-square, standard-normal, degrees-of-freedom, critical-value, null-distribution, simulation]
-related: [CON-distribution-family, CON-normal-distribution, CON-degrees-of-freedom, CON-test-statistic, MTH-chi-square, CON-test-selection, CON-t-distribution, CON-continuity-correction]
+related: [CON-distribution-family, CON-normal-distribution, CON-degrees-of-freedom, CON-test-statistic, MTH-chi-square, CON-test-selection, CON-t-distribution, CON-continuity-correction, MTH-breslow-day]
 sources: ["Claude 对话（inbox: Chi-Square distribution.md）"]
 status: draft
 updated: 2026-11-18

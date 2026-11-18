@@ -99,7 +99,10 @@ title: 中英术语对照
 | 观察频数 / 期望频数 | observed / expected frequency † | O / E | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
 | CMH 检验 | Cochran-Mantel-Haenszel test | CMH | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
 | MH 合并 OR | Mantel-Haenszel common odds ratio † | MH OR | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
-| Breslow-Day 检验 | Breslow-Day test | | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
+| Breslow-Day 检验 | Breslow-Day test | | [MTH-breslow-day](cards/methods/binary/MTH-breslow-day.md) |
+| OR 同质性 | homogeneity of odds ratios | | [MTH-breslow-day](cards/methods/binary/MTH-breslow-day.md) |
+| Tarone 校正 | Tarone's adjustment † | | [MTH-breslow-day](cards/methods/binary/MTH-breslow-day.md) |
+| 量的交互作用 / 质的交互作用 | quantitative / qualitative interaction | | [MTH-breslow-day](cards/methods/binary/MTH-breslow-day.md) |
 | 辛普森悖论 | Simpson's paradox | | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
 | 优势（赔率） | odds | | [CON-odds-ratio](cards/methods/binary/CON-odds-ratio.md) |
 | 优势比 / 比值比 | odds ratio | OR | [CON-odds-ratio](cards/methods/binary/CON-odds-ratio.md) |
