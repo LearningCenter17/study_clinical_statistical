@@ -2,10 +2,10 @@
 id: CON-stratified-randomization
 title: "分层随机化与过度分层（Stratified Randomization and Over-stratification）"
 categories: [design, randomization, stratification, stratified-randomization, over-stratification, block-randomization, minimization, sample-size, irt, subgroup]
-related: [CON-sample-size-power, CON-covariate, MTH-CMH, CON-logrank-vs-cox, CON-sensitivity-analysis, CON-prognostic-factor, CON-unequal-allocation]
+related: [CON-sample-size-power, CON-covariate, MTH-CMH, CON-logrank-vs-cox, CON-sensitivity-analysis, CON-prognostic-factor, CON-unequal-allocation, MTH-breslow-day]
 sources: ["Claude 对话（inbox: stratification_sample.md）", "Claude 对话（inbox: stratification_example_check.md）", "Claude 对话（inbox: stratification_imbalance_correction.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: stratification_sample.md、stratification_example_check.md、stratification_imbalance_correction.md），属 AI 生成内容，未引用原始文献。建议对照 ICH E9 第 2.3 节（随机化）、EMA *Guideline on adjustment for baseline covariates in clinical trials*（2015）。
