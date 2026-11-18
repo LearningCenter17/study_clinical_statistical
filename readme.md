@@ -43,7 +43,7 @@
 ```
 inbox/              待收录材料（处理后归档到 inbox/archive/）
 wiki/index.md       总索引 + 待建卡片清单
-wiki/glossary.md    中英术语对照（只做翻译和索引，指向主卡）
+wiki/glossary.md    中英术语对照（只做翻译和索引，指向主卡）；英文 A–Z 视图由 hooks/glossary_en.py 自动生成
 wiki/decision-tree/tree.yaml
                     检验方法选择树的数据源；网站页面由 hooks/decision_tree.py 自动生成
 wiki/cards/<主题>/  卡片，按主题分文件夹（estimand、inference、methods/…、missing-data、design、regulatory）

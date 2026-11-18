@@ -39,6 +39,7 @@ plugins:
 hooks:
   - hooks/card_meta.py
   - hooks/decision_tree.py   # 由 wiki/decision-tree/tree.yaml 生成"检验方法选择树"页面
+  - hooks/glossary_en.py     # 由 wiki/glossary.md 生成"术语表（按英文 A–Z）"页面
 
 markdown_extensions:
   - tables
