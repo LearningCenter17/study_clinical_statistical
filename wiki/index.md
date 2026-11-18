@@ -32,6 +32,7 @@ title: 知识库索引
 - [CON-distribution-family](cards/inference/CON-distribution-family.md) — 伯努利 → 二项 → 正态 → Z → t / χ² / F 的演化关系、各分布特点；F = 组间 / 组内变异及其用途（ANOVA、Type III 检验）
 - [CON-normal-distribution](cards/inference/CON-normal-distribution.md) — 标准正态 N(0, 1) 只有一条、μ 定位置 σ 定胖瘦、标准化 z = (x − μ) / σ；1.96 是 97.5% 分位数及其数值求法（`qnorm`、`integrate` + `uniroot`）；1.96 vs t 临界值
 - [CON-t-distribution](cards/inference/CON-t-distribution.md) — t 分布只由自由度决定、随 df 的形状变化；**各 df 的临界值与 t = 2 时 P 值对照表**；t 与 z 的区别（σ 未知、Gosset）及"n ≥ 30 当 Z 用"的分歧；与正态分布对比
+- [CON-chi-square-distribution](cards/inference/CON-chi-square-distribution.md) — 卡方分布 = 独立标准正态的平方和；Z² 的均值 1、95% 分位数 1.96² = 3.84，自由度 = 独立项个数（df 2 → 5.99）；卡方检验每项 (O − E)/√E ≈ Z 的由来、期望值 ≥ 5 的原因、2×2 表 4 项只有 1 个自由度；R 模拟
 
 ### 2.3 检验方法的选择与计算
 

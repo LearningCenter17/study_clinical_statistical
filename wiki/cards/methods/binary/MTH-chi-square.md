@@ -2,7 +2,7 @@
 id: MTH-chi-square
 title: "卡方检验：名字由来、两种用法与 2×2 表手算（Pearson's Chi-squared Test）"
 categories: [binary-endpoint, chi-square, pearson-chi-square, contingency-table, test-of-independence, goodness-of-fit, expected-frequency, hypothesis-testing]
-related: [CON-test-statistic, CON-test-selection, CON-distribution-family, CON-degrees-of-freedom, CON-p-value, MTH-CMH, CON-response-rate, CON-confirmatory-methods-overview]
+related: [CON-test-statistic, CON-test-selection, CON-distribution-family, CON-degrees-of-freedom, CON-p-value, MTH-CMH, CON-response-rate, CON-confirmatory-methods-overview, CON-chi-square-distribution]
 sources: ["Claude 对话（inbox: Chi-squared test_1.md）"]
 status: draft
 updated: 2026-11-18
@@ -14,7 +14,7 @@ updated: 2026-11-18
 
 - 统计量的一般形式 Σ (O − E)² / E，以及它和 t、log-rank 的关系：[CON-test-statistic](../../inference/CON-test-statistic.md)
 - 什么时候用卡方、什么时候改用 Fisher，以及临床例子和 R 代码：[CON-test-selection](../../inference/CON-test-selection.md#3-卡方检验)
-- χ² 分布从哪来（Z 的平方和）：[CON-distribution-family](../../inference/CON-distribution-family.md#χ²-分布)
+- χ² 分布从哪来（Z 的平方和）、统计量为什么近似服从 χ² 分布、2×2 表为什么 df = 1：[CON-chi-square-distribution](../../inference/CON-chi-square-distribution.md)
 - 自由度 (r − 1)(c − 1)：[CON-degrees-of-freedom](../../inference/CON-degrees-of-freedom.md)
 - 有分层因素时：[MTH-CMH](MTH-CMH.md#二分类终点分层比较应答率)
 
@@ -128,7 +128,8 @@ CMH 检验的连续性校正默认（R `mantelhaen.test()` 与 SAS 不同）见 
 
 - [CON-test-statistic](../../inference/CON-test-statistic.md)：χ² 统计量的一般形式及与 t、log-rank 的关系
 - [CON-test-selection](../../inference/CON-test-selection.md#3-卡方检验)：卡方检验的适用条件（期望频数 ≥ 5）和 Fisher 的替代
-- [CON-distribution-family](../../inference/CON-distribution-family.md)：χ² 分布的构造
+- [CON-chi-square-distribution](../../inference/CON-chi-square-distribution.md)：χ² 分布的构造及与卡方检验的联系
+- [CON-distribution-family](../../inference/CON-distribution-family.md)：χ² 在分布家族中的位置
 - [CON-degrees-of-freedom](../../inference/CON-degrees-of-freedom.md)：列联表自由度
 - [CON-p-value](../../inference/CON-p-value.md)：P 值的定义
 - [MTH-CMH](MTH-CMH.md)：分层版本

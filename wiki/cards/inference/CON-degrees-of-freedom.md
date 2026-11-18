@@ -2,7 +2,7 @@
 id: CON-degrees-of-freedom
 title: "自由度（Degrees of Freedom, df）"
 categories: [inference, degrees-of-freedom, t-distribution, chi-square, variance]
-related: [CON-t-distribution, MTH-t-test, CON-test-statistic, MTH-MMRM, CON-distribution-family, CON-p-value, GOT-ttest-student-vs-welch, CON-test-selection, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction, MTH-chi-square]
+related: [CON-t-distribution, MTH-t-test, CON-test-statistic, MTH-MMRM, CON-distribution-family, CON-p-value, GOT-ttest-student-vs-welch, CON-test-selection, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction, MTH-chi-square, CON-chi-square-distribution]
 sources: ["Claude 对话（inbox: degreeOfFreedom.md）"]
 status: draft
 updated: 2026-11-18
@@ -53,7 +53,7 @@ updated: 2026-11-18
 
 > 补充（Claude）：
 >
-> - χ² 列联表的 df 不是"样本量 − 参数数"，而是"格子数 − 约束数"：行合计和列合计固定后，(r − 1)(c − 1) 个格子可以自由填。思路相同（约束用掉自由度），但计数对象是格子而不是受试者。
+> - χ² 列联表的 df 不是"样本量 − 参数数"，而是"格子数 − 约束数"：行合计和列合计固定后，(r − 1)(c − 1) 个格子可以自由填。思路相同（约束用掉自由度），但计数对象是格子而不是受试者。2×2 表 4 项相加为什么只相当于 1 个 Z² 的直观解释见 [CON-chi-square-distribution](CON-chi-square-distribution.md#两个近似要注意)。
 > - 自由度不一定是整数：方差不齐时的 Welch / Satterthwaite t 检验（SAS PROC TTEST 的 Satterthwaite 行），以及 [MMRM](../methods/continuous/MTH-MMRM.md) 中的 Kenward-Roger 方法，都用近似公式算出非整数 df。所以 SAS 与 R 结果的 P 值差异，常要先核对 df 方法（t 检验的例子见 [GOT-ttest-student-vs-welch](../methods/continuous/GOT-ttest-student-vs-welch.md)）。
 > - 待 Li 核实。
 

@@ -2,7 +2,7 @@
 id: CON-t-distribution
 title: "t 分布（Student's t Distribution）"
 categories: [inference, t-distribution, degrees-of-freedom, null-distribution]
-related: [MTH-t-test, CON-p-value, CON-test-statistic, CON-degrees-of-freedom, CON-distribution-family, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction, GOT-ttest-student-vs-welch]
+related: [MTH-t-test, CON-p-value, CON-test-statistic, CON-degrees-of-freedom, CON-distribution-family, CON-normal-distribution, CON-confidence-interval, MTH-ci-construction, GOT-ttest-student-vs-welch, CON-chi-square-distribution]
 sources: ["Claude 对话（inbox: t_distribution.md）", "Claude 对话（inbox: t_conception.md）", "Claude 对话（inbox: distribution.md）", "Claude 对话（inbox: degreeOfFreedom.md）", "Claude 对话（inbox: PValue_ttest.md）", "Claude 对话（inbox: t_test_mean.md）", "Claude 对话（inbox: pvalue_tvalue.md）"]
 status: draft
 updated: 2026-11-18

@@ -2,7 +2,7 @@
 id: CON-distribution-family
 title: "常用概率分布的家族关系（Bernoulli → Binomial → Normal → Z / t / χ² / F）"
 categories: [inference, distribution, bernoulli, binomial, normal, z-distribution, t-distribution, chi-square, f-distribution, null-distribution]
-related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, MTH-t-test, MTH-MMRM, GOT-ttest-student-vs-welch, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-dose-escalation-design, CON-normal-distribution, CON-response-rate, CON-credible-interval, MTH-chi-square]
+related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, MTH-t-test, MTH-MMRM, GOT-ttest-student-vs-welch, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-dose-escalation-design, CON-normal-distribution, CON-response-rate, CON-credible-interval, MTH-chi-square, CON-chi-square-distribution]
 sources: ["Claude 对话（inbox: distribution.md）", "Claude 对话（inbox: F_distribution.md）"]
 status: draft
 updated: 2026-11-18
@@ -57,6 +57,8 @@ updated: 2026-11-18
 - Z² 的分布；**5 个独立 Z 平方后相加，就是自由度为 5 的 χ² 分布**。
 - 只在 0 右侧取值、右偏；自由度越大越趋于对称。
 - 材料列出的用途：方差检验、拟合优度检验。
+
+为什么 Z² 的 95% 分位数是 3.84、自由度为什么是"独立项的个数"、卡方检验的统计量为什么近似服从 χ² 分布，以及 R 模拟，见 [CON-chi-square-distribution](CON-chi-square-distribution.md)。
 
 > 补充（Claude）：临床统计里更常见的是**列联表独立性检验**（如 2×2 表比较两组应答率）和 **log-rank 检验**（统计量按 χ²(1) 查 P 值），见 [CON-test-statistic](CON-test-statistic.md)。χ² 检验的自由度怎么算见 [CON-degrees-of-freedom](CON-degrees-of-freedom.md)。
 

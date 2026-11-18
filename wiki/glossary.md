@@ -46,7 +46,8 @@ title: 中英术语对照
 | 标准化 | standardization | z | [CON-normal-distribution](cards/inference/CON-normal-distribution.md) |
 | 临界值 | critical value † | | [CON-t-distribution](cards/inference/CON-t-distribution.md) |
 | t 分布 | Student's t distribution | | [CON-t-distribution](cards/inference/CON-t-distribution.md) |
-| 卡方分布 / F 分布 | chi-square / F distribution † | χ² / F | [CON-distribution-family](cards/inference/CON-distribution-family.md) |
+| 卡方分布 | chi-square distribution | χ² | [CON-chi-square-distribution](cards/inference/CON-chi-square-distribution.md) |
+| F 分布 | F distribution † | F | [CON-distribution-family](cards/inference/CON-distribution-family.md) |
 | 中心极限定理 | central limit theorem † | CLT | [CON-distribution-family](cards/inference/CON-distribution-family.md) |
 | 方差分析 | analysis of variance | ANOVA | [CON-distribution-family](cards/inference/CON-distribution-family.md) |
 | 标准误 | standard error | SE | [MTH-t-test](cards/methods/continuous/MTH-t-test.md) |

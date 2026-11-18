@@ -2,10 +2,10 @@
 id: CON-normal-distribution
 title: "正态分布、标准正态分布与 1.96（Normal Distribution, Standardization and 1.96）"
 categories: [inference, distribution, normal, standard-normal, z-score, standardization, critical-value, qnorm, confidence-interval]
-related: [CON-distribution-family, CON-t-distribution, CON-degrees-of-freedom, CON-confidence-interval, MTH-t-test, CON-sample-size-power, CON-test-statistic, CON-p-value, WF-sample-size-calc, MTH-ci-construction]
+related: [CON-distribution-family, CON-t-distribution, CON-degrees-of-freedom, CON-confidence-interval, MTH-t-test, CON-sample-size-power, CON-test-statistic, CON-p-value, WF-sample-size-calc, MTH-ci-construction, CON-chi-square-distribution]
 sources: ["Claude 对话（inbox: normal_distribution.md）", "Claude 对话（inbox: calculate_pvalue.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: normal_distribution.md、calculate_pvalue.md），属 AI 生成内容，未引用原始文献。文中数值已由 Claude 在 R 4.5.2 中逐项复核。
