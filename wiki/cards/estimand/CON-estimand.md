@@ -5,7 +5,7 @@ categories: [estimand, ich-e9r1, intercurrent-event, design]
 related: [MTH-MMRM, REF-ICH-E9R1, GOT-ice-reason-collection, CON-missing-data, CON-rescue-medication, CON-sensitivity-analysis, CON-null-hypothesis, CON-response-rate]
 sources: [REF-ICH-E9R1, "Claude 对话（inbox: Estimand_1.md）", "Claude 对话（inbox: hypothetical_vs_completers.md）"]
 status: draft
-updated: 2026-11-05
+updated: 2026-11-18
 ---
 
 ## 一句话定义
@@ -99,7 +99,7 @@ Composite（停药 = 失败）下，药要拿高分必须同时：药效好 **�
 
 因此不少统计师主张：救援药用 hypothetical；因副作用或无效停药更适合 treatment policy 或 composite。按原因分配策略，不仅是为了公平，也是因为有些 hypothetical 情境本身就不太站得住。
 
-> ⚠ 存在分歧（程度上的）：上一节的表（Estimand_1.md）对搬家等与药无关的停药用 hypothetical、对 AE / 无效停药用 composite；本节材料对 AE / 无效停药给出 treatment policy **或** composite 两种选择。两者不矛盾，但具体选哪种取决于试验，待 Li 判断是否需要统一表述。
+> 分歧记录（已由 Li 裁定，2026-11-18）：上一节的表（Estimand_1.md）对搬家等与药无关的停药用 hypothetical、对 AE / 无效停药用 composite；本节材料对 AE / 无效停药给出 treatment policy **或** composite 两种选择。Li 的结论：**上一节的表是一种常见组合示例，不是唯一答案**。对 AE / 无效停药，treatment policy 和 composite 都是合理选择，选哪种取决于试验要回答的问题，在 SAP 中事先规定；两者的共同点是不用 hypothetical。
 
 > 补充（Claude）：E9(R1) 原文表述为对不同的 intercurrent event 可采用不同策略；"按停药原因区分"是将不同原因的停药定义为不同类型 ICE 的常见做法。具体条文待对照 [REF-ICH-E9R1](../regulatory/REF-ICH-E9R1.md) 核实。
 
