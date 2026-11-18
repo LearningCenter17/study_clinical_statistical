@@ -138,8 +138,7 @@ root:
                 - answer: 大样本
                   result:
                     method: 卡方检验
-                    card: CON-test-selection
-                    anchor: 3-卡方检验
+                    card: MTH-chi-square
                     from: CON-test-selection
                 - answer: 小样本、期望频数小（如 AE / SAE 发生率）
                   result:
@@ -150,8 +149,7 @@ root:
           - answer: 三组及以上比较，不分层
             result:
               method: 卡方检验（R×C）；小样本用 Fisher 确切概率法（R×C）
-              card: CON-test-selection
-              anchor: 3-卡方检验
+              card: MTH-chi-square
               from: CON-test-selection
               note: 原在 CON-test-selection 快速选择表
           - answer: 配对设计
