@@ -65,7 +65,8 @@ title: 中英术语对照
 | Mann-Whitney U 检验 / Wilcoxon 秩和检验 | Mann-Whitney U test / Wilcoxon rank-sum test | | [CON-test-selection](cards/inference/CON-test-selection.md) |
 | Kruskal-Wallis 检验 | Kruskal-Wallis test | | [CON-test-selection](cards/inference/CON-test-selection.md) |
 | Fisher 精确检验 | Fisher's exact test | | [CON-test-selection](cards/inference/CON-test-selection.md) |
-| 连续性校正 | continuity correction (Yates) † | | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
+| 连续性校正 | continuity correction | | [CON-continuity-correction](cards/inference/CON-continuity-correction.md) |
+| Yates 校正 | Yates' continuity correction | | [CON-continuity-correction](cards/inference/CON-continuity-correction.md) |
 
 ## 3. 连续型终点
 

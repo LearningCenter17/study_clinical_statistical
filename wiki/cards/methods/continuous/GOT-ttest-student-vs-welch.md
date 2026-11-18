@@ -2,10 +2,10 @@
 id: GOT-ttest-student-vs-welch
 title: "同一数据 t 检验 P 值不同：Student vs Welch 默认设置（Student's vs Welch's t-test）"
 categories: [t-test, welch, satterthwaite, pooled-variance, sas-vs-r, python, software-default, degrees-of-freedom, two-stage-procedure, levene, type-i-error]
-related: [MTH-t-test, CON-p-value, CON-degrees-of-freedom, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-null-hypothesis, CON-confidence-interval, CON-test-selection, GOT-skewed-small-sample, GOT-ordinal-or-direction, CODE-ttest-sas-r-python]
+related: [MTH-t-test, CON-p-value, CON-degrees-of-freedom, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-null-hypothesis, CON-confidence-interval, CON-test-selection, GOT-skewed-small-sample, GOT-ordinal-or-direction, CODE-ttest-sas-r-python, GOT-continuity-correction-r-vs-sas]
 sources: ["Claude 对话（inbox: ttest_student_vs_welch.md）", "Claude 对话（inbox: calculate_p_value.md）", "Claude 对话（inbox: summary_p.md）"]
 status: draft
-updated: 2026-11-12
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: ttest_student_vs_welch.md、summary_p.md），以及 Claude 对 calculate_p_value.md 示例代码的 R 复现，属 AI 生成内容，未引用原始文献。

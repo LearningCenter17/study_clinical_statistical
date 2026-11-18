@@ -39,6 +39,7 @@ title: 知识库索引
 - [CON-p-value](cards/inference/CON-p-value.md) — P 值的定义、四个必备要素、零分布的前提假设、非参数 / 置换 / 精确检验；计算四步、z 检验手算示例、标准化不是数学上必须的、怎么解读
 - [CON-test-selection](cards/inference/CON-test-selection.md) — t、ANOVA、卡方、Fisher、Mann-Whitney、Kruskal-Wallis 的适用条件、临床例子与 R 代码；怎么判断正态；怎么选见 [检验方法选择树](decision-tree.md)
 - [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) — 导航页：确证性试验最常用的十种方法（ANCOVA、MMRM、KM、log-rank、Cox、CMH、logistic、Fisher、卡方、Wilcoxon）、按治疗领域的分布、描述统计占 TLF 大头、SAS / R 对齐重点
+- [CON-continuity-correction](cards/inference/CON-continuity-correction.md) — 连续性校正：用连续分布近似离散计数时的"半格"修正（|O − E| − 0.5）；抛硬币例子（0.029 vs 0.057 vs 精确 0.0547）、2×2 表 Yates 校正、要不要用的争议（大样本不校正、小样本用 Fisher）；七个使用场景（卡方、CMH、两比率 z、比例 CI、McNemar 减 1、Wilcoxon、样本量 Fleiss）与不需要校正的方法
 - [CON-parametric-vs-nonparametric](cards/inference/CON-parametric-vs-nonparametric.md) — 参数方法（假设分布、比较参数）vs 非参数方法（基于秩次、分布无关）：优缺点、秩次为何对离群值稳健、对应关系、秩和检验中英术语对照（rank-sum vs signed-rank、R 的 W 即 U）、"非参数 ≠ 无假设"
 - [MTH-t-test](cards/methods/continuous/MTH-t-test.md) — t 检验 / t 值 / t 分布的区别、t 值 = 信噪比（SE 与 n、SD 的关系）、t 检验五步流程、怎么读 t 值、t 与 P 的对应（t 越大 P 越小、df 影响翻译、一一对应的条件）及报告写法 t(df) = …，P = …
 - [CODE-ttest-sas-r-python](cards/methods/continuous/CODE-ttest-sas-r-python.md) — t 检验的 SAS / R / Python 代码：同一组数据三种软件的写法及 P 值为何不同（Student vs Welch 默认）、项目数据（ADEFF）写法、SAS PROC TTEST 四张输出表与 ODS 抽取 QC
@@ -67,6 +68,7 @@ title: 知识库索引
 - [CON-response-rate](cards/methods/binary/CON-response-rate.md) — 应答的定义与各领域标准（RECIST、ACR20、PASI 75）；应答概率 p（真值）vs 应答率 p̂（估计）、ORR 与 CI 示例；RECIST 1.1 判定 PR / CR 的三个条件与确认（confirmation）；抛硬币 / `rbinom` 类比；同样适用于 AE 发生率；中英术语（response rate、responder analysis）、ASAS40 定义；ADRS 参数（OVRLRESP / BOR / CBOR）与 ORR 算法
 - [CON-ordinal-data](cards/methods/ordinal/CON-ordinal-data.md) — 有序分类数据：能排序但不能做算术；临床例子（CTCAE、RECIST、mRS、CGI）；描述用 n (%)，比较用 CMH（row mean scores）/ Wilcoxon / proportional odds model；多级总分量表常当连续处理
 - [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) — 卡方检验（Pearson χ²）：名字由来、独立性检验与拟合优度检验、2×2 表逐格手算 (O − E)² / E（χ² = 9.09，df = 1，p = 0.0026）、为什么要除以 E、R 复核与 Yates 校正
+- [GOT-continuity-correction-r-vs-sas](cards/methods/binary/GOT-continuity-correction-r-vs-sas.md) — 双编程 P 值对不上：R 的 `chisq.test` / `mantelhaen.test` / `prop.test` / `mcnemar.test` / `wilcox.test` 默认校正，SAS PROC FREQ 大多不校正（CHISQ 两种都输出、CMH / AGREE / BINOMIAL / RISKDIFF 不校正），NPAR1WAY 例外；R 用 `correct = FALSE` 对齐
 - [MTH-CMH](cards/methods/binary/MTH-CMH.md) — 二分类：分层比较应答率的思路、辛普森悖论算例（不分层 OR 0.57 vs CMH 合并 OR 1.63）、各层效应一致的前提与 Breslow-Day、SAS / R 写法（`correct = FALSE`）；有序：PROC FREQ 的 CMH 三个统计量怎么选（Nonzero Correlation / Row Mean Scores / General Association）、`SCORES=` 选项（table、rank ≈ Kruskal-Wallis / Wilcoxon、modridit = van Elteren）、行列顺序与排序注意事项
 - [MTH-proportional-odds-model](cards/methods/ordinal/MTH-proportional-odds-model.md) — 比例优势模型（有序 logistic）：累积 logit、共同 OR；比例优势假设的 score test 及其局限、partial PO（`UNEQUALSLOPES` / `nominal =`）；R（polr / clm）与 SAS 实现
 - [GOT-ordinal-or-direction](cards/methods/ordinal/GOT-ordinal-or-direction.md) — SAS 默认对 P(Y ≤ k) 建模、R polr / clm 参数化带减号，OR 互为倒数；看 "Probabilities modeled…" 那行；加不加 `DESCENDING` 取决于哪端是好结局

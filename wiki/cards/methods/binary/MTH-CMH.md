@@ -2,7 +2,7 @@
 id: MTH-CMH
 title: "CMH 检验：分层比较应答率、三个统计量与 SCORES= 选项（Cochran-Mantel-Haenszel）"
 categories: [categorical, cmh, stratification, binary-endpoint, odds-ratio, mantel-haenszel, breslow-day, simpsons-paradox, ordinal, van-elteren, wilcoxon, kruskal-wallis, sas, proc-freq, scores]
-related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, MTH-proportional-odds-model, CON-response-rate, CON-stratified-randomization, CON-test-statistic, MTH-chi-square]
+related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, MTH-proportional-odds-model, CON-response-rate, CON-stratified-randomization, CON-test-statistic, MTH-chi-square, CON-continuity-correction, GOT-continuity-correction-r-vs-sas]
 sources: ["Claude 对话（inbox: cmh_statistics.md）", "Claude 对话（inbox: CMH1.md）"]
 status: draft
 updated: 2026-11-18
@@ -47,7 +47,7 @@ CMH 默认**各层的效应方向大致一致**，也就是药物在每一层里
 
 如果打算去掉分层，CMH 就会退化成普通的卡方检验或 Fisher 检验。不过如果随机化本身是分层做的，分析时把分层也去掉，通常需要在 SAP 里给出理由。
 
-> 补充（Claude）：R 的 `mantelhaen.test()` 默认 `correct = TRUE`（连续性校正），SAS `PROC FREQ` 的 CMH 统计量不做连续性校正（普通卡方的 R / SAS 默认见 [MTH-chi-square](MTH-chi-square.md#r-与-sasyates-连续性校正)）。和 SAS 比对时，R 端要写 `correct = FALSE`（下文算例就是这样写的）。2×2×K 表时 SAS 会同时输出 MH 合并 OR / RR 和 Breslow-Day 检验。待 Li 核实。
+> 补充（Claude）：R 的 `mantelhaen.test()` 默认 `correct = TRUE`（连续性校正），SAS `PROC FREQ` 的 CMH 统计量不做连续性校正（各方法的 R / SAS 默认对照见 [GOT-continuity-correction-r-vs-sas](GOT-continuity-correction-r-vs-sas.md)；后续材料 Continuity correction.md 给出相同说法）。和 SAS 比对时，R 端要写 `correct = FALSE`（下文算例就是这样写的）。2×2×K 表时 SAS 会同时输出 MH 合并 OR / RR 和 Breslow-Day 检验。待 Li 核实。
 
 ### 算例：辛普森悖论
 
