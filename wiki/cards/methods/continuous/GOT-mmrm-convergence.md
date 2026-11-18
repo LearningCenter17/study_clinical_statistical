@@ -3,10 +3,12 @@ id: GOT-mmrm-convergence
 title: MMRM 非结构化协方差不收敛
 categories: [mixed-model, convergence, sap]
 related: [MTH-MMRM]
-sources: []
+sources: ["Claude 生成（知识库初始化时的示例卡，2026-11-02；无 inbox 材料）"]
 status: draft
-updated: 2026-11-02
+updated: 2026-11-18
 ---
+
+> 出处待补：本卡由 Claude 在知识库初始化时（2026-11-02）作为示例卡生成，没有对应的 inbox 材料，属 AI 生成内容，未引用原始文献。备选协方差结构顺序和 SAS / R 选项需对照 SAP 模板、`mmrm` 包文档或方法学文献核实。
 
 ## 现象
 
@@ -28,4 +30,4 @@ SAS 报 "Did not converge" 或 G/R 矩阵非正定，R `mmrm` 报拟合失败。
 
 ## 出处
 
-- 出处待补（建议补充 SAP 模板或方法学文献）
+- Claude 生成（知识库初始化示例卡，2026-11-02；AI 生成，原始出处待补；建议补充 SAP 模板或方法学文献）
