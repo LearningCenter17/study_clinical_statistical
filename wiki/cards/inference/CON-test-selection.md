@@ -2,7 +2,7 @@
 id: CON-test-selection
 title: "常用统计检验的选择与临床示例（Choosing a Statistical Test）"
 categories: [inference, test-selection, t-test, anova, chi-square, fisher-exact, mann-whitney, wilcoxon, kruskal-wallis, nonparametric, normality]
-related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, MTH-t-test, CON-distribution-family, CON-degrees-of-freedom, MTH-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview, CON-ordinal-data, MTH-CMH, CON-response-rate, MTH-chi-square]
+related: [CON-p-value, CON-test-statistic, GOT-ttest-student-vs-welch, MTH-t-test, CON-distribution-family, CON-degrees-of-freedom, MTH-MMRM, CON-type-I-II-error, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-covariate, CON-confirmatory-methods-overview, CON-ordinal-data, MTH-CMH, CON-response-rate, MTH-chi-square, CON-chi-square-distribution]
 sources: ["Claude 对话（inbox: sample_test_statistic.md）", "Claude 对话（inbox: calculate_p_value.md）"]
 status: draft
 updated: 2026-11-18
