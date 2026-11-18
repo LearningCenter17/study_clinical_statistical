@@ -2,10 +2,10 @@
 id: GOT-ordinal-or-direction
 title: "有序 logistic 的 OR 方向：SAS 默认与 R 参数化相反（OR 互为倒数）"
 categories: [ordinal, proportional-odds, odds-ratio, sas-vs-r, proc-logistic, descending, polr, clm, qc, double-programming]
-related: [MTH-proportional-odds-model, CON-ordinal-data, GOT-ttest-student-vs-welch]
+related: [MTH-proportional-odds-model, CON-ordinal-data, GOT-ttest-student-vs-welch, CON-odds-ratio]
 sources: ["Claude 对话（inbox: proportional_odds.md）"]
 status: draft
-updated: 2026-11-12
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: proportional_odds.md），属 AI 生成内容，未引用原始文献。R 的符号约定已由 Claude 在 R 4.5.2 中用 `MASS::polr` 复核（见下文）；SAS 部分未实际运行。

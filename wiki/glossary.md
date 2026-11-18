@@ -101,8 +101,11 @@ title: 中英术语对照
 | MH 合并 OR | Mantel-Haenszel common odds ratio † | MH OR | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
 | Breslow-Day 检验 | Breslow-Day test | | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
 | 辛普森悖论 | Simpson's paradox | | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
-| 率差 | risk difference † | RD | [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) |
-| 比值比 | odds ratio | OR | [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) |
+| 优势（赔率） | odds | | [CON-odds-ratio](cards/methods/binary/CON-odds-ratio.md) |
+| 优势比 / 比值比 | odds ratio | OR | [CON-odds-ratio](cards/methods/binary/CON-odds-ratio.md) |
+| 交叉乘积比 | cross-product ratio | | [CON-odds-ratio](cards/methods/binary/CON-odds-ratio.md) |
+| 相对危险度 | relative risk | RR | [CON-odds-ratio](cards/methods/binary/CON-odds-ratio.md) |
+| 率差 | risk difference | RD | [CON-odds-ratio](cards/methods/binary/CON-odds-ratio.md) |
 | 率差 CI 方法 | Newcombe / Miettinen-Nurminen | | [MTH-ci-construction](cards/inference/MTH-ci-construction.md) |
 | 有序分类数据 | ordinal data | | [CON-ordinal-data](cards/methods/ordinal/CON-ordinal-data.md) |
 | 比例优势模型 / 有序 logistic 回归 | proportional odds model / ordinal logistic regression | PO | [MTH-proportional-odds-model](cards/methods/ordinal/MTH-proportional-odds-model.md) |
