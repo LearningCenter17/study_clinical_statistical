@@ -92,6 +92,9 @@ title: 中英术语对照
 | 确认 | confirmation | | [CON-response-rate](cards/methods/binary/CON-response-rate.md) |
 | 应答者分析 | responder analysis | | [CON-response-rate](cards/methods/binary/CON-response-rate.md) |
 | CMH 检验 | Cochran-Mantel-Haenszel test | CMH | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
+| MH 合并 OR | Mantel-Haenszel common odds ratio † | MH OR | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
+| Breslow-Day 检验 | Breslow-Day test | | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
+| 辛普森悖论 | Simpson's paradox | | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
 | 率差 | risk difference † | RD | [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) |
 | 比值比 | odds ratio | OR | [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) |
 | 率差 CI 方法 | Newcombe / Miettinen-Nurminen | | [MTH-ci-construction](cards/inference/MTH-ci-construction.md) |

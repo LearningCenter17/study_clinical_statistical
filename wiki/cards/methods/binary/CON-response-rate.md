@@ -5,7 +5,7 @@ categories: [binary-endpoint, response, response-rate, responder, orr, binomial,
 related: [CON-distribution-family, CON-confidence-interval, CON-ordinal-data, MTH-CMH, CON-test-statistic, CON-confirmatory-methods-overview, CON-estimand, CON-test-selection, CON-sample-size-power, CON-unequal-allocation, MTH-ci-construction, CON-credible-interval]
 sources: ["Claude 对话（inbox: response_rate.md）", "Claude 对话（inbox: response_rate_recist_correction.md）", "Claude 对话（inbox: calculcate_sample_size.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: response_rate.md、response_rate_recist_correction.md、calculcate_sample_size.md），属 AI 生成内容，未引用原始文献。示例 CI 已由 Claude 在 R 4.5.2 中复核（见下文）。
@@ -141,7 +141,7 @@ PARAMCD 的名称各公司不同（如 `BESTRSP`、`CBESTRSP`），以项目的 
 ## 两组比较去哪里看
 
 - 2×2 表比较两组应答率：卡方 / Fisher，见 [CON-test-selection](../../inference/CON-test-selection.md)
-- 分层比较（如 PASI 75、ACR20）：CMH，见 [MTH-CMH](MTH-CMH.md)（二分类部分待补）
+- 分层比较（如 PASI 75、ACR20）：CMH，见 [MTH-CMH](MTH-CMH.md#二分类终点分层比较应答率)
 - 停药等伴发事件记为"无应答"属于 composite strategy，见 [CON-estimand](../../estimand/CON-estimand.md)
 
 ## 相关卡片
