@@ -2,7 +2,7 @@
 id: CON-confirmatory-methods-overview
 title: "确证性试验最常用的统计方法总览（Common Methods in Confirmatory Trials）"
 categories: [overview, confirmatory-trial, ancova, mmrm, kaplan-meier, log-rank, cox, cmh, logistic, fisher-exact, chi-square, wilcoxon, negative-binomial, clopper-pearson, risk-difference, therapeutic-area, statistical-programming]
-related: [CON-test-selection, CON-covariate, MTH-MMRM, CON-logrank-vs-cox, CON-hazard-ratio, CON-parametric-vs-nonparametric, CON-missing-data, CON-sensitivity-analysis, MTH-t-test, CON-ordinal-data, MTH-CMH, MTH-proportional-odds-model, CON-response-rate, MTH-chi-square, CON-odds-ratio]
+related: [CON-test-selection, CON-covariate, MTH-MMRM, CON-logrank-vs-cox, CON-hazard-ratio, CON-parametric-vs-nonparametric, CON-missing-data, CON-sensitivity-analysis, MTH-t-test, CON-ordinal-data, MTH-CMH, MTH-proportional-odds-model, CON-response-rate, MTH-chi-square, CON-odds-ratio, CON-survival-analysis-overview]
 sources: ["Claude 对话（inbox: most_pop_stat_test.md）"]
 status: draft
 updated: 2026-11-18
@@ -18,7 +18,7 @@ updated: 2026-11-18
 |---|---|---|---|---|---|
 | 1 | 协方差分析 | ANCOVA | 连续 | 单个时间点的主要终点，调整基线和分层因素（如第 24 周 HbA1c 变化） | [CON-covariate](continuous/CON-covariate.md)（第 3 章） |
 | 2 | 混合效应重复测量模型 | MMRM | 连续 · 多访视 | 有脱落的多访视终点（如抑郁量表、肺功能） | [MTH-MMRM](continuous/MTH-MMRM.md)（第 3 章） |
-| 3 | Kaplan-Meier 法 | Kaplan-Meier | 时间-事件 | 生存曲线、中位 OS / PFS | 第 5 章，待建 |
+| 3 | Kaplan-Meier 法 | Kaplan-Meier | 时间-事件 | 生存曲线、中位 OS / PFS | [CON-survival-analysis-overview](tte/CON-survival-analysis-overview.md)（独立卡片待建） |
 | 4 | Log-rank 检验 | Log-rank test | 时间-事件 | 肿瘤试验 OS / PFS 主要终点的检验 | [CON-logrank-vs-cox](tte/CON-logrank-vs-cox.md) |
 | 5 | Cox 比例风险模型 | Cox PH model | 时间-事件 | 风险比（HR）及 95% CI | [CON-hazard-ratio](tte/CON-hazard-ratio.md)、[CON-logrank-vs-cox](tte/CON-logrank-vs-cox.md) |
 | 6 | CMH 检验 | Cochran-Mantel-Haenszel | 二分类 | 分层比较应答率（如 PASI 75、ACR20） | [MTH-CMH](binary/MTH-CMH.md)（第 4 章） |

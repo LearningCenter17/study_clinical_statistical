@@ -2,7 +2,7 @@
 id: CON-logrank-vs-cox
 title: "log-rank 检验与 Cox 模型的分工（Log-rank Test vs Cox Model）"
 categories: [survival, log-rank, cox, hazard-ratio, proportional-hazards, sas]
-related: [CON-hazard-ratio, CON-null-hypothesis, CON-p-value, CON-test-statistic, CON-confirmatory-methods-overview, CON-confidence-interval, CON-stratified-randomization, WF-sample-size-calc, CON-ci-width, CON-sample-size-power]
+related: [CON-hazard-ratio, CON-null-hypothesis, CON-p-value, CON-test-statistic, CON-confirmatory-methods-overview, CON-confidence-interval, CON-stratified-randomization, WF-sample-size-calc, CON-ci-width, CON-sample-size-power, CON-survival-analysis-overview]
 sources: ["Claude 对话（inbox: logrank_vs_cox.md）", "Claude 对话（inbox: CI_HR.md）"]
 status: draft
 updated: 2026-11-18

@@ -2,10 +2,10 @@
 id: WF-sample-size-calc
 title: "样本量计算流程与各终点公式（Sample Size Calculation Workflow）"
 categories: [sample-size, power, workflow, formula, rounding, dropout, binary-endpoint, survival, schoenfeld, proc-power, gsdesign]
-related: [CON-sample-size-power, CON-ni-sample-size, CON-unequal-allocation, CON-type-I-II-error, CON-normal-distribution, MTH-t-test, CON-hazard-ratio, CON-logrank-vs-cox, CON-confidence-interval, CON-ci-width]
+related: [CON-sample-size-power, CON-ni-sample-size, CON-unequal-allocation, CON-type-I-II-error, CON-normal-distribution, MTH-t-test, CON-hazard-ratio, CON-logrank-vs-cox, CON-confidence-interval, CON-ci-width, CON-survival-analysis-overview]
 sources: ["Claude 对话（inbox: power.md）", "Claude 对话（inbox: sample_size.md）", "Claude 对话（inbox: sample_size_rounding.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: power.md、sample_size.md、sample_size_rounding.md），属 AI 生成内容，未引用原始文献。文中数值已由 Claude 在 R 4.5.2 中复核（见文末）。

@@ -2,10 +2,10 @@
 id: CON-hazard-ratio
 title: "风险比（Hazard Ratio, HR）"
 categories: [survival, hazard-ratio, cox, log-rank, null-hypothesis]
-related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-sample-size-power, CON-confidence-interval, CON-confirmatory-methods-overview, WF-sample-size-calc, MTH-ci-construction, CON-ci-width]
+related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-sample-size-power, CON-confidence-interval, CON-confirmatory-methods-overview, WF-sample-size-calc, MTH-ci-construction, CON-ci-width, CON-survival-analysis-overview]
 sources: ["Claude 对话（inbox: h0_hr.md）", "Claude 对话（inbox: logrank_vs_cox.md）", "Claude 对话（inbox: CI_HR.md）", "Claude 对话（inbox: CI_HR_rounding.md）"]
 status: draft
-updated: 2026-11-16
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: h0_hr.md、CI_HR.md、CI_HR_rounding.md），属 AI 生成内容，未引用原始文献。

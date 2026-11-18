@@ -2,7 +2,7 @@
 id: CON-sensitivity-analysis
 title: "敏感性分析与补充分析（Sensitivity Analysis vs Supplementary Analysis）"
 categories: [sensitivity-analysis, supplementary-analysis, estimand, ich-e9r1, missing-data, tipping-point, reference-based-mi, pattern-mixture-model]
-related: [CON-estimand, CON-missing-data, MTH-MMRM, REF-ICH-E9R1, CON-confirmatory-methods-overview, CON-stratified-randomization]
+related: [CON-estimand, CON-missing-data, MTH-MMRM, REF-ICH-E9R1, CON-confirmatory-methods-overview, CON-stratified-randomization, CON-survival-analysis-overview]
 sources: ["Claude 对话（inbox: sensitivity_analysis1.md）", "Claude 对话（inbox: hypothetical_vs_completers.md）"]
 status: draft
 updated: 2026-11-18
