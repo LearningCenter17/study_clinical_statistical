@@ -1,0 +1,211 @@
+# 检验方法选择树：唯一数据源
+#
+# 网站上的"检验方法选择树"页面由 hooks/decision_tree.py 在构建时根据本文件生成，不要手写那个页面。
+# 这里只放决策结构：问题、分支、叶子上的方法名和一句提示。方法的解释、代码、例子都在卡片里。
+#
+# 结构：
+#   节点 = { question: 问题, options: [分支, ...] }
+#   分支 = { answer: 选项文字, next: 节点 }  或  { answer: 选项文字, result: 叶子 }
+#   叶子 = { method: 方法名,
+#            card: 详细解释该方法的卡片 ID（还没有卡片写 null，页面显示"待建"）,
+#            anchor: 可选，卡片内的锚点（不含 #）,
+#            from: 这条推荐出自哪张卡片（必填，保证每条推荐都有依据）,
+#            note: 可选，一句提示 }
+#
+# 新增分支时，推荐必须来自某张卡片（写在 from 里）；卡片里没有的推荐，先写进 inbox 走 /kb-ingest。
+# 卡片 ID 不存在时，mkdocs build --strict 会失败。
+
+title: 检验方法选择树
+intro: >-
+  按终点类型和分析目的，找到常用的检验或模型，再点进卡片看细节。
+  注册试验的分析方法必须在 SAP 中预先指定，不能看完数据再选；
+  主要分析通常是调整基线和分层因素的模型（ANCOVA、MMRM、CMH 等），简单检验多用于次要终点、安全性和探索性分析。
+
+root:
+  question: 终点是什么类型？
+  options:
+
+    - answer: 连续
+      next:
+        question: 用于什么分析？
+        options:
+          - answer: 确证性主要分析
+            next:
+              question: 几个时间点？
+              options:
+                - answer: 单个时间点（如第 24 周较基线变化）
+                  result:
+                    method: ANCOVA
+                    card: CON-covariate
+                    from: CON-confirmatory-methods-overview
+                    note: 调整基线值和分层因素
+                - answer: 多次访视，有脱落
+                  result:
+                    method: MMRM
+                    card: MTH-MMRM
+                    from: CON-confirmatory-methods-overview
+                    note: 常用非结构化协方差、Kenward-Roger 自由度
+          - answer: 次要、探索性或安全性分析
+            next:
+              question: 几组？是否配对？
+              options:
+                - answer: 两组，独立
+                  next:
+                    question: 数据分布？
+                    options:
+                      - answer: 近似正态，或每组样本量较大、仅轻度偏态
+                        result:
+                          method: t 检验（默认 Welch）
+                          card: MTH-t-test
+                          from: CON-test-selection
+                          note: Student 与 Welch 的选择见 GOT-ttest-student-vs-welch
+                      - answer: 小样本且明显右偏（如生物标志物）
+                        result:
+                          method: log 转换后 t 检验，或 Mann-Whitney U
+                          card: GOT-skewed-small-sample
+                          from: GOT-skewed-small-sample
+                          note: 此时 Welch t 检验也不合适
+                      - answer: 非正态或等级数据
+                        result:
+                          method: Mann-Whitney U（Wilcoxon 秩和检验）
+                          card: CON-test-selection
+                          anchor: 5-mann-whitney-u-检验wilcoxon-秩和检验
+                          from: CON-test-selection
+                - answer: 三组及以上，独立
+                  next:
+                    question: 数据分布？
+                    options:
+                      - answer: 近似正态
+                        result:
+                          method: 方差分析（ANOVA）
+                          card: CON-test-selection
+                          anchor: 2-方差分析anova
+                          from: CON-test-selection
+                      - answer: 非正态或等级数据
+                        result:
+                          method: Kruskal-Wallis 检验
+                          card: CON-test-selection
+                          anchor: 6-kruskal-wallis-检验
+                          from: CON-test-selection
+                - answer: 配对或重复测量
+                  next:
+                    question: 数据分布？
+                    options:
+                      - answer: 近似正态
+                        result:
+                          method: 配对 t 检验 / 重复测量 ANOVA / MMRM
+                          card: null
+                          from: CON-test-selection
+                          note: 原在 CON-test-selection 快速选择表；MMRM 见 MTH-MMRM，配对 t 检验和重复测量 ANOVA 尚无卡片
+                      - answer: 非正态或等级数据
+                        result:
+                          method: Wilcoxon 符号秩检验 / Friedman 检验
+                          card: null
+                          from: CON-test-selection
+                          note: 原在 CON-test-selection 快速选择表
+
+    - answer: 二分类（应答 / 未应答）
+      next:
+        question: 要回答什么问题？
+        options:
+          - answer: 单组应答率及其 CI（如单臂试验 ORR）
+            result:
+              method: Clopper-Pearson 精确 CI
+              card: MTH-ci-construction
+              anchor: 不同统计量的-ci-构造方法
+              from: CON-confirmatory-methods-overview
+          - answer: 两组比较，按分层因素调整
+            result:
+              method: CMH 检验
+              card: MTH-CMH
+              from: CON-confirmatory-methods-overview
+              note: 如 PASI 75、ACR20；二分类部分卡片待补
+          - answer: 两组比较，调整协变量并报告 OR
+            result:
+              method: Logistic 回归
+              card: null
+              from: CON-confirmatory-methods-overview
+          - answer: 两组率差及其 CI（如非劣效、疫苗试验）
+            result:
+              method: Miettinen-Nurminen / Newcombe CI
+              card: MTH-ci-construction
+              anchor: 不同统计量的-ci-构造方法
+              from: CON-confirmatory-methods-overview
+          - answer: 两组比较，不分层（次要终点、基线、安全性）
+            next:
+              question: 样本量和期望频数？
+              options:
+                - answer: 大样本
+                  result:
+                    method: 卡方检验
+                    card: CON-test-selection
+                    anchor: 3-卡方检验
+                    from: CON-test-selection
+                - answer: 小样本、期望频数小（如 AE / SAE 发生率）
+                  result:
+                    method: Fisher 确切概率法
+                    card: CON-test-selection
+                    anchor: 4-fisher-确切概率法
+                    from: CON-test-selection
+          - answer: 三组及以上比较，不分层
+            result:
+              method: 卡方检验（R×C）；小样本用 Fisher 确切概率法（R×C）
+              card: CON-test-selection
+              anchor: 3-卡方检验
+              from: CON-test-selection
+              note: 原在 CON-test-selection 快速选择表
+          - answer: 配对设计
+            result:
+              method: McNemar 检验（小样本用精确 McNemar）
+              card: null
+              from: CON-test-selection
+              note: 原在 CON-test-selection 快速选择表
+
+    - answer: 有序分类（如 mRS、CGI-I）
+      next:
+        question: 用于什么分析？
+        options:
+          - answer: 主要终点，需要一个共同的效应量
+            result:
+              method: 比例优势模型（有序 logistic 回归）
+              card: MTH-proportional-odds-model
+              from: CON-ordinal-data
+              note: 需检验比例优势假设；SAS 与 R 的 OR 方向相反，见 GOT-ordinal-or-direction
+          - answer: 两组比较，按分层因素调整
+            result:
+              method: CMH 检验（Row Mean Scores Differ；scores=modridit 即 van Elteren）
+              card: MTH-CMH
+              from: CON-ordinal-data
+          - answer: 两组比较，不分层
+            result:
+              method: Wilcoxon 秩和检验（Mann-Whitney U）
+              card: CON-parametric-vs-nonparametric
+              from: CON-ordinal-data
+
+    - answer: 时间-事件（OS、PFS 等）
+      next:
+        question: 要报告什么？
+        options:
+          - answer: 组间比较的 P 值
+            result:
+              method: （分层）log-rank 检验
+              card: CON-logrank-vs-cox
+              from: CON-logrank-vs-cox
+          - answer: 效应量 HR 及其 95% CI
+            result:
+              method: （分层）Cox 模型
+              card: CON-hazard-ratio
+              from: CON-logrank-vs-cox
+              note: 同时检查比例风险假设
+          - answer: 生存曲线、中位生存期
+            result:
+              method: Kaplan-Meier 法
+              card: null
+              from: CON-confirmatory-methods-overview
+
+    - answer: 计数 / 事件率（如急性加重次数）
+      result:
+        method: 负二项回归
+        card: null
+        from: CON-confirmatory-methods-overview
+        note: 呼吸领域急性加重率的标准方法

@@ -1,0 +1,72 @@
+site_name: Clinical Stats Wiki
+site_description: 临床试验统计知识库
+docs_dir: wiki
+site_dir: site
+
+# 决策树的数据文件只供 hooks/decision_tree.py 读取，不作为网站文件发布
+exclude_docs: |
+  decision-tree/
+
+theme:
+  name: material
+  language: zh
+  features:
+    # 不用 navigation.sections：它会把顶层主题固定展开、不能折叠，侧边栏太长。
+    # 去掉后每个主题都可以折叠，默认收起，只自动展开当前页面所在的主题。
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色
+
+plugins:
+  - search:
+      lang: zh
+
+hooks:
+  - hooks/card_meta.py
+  - hooks/decision_tree.py   # 由 wiki/decision-tree/tree.yaml 生成"检验方法选择树"页面
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        # Mermaid 流程图（决策树页面用），Material 主题会自动加载 mermaid.js
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+      # 保留中文锚点（MkDocs 默认会丢掉非 ASCII 字符），与 Quarto 生成的锚点一致
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+validation:
+  links:
+    not_found: warn
+    anchors: warn
+    unrecognized_links: warn

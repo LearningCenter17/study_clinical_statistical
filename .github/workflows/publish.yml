@@ -20,14 +20,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: quarto-dev/quarto-actions/setup@v2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
 
-      - name: Render site
-        run: quarto render
+      - name: Install MkDocs
+        run: pip install -r requirements.txt
+
+      # --strict：有断链或失效锚点（WARNING）时构建失败，不发布
+      - name: Build site
+        run: mkdocs build --strict
+        env:
+          NO_MKDOCS_2_WARNING: "1"
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: site
 
   deploy:
     needs: build

@@ -11,7 +11,9 @@ description: Process raw material in inbox/ into knowledge base cards. Use when 
 
 1. **盘点**：列出 `inbox/` 下所有文件（忽略 `inbox/archive/`）。没有文件就告诉用户并结束。
 2. **拆分知识点**：逐个文件读，拆成独立知识点。一个知识点 = 一张卡片能讲清楚的内容。
-   判断归类：概念/方法 → `CON-`；坑/易错点 → `GOT-`；指南/文献 → `REF-`；TLF 呈现 → `TLF-`。
+   判断类型（前缀）：概念 → `CON-`；可运行的统计方法 → `MTH-`；操作流程 → `WF-`；R/SAS 代码 → `CODE-`；
+   TLF 呈现 → `TLF-`；坑/易错点 → `GOT-`；指南/文献 → `REF-`。
+   再判断主题，决定放进 `wiki/cards/` 下哪个文件夹（见 `CLAUDE.md` 的主题表）。
 3. **查重**：每个知识点先在 `wiki/` 里 grep 关键词和同义词（中英文都查）。
    - 已有卡片 → **合并**进现有卡片的对应小节，不新建；更新 `updated` 日期。
    - 没有 → 用 `templates/card-template.md` 新建。
@@ -21,6 +23,12 @@ description: Process raw material in inbox/ into knowledge base cards. Use when 
    - 只写材料支持的内容。你自己补充的背景知识用 `> 补充（Claude）：` 引用块标出。
    - 补全 `related`，并在对方卡片的 `related` 里加回链。
 5. **更新索引**：在 `wiki/index.md` 对应分类下加入新卡片，一行一个：`- [ID](相对路径) — 一句话`。
+   新建了主题文件夹时，同步在 `hooks/card_meta.py` 的 `SECTIONS` 里登记中文名和顺序。
+   材料引入了术语表里还没有的术语时，在 `wiki/glossary.md` 对应章节加一行（规则见 `CLAUDE.md`）。
+   新建的卡片讲的是决策树里标为待建（`card: null`）的方法时，把那个叶子改成新卡片 ID；
+   材料给出了新的"什么情况用什么方法"的推荐时，在汇报中建议怎么加进 `wiki/decision-tree/tree.yaml`（不要自行改树的结构）。
+   然后运行 `C:\ProgramData\miniconda3\python.exe -m mkdocs build --strict`（设 `NO_MKDOCS_2_WARNING=1`），
+   确认没有 WARNING（断链、失效锚点）。
 6. **归档**：把处理完的源文件移到 `inbox/archive/`，文件名前加日期 `YYYYMMDD_`。
 7. **汇报**：列出新建了哪些卡片、合并进了哪些卡片、有哪些内容不确定需要 Li 核对。
 
@@ -28,3 +36,4 @@ description: Process raw material in inbox/ into knowledge base cards. Use when 
 
 - 材料之间、材料与现有卡片之间有矛盾时，不要自行裁决：两种说法都写进卡片，标"⚠ 存在分歧"并在汇报中列出。
 - 不要把卡片改成 `reviewed`。
+- 合并进现有卡片后，如果那张卡已超过约 200 行或混了几个独立知识点，在汇报中提出拆分建议（不要自行拆分）。

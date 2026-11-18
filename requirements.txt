@@ -1,0 +1,5 @@
+# 网站构建依赖（本机与 GitHub Actions 共用，版本固定以保证两边结果一致）
+mkdocs==1.6.1
+mkdocs-material==9.8.1
+pymdown-extensions==13.1
+jieba==0.42.1
