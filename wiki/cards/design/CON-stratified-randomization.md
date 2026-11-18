@@ -2,7 +2,7 @@
 id: CON-stratified-randomization
 title: "分层随机化与过度分层（Stratified Randomization and Over-stratification）"
 categories: [design, randomization, stratification, stratified-randomization, over-stratification, block-randomization, minimization, sample-size, irt, subgroup]
-related: [CON-sample-size-power, CON-covariate, MTH-CMH, CON-logrank-vs-cox, CON-sensitivity-analysis, CON-prognostic-factor, CON-unequal-allocation, MTH-breslow-day]
+related: [CON-sample-size-power, CON-covariate, MTH-CMH, CON-logrank-vs-cox, CON-sensitivity-analysis, CON-prognostic-factor, CON-unequal-allocation, MTH-breslow-day, CON-survival-analysis-overview]
 sources: ["Claude 对话（inbox: stratification_sample.md）", "Claude 对话（inbox: stratification_example_check.md）", "Claude 对话（inbox: stratification_imbalance_correction.md）"]
 status: draft
 updated: 2026-11-18
