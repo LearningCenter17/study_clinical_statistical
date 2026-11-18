@@ -2,7 +2,7 @@
 id: CON-distribution-family
 title: "常用概率分布的家族关系（Bernoulli → Binomial → Normal → Z / t / χ² / F）"
 categories: [inference, distribution, bernoulli, binomial, normal, z-distribution, t-distribution, chi-square, f-distribution, null-distribution]
-related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, MTH-t-test, MTH-MMRM, GOT-ttest-student-vs-welch, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-dose-escalation-design, CON-normal-distribution, CON-response-rate, CON-credible-interval, MTH-chi-square, CON-chi-square-distribution]
+related: [CON-t-distribution, CON-degrees-of-freedom, CON-test-statistic, CON-p-value, MTH-t-test, MTH-MMRM, GOT-ttest-student-vs-welch, CON-test-selection, CON-parametric-vs-nonparametric, CON-covariate, CON-dose-escalation-design, CON-normal-distribution, CON-response-rate, CON-credible-interval, MTH-chi-square, CON-chi-square-distribution, CON-continuity-correction]
 sources: ["Claude 对话（inbox: distribution.md）", "Claude 对话（inbox: F_distribution.md）"]
 status: draft
 updated: 2026-11-18

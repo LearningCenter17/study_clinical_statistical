@@ -2,10 +2,10 @@
 id: CON-unequal-allocation
 title: "不等分配（k:1）的样本量（Unequal Allocation）"
 categories: [sample-size, unequal-allocation, allocation-ratio, binary-endpoint, survival, continuity-correction, dropout, asas40]
-related: [CON-sample-size-power, WF-sample-size-calc, CON-stratified-randomization, CON-response-rate, CON-confidence-interval, CON-ci-width]
+related: [CON-sample-size-power, WF-sample-size-calc, CON-stratified-randomization, CON-response-rate, CON-confidence-interval, CON-ci-width, CON-continuity-correction]
 sources: ["Claude 对话（inbox: stratification_example_check.md）", "Claude 对话（inbox: calculcate_sample_size.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: stratification_example_check.md、calculcate_sample_size.md），属 AI 生成内容，未引用原始文献。文中数值已由 Claude 在 R 4.5.2 中复核。
@@ -76,7 +76,7 @@ k = 1 时就是 1:1 的二分类公式（见 [WF-sample-size-calc](WF-sample-siz
 | 可评价人数 | 42 | 84 | 126 |
 | 考虑 15% 脱落后的入组人数 | 50 | 100 | **150** |
 
-**连续性校正（Fleiss 校正）**：结果更保守，安慰剂约 48、药物 96、共 144 人；考虑脱落后约 57 + 114 = 171 人。**用哪种算法要在方案中写明**，以免核对时出现不同的数字。
+**连续性校正（Fleiss 校正，见 [CON-continuity-correction](../inference/CON-continuity-correction.md)）**：结果更保守，安慰剂约 48、药物 96、共 144 人；考虑脱落后约 57 + 114 = 171 人。**用哪种算法要在方案中写明**，以免核对时出现不同的数字。
 
 ```sas
 proc power;

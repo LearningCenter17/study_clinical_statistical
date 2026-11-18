@@ -2,10 +2,10 @@
 id: MTH-ci-construction
 title: "置信区间的构造方法：1.96 还是 t、各统计量用什么方法（Constructing Confidence Intervals）"
 categories: [inference, confidence-interval, critical-value, t-distribution, z, clopper-pearson, wilson, newcombe, miettinen-nurminen, log-scale, wald, hazard-ratio]
-related: [CON-confidence-interval, CON-normal-distribution, CON-t-distribution, CON-degrees-of-freedom, CON-hazard-ratio, CON-response-rate, MTH-t-test]
+related: [CON-confidence-interval, CON-normal-distribution, CON-t-distribution, CON-degrees-of-freedom, CON-hazard-ratio, CON-response-rate, MTH-t-test, CON-continuity-correction, GOT-continuity-correction-r-vs-sas]
 sources: ["Claude 对话（inbox: CI_1.md）", "Claude 对话（inbox: CI_1_correction.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: CI_1.md、CI_1_correction.md），属 AI 生成内容，未引用原始文献。示例数值已由 Claude 在 R 4.5.2 中复核。
