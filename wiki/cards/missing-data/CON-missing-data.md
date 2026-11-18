@@ -2,10 +2,10 @@
 id: CON-missing-data
 title: "缺失数据机制与敏感性分析（Missing Data Mechanisms: MCAR / MAR / MNAR）"
 categories: [missing-data, estimand, sensitivity-analysis, hypothetical, treatment-policy, mcar, mar, mnar, tipping-point, retrieved-dropout]
-related: [CON-estimand, MTH-MMRM, REF-ICH-E9R1, GOT-ice-reason-collection, CON-sensitivity-analysis, CON-confirmatory-methods-overview, CON-confidence-interval, CON-ci-width]
+related: [CON-estimand, MTH-MMRM, REF-ICH-E9R1, GOT-ice-reason-collection, CON-sensitivity-analysis, CON-confirmatory-methods-overview, CON-confidence-interval, CON-ci-width, CON-rescue-medication]
 sources: ["Claude 对话（inbox: hypothetical_vs_completers.md）", "Claude 对话（inbox: missing_1.md）", "Claude 对话（inbox: ae_discontinuation_mar_mnar.md）"]
 status: draft
-updated: 2026-11-05
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: hypothetical_vs_completers.md、missing_1.md、ae_discontinuation_mar_mnar.md），属 AI 生成内容，未引用原始文献，需对照 ICH E9(R1)、缺失数据相关文献（如 NRC 2010 报告）核实。

@@ -2,7 +2,7 @@
 id: MTH-chi-square
 title: "卡方检验：名字由来、两种用法与 2×2 表手算（Pearson's Chi-squared Test）"
 categories: [binary-endpoint, chi-square, pearson-chi-square, contingency-table, test-of-independence, goodness-of-fit, expected-frequency, hypothesis-testing]
-related: [CON-test-statistic, CON-test-selection, CON-distribution-family, CON-degrees-of-freedom, CON-p-value, MTH-CMH, CON-response-rate]
+related: [CON-test-statistic, CON-test-selection, CON-distribution-family, CON-degrees-of-freedom, CON-p-value, MTH-CMH, CON-response-rate, CON-confirmatory-methods-overview]
 sources: ["Claude 对话（inbox: Chi-squared test_1.md）"]
 status: draft
 updated: 2026-11-18

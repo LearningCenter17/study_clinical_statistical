@@ -2,10 +2,10 @@
 id: CON-null-hypothesis
 title: "零假设的定义（Null Hypothesis, H₀）"
 categories: [inference, hypothesis-testing, null-hypothesis, superiority, non-inferiority, design]
-related: [CON-p-value, MTH-t-test, CON-hazard-ratio, CON-estimand, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-type-I-II-error, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-ni-sample-size]
+related: [CON-p-value, MTH-t-test, CON-hazard-ratio, CON-estimand, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-type-I-II-error, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-ni-sample-size, CON-sample-size-power]
 sources: ["Claude 对话（inbox: p_value_h0.md）", "Claude 对话（inbox: ni_h0_direction.md）"]
 status: draft
-updated: 2026-11-10
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: p_value_h0.md、ni_h0_direction.md），属 AI 生成内容，未引用原始文献。
