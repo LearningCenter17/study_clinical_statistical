@@ -1,7 +1,7 @@
 ---
 id: CON-missing-data
-title: "缺失数据机制与敏感性分析（Missing Data Mechanisms: MCAR / MAR / MNAR）"
-categories: [missing-data, estimand, sensitivity-analysis, hypothetical, treatment-policy, mcar, mar, mnar, tipping-point, retrieved-dropout]
+title: "缺失数据机制（Missing Data Mechanisms: MCAR / MAR / MNAR）"
+categories: [missing-data, estimand, sensitivity-analysis, hypothetical, treatment-policy, mcar, mar, mnar, retrieved-dropout]
 related: [CON-estimand, MTH-MMRM, REF-ICH-E9R1, GOT-ice-reason-collection, CON-sensitivity-analysis, CON-confirmatory-methods-overview, CON-confidence-interval, CON-ci-width, CON-rescue-medication]
 sources: ["Claude 对话（inbox: hypothetical_vs_completers.md）", "Claude 对话（inbox: missing_1.md）", "Claude 对话（inbox: ae_discontinuation_mar_mnar.md）"]
 status: draft
@@ -109,15 +109,9 @@ updated: 2026-11-18
 
 ## MAR 何时站不住：敏感性分析
 
-因副作用停药的人，停药后的结局很可能比 MAR 推测的更差（即 MNAR）。主分析通常基于 MAR，SAP 中再配以下敏感性分析：
+因副作用停药的人，停药后的结局很可能比 MAR 推测的更差（即 MNAR）。主分析通常基于 MAR，SAP 中再配敏感性分析（reference-based MI、tipping point、模式混合模型），各方法说明见 [CON-sensitivity-analysis](CON-sensitivity-analysis.md#各方法说明)；敏感性分析的总体定义及其与补充分析的区别也在那张卡。
 
-- **Reference-based MI（jump to reference / copy reference）**：假设停药后的表现趋向对照组。
-- **Tipping point 分析**：逐步往停药者的插补值里加惩罚（偏移量），例如假设失访者比 MAR 推测的再差 1、2、3 个单位，看到什么程度结论会翻转。如果要假设得非常极端才翻转，结论就算稳健。
-- **模式混合模型（pattern mixture model）**：对不同退出模式分别做不同假设（来源：sensitivity_analysis1.md；方法细节待补）。
-
-敏感性分析的总体定义及其与补充分析的区别见 [CON-sensitivity-analysis](CON-sensitivity-analysis.md)。
-
-> 补充（Claude）：J2R 与 CR 并不相同：J2R（jump to reference）假设停药后均值立即"跳到"对照组的均值轨迹；CR（copy reference）假设停药者从一开始就按对照组的均值轨迹和协方差结构建模，停药前的疗效随相关性逐渐衰减而非立即消失。通常 J2R 比 CR 更保守。待对照 Carpenter, Roger & Kenward (2013) 等文献核实。
+> 整理记录（2026-11-18）：本节原有的三种敏感性分析方法列表（reference-based MI、tipping point、模式混合模型）及 J2R 与 CR 区别的补充说明，已原样移到 [CON-sensitivity-analysis](CON-sensitivity-analysis.md#各方法说明)，避免两张卡重复列同一组方法。
 
 ## 相关卡片
 

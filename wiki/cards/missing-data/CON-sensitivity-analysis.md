@@ -1,14 +1,14 @@
 ---
 id: CON-sensitivity-analysis
 title: "敏感性分析与补充分析（Sensitivity Analysis vs Supplementary Analysis）"
-categories: [sensitivity-analysis, supplementary-analysis, estimand, ich-e9r1, missing-data]
+categories: [sensitivity-analysis, supplementary-analysis, estimand, ich-e9r1, missing-data, tipping-point, reference-based-mi, pattern-mixture-model]
 related: [CON-estimand, CON-missing-data, MTH-MMRM, REF-ICH-E9R1, CON-confirmatory-methods-overview, CON-stratified-randomization]
-sources: ["Claude 对话（inbox: sensitivity_analysis1.md）"]
+sources: ["Claude 对话（inbox: sensitivity_analysis1.md）", "Claude 对话（inbox: hypothetical_vs_completers.md）"]
 status: draft
-updated: 2026-11-05
+updated: 2026-11-18
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: sensitivity_analysis1.md），属 AI 生成内容，未引用原始文献，需对照 ICH E9(R1) 原文（sensitivity / supplementary analysis 相关章节）核实。
+> 出处待补：本卡内容来自 Claude 对话（inbox: sensitivity_analysis1.md；"各方法说明"一节随整理从 CON-missing-data 移入，部分来自 hypothetical_vs_completers.md），属 AI 生成内容，未引用原始文献，需对照 ICH E9(R1) 原文（sensitivity / supplementary analysis 相关章节）核实。
 
 ## 一句话定义
 
@@ -29,11 +29,21 @@ Sensitivity analysis（敏感性分析）：**换几种不同的假设，把主�
 | 敏感性分析 2：Tipping point | 逐步假设试验组缺失者更差，找到结论翻转的点 |
 | 敏感性分析 3：模式混合模型（pattern mixture model） | 对不同退出模式分别做不同假设 |
 
-各方法的细节见 [CON-missing-data](CON-missing-data.md#mar-何时站不住敏感性分析)。
+各方法的细节见[下文](#各方法说明)。
 
 如果几种分析结论一致，监管机构就比较放心；如果主分析显著、换个假设就不显著了，结论就会被质疑。
 
 > 补充（Claude）：J2R 在 hypothetical + MAR 主分析下常作为敏感性分析，但在 treatment policy 策略下可能就是主分析的插补方法（见 [CON-missing-data](CON-missing-data.md#策略决定缺失怎么补)）。所以"某方法是不是敏感性分析"取决于它相对于哪个 estimand 和主分析。
+
+### 各方法说明
+
+> 整理记录（2026-11-18）：本小节从 [CON-missing-data](CON-missing-data.md#mar-何时站不住敏感性分析) 原样移入（含 J2R 与 CR 的补充说明），出处见该卡原列的 hypothetical_vs_completers.md 与本卡的 sensitivity_analysis1.md。
+
+- **Reference-based MI（jump to reference / copy reference）**：假设停药后的表现趋向对照组。
+- **Tipping point 分析**：逐步往停药者的插补值里加惩罚（偏移量），例如假设失访者比 MAR 推测的再差 1、2、3 个单位，看到什么程度结论会翻转。如果要假设得非常极端才翻转，结论就算稳健。
+- **模式混合模型（pattern mixture model）**：对不同退出模式分别做不同假设（来源：sensitivity_analysis1.md；方法细节待补）。
+
+> 补充（Claude）：J2R 与 CR 并不相同：J2R（jump to reference）假设停药后均值立即"跳到"对照组的均值轨迹；CR（copy reference）假设停药者从一开始就按对照组的均值轨迹和协方差结构建模，停药前的疗效随相关性逐渐衰减而非立即消失。通常 J2R 比 CR 更保守。待对照 Carpenter, Roger & Kenward (2013) 等文献核实。
 
 ## E9(R1) 的关键界定：敏感性分析 vs 补充分析
 
@@ -62,3 +72,4 @@ Sensitivity analysis（敏感性分析）：**换几种不同的假设，把主�
 ## 出处
 
 - Claude 对话（inbox: sensitivity_analysis1.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: hypothetical_vs_completers.md；AI 生成，原始出处待补；"各方法说明"部分内容）
