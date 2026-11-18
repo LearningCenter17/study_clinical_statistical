@@ -2,10 +2,10 @@
 id: CON-p-value
 title: "P 值的定义与计算条件（P-value）"
 categories: [inference, p-value, hypothesis-testing, null-distribution, nonparametric, permutation-test, test-selection, software, effect-size]
-related: [CON-null-hypothesis, MTH-t-test, CON-hazard-ratio, MTH-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CODE-ttest-sas-r-python]
+related: [CON-null-hypothesis, MTH-t-test, CON-hazard-ratio, MTH-MMRM, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-test-statistic, CON-t-distribution, CON-distribution-family, CON-type-I-II-error, CON-degrees-of-freedom, CON-sample-size-power, GOT-ttest-student-vs-welch, CON-confidence-interval, CON-test-selection, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CODE-ttest-sas-r-python, MTH-chi-square]
 sources: ["Claude 对话（inbox: p_value_requirement.md）", "Claude 对话（inbox: calculate_p_value.md）", "Claude 对话（inbox: calculate_pvalue.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: p_value_requirement.md、calculate_p_value.md、calculate_pvalue.md），属 AI 生成内容，未引用原始文献。

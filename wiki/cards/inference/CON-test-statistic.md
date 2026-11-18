@@ -2,10 +2,10 @@
 id: CON-test-statistic
 title: "检验统计量：t、χ² 与 log-rank（Test Statistics）"
 categories: [inference, test-statistic, t-test, chi-square, log-rank, hypothesis-testing]
-related: [CON-p-value, MTH-t-test, CON-logrank-vs-cox, CON-null-hypothesis, CON-t-distribution, CON-degrees-of-freedom, CON-distribution-family, CON-type-I-II-error, CON-test-selection, CON-normal-distribution, CON-response-rate]
+related: [CON-p-value, MTH-t-test, CON-logrank-vs-cox, CON-null-hypothesis, CON-t-distribution, CON-degrees-of-freedom, CON-distribution-family, CON-type-I-II-error, CON-test-selection, CON-normal-distribution, CON-response-rate, MTH-CMH, MTH-chi-square]
 sources: ["Claude 对话（inbox: Test_statistic.md）", "Claude 对话（inbox: calculate_pvalue.md）"]
 status: draft
-updated: 2026-11-17
+updated: 2026-11-18
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: Test_statistic.md、calculate_pvalue.md），属 AI 生成内容，未引用原始文献。

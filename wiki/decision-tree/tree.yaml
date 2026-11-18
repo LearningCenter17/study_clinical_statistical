@@ -119,7 +119,7 @@ root:
               method: CMH 检验
               card: MTH-CMH
               from: CON-confirmatory-methods-overview
-              note: 如 PASI 75、ACR20；二分类部分卡片待补
+              note: 如 PASI 75、ACR20；各层效应需一致（Breslow-Day）
           - answer: 两组比较，调整协变量并报告 OR
             result:
               method: Logistic 回归

@@ -7,6 +7,7 @@ title: 中英术语对照
 - **†** = 卡片中只出现了中文或英文其中一种，另一种是 Claude 补充的常用译法，**待 Li 核实**（如 ICH E9(R1) 中文版的官方译名）。
 - 主卡写"尚无卡片"的，表示卡片里只顺带提到、还没有专门解释，对应主题在 [索引](index.md) 中列为"待建"。
 - 新增卡片引入新术语时，在对应章节加一行；术语的解释仍然写在卡片里。
+- 按英文首字母查找见 [术语表（按英文 A–Z）](glossary-en.md)，那一页由本页自动生成。
 
 ## 1. 估计目标（Estimand）
 
@@ -90,7 +91,14 @@ title: 中英术语对照
 | 最佳总体应答 | best overall response | BOR | [CON-response-rate](cards/methods/binary/CON-response-rate.md) |
 | 确认 | confirmation | | [CON-response-rate](cards/methods/binary/CON-response-rate.md) |
 | 应答者分析 | responder analysis | | [CON-response-rate](cards/methods/binary/CON-response-rate.md) |
+| 卡方检验 | chi-square test / Pearson's chi-squared test | χ² | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
+| 独立性检验 | test of independence | | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
+| 拟合优度检验 | goodness-of-fit test | | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
+| 观察频数 / 期望频数 | observed / expected frequency † | O / E | [MTH-chi-square](cards/methods/binary/MTH-chi-square.md) |
 | CMH 检验 | Cochran-Mantel-Haenszel test | CMH | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
+| MH 合并 OR | Mantel-Haenszel common odds ratio † | MH OR | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
+| Breslow-Day 检验 | Breslow-Day test | | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
+| 辛普森悖论 | Simpson's paradox | | [MTH-CMH](cards/methods/binary/MTH-CMH.md) |
 | 率差 | risk difference † | RD | [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) |
 | 比值比 | odds ratio | OR | [CON-confirmatory-methods-overview](cards/methods/CON-confirmatory-methods-overview.md) |
 | 率差 CI 方法 | Newcombe / Miettinen-Nurminen | | [MTH-ci-construction](cards/inference/MTH-ci-construction.md) |

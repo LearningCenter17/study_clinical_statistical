@@ -1,18 +1,127 @@
 ---
 id: MTH-CMH
-title: "CMH 检验：PROC FREQ 三个统计量与 SCORES= 选项（Cochran-Mantel-Haenszel）"
-categories: [categorical, cmh, stratification, ordinal, van-elteren, wilcoxon, kruskal-wallis, sas, proc-freq, scores]
-related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, MTH-proportional-odds-model, CON-response-rate, CON-stratified-randomization]
-sources: ["Claude 对话（inbox: cmh_statistics.md）"]
+title: "CMH 检验：分层比较应答率、三个统计量与 SCORES= 选项（Cochran-Mantel-Haenszel）"
+categories: [categorical, cmh, stratification, binary-endpoint, odds-ratio, mantel-haenszel, breslow-day, simpsons-paradox, ordinal, van-elteren, wilcoxon, kruskal-wallis, sas, proc-freq, scores]
+related: [CON-ordinal-data, CON-parametric-vs-nonparametric, CON-test-selection, CON-confirmatory-methods-overview, CON-covariate, MTH-proportional-odds-model, CON-response-rate, CON-stratified-randomization, CON-test-statistic, MTH-chi-square]
+sources: ["Claude 对话（inbox: cmh_statistics.md）", "Claude 对话（inbox: CMH1.md）"]
 status: draft
-updated: 2026-11-12
+updated: 2026-11-18
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: cmh_statistics.md），属 AI 生成内容，未引用原始文献（如 SAS PROC FREQ 文档、Stokes, Davis & Koch《Categorical Data Analysis Using SAS》）。
+> 出处待补：本卡内容来自 Claude 对话（inbox: cmh_statistics.md、CMH1.md），属 AI 生成内容，未引用原始文献（如 SAS PROC FREQ 文档、Stokes, Davis & Koch《Categorical Data Analysis Using SAS》）。示例数值已由 Claude 在 R 4.5.2 中复核。
 >
-> 本卡目前只覆盖"**三个统计量怎么选、`SCORES=` 怎么设**"。CMH 用于二分类终点时的内容（共同 OR / RR、Mantel-Haenszel 率差、Breslow-Day 齐性检验）尚待补充。
+> 本卡分两部分：**二分类终点**（分层比较应答率、MH 合并 OR、Breslow-Day）和**有序终点**（三个统计量怎么选、`SCORES=` 怎么设）。Mantel-Haenszel 率差与 RR 尚待补充。
 
-## CMH 三个统计量怎么选
+## 二分类终点：分层比较应答率
+
+（来源：CMH1.md）**CMH 检验**（Cochran-Mantel-Haenszel）可以理解成**"分组比较，再合并结论"**的卡方检验（卡方统计量的原理见 [CON-test-statistic](../../inference/CON-test-statistic.md)）。
+
+### 它要解决什么问题
+
+比如比较药物组和安慰剂组的应答率（应答 / 不应答）。最简单的做法是把所有人放进一张 2×2 表，做个卡方检验。
+
+但如果病人本身差别很大，比如有的人之前用过生物制剂（更难治），有的人没用过（更好治），全部混在一起比，结果就可能被这种差异干扰。极端情况下甚至会出现**辛普森悖论**（Simpson's paradox）：每个亚组里药物都更好，合起来看却显得更差（见下文算例）。
+
+### CMH 的做法
+
+1. **先分层**：按"是否用过生物制剂"（也可以再加 X 光分级）把病人分成几组。
+2. **每层内各比各的**：每一层单独做一张 2×2 表，药物组和安慰剂组只在同一层里比，相当于"苹果比苹果"。
+3. **加权合并**：把各层的比较结果按样本量等信息加权汇总，得到一个总的检验结果和一个**共同的效应量**（通常是 CMH 合并的 OR 或风险差）。
+
+一句话概括：**它回答的是"排除分层因素的影响以后，药物到底有没有效"。**
+
+### 为什么临床试验里这么常用
+
+- **和随机化设计对应**：如果随机化是按某些因素分层做的，分析时一般也按这些因素分层。ICH E9 的原则就是"按设计来分析"（analyze as randomized，见 [CON-stratified-randomization](../../design/CON-stratified-randomization.md#分层主要在什么时候有用)）。例如按 X 光分级和既往生物制剂分层随机的关节炎试验，二分类终点（比如 ACR20 应答率）的主分析通常就是用这两个因素做分层的 CMH 检验。
+- **结果稳健**：不需要像 logistic 回归那样设定模型形式。
+- **监管机构熟悉**：FDA / EMA 的审评人员都很常见这种方法。
+
+### 一个前提：各层效应方向一致
+
+CMH 默认**各层的效应方向大致一致**，也就是药物在每一层里都差不多有效。如果某一层药物有效、另一层反而有害，合并出来的数字就没什么意义了。所以一般会配一个 **Breslow-Day 检验**，看各层的 OR 是否同质。
+
+### 程序里怎么做
+
+- **SAS**：`PROC FREQ` 加 `TABLES strat1*strat2*trt*resp / CMH;`，最后两个变量是行和列，前面的都是分层变量。
+- **R**：`mantelhaen.test(table(trt, resp, strata))`。如果要按"X 光 × 生物制剂"交叉分层，先把两个变量合成一个分层变量。
+
+如果打算去掉分层，CMH 就会退化成普通的卡方检验或 Fisher 检验。不过如果随机化本身是分层做的，分析时把分层也去掉，通常需要在 SAP 里给出理由。
+
+> 补充（Claude）：R 的 `mantelhaen.test()` 默认 `correct = TRUE`（连续性校正），SAS `PROC FREQ` 的 CMH 统计量不做连续性校正。和 SAS 比对时，R 端要写 `correct = FALSE`（下文算例就是这样写的）。2×2×K 表时 SAS 会同时输出 MH 合并 OR / RR 和 Breslow-Day 检验。待 Li 核实。
+
+### 算例：辛普森悖论
+
+虚构的关节炎试验，终点是 **ACR20 应答率**，分层因素是**既往是否用过生物制剂**。为了看得更清楚，这里故意把两组人群设得很不均衡。
+
+**第 1 层：没用过生物制剂（病情相对好治）**
+
+| | 应答 | 不应答 | 合计 | 应答率 |
+|---|---|---|---|---|
+| 药物组 | 48 | 12 | 60 | **80%** |
+| 安慰剂 | 168 | 72 | 240 | **70%** |
+
+**第 2 层：用过生物制剂（病情难治）**
+
+| | 应答 | 不应答 | 合计 | 应答率 |
+|---|---|---|---|---|
+| 药物组 | 96 | 144 | 240 | **40%** |
+| 安慰剂 | 18 | 42 | 60 | **30%** |
+
+在每一层里，药物组都比安慰剂组**高 10 个百分点**。
+
+**如果不分层，直接合在一起：**
+
+| | 应答 | 不应答 | 合计 | 应答率 |
+|---|---|---|---|---|
+| 药物组 | 144 | 156 | 300 | **48%** |
+| 安慰剂 | 186 | 114 | 300 | **62%** |
+
+结果变成药物组比安慰剂组**低 14 个百分点**。普通卡方检验 χ² ≈ 11.9，p < 0.001，看起来"药物显著更差"。
+
+这就是辛普森悖论。原因是药物组里大部分人（240/300）是难治的老病人，安慰剂组里大部分人是好治的新病人。合在一起比，比的其实是"病人难不难治"，而不是"药好不好"。
+
+**CMH 怎么算：**
+
+**第一步：每层算"观察值 − 期望值"。** 这里只看药物组的应答人数。期望值的意思是：假设药物无效，这一层应答的人会按人数比例分到两组。
+
+- 第 1 层：一共 216 人应答，药物组占 60/300 的人，期望 = 216 × 60/300 = 43.2，实际 48，**多出 4.8**
+- 第 2 层：一共 114 人应答，药物组占 240/300，期望 = 114 × 240/300 = 91.2，实际 96，**多出 4.8**
+
+**第二步：各层相加，再除以方差。**
+
+- 偏差总和 = 4.8 + 4.8 = 9.6
+- 各层方差之和 ≈ 9.71 + 11.35 = 21.06
+- CMH 统计量 = 9.6² / 21.06 ≈ **4.38**，p ≈ **0.036**
+
+**第三步：合并的效应量（MH 合并 OR）。**
+
+- 第 1 层 OR = (48×72)/(12×168) ≈ 1.71
+- 第 2 层 OR = (96×42)/(144×18) ≈ 1.56
+- MH 合并 OR ≈ **1.63**，也就是药物组应答的优势约为安慰剂组的 1.6 倍
+
+两层的 OR 很接近（1.71 和 1.56），说明满足"各层效应一致"的前提，合并是合理的。
+
+| 分析方法 | 结论 |
+|---|---|
+| 不分层卡方 | OR ≈ 0.57，药物**显著更差**（p < 0.001） |
+| 分层 CMH | OR ≈ 1.63，药物**显著更好**（p ≈ 0.036） |
+
+```r
+tab <- array(c(48, 168, 12, 72,     # 第1层：药物应答, 安慰剂应答, 药物不应答, 安慰剂不应答
+               96,  18, 144, 42),   # 第2层
+             dim = c(2, 2, 2),
+             dimnames = list(trt  = c("Drug", "Placebo"),
+                             resp = c("Yes", "No"),
+                             bio  = c("Naive", "Experienced")))
+
+mantelhaen.test(tab, correct = FALSE)   # CMH ≈ 4.38, p ≈ 0.036, OR ≈ 1.63
+```
+
+真实的随机化试验里，组间人群不会这么不均衡，这正是分层随机化要防止的情况（见 [CON-stratified-randomization](../../design/CON-stratified-randomization.md)）。实际中 CMH 的作用通常没这么戏剧化，主要是去掉分层因素带来的噪音，让检验**更精确、效能更高**。
+
+> 数值复核（Claude，R 4.5.2）：`mantelhaen.test(tab, correct = FALSE)` 给出 CMH = 4.377、p = 0.0364、MH 合并 OR = 1.625（95% CI 1.03–2.57）；两层期望值 43.2 / 91.2、方差 9.709 / 11.347、OR 1.714 / 1.556；不分层 χ² = 11.88（p = 0.0006）、OR = 0.566。以上均与材料一致。另按公式手算 Breslow-Day 统计量 = 0.043（p = 0.84），各层 OR 同质，与材料"两层 OR 很接近"的判断一致。
+
+## 有序终点：CMH 三个统计量怎么选
 
 SAS `PROC FREQ` 的 `CMH` 选项会同时输出三个统计量，按行、列变量是否有序来选：
 
@@ -57,6 +166,8 @@ run;
 
 ## 相关卡片
 
+- [CON-stratified-randomization](../../design/CON-stratified-randomization.md)：分层随机与"按设计来分析"
+- [CON-response-rate](CON-response-rate.md)：应答率与 ACR20 等应答标准
 - [CON-ordinal-data](../ordinal/CON-ordinal-data.md)：有序应答的分析方法
 - [CON-parametric-vs-nonparametric](../../inference/CON-parametric-vs-nonparametric.md)：van Elteren（分层 Wilcoxon）
 - [CON-test-selection](../../inference/CON-test-selection.md)：Wilcoxon、Kruskal-Wallis
@@ -66,3 +177,4 @@ run;
 ## 出处
 
 - Claude 对话（inbox: cmh_statistics.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: CMH1.md；AI 生成，原始出处待补；二分类部分与辛普森悖论算例）
