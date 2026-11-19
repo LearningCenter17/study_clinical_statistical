@@ -2,7 +2,7 @@
 id: CON-survival-analysis-overview
 title: "生存分析概览：删失、核心函数、KM / log-rank / Cox 与 ADTTE（Survival Analysis Overview）"
 categories: [overview, survival, time-to-event, censoring, kaplan-meier, log-rank, cox, proportional-hazards, rmst, competing-risks, adtte, tern, statistical-programming]
-related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression, MTH-kaplan-meier, CON-survival-analysis-non-clinical, CON-reliability-engineering, CON-censoring, CON-km-logrank-cox-example]
+related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression, MTH-kaplan-meier, CON-survival-analysis-non-clinical, CON-reliability-engineering, CON-censoring, CON-km-logrank-cox-example, CON-cdisc-variable-naming]
 sources: ["Claude 对话（inbox: Survival Analysis.md）", "Claude 对话（inbox: regression.md）", "Claude 对话（inbox: at_risk_event.md）"]
 status: draft
 updated: 2026-11-19
@@ -172,6 +172,7 @@ cox.zph(cox)                                       # PH 假设检验
 - [CON-reliability-engineering](../../non-clinical/CON-reliability-engineering.md)：制造业的可靠性工程（生存分析的非临床应用）
 - [CON-censoring](CON-censoring.md)：删失原因、删失日期、SAP 删失规则
 - [CON-km-logrank-cox-example](CON-km-logrank-cox-example.md)：三件套的 10 人串算
+- [CON-cdisc-variable-naming](../../cdisc/CON-cdisc-variable-naming.md)：ADaM / SDTM 变量名的拆解规则
 
 ## 出处
 
