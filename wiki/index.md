@@ -122,6 +122,14 @@ title: 知识库索引
 
 待建：亚组分析与森林图、计数终点的负二项回归（如呼吸领域急性加重率）、一期 PK 统计（NCA、剂量比例性 power model、浓度-QTc）
 
+## CDISC 数据标准
+
+SDTM / ADaM 的结构、变量命名规则，以及各分析数据集里与统计分析直接相关的约定。
+
+待建：ADaM / SDTM 变量命名规则（inbox: CDISC_1.md 待收录）
+
+> ADTTE 的关键变量与 CNSR 方向目前写在 [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md#6-落到临床编程上)，删失相关的 CNSR / ADT / EVNTDESC / CNSDTDSC 写在 [CON-censoring](cards/methods/tte/CON-censoring.md#在-adtte-里怎么体现)。
+
 ## 非临床应用
 
 统计方法在临床试验以外的领域（工程、互联网、金融等）怎么用，帮助理解方法本身。

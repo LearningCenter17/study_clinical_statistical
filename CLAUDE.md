@@ -35,6 +35,7 @@ estimand 相关内容不单设前缀，按类型取前缀、放进 `estimand/` �
 | `wiki/cards/missing-data/` | 缺失机制、MI、tipping point、敏感性分析 |
 | `wiki/cards/design/` | 随机化、分层、样本量、非劣效、多重性、剂量递增 |
 | `wiki/cards/regulatory/` | FDA / EMA / ICH guidance 要点（REF- 卡片） |
+| `wiki/cards/cdisc/` | CDISC 数据标准：SDTM / ADaM 结构与变量命名、各分析数据集（如 ADSL、ADTTE）的统计相关约定 |
 | `wiki/cards/non-clinical/` | 统计方法在临床试验以外领域（工程、互联网、金融等）的应用，帮助理解方法本身 |
 | `inbox/` | 待收录的原始材料；处理后移到 `inbox/archive/` |
 | `templates/` | 卡片模板 |
@@ -58,7 +59,7 @@ estimand 相关内容不单设前缀，按类型取前缀、放进 `estimand/` �
 7. 多重性
 8. 样本量与成组序贯设计
 
-文件夹按主题分（网站侧边栏），索引按大纲章节分（`wiki/index.md`）：新卡片放进对应章节，不属于任何一章的放"大纲外主题"；`non-clinical/` 的卡片放 index 末尾的"非临床应用"。
+文件夹按主题分（网站侧边栏），索引按大纲章节分（`wiki/index.md`）：新卡片放进对应章节，不属于任何一章的放"大纲外主题"；`cdisc/` 和 `non-clinical/` 的卡片分别放 index 末尾的"CDISC 数据标准"和"非临床应用"。
 一张卡片只列在一个章节下（主归属），跨章关系用 `related` 和正文链接表达。
 
 ## 卡片规则
