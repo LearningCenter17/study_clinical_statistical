@@ -119,3 +119,9 @@ title: 知识库索引
 - [CON-dose-escalation-design](cards/design/CON-dose-escalation-design.md) — 一期剂量递增设计：MTD 与目标毒性率；3+3（规则）、CRM / BLRM / EWOC（模型）、BOIN（模型辅助，查表执行）对比；Project Optimus；一期其他统计分析与 R 包
 
 待建：亚组分析与森林图、计数终点的负二项回归（如呼吸领域急性加重率）、一期 PK 统计（NCA、剂量比例性 power model、浓度-QTc）
+
+## 非临床应用
+
+统计方法在临床试验以外的领域（工程、互联网、金融等）怎么用，帮助理解方法本身。
+
+- [CON-survival-analysis-non-clinical](cards/non-clinical/CON-survival-analysis-non-clinical.md) — 生存分析在工程、互联网、金融、保险、人力资源等 10 个领域的起点 / 事件 / 删失举例；可靠性分析、持续时间分析、事件史分析等别名；客户流失率直接相除为何有偏
