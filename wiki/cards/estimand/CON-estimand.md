@@ -2,10 +2,10 @@
 id: CON-estimand
 title: 估计目标（Estimand）
 categories: [estimand, ich-e9r1, intercurrent-event, design]
-related: [MTH-MMRM, REF-ICH-E9R1, GOT-ice-reason-collection, CON-missing-data, CON-rescue-medication, CON-sensitivity-analysis, CON-null-hypothesis, CON-response-rate, CON-survival-analysis-overview]
+related: [MTH-MMRM, REF-ICH-E9R1, GOT-ice-reason-collection, CON-missing-data, CON-rescue-medication, CON-sensitivity-analysis, CON-null-hypothesis, CON-response-rate, CON-survival-analysis-overview, CON-censoring]
 sources: [REF-ICH-E9R1, "Claude 对话（inbox: Estimand_1.md）", "Claude 对话（inbox: hypothetical_vs_completers.md）"]
 status: draft
-updated: 2026-11-18
+updated: 2026-11-19
 ---
 
 ## 一句话定义

@@ -2,7 +2,7 @@
 id: MTH-kaplan-meier
 title: "Kaplan-Meier 估计与在险人数：逐步手算、在险集规则与 number at risk 表（Kaplan-Meier Estimator and Number at Risk）"
 categories: [survival, kaplan-meier, number-at-risk, censoring, risk-set, km-plot, tlf, tern, ggsurvfit, proc-lifetest]
-related: [CON-survival-analysis-overview, CON-logrank-vs-cox, CON-hazard-ratio, CON-ci-width, CON-confirmatory-methods-overview, CON-survival-analysis-non-clinical, CON-reliability-engineering]
+related: [CON-survival-analysis-overview, CON-logrank-vs-cox, CON-hazard-ratio, CON-ci-width, CON-confirmatory-methods-overview, CON-survival-analysis-non-clinical, CON-reliability-engineering, CON-censoring]
 sources: ["Claude 对话（inbox: at_risk_event.md）"]
 status: draft
 updated: 2026-11-19
@@ -110,6 +110,7 @@ log-rank 检验在每个事件时间点，按两组的在险人数比例计算"�
 - [CON-confirmatory-methods-overview](../CON-confirmatory-methods-overview.md)：KM 在确证性试验中的地位
 - [CON-survival-analysis-non-clinical](../../non-clinical/CON-survival-analysis-non-clinical.md)：KM 在临床以外的应用（如用户留存曲线）
 - [CON-reliability-engineering](../../non-clinical/CON-reliability-engineering.md)：制造业的可靠性工程（生存分析的非临床应用）
+- [CON-censoring](CON-censoring.md)：删失的原因与类型（KM 只能处理右删失）
 
 ## 出处
 
