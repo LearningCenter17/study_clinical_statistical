@@ -1,14 +1,14 @@
 ---
 id: MTH-kaplan-meier
-title: "Kaplan-Meier 估计与在险人数：逐步手算、在险集规则与 number at risk 表（Kaplan-Meier Estimator and Number at Risk）"
-categories: [survival, kaplan-meier, number-at-risk, censoring, risk-set, km-plot, tlf, tern, ggsurvfit, proc-lifetest]
+title: "Kaplan-Meier 估计与在险人数：闯关相乘、逐步手算（含并列死亡）、在险集规则、中位生存与 number at risk 表（Kaplan-Meier Estimator and Number at Risk）"
+categories: [survival, kaplan-meier, number-at-risk, censoring, risk-set, km-plot, tlf, tern, ggsurvfit, proc-lifetest, median-survival, greenwood, non-informative-censoring, tied-events]
 related: [CON-survival-analysis-overview, CON-logrank-vs-cox, CON-hazard-ratio, CON-ci-width, CON-confirmatory-methods-overview, CON-survival-analysis-non-clinical, CON-reliability-engineering, CON-censoring]
-sources: ["Claude 对话（inbox: at_risk_event.md）"]
+sources: ["Claude 对话（inbox: at_risk_event.md）", "Claude 对话（inbox: Kaplan–Meier_1.md）"]
 status: draft
 updated: 2026-11-19
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: at_risk_event.md），属 AI 生成内容，未引用原始文献（如 Kaplan & Meier 1958、Collett《Modelling Survival Data in Medical Research》）。算例已由 Claude 在 R 4.5.2 中复核。生存分析的整体框架（删失、S(t)、log-rank、Cox）见 [CON-survival-analysis-overview](CON-survival-analysis-overview.md)；"事件"在各终点里指什么见该卡第 1 节。
+> 出处待补：本卡内容来自 Claude 对话（inbox: at_risk_event.md；"核心思路：闯关相乘"、"第二个例子"、"从曲线上读什么"、"关键前提"四节来自 Kaplan–Meier_1.md），属 AI 生成内容，未引用原始文献（如 Kaplan & Meier 1958、Collett《Modelling Survival Data in Medical Research》）。算例已由 Claude 在 R 4.5.2 中复核。生存分析的整体框架（删失、S(t)、log-rank、Cox）见 [CON-survival-analysis-overview](CON-survival-analysis-overview.md)；"事件"在各终点里指什么见该卡第 1 节。
 
 ## 一句话定义
 
@@ -17,6 +17,30 @@ updated: 2026-11-19
 > 补充（Claude）：写成公式即 Ŝ(t) = ∏_{tᵢ ≤ t} (nᵢ − dᵢ) / nᵢ，nᵢ 为在险人数、dᵢ 为事件数。待 Li 核实。
 >
 > 整理记录（2026-11-19）：上面这条公式补充原写在 CON-survival-analysis-overview 的 KM 段落下（当时 KM 尚无独立卡片），随本卡建立原样移来。
+
+## 核心思路：闯关相乘
+
+> 以下来自 Claude 对话（inbox: Kaplan–Meier_1.md），AI 生成，出处待补。
+
+**KM 估计 = 把"活过整段时间"拆成"一关一关地闯过去"，每一关的通过率相乘。**
+
+活过 2 年 = 闯过第一次死亡发生的时间点 × 闯过第二次死亡时间点 × ……
+
+每一关的通过率是：
+
+> **该时刻的通过率 = 1 − (这一刻死了几个人 / 这一刻之前还在观察中的人数)**
+
+"还在观察中的人数"叫**风险集（number at risk）**，就是此刻还活着、也还没被删失的人。
+
+把这些通过率连乘起来，就是 KM 估计的生存函数 S(t)：
+
+$$\hat S(t) = \prod_{t_i \le t}\left(1 - \frac{d_i}{n_i}\right)$$
+
+KM 的巧妙之处在于：**删失的人在被删失之前都算数，删失之后就悄悄退出分母**，不当死亡处理，也不当存活到终点处理。（为什么删失的人既不能扔掉、也不能当成活到终点，见 [CON-survival-analysis-overview](CON-survival-analysis-overview.md#1-它解决什么问题)；删失的原因与类型见 [CON-censoring](CON-censoring.md)。）
+
+> 整理记录（2026-11-19）：材料中"为什么需要它：删失问题"一节（扔掉删失者会浪费信息、当成活过终点会高估生存率）与 CON-survival-analysis-overview 第 1 节重复，未再写入，只保留了上面 KM 特有的一句。上方"一句话定义"下的公式补充（Claude）与这里材料给出的公式等价（(nᵢ − dᵢ)/nᵢ = 1 − dᵢ/nᵢ）。
+>
+> 补充（Claude）：材料把 number at risk 叫"风险集"。本库用"在险人数"指人数（number at risk），用"在险集"（risk set）指这群人本身；"风险集"与"在险集"是同一概念的不同译法。待 Li 确认用词。
 
 ## 一个小例子
 
@@ -73,6 +97,48 @@ updated: 2026-11-19
 
 > 数值复核（Claude，R 4.5.2）：`survfit(Surv(t, e) ~ 1)` 在事件时间 2 / 5 / 8 给出 n.risk = 6 / 4 / 2，S(t) = 0.833 / 0.625 / 0.3125（材料四舍五入为 0.313）；中位生存时间 = 8 个月（S(t) 在第 8 个月首次 ≤ 0.5）。`summary(fit, times = c(0, 3, 6, 9))` 给出 n.risk = 6 / 5 / 3 / 1，即第 3 个月 5 人、第 6 个月 3 人，与"观测时间 ≥ t"的规则一致。默认 log 变换下第 8 个月 S(t) 的 95% CI 为 0.067–1，几乎没有信息量，正好印证下文"在险人数少的地方置信区间很宽"。
 
+## 第二个例子：有并列死亡
+
+> 以下来自 Claude 对话（inbox: Kaplan–Meier_1.md），AI 生成，出处待补。
+
+6 个病人的随访时间（月），"+" 表示删失：
+
+**3, 5+, 6, 6, 9+, 12**
+
+| 时间 | 风险集 n | 死亡 d | 这一关通过率 | 累计 S(t) |
+|---|---|---|---|---|
+| 3 | 6 | 1 | 5/6 | 0.833 |
+| 5+ | — | 删失 1 人 | 不算一关 | 仍为 0.833 |
+| 6 | 4 | 2 | 2/4 | 0.833 × 0.5 = 0.417 |
+| 9+ | — | 删失 1 人 | 不算一关 | 仍为 0.417 |
+| 12 | 1 | 1 | 0/1 | 0 |
+
+需要注意的几点：
+
+- **删失时 S(t) 不变**，只是下一关的分母变小了（第 6 个月时风险集是 4，不是 5，因为 5 月删失的那个人已经离开了）。
+- **只在有死亡的时间点，曲线才往下掉一个台阶**，所以 KM 曲线是阶梯状的。
+- 图上删失点一般画成小竖线 "|" 或 "+"，就是你在 TLF 里常见的那些小刻度。
+
+> 数值复核（Claude，R 4.5.2）：`survfit(Surv(t, e) ~ 1)` 在 3 / 6 / 12 个月给出 n.risk = 6 / 4 / 1，n.event = 1 / 2 / 1，S(t) = 0.833 / 0.417 / 0；中位生存时间 = 6 个月。第 6 个月 2 人同时死亡，一步就用 2/4，这正是 KM 处理并列事件时间（tied event times）的方式。
+>
+> 补充（Claude）：最后一个观测是死亡时曲线降到 0；若最后一个观测是删失，曲线停在最后的高度，不会降到 0。
+
+## 从曲线上读什么
+
+> 以下来自 Claude 对话（inbox: Kaplan–Meier_1.md），AI 生成，出处待补。
+
+- **中位生存时间**：S(t) 第一次降到 ≤ 0.5 的时间。上面的例子里是 6 个月。如果曲线一直没降到 0.5，就报告"未达到（NR）"。
+- **某个时间点的生存率**：比如 12 个月生存率，直接读曲线高度，再配上置信区间。置信区间通常用 **Greenwood 公式**算方差，再做 log-log 变换，SAS 和 R 的默认设置不太一样，做 double programming 的时候常在这里对不上（具体默认值见本卡下文和 [CON-survival-analysis-overview](CON-survival-analysis-overview.md#6-落到临床编程上)）。
+- **两组比较**：KM 本身只负责"描述"，比较两条曲线一般用 **log-rank 检验**，要估计效应大小就用 **Cox 模型**算 HR（见 [CON-logrank-vs-cox](CON-logrank-vs-cox.md)、[CON-hazard-ratio](CON-hazard-ratio.md)）。
+
+> 补充（Claude）：中位生存时间的置信区间常用 Brookmeyer-Crowley 法，见 [MTH-ci-construction](../../inference/MTH-ci-construction.md)。上例 R 默认（log 变换）给出中位数 95% CI 为 6 至 NA，即上限"未达到"，TLF 里也写作 NR。待 Li 核实。
+
+## 关键前提：非信息性删失
+
+> 以下来自 Claude 对话（inbox: Kaplan–Meier_1.md），AI 生成，出处待补。
+
+KM 默认**删失的人和留下的人，未来的风险是一样的**。如果病人是因为病情恶化才退出、被记为删失，这个假设就被破坏了，KM 会高估生存率。这也是 SAP 里要仔细定义删失规则的原因（比如开始新治疗算不算删失、末次评估日期怎么取，见 [CON-censoring](CON-censoring.md)）。
+
 ## 为什么这个数很重要
 
 **1. 它决定了曲线在每个时间点有多可信**
@@ -97,6 +163,7 @@ log-rank 检验在每个事件时间点，按两组的在险人数比例计算"�
 
 - `tern::g_km()` 默认就会在图下方生成在险人数表。
 - `ggsurvfit` 用 `+ add_risktable()` 添加。
+- `print(survfit(...))` 给出中位生存时间及 95% CI（来自 Kaplan–Meier_1.md；完整的 ADTTE 代码和 `Surv(AVAL, 1 - CNSR)` 的方向问题见 [CON-survival-analysis-overview](CON-survival-analysis-overview.md#6-落到临床编程上)）。
 - 想直接拿到具体数字做 QC，可以用 `summary(survfit(...), times = c(0, 3, 6, 9, 12))`，输出里的 `n.risk` 列就是在险人数，可以和 SAS `PROC LIFETEST` 的结果逐个时间点核对。
 
 > 补充（Claude）：和 SAS 核对 KM 生存率的置信区间时，注意两边的默认变换不同（R `survfit` 默认 log，SAS LIFETEST 默认 log-log），见 [CON-survival-analysis-overview](CON-survival-analysis-overview.md#6-落到临床编程上)。
@@ -111,7 +178,9 @@ log-rank 检验在每个事件时间点，按两组的在险人数比例计算"�
 - [CON-survival-analysis-non-clinical](../../non-clinical/CON-survival-analysis-non-clinical.md)：KM 在临床以外的应用（如用户留存曲线）
 - [CON-reliability-engineering](../../non-clinical/CON-reliability-engineering.md)：制造业的可靠性工程（生存分析的非临床应用）
 - [CON-censoring](CON-censoring.md)：删失的原因与类型（KM 只能处理右删失）
+- [MTH-ci-construction](../../inference/MTH-ci-construction.md)：中位生存期 CI 的构造方法
 
 ## 出处
 
 - Claude 对话（inbox: at_risk_event.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: Kaplan–Meier_1.md；AI 生成，原始出处待补）
