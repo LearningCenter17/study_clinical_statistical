@@ -2,7 +2,7 @@
 id: CON-survival-analysis-overview
 title: "生存分析概览：删失、核心函数、KM / log-rank / Cox 与 ADTTE（Survival Analysis Overview）"
 categories: [overview, survival, time-to-event, censoring, kaplan-meier, log-rank, cox, proportional-hazards, rmst, competing-risks, adtte, tern, statistical-programming]
-related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression, MTH-kaplan-meier, CON-survival-analysis-non-clinical, CON-reliability-engineering]
+related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression, MTH-kaplan-meier, CON-survival-analysis-non-clinical, CON-reliability-engineering, CON-censoring]
 sources: ["Claude 对话（inbox: Survival Analysis.md）", "Claude 对话（inbox: regression.md）", "Claude 对话（inbox: at_risk_event.md）"]
 status: draft
 updated: 2026-11-19
@@ -43,7 +43,9 @@ updated: 2026-11-19
 
 它和普通回归最大的区别在于**删失（censoring）**：研究结束时，有的受试者事件还没发生，或者中途失访、撤回同意。我们只知道他的事件时间**大于**某个值，不知道确切时间。删失的人不能直接扔掉，否则结果会偏；也不能当作"事件发生"，否则会低估生存时间。生存分析的方法就是为了正确利用这部分"不完整"的信息。
 
-最常见的是**右删失**：知道事件至少在某时间点之后才发生。另外还有左删失和区间删失，比如事件只在两次访视之间被发现，这在影像学评估进展时很常见。
+→ 删失的常见原因、删失日期怎么取、SAP 删失规则、右 / 区间 / 左删失见 [CON-censoring](CON-censoring.md)。
+
+> 整理记录（2026-11-19）：此处原有一句讲右 / 左 / 区间删失的话，已原样移到 CON-censoring。
 
 ### 普通回归为什么处理不了删失
 
@@ -131,6 +133,8 @@ Log-rank 检验的原假设是两组的生存曲线相同。它在每个事件�
 - `EVNTDESC` / `CNSDTDSC`：事件或删失的原因，审阅时非常重要
 - `STARTDT`、`ADT`、`SRCDOM`、`SRCVAR`：用于溯源
 
+→ CNSR 用不同正整数区分删失原因、ADT 取哪一天、先把 SAP 删失规则整理成表再写代码，见 [CON-censoring](CON-censoring.md#在-adtte-里怎么体现)。
+
 ⚠️ **最常见的坑**：ADaM 里 `CNSR = 1` 表示删失，而 R `survival` 包的 `Surv(time, status)` 里 `status = 1` 表示**事件**，所以要写 `Surv(AVAL, 1 - CNSR)`；SAS 里对应 `time AVAL*CNSR(1)`。（这一点在 [CON-logrank-vs-cox](CON-logrank-vs-cox.md#实现) 的代码里也有说明。）
 
 **R 实现示例：**
@@ -164,6 +168,7 @@ cox.zph(cox)                                       # PH 假设检验
 - [WF-sample-size-calc](../../design/WF-sample-size-calc.md)：生存终点的事件数计算
 - [CON-survival-analysis-non-clinical](../../non-clinical/CON-survival-analysis-non-clinical.md)：生存分析在工程、互联网、金融等领域的应用
 - [CON-reliability-engineering](../../non-clinical/CON-reliability-engineering.md)：制造业的可靠性工程（生存分析的非临床应用）
+- [CON-censoring](CON-censoring.md)：删失原因、删失日期、SAP 删失规则
 
 ## 出处
 

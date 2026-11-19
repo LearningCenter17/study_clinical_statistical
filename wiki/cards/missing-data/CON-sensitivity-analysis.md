@@ -2,10 +2,10 @@
 id: CON-sensitivity-analysis
 title: "敏感性分析与补充分析（Sensitivity Analysis vs Supplementary Analysis）"
 categories: [sensitivity-analysis, supplementary-analysis, estimand, ich-e9r1, missing-data, tipping-point, reference-based-mi, pattern-mixture-model]
-related: [CON-estimand, CON-missing-data, MTH-MMRM, REF-ICH-E9R1, CON-confirmatory-methods-overview, CON-stratified-randomization, CON-survival-analysis-overview]
+related: [CON-estimand, CON-missing-data, MTH-MMRM, REF-ICH-E9R1, CON-confirmatory-methods-overview, CON-stratified-randomization, CON-survival-analysis-overview, CON-censoring]
 sources: ["Claude 对话（inbox: sensitivity_analysis1.md）", "Claude 对话（inbox: hypothetical_vs_completers.md）"]
 status: draft
-updated: 2026-11-18
+updated: 2026-11-19
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: sensitivity_analysis1.md；"各方法说明"一节随整理从 CON-missing-data 移入，部分来自 hypothetical_vs_completers.md），属 AI 生成内容，未引用原始文献，需对照 ICH E9(R1) 原文（sensitivity / supplementary analysis 相关章节）核实。
@@ -68,6 +68,7 @@ Sensitivity analysis（敏感性分析）：**换几种不同的假设，把主�
 - [CON-missing-data](CON-missing-data.md)
 - [MTH-MMRM](../methods/continuous/MTH-MMRM.md)
 - [REF-ICH-E9R1](../regulatory/REF-ICH-E9R1.md)
+- [CON-censoring](../methods/tte/CON-censoring.md)：删失原因与非信息性删失
 
 ## 出处
 

@@ -2,10 +2,10 @@
 id: GOT-ice-reason-collection
 title: 停药原因收集含糊导致无法按原因选 ICE 策略
 categories: [estimand, intercurrent-event, crf, sdtm, data-collection, missing-data]
-related: [CON-estimand, REF-ICH-E9R1, CON-rescue-medication, CON-missing-data]
+related: [CON-estimand, REF-ICH-E9R1, CON-rescue-medication, CON-missing-data, CON-censoring]
 sources: ["Claude 对话（inbox: Estimand_1.md）", "Claude 对话（inbox: missing_1.md）"]
 status: draft
-updated: 2026-11-05
+updated: 2026-11-19
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: Estimand_1.md、missing_1.md），属 AI 生成内容，未引用原始文献，需对照 ICH E9(R1) 及 SDTMIG（DS 域）核实。
@@ -54,6 +54,7 @@ SAP 常按停药原因给不同类型的 intercurrent event 分配不同策略�
 - [REF-ICH-E9R1](../regulatory/REF-ICH-E9R1.md)
 - [CON-missing-data](../missing-data/CON-missing-data.md)
 - [CON-rescue-medication](CON-rescue-medication.md)
+- [CON-censoring](../methods/tte/CON-censoring.md)：失访、撤回同意在生存终点里的删失处理
 
 ## 出处
 

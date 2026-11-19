@@ -131,7 +131,7 @@ title: 中英术语对照
 | 比例风险 | proportional hazards | PH | [CON-hazard-ratio](cards/methods/tte/CON-hazard-ratio.md) |
 | log-rank 检验 | log-rank test | | [CON-logrank-vs-cox](cards/methods/tte/CON-logrank-vs-cox.md) |
 | Cox 模型 | Cox proportional hazards model | | [CON-logrank-vs-cox](cards/methods/tte/CON-logrank-vs-cox.md) |
-| 删失 | censoring | CNSR | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
+| 删失 | censoring | CNSR | [CON-censoring](cards/methods/tte/CON-censoring.md) |
 | 似然 | likelihood | | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 结点（事件时间相同） | tied event times | | [CON-logrank-vs-cox](cards/methods/tte/CON-logrank-vs-cox.md) |
 | Kaplan-Meier 法 | Kaplan-Meier | KM | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
@@ -142,7 +142,11 @@ title: 中英术语对照
 | 中位生存时间 | median survival time † |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 在险人数 | number at risk |  | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
 | 在险集 | risk set † |  | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
-| 右删失 / 左删失 / 区间删失 | right / left / interval censoring † |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
+| 右删失 / 左删失 / 区间删失 | right / left / interval censoring † |  | [CON-censoring](cards/methods/tte/CON-censoring.md) |
+| 行政删失 | administrative censoring † |  | [CON-censoring](cards/methods/tte/CON-censoring.md) |
+| 失访 | loss to follow-up † |  | [CON-censoring](cards/methods/tte/CON-censoring.md) |
+| 撤回知情同意 | withdrawal of consent † |  | [CON-censoring](cards/methods/tte/CON-censoring.md) |
+| 删失日期 | censoring date † |  | [CON-censoring](cards/methods/tte/CON-censoring.md) |
 | 非信息性删失 | non-informative censoring † |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 限制平均生存时间 | restricted mean survival time | RMST | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 加权 log-rank 检验 | weighted log-rank test (Fleming–Harrington) / MaxCombo |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
