@@ -125,3 +125,4 @@ title: 知识库索引
 统计方法在临床试验以外的领域（工程、互联网、金融等）怎么用，帮助理解方法本身。
 
 - [CON-survival-analysis-non-clinical](cards/non-clinical/CON-survival-analysis-non-clinical.md) — 生存分析在工程、互联网、金融、保险、人力资源等 10 个领域的起点 / 事件 / 删失举例；可靠性分析、持续时间分析、事件史分析等别名；客户流失率直接相除为何有偏
+- [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) — 可靠性工程：制造业为何需要生存分析（大量删失）；寿命测试（B10、MTTF / MTBF、可靠度）、加速寿命试验与 AFT、保修数据分析（里程作时间轴）、预测性维护（时间依赖协变量 Cox）、供应商比较；与临床试验的区别（Weibull 参数模型、外推）；Weibull 形状参数与浴盆曲线

@@ -210,3 +210,20 @@ title: 中英术语对照
 | 中文 | English | 缩写 | 主卡 |
 |---|---|---|---|
 | 意向性治疗 / 全分析集 † | intention-to-treat / full analysis set | ITT / FAS | [CON-null-hypothesis](cards/inference/CON-null-hypothesis.md) |
+
+## 非临床应用
+
+| 中文 | English | 缩写 | 主卡 |
+|---|---|---|---|
+| 可靠性工程 | reliability engineering |  | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| B10 寿命 | B10 life † | B10 | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| 平均失效时间 | mean time to failure † | MTTF | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| 平均故障间隔时间 | mean time between failures † | MTBF | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| 可靠度 | reliability † |  | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| 加速寿命试验 | accelerated life testing † | ALT | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| 保修数据分析 | warranty analysis |  | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| 预测性维护 | predictive maintenance † |  | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| 时间依赖协变量 | time-varying covariate † |  | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| Weibull 分布 | Weibull distribution |  | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| 形状参数 | shape parameter † |  | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |
+| 浴盆曲线 | bathtub curve |  | [CON-reliability-engineering](cards/non-clinical/CON-reliability-engineering.md) |

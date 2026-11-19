@@ -2,7 +2,7 @@
 id: CON-logrank-vs-cox
 title: "log-rank 检验与 Cox 模型的分工（Log-rank Test vs Cox Model）"
 categories: [survival, log-rank, cox, hazard-ratio, proportional-hazards, sas]
-related: [CON-hazard-ratio, CON-null-hypothesis, CON-p-value, CON-test-statistic, CON-confirmatory-methods-overview, CON-confidence-interval, CON-stratified-randomization, WF-sample-size-calc, CON-ci-width, CON-sample-size-power, CON-survival-analysis-overview, MTH-kaplan-meier]
+related: [CON-hazard-ratio, CON-null-hypothesis, CON-p-value, CON-test-statistic, CON-confirmatory-methods-overview, CON-confidence-interval, CON-stratified-randomization, WF-sample-size-calc, CON-ci-width, CON-sample-size-power, CON-survival-analysis-overview, MTH-kaplan-meier, CON-reliability-engineering]
 sources: ["Claude 对话（inbox: logrank_vs_cox.md）", "Claude 对话（inbox: CI_HR.md）"]
 status: draft
 updated: 2026-11-19
@@ -99,6 +99,7 @@ ADTTE 中 CNSR = 1 表示删失，所以 R 的事件指示变量是 `1 - CNSR`�
 - [CON-hazard-ratio](CON-hazard-ratio.md)
 - [CON-null-hypothesis](../../inference/CON-null-hypothesis.md)
 - [CON-p-value](../../inference/CON-p-value.md)
+- [CON-reliability-engineering](../../non-clinical/CON-reliability-engineering.md)：制造业的可靠性工程（生存分析的非临床应用）
 
 ## 出处
 
