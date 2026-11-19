@@ -2,7 +2,7 @@
 id: CON-survival-analysis-non-clinical
 title: "生存分析在临床以外的应用：工程、互联网、金融等领域的起点、事件与删失（Survival Analysis Beyond Clinical Trials）"
 categories: [non-clinical, survival, time-to-event, censoring, reliability-analysis, duration-analysis, event-history-analysis, churn, retention, aft]
-related: [CON-survival-analysis-overview, MTH-kaplan-meier]
+related: [CON-survival-analysis-overview, MTH-kaplan-meier, CON-reliability-engineering]
 sources: ["Claude 对话（inbox: Time_to_event_analysis_area.md）"]
 status: draft
 updated: 2026-11-19
@@ -47,6 +47,7 @@ updated: 2026-11-19
 
 - [CON-survival-analysis-overview](../methods/tte/CON-survival-analysis-overview.md)：生存分析框架、删失、KM / log-rank / Cox
 - [MTH-kaplan-meier](../methods/tte/MTH-kaplan-meier.md)：KM 估计（留存曲线即 KM 曲线）
+- [CON-reliability-engineering](CON-reliability-engineering.md)：制造业的可靠性工程（B10、ALT、保修分析、Weibull）
 
 ## 出处
 

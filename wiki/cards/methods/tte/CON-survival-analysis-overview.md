@@ -2,7 +2,7 @@
 id: CON-survival-analysis-overview
 title: "生存分析概览：删失、核心函数、KM / log-rank / Cox 与 ADTTE（Survival Analysis Overview）"
 categories: [overview, survival, time-to-event, censoring, kaplan-meier, log-rank, cox, proportional-hazards, rmst, competing-risks, adtte, tern, statistical-programming]
-related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression, MTH-kaplan-meier, CON-survival-analysis-non-clinical]
+related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression, MTH-kaplan-meier, CON-survival-analysis-non-clinical, CON-reliability-engineering]
 sources: ["Claude 对话（inbox: Survival Analysis.md）", "Claude 对话（inbox: regression.md）", "Claude 对话（inbox: at_risk_event.md）"]
 status: draft
 updated: 2026-11-19
@@ -163,6 +163,7 @@ cox.zph(cox)                                       # PH 假设检验
 - [CON-ci-width](../../inference/CON-ci-width.md)：HR 的 CI 宽度由事件数决定
 - [WF-sample-size-calc](../../design/WF-sample-size-calc.md)：生存终点的事件数计算
 - [CON-survival-analysis-non-clinical](../../non-clinical/CON-survival-analysis-non-clinical.md)：生存分析在工程、互联网、金融等领域的应用
+- [CON-reliability-engineering](../../non-clinical/CON-reliability-engineering.md)：制造业的可靠性工程（生存分析的非临床应用）
 
 ## 出处
 
