@@ -226,8 +226,15 @@ title: 中英术语对照
 | 分析数据模型 † | Analysis Data Model | ADaM | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
 | 数据定义文件 † | define.xml |  | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
 | 域（两位域代码，如 AE、LB、VS）† | domain |  | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
-| 首选术语 † | Preferred Term | PT | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
-| 系统器官分类 | body system / system organ class † | SOC | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 首选术语 † | Preferred Term | PT | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
+| 系统器官分类 | body system / system organ class † | SOC | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
+| 监管活动医学词典 † | Medical Dictionary for Regulatory Activities | MedDRA | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
+| 低位语 | Lowest Level Term | LLT | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
+| 高位语 | High Level Term | HLT | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
+| 高位组语 | High Level Group Term | HLGT | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
+| 主 SOC | primary SOC |  | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
+| 多轴 | multiaxial |  | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
+| 字典编码术语 | Dictionary-Derived Term |  | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
 | 研究日 † | study day | --DY | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 参考日期 | reference date |  | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 受试者参考开始日期 † | Subject Reference Start Date | RFSTDTC | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
