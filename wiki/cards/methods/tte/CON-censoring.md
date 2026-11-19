@@ -2,7 +2,7 @@
 id: CON-censoring
 title: "删失：原因、删失日期怎么取、SAP 删失规则与 ADTTE 中的 CNSR（Censoring）"
 categories: [survival, censoring, right-censoring, interval-censoring, left-censoring, administrative-censoring, loss-to-follow-up, sap, adtte, cnsr, pfs, os, statistical-programming, qc]
-related: [CON-survival-analysis-overview, MTH-kaplan-meier, CON-estimand, CON-sensitivity-analysis, GOT-ice-reason-collection]
+related: [CON-survival-analysis-overview, MTH-kaplan-meier, CON-estimand, CON-sensitivity-analysis, GOT-ice-reason-collection, CON-km-logrank-cox-example]
 sources: ["Claude 对话（inbox: censoring.md）"]
 status: draft
 updated: 2026-11-19
@@ -84,6 +84,7 @@ KM 只能处理右删失。
 - [CON-estimand](../../estimand/CON-estimand.md)：ICE 处理策略决定删失规则
 - [CON-sensitivity-analysis](../../missing-data/CON-sensitivity-analysis.md)：删失假设的敏感性分析
 - [GOT-ice-reason-collection](../../estimand/GOT-ice-reason-collection.md)：失访、撤回同意的原因记录
+- [CON-km-logrank-cox-example](CON-km-logrank-cox-example.md)：含删失的两组算例
 
 ## 出处
 
