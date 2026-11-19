@@ -142,6 +142,9 @@ title: 中英术语对照
 | 中位生存时间 | median survival time † |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 在险人数 | number at risk |  | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
 | 在险集 | risk set † |  | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
+| 风险集（同在险集） | risk set † |  | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
+| 未达到（中位生存时间） | not reached † | NR | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
+| Greenwood 公式 | Greenwood's formula † |  | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
 | 右删失 / 左删失 / 区间删失 | right / left / interval censoring † |  | [CON-censoring](cards/methods/tte/CON-censoring.md) |
 | 行政删失 | administrative censoring † |  | [CON-censoring](cards/methods/tte/CON-censoring.md) |
 | 失访 | loss to follow-up † |  | [CON-censoring](cards/methods/tte/CON-censoring.md) |
