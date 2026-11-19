@@ -18,6 +18,7 @@ SECTIONS = {
     "cards/design": "试验设计",
     "cards/safety": "安全性分析",
     "cards/regulatory": "法规与指南",
+    "cards/cdisc": "CDISC 数据标准",
     "cards/non-clinical": "非临床应用",
 }
 _ORDER = list(SECTIONS)
