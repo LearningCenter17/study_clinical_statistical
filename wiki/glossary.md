@@ -218,6 +218,20 @@ title: 中英术语对照
 |---|---|---|---|
 | 意向性治疗 / 全分析集 † | intention-to-treat / full analysis set | ITT / FAS | [CON-null-hypothesis](cards/inference/CON-null-hypothesis.md) |
 
+## CDISC 数据标准
+
+| 中文 | English | 缩写 | 主卡 |
+|---|---|---|---|
+| 研究数据制表模型 † | Study Data Tabulation Model | SDTM | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 分析数据模型 † | Analysis Data Model | ADaM | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 数据定义文件 † | define.xml |  | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 域（两位域代码，如 AE、LB、VS）† | domain |  | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 首选术语 † | Preferred Term | PT | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 系统器官分类 | body system / system organ class † | SOC | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 研究日 † | study day | --DY | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 日期填补标识 † | date imputation flag | --DTF | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 衍生类型 † | derivation type | DTYPE | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+
 ## 非临床应用
 
 | 中文 | English | 缩写 | 主卡 |
