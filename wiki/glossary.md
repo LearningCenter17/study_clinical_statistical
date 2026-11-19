@@ -134,13 +134,14 @@ title: 中英术语对照
 | 删失 | censoring | CNSR | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 似然 | likelihood | | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 结点（事件时间相同） | tied event times | | [CON-logrank-vs-cox](cards/methods/tte/CON-logrank-vs-cox.md) |
-| Kaplan-Meier 法 | Kaplan-Meier | KM | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md)（独立卡片待建） |
+| Kaplan-Meier 法 | Kaplan-Meier | KM | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
 | 生存分析 / 时间-事件分析 | survival analysis / time-to-event analysis | TTE | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 生存函数 | survival function † | S(t) | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 风险函数 | hazard function † | h(t) | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 累积风险 | cumulative hazard † | H(t) | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 中位生存时间 | median survival time † |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
-| 在险人数 | number at risk |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
+| 在险人数 | number at risk |  | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
+| 在险集 | risk set † |  | [MTH-kaplan-meier](cards/methods/tte/MTH-kaplan-meier.md) |
 | 右删失 / 左删失 / 区间删失 | right / left / interval censoring † |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 非信息性删失 | non-informative censoring † |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 限制平均生存时间 | restricted mean survival time | RMST | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
@@ -150,6 +151,9 @@ title: 中英术语对照
 | Gray 检验 / Fine–Gray 模型 | Gray's test / Fine–Gray model |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | Schoenfeld 残差 | Schoenfeld residuals |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 时间-事件分析数据集 | ADaM time-to-event dataset † | ADTTE | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
+| 总生存期 | overall survival † | OS | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
+| 无进展生存期 | progression-free survival † | PFS | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
+| 至首次不良事件时间 | time to first adverse event † | TTAE | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 
 ## 6. 缺失数据与敏感性分析
 

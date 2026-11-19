@@ -2,13 +2,13 @@
 id: CON-survival-analysis-overview
 title: "生存分析概览：删失、核心函数、KM / log-rank / Cox 与 ADTTE（Survival Analysis Overview）"
 categories: [overview, survival, time-to-event, censoring, kaplan-meier, log-rank, cox, proportional-hazards, rmst, competing-risks, adtte, tern, statistical-programming]
-related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression]
-sources: ["Claude 对话（inbox: Survival Analysis.md）", "Claude 对话（inbox: regression.md）"]
+related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression, MTH-kaplan-meier]
+sources: ["Claude 对话（inbox: Survival Analysis.md）", "Claude 对话（inbox: regression.md）", "Claude 对话（inbox: at_risk_event.md）"]
 status: draft
-updated: 2026-11-18
+updated: 2026-11-19
 ---
 
-> 出处待补：本卡内容来自 Claude 对话（inbox: Survival Analysis.md；"普通回归为什么处理不了删失"一节来自 regression.md），属 AI 生成内容，未引用原始文献（如 Collett《Modelling Survival Data in Medical Research》、Klein & Moeschberger、SAS PROC LIFETEST / PHREG 文档、CDISC ADaM ADTTE 规范）。本卡是第 5 章的导航页，各方法的细节在链接的卡片里。
+> 出处待补：本卡内容来自 Claude 对话（inbox: Survival Analysis.md；"普通回归为什么处理不了删失"一节来自 regression.md；"常见的事件定义"来自 at_risk_event.md），属 AI 生成内容，未引用原始文献（如 Collett《Modelling Survival Data in Medical Research》、Klein & Moeschberger、SAS PROC LIFETEST / PHREG 文档、CDISC ADaM ADTTE 规范）。本卡是第 5 章的导航页，各方法的细节在链接的卡片里。
 
 ## 名称
 
@@ -17,6 +17,23 @@ updated: 2026-11-18
 ## 1. 它解决什么问题
 
 生存分析研究的是**"到某个事件发生要多久"**，也就是 time-to-event。这里的"事件"不一定是死亡，也可以是疾病进展、复发、首次出现某种不良事件、退出治疗、达到缓解等。
+
+> 以下来自 Claude 对话（inbox: at_risk_event.md），AI 生成，出处待补。
+
+"事件"指的是研究方案里定义的那个终点，具体是什么取决于你研究什么。"生存分析"这个名字来自早期研究死亡时间，所以事件最初就是死亡，但这个方法后来被推广到任何"到某件事发生要多久"的问题。
+
+常见的事件定义：
+
+| 终点 | 事件是什么 |
+|---|---|
+| 总生存期（OS） | 任何原因的死亡，这时事件确实是"挂了" |
+| 无进展生存期（PFS） | 疾病进展或死亡，以先发生者为准 |
+| 至复发时间 | 疾病复发 |
+| 至首次不良事件时间（TTAE） | 首次出现某种不良事件 |
+| 至停药时间 | 因任何原因停止治疗 |
+| 至起效时间 | 首次达到疗效标准，比如关节炎试验里首次达到 ACR20 |
+
+最后一行说明，事件不一定是坏事。"至起效时间"里，事件是"病情好转"，这时曲线下降得越快越好。
 
 它和普通回归最大的区别在于**删失（censoring）**：研究结束时，有的受试者事件还没发生，或者中途失访、撤回同意。我们只知道他的事件时间**大于**某个值，不知道确切时间。删失的人不能直接扔掉，否则结果会偏；也不能当作"事件发生"，否则会低估生存时间。生存分析的方法就是为了正确利用这部分"不完整"的信息。
 
@@ -59,7 +76,7 @@ updated: 2026-11-18
 | 风险函数 h(t) | 在 t 时刻仍"在险"的条件下，下一瞬间发生事件的速率 |
 | 累积风险 H(t) | h(t) 的积分，S(t) = exp(−H(t)) |
 | 中位生存时间 | S(t) 降到 0.5 时对应的 t |
-| 在险人数（number at risk） | 在 t 时刻仍在观察中、尚未发生事件也未删失的人数 |
+| 在险人数（number at risk） | 在 t 时刻仍在观察中、尚未发生事件也未删失的人数（精确规则：观测时间 ≥ t 的人数，t 时刻发生事件或删失的人仍计入；算例见 [MTH-kaplan-meier](MTH-kaplan-meier.md#在险集规则)） |
 
 ## 3. 三大常用方法
 
@@ -67,7 +84,9 @@ updated: 2026-11-18
 
 KM 是一种非参数方法。每到一个事件时间点，就用"(在险人数 − 事件数) / 在险人数"去乘前一步的生存率，得到一条阶梯状下降的曲线。删失的人在删失之前一直计入在险人数，之后才移出，曲线上通常用 "+" 标出删失位置。KM 能给出中位生存时间、某个时间点的生存率（比如 12 个月生存率）以及置信区间。
 
-> 补充（Claude）：KM 还没有独立卡片（第 5 章待建）。写成公式即 Ŝ(t) = ∏_{tᵢ ≤ t} (nᵢ − dᵢ) / nᵢ，nᵢ 为在险人数、dᵢ 为事件数。待 Li 核实。
+→ 6 人算例的逐步手算、在险集规则、为什么在险人数决定曲线可信度、number at risk 表见 [MTH-kaplan-meier](MTH-kaplan-meier.md)。
+
+> 整理记录（2026-11-19）：此处原有的 KM 公式补充（Claude）已原样移到 MTH-kaplan-meier。
 
 **② Log-rank 检验：比较组间曲线**
 
@@ -142,3 +161,4 @@ cox.zph(cox)                                       # PH 假设检验
 
 - Claude 对话（inbox: Survival Analysis.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: regression.md；AI 生成，原始出处待补；"普通回归为什么处理不了删失"一节）
+- Claude 对话（inbox: at_risk_event.md；AI 生成，原始出处待补；第 1 节"常见的事件定义"）

@@ -2,10 +2,10 @@
 id: CON-ci-width
 title: "置信区间的宽度由什么决定（What Determines CI Width）"
 categories: [inference, confidence-interval, precision, standard-error, sample-size, event-count, survival, bias]
-related: [CON-confidence-interval, CON-covariate, CON-hazard-ratio, CON-logrank-vs-cox, WF-sample-size-calc, CON-unequal-allocation, CON-missing-data, CON-sample-size-power, CON-survival-analysis-overview]
+related: [CON-confidence-interval, CON-covariate, CON-hazard-ratio, CON-logrank-vs-cox, WF-sample-size-calc, CON-unequal-allocation, CON-missing-data, CON-sample-size-power, CON-survival-analysis-overview, MTH-kaplan-meier]
 sources: ["Claude 对话（inbox: CI_1.md）", "Claude 对话（inbox: CI_width.md）"]
 status: draft
-updated: 2026-11-18
+updated: 2026-11-19
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: CI_1.md、CI_width.md），属 AI 生成内容，未引用原始文献。示例数值已由 Claude 在 R 4.5.2 中复核。

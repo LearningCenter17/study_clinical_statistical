@@ -2,10 +2,10 @@
 id: CON-logrank-vs-cox
 title: "log-rank 检验与 Cox 模型的分工（Log-rank Test vs Cox Model）"
 categories: [survival, log-rank, cox, hazard-ratio, proportional-hazards, sas]
-related: [CON-hazard-ratio, CON-null-hypothesis, CON-p-value, CON-test-statistic, CON-confirmatory-methods-overview, CON-confidence-interval, CON-stratified-randomization, WF-sample-size-calc, CON-ci-width, CON-sample-size-power, CON-survival-analysis-overview]
+related: [CON-hazard-ratio, CON-null-hypothesis, CON-p-value, CON-test-statistic, CON-confirmatory-methods-overview, CON-confidence-interval, CON-stratified-randomization, WF-sample-size-calc, CON-ci-width, CON-sample-size-power, CON-survival-analysis-overview, MTH-kaplan-meier]
 sources: ["Claude 对话（inbox: logrank_vs_cox.md）", "Claude 对话（inbox: CI_HR.md）"]
 status: draft
-updated: 2026-11-18
+updated: 2026-11-19
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: logrank_vs_cox.md），属 AI 生成内容，未引用原始文献。需对照生存分析教材（如 Collett、Klein & Moeschberger）及 SAS PROC LIFETEST / PHREG 文档核实。
