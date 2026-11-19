@@ -127,6 +127,7 @@ title: 知识库索引
 SDTM / ADaM 的结构、变量命名规则，以及各分析数据集里与统计分析直接相关的约定。
 
 - [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) — 把 ADaM / SDTM 变量名拆成零件：主体词根（TRT、AE、PARAM、BASE、CHG、DCS / DCT、NR、CRIT、OCC、CNSR…）、时间零件（S / E、DT / TM / DTM / DTC、DY、DTF）、类型后缀（FL、N、C、CD、GR、CAT）、前缀（A、B、P、RF、`--`）、计划 / 实际与编号（P / A、xx、y、zz）、SDTM 结果类变量（ORRES、STRESC / STRESN、STNRLO…）、11 个拆解示例；同一字母在不同位置含义不同，最终以 define.xml 为准
+- [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) — 参考日期是什么；SDTM `--DY` 相对 `RFSTDTC` 的算法（≥ 时 +1、< 时不加，没有 Day 0）与例子；DM 中 RFICDTC / RFXSTDTC / RFXENDTC / RFPENDTC 时间轴，RFSTDTC 由 sponsor 定义（多为首次用药日，也有随机化日）；ADaM 中 ADY 相对 `TRTSDT`
 
 > ADTTE 的关键变量与 CNSR 方向目前写在 [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md#6-落到临床编程上)，删失相关的 CNSR / ADT / EVNTDESC / CNSDTDSC 写在 [CON-censoring](cards/methods/tte/CON-censoring.md#在-adtte-里怎么体现)。
 

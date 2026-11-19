@@ -228,7 +228,9 @@ title: 中英术语对照
 | 域（两位域代码，如 AE、LB、VS）† | domain |  | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
 | 首选术语 † | Preferred Term | PT | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
 | 系统器官分类 | body system / system organ class † | SOC | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
-| 研究日 † | study day | --DY | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 研究日 † | study day | --DY | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
+| 参考日期 | reference date |  | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
+| 受试者参考开始日期 † | Subject Reference Start Date | RFSTDTC | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 日期填补标识 † | date imputation flag | --DTF | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
 | 衍生类型 † | derivation type | DTYPE | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
 

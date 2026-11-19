@@ -2,7 +2,7 @@
 id: CON-cdisc-variable-naming
 title: "ADaM / SDTM 变量命名规则：把变量名拆成零件（CDISC Variable Naming Conventions）"
 categories: [cdisc, adam, sdtm, variable-naming, adsl, adae, adlb, adtte, bds, define-xml, statistical-programming]
-related: [CON-survival-analysis-overview, CON-censoring]
+related: [CON-survival-analysis-overview, CON-censoring, CON-reference-date-study-day]
 sources: ["Claude 对话（inbox: CDISC_1.md）"]
 status: draft
 updated: 2026-11-19
@@ -151,12 +151,13 @@ updated: 2026-11-19
 >
 > - `FL` 的取值：ADaMIG 中人群标识（如 `SAFFL`、`ITTFL`）一般要求 `Y`/`N`，其他记录级标识（如 `ABLFL`、`ANL01FL`）多为 `Y`/空，即材料说的两种情况分别对应哪类变量。
 > - `DTYPE` 的全称是 Derivation Type（衍生类型），记录这一行是怎么衍生出来的，如 `LOCF`、`AVERAGE`；不只是泛指"类型"。
-> - `ADT` / `ADY` 里的 `A` 是分析版本；研究日 `--DY` 没有第 0 天（第 1 天为参考日期当天，之前一天为 −1）。
+> - `ADT` / `ADY` 里的 `A` 是分析版本；研究日 `--DY` 没有第 0 天（第 1 天为参考日期当天，之前一天为 −1）。（这一点后来有了材料支持，算法与例子见 [CON-reference-date-study-day](CON-reference-date-study-day.md)。）
 
 ## 相关卡片
 
 - [CON-censoring](../methods/tte/CON-censoring.md)：ADTTE 中 CNSR / ADT / EVNTDESC / CNSDTDSC 与删失规则
 - [CON-survival-analysis-overview](../methods/tte/CON-survival-analysis-overview.md)：ADTTE 关键变量、`Surv(AVAL, 1 - CNSR)` 的方向
+- [CON-reference-date-study-day](CON-reference-date-study-day.md)：参考日期与研究日的算法
 
 ## 出处
 
