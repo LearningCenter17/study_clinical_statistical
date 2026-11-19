@@ -14,7 +14,7 @@ updated: YYYY-MM-DD
 1. 类型 → 前缀（id 和文件名相同）
    CON- 概念 | MTH- 统计方法 | WF- 操作流程 | CODE- R/SAS 代码 | TLF- TLF 呈现 | GOT- 坑 | REF- 法规/文献
 2. 主题 → 放进 wiki/cards/ 下哪个文件夹
-   estimand / inference / methods/{continuous,binary,ordinal,tte} / missing-data / design / regulatory
+   estimand / inference / methods/{continuous,binary,ordinal,tte} / missing-data / design / regulatory / non-clinical
    新建主题文件夹时，同步在 hooks/card_meta.py 的 SECTIONS 里加中文名和顺序。
 
 下面的小节按类型取舍，用不上的删掉：

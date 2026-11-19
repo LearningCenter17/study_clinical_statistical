@@ -150,11 +150,11 @@ title: 中英术语对照
 | 累积发生率函数 | cumulative incidence function | CIF | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | Gray 检验 / Fine–Gray 模型 | Gray's test / Fine–Gray model |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | Schoenfeld 残差 | Schoenfeld residuals |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
-| 可靠性分析 | reliability analysis |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
-| 持续时间分析 | duration analysis |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
-| 事件史分析 | event history analysis |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
-| 加速失效时间模型 † | accelerated failure time model † | AFT | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
-| 留存曲线 | retention curve † |  | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
+| 可靠性分析 | reliability analysis |  | [CON-survival-analysis-non-clinical](cards/non-clinical/CON-survival-analysis-non-clinical.md) |
+| 持续时间分析 | duration analysis |  | [CON-survival-analysis-non-clinical](cards/non-clinical/CON-survival-analysis-non-clinical.md) |
+| 事件史分析 | event history analysis |  | [CON-survival-analysis-non-clinical](cards/non-clinical/CON-survival-analysis-non-clinical.md) |
+| 加速失效时间模型 † | accelerated failure time model † | AFT | [CON-survival-analysis-non-clinical](cards/non-clinical/CON-survival-analysis-non-clinical.md) |
+| 留存曲线 | retention curve † |  | [CON-survival-analysis-non-clinical](cards/non-clinical/CON-survival-analysis-non-clinical.md) |
 | 时间-事件分析数据集 | ADaM time-to-event dataset † | ADTTE | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 总生存期 | overall survival † | OS | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
 | 无进展生存期 | progression-free survival † | PFS | [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md) |
