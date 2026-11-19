@@ -2,10 +2,10 @@
 id: CON-ordinal-data
 title: "有序分类数据（Ordinal Data）"
 categories: [data-type, ordinal, categorical, ctcae, recist, mrs, cmh, wilcoxon, proportional-odds, ordinal-logistic, adam, avalc]
-related: [CON-test-selection, CON-parametric-vs-nonparametric, CON-confirmatory-methods-overview, MTH-MMRM, CON-covariate, MTH-CMH, MTH-proportional-odds-model, GOT-ordinal-or-direction, CON-response-rate]
+related: [CON-test-selection, CON-parametric-vs-nonparametric, CON-confirmatory-methods-overview, MTH-MMRM, CON-covariate, MTH-CMH, MTH-proportional-odds-model, GOT-ordinal-or-direction, CON-response-rate, CON-ae-severity-asev]
 sources: ["Claude 对话（inbox: ordinal_data.md）", "Claude 对话（inbox: ordinal_data_adam_correction.md）", "Claude 对话（inbox: cmh_statistics.md）"]
 status: draft
-updated: 2026-11-12
+updated: 2026-11-19
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: ordinal_data.md），属 AI 生成内容，未引用原始文献。
@@ -85,6 +85,7 @@ TLF 里按 `AVAL` 或 `AVALCAyN` 排序，类别就能按自然顺序显示。
 - [CON-parametric-vs-nonparametric](../../inference/CON-parametric-vs-nonparametric.md)：秩次方法不怕等级数据
 - [CON-confirmatory-methods-overview](../CON-confirmatory-methods-overview.md)：CMH、logistic、Wilcoxon 在确证性试验中的位置
 - [MTH-MMRM](../continuous/MTH-MMRM.md)：多级总分量表当作连续变量分析
+- [CON-ae-severity-asev](../../cdisc/CON-ae-severity-asev.md)：AE 严重程度变量与 CTCAE 分级映射
 
 ## 出处
 

@@ -235,6 +235,9 @@ title: 中英术语对照
 | 主 SOC | primary SOC |  | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
 | 多轴 | multiaxial |  | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
 | 字典编码术语 | Dictionary-Derived Term |  | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
+| 严重程度（强度） | severity / intensity |  | [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) |
+| 严重不良事件 | serious adverse event | SAE | [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) |
+| 不良事件通用术语标准 † | Common Terminology Criteria for Adverse Events | CTCAE | [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) |
 | 研究日 † | study day | --DY | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 参考日期 | reference date |  | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 受试者参考开始日期 † | Subject Reference Start Date | RFSTDTC | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |

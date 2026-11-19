@@ -2,7 +2,7 @@
 id: CON-cdisc-variable-naming
 title: "ADaM / SDTM 变量命名规则：把变量名拆成零件（CDISC Variable Naming Conventions）"
 categories: [cdisc, adam, sdtm, variable-naming, adsl, adae, adlb, adtte, bds, define-xml, statistical-programming]
-related: [CON-survival-analysis-overview, CON-censoring, CON-reference-date-study-day, CON-meddra-hierarchy]
+related: [CON-survival-analysis-overview, CON-censoring, CON-reference-date-study-day, CON-meddra-hierarchy, CON-ae-severity-asev]
 sources: ["Claude 对话（inbox: CDISC_1.md）"]
 status: draft
 updated: 2026-11-19
@@ -159,6 +159,7 @@ updated: 2026-11-19
 - [CON-survival-analysis-overview](../methods/tte/CON-survival-analysis-overview.md)：ADTTE 关键变量、`Surv(AVAL, 1 - CNSR)` 的方向
 - [CON-reference-date-study-day](CON-reference-date-study-day.md)：参考日期与研究日的算法
 - [CON-meddra-hierarchy](CON-meddra-hierarchy.md)：MedDRA 层级与 AE 编码变量（AEDECOD、AEBODSYS、AESOC）
+- [CON-ae-severity-asev](CON-ae-severity-asev.md)：`AESEV` 与 `ASEV`，前缀 A 的一个实例
 
 ## 出处
 
