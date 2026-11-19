@@ -2,7 +2,7 @@
 id: CON-survival-analysis-overview
 title: "生存分析概览：删失、核心函数、KM / log-rank / Cox 与 ADTTE（Survival Analysis Overview）"
 categories: [overview, survival, time-to-event, censoring, kaplan-meier, log-rank, cox, proportional-hazards, rmst, competing-risks, adtte, tern, statistical-programming]
-related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression, MTH-kaplan-meier, CON-survival-analysis-non-clinical, CON-reliability-engineering, CON-censoring]
+related: [CON-logrank-vs-cox, CON-hazard-ratio, CON-confirmatory-methods-overview, CON-estimand, CON-sensitivity-analysis, CON-stratified-randomization, CON-test-statistic, CON-ci-width, WF-sample-size-calc, CON-regression, MTH-kaplan-meier, CON-survival-analysis-non-clinical, CON-reliability-engineering, CON-censoring, CON-km-logrank-cox-example]
 sources: ["Claude 对话（inbox: Survival Analysis.md）", "Claude 对话（inbox: regression.md）", "Claude 对话（inbox: at_risk_event.md）"]
 status: draft
 updated: 2026-11-19
@@ -88,6 +88,8 @@ updated: 2026-11-19
 
 ## 3. 三大常用方法
 
+→ 三种方法各答什么问题、两组 10 人从 KM 到 log-rank 到 Cox 的串算见 [CON-km-logrank-cox-example](CON-km-logrank-cox-example.md)。
+
 **① Kaplan–Meier（KM）估计：描述**
 
 KM 是一种非参数方法。每到一个事件时间点，就用"(在险人数 − 事件数) / 在险人数"去乘前一步的生存率，得到一条阶梯状下降的曲线。删失的人在删失之前一直计入在险人数，之后才移出，曲线上通常用 "+" 标出删失位置。KM 能给出中位生存时间、某个时间点的生存率（比如 12 个月生存率）以及置信区间。
@@ -169,6 +171,7 @@ cox.zph(cox)                                       # PH 假设检验
 - [CON-survival-analysis-non-clinical](../../non-clinical/CON-survival-analysis-non-clinical.md)：生存分析在工程、互联网、金融等领域的应用
 - [CON-reliability-engineering](../../non-clinical/CON-reliability-engineering.md)：制造业的可靠性工程（生存分析的非临床应用）
 - [CON-censoring](CON-censoring.md)：删失原因、删失日期、SAP 删失规则
+- [CON-km-logrank-cox-example](CON-km-logrank-cox-example.md)：三件套的 10 人串算
 
 ## 出处
 

@@ -2,10 +2,10 @@
 id: CON-confidence-interval
 title: "置信区间（Confidence Interval）：含义、构成、解读及与 P 值的对应"
 categories: [inference, confidence-interval, p-value, hypothesis-testing, effect-size, reporting, point-estimate, standard-error, coverage]
-related: [MTH-ci-construction, CON-credible-interval, CON-ci-width, CON-p-value, CON-type-I-II-error, MTH-t-test, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CON-response-rate, CON-t-distribution, CON-degrees-of-freedom, CON-dose-escalation-design, CON-covariate, CON-sample-size-power, CON-missing-data, CON-logrank-vs-cox, WF-sample-size-calc, CON-unequal-allocation, CODE-ttest-sas-r-python, CON-odds-ratio]
+related: [MTH-ci-construction, CON-credible-interval, CON-ci-width, CON-p-value, CON-type-I-II-error, MTH-t-test, GOT-ttest-student-vs-welch, CON-hazard-ratio, GOT-ni-hypothesis-direction, CON-null-hypothesis, CON-parametric-vs-nonparametric, GOT-skewed-small-sample, CON-normal-distribution, CON-response-rate, CON-t-distribution, CON-degrees-of-freedom, CON-dose-escalation-design, CON-covariate, CON-sample-size-power, CON-missing-data, CON-logrank-vs-cox, WF-sample-size-calc, CON-unequal-allocation, CODE-ttest-sas-r-python, CON-odds-ratio, CON-km-logrank-cox-example]
 sources: ["Claude 对话（inbox: summary_p.md）", "Claude 对话（inbox: CI_1.md）", "Claude 对话（inbox: CI_1_correction.md）", "Claude 对话（inbox: CI_bayesian.md）"]
 status: draft
-updated: 2026-11-18
+updated: 2026-11-19
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: summary_p.md、CI_1.md、CI_1_correction.md、CI_bayesian.md），属 AI 生成内容，未引用原始文献。示例数值已由 Claude 在 R 4.5.2 中复核。
@@ -135,6 +135,7 @@ CI 能提供的信息比 P 值多：
 - [GOT-ni-hypothesis-direction](../design/GOT-ni-hypothesis-direction.md)：非劣效用 CI 与 Δ 比较
 - [CON-hazard-ratio](../methods/tte/CON-hazard-ratio.md)：比值类效应量的 CI 看是否跨 1
 - [CON-response-rate](../methods/binary/CON-response-rate.md)：率的 CI 示例（ORR）
+- [CON-km-logrank-cox-example](../methods/tte/CON-km-logrank-cox-example.md)：log-rank p 与 Cox HR 的 CI 结论一致的算例
 
 ## 出处
 

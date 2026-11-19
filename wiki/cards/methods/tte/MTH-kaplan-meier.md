@@ -2,8 +2,8 @@
 id: MTH-kaplan-meier
 title: "Kaplan-Meier 估计与在险人数：闯关相乘、逐步手算（含并列死亡）、在险集规则、中位生存与 number at risk 表（Kaplan-Meier Estimator and Number at Risk）"
 categories: [survival, kaplan-meier, number-at-risk, censoring, risk-set, km-plot, tlf, tern, ggsurvfit, proc-lifetest, median-survival, greenwood, non-informative-censoring, tied-events]
-related: [CON-survival-analysis-overview, CON-logrank-vs-cox, CON-hazard-ratio, CON-ci-width, CON-confirmatory-methods-overview, CON-survival-analysis-non-clinical, CON-reliability-engineering, CON-censoring]
-sources: ["Claude 对话（inbox: at_risk_event.md）", "Claude 对话（inbox: Kaplan–Meier_1.md）"]
+related: [CON-survival-analysis-overview, CON-logrank-vs-cox, CON-hazard-ratio, CON-ci-width, CON-confirmatory-methods-overview, CON-survival-analysis-non-clinical, CON-reliability-engineering, CON-censoring, CON-km-logrank-cox-example]
+sources: ["Claude 对话（inbox: at_risk_event.md）", "Claude 对话（inbox: Kaplan–Meier_1.md）", "Claude 对话（inbox: KM_log_rank_cox_1.md）"]
 status: draft
 updated: 2026-11-19
 ---
@@ -139,6 +139,8 @@ KM 的巧妙之处在于：**删失的人在被删失之前都算数，删失之
 
 KM 默认**删失的人和留下的人，未来的风险是一样的**。如果病人是因为病情恶化才退出、被记为删失，这个假设就被破坏了，KM 会高估生存率。这也是 SAP 里要仔细定义删失规则的原因（比如开始新治疗算不算删失、末次评估日期怎么取，见 [CON-censoring](CON-censoring.md)）。
 
+**KM 不需要任何假设**（除了非信息性删失），所以它常被用来**直观检查 PH 假设**：看两条曲线是否大致"成比例地"分开，有没有交叉。（来自 KM_log_rank_cox_1.md；PH 假设见 [CON-logrank-vs-cox](CON-logrank-vs-cox.md)。）
+
 ## 为什么这个数很重要
 
 **1. 它决定了曲线在每个时间点有多可信**
@@ -179,8 +181,10 @@ log-rank 检验在每个事件时间点，按两组的在险人数比例计算"�
 - [CON-reliability-engineering](../../non-clinical/CON-reliability-engineering.md)：制造业的可靠性工程（生存分析的非临床应用）
 - [CON-censoring](CON-censoring.md)：删失的原因与类型（KM 只能处理右删失）
 - [MTH-ci-construction](../../inference/MTH-ci-construction.md)：中位生存期 CI 的构造方法
+- [CON-km-logrank-cox-example](CON-km-logrank-cox-example.md)：两组 10 人的 KM / log-rank / Cox 串算
 
 ## 出处
 
 - Claude 对话（inbox: at_risk_event.md；AI 生成，原始出处待补）
 - Claude 对话（inbox: Kaplan–Meier_1.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: KM_log_rank_cox_1.md；AI 生成，原始出处待补）

@@ -2,7 +2,7 @@
 id: CON-hazard-ratio
 title: "风险比（Hazard Ratio, HR）"
 categories: [survival, hazard-ratio, cox, log-rank, null-hypothesis]
-related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-sample-size-power, CON-confidence-interval, CON-confirmatory-methods-overview, WF-sample-size-calc, MTH-ci-construction, CON-ci-width, CON-survival-analysis-overview, CON-regression, MTH-kaplan-meier, CON-reliability-engineering]
+related: [CON-null-hypothesis, CON-p-value, GOT-ni-hypothesis-direction, CON-logrank-vs-cox, CON-sample-size-power, CON-confidence-interval, CON-confirmatory-methods-overview, WF-sample-size-calc, MTH-ci-construction, CON-ci-width, CON-survival-analysis-overview, CON-regression, MTH-kaplan-meier, CON-reliability-engineering, CON-km-logrank-cox-example]
 sources: ["Claude 对话（inbox: h0_hr.md）", "Claude 对话（inbox: logrank_vs_cox.md）", "Claude 对话（inbox: CI_HR.md）", "Claude 对话（inbox: CI_HR_rounding.md）"]
 status: draft
 updated: 2026-11-19
@@ -126,6 +126,7 @@ R `summary(coxph(...))` 输出列与本卡概念的对应：
 - [CON-p-value](../../inference/CON-p-value.md)：log-rank 统计量作为检验统计量的例子
 - [CON-logrank-vs-cox](CON-logrank-vs-cox.md)：log-rank 与 Cox 的分工
 - [CON-reliability-engineering](../../non-clinical/CON-reliability-engineering.md)：制造业的可靠性工程（生存分析的非临床应用）
+- [CON-km-logrank-cox-example](CON-km-logrank-cox-example.md)：小样本下 HR 点估计大、CI 宽的算例
 
 ## 出处
 
