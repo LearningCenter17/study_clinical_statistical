@@ -198,7 +198,7 @@ root:
           - answer: 生存曲线、中位生存期
             result:
               method: Kaplan-Meier 法
-              card: null
+              card: MTH-kaplan-meier
               from: CON-confirmatory-methods-overview
 
     - answer: 计数 / 事件率（如急性加重次数）
