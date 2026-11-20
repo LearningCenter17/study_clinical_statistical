@@ -2,10 +2,10 @@
 id: CON-ae-severity-asev
 title: "AE 严重程度：AESEV 与 ASEV 的区别、ASEVN，以及 severity ≠ seriousness（AE Severity: AESEV vs ASEV）"
 categories: [cdisc, sdtm, adam, adae, adverse-event, severity, aesev, asev, aeser, sae, ctcae, safety, tlf]
-related: [CON-cdisc-variable-naming, CON-meddra-hierarchy, CON-ordinal-data]
+related: [CON-cdisc-variable-naming, CON-meddra-hierarchy, CON-ordinal-data, CON-ae-causality-arel]
 sources: ["Claude 对话（inbox: AESEV_ASEV.md）"]
 status: draft
-updated: 2026-11-19
+updated: 2026-11-20
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: AESEV_ASEV.md），属 AI 生成内容，未引用原始文献。需对照 SDTMIG AE 域、ADaM OCCDS（ADAE）规范、ICH E2A（SAE 定义）核实。
@@ -52,6 +52,7 @@ updated: 2026-11-19
 - [CON-cdisc-variable-naming](CON-cdisc-variable-naming.md)：前缀 A、SEV / SER 等变量名零件
 - [CON-meddra-hierarchy](CON-meddra-hierarchy.md)：PT、SOC 与 AE 汇总表
 - [CON-ordinal-data](../methods/ordinal/CON-ordinal-data.md)：CTCAE 分级作为有序分类数据
+- [CON-ae-causality-arel](CON-ae-causality-arel.md)：同样"原始值 vs 分析值"的 `AEREL` / `AREL`
 
 ## 出处
 

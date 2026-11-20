@@ -2,10 +2,10 @@
 id: CON-cdisc-variable-naming
 title: "ADaM / SDTM 变量命名规则：把变量名拆成零件（CDISC Variable Naming Conventions）"
 categories: [cdisc, adam, sdtm, variable-naming, adsl, adae, adlb, adtte, bds, define-xml, statistical-programming]
-related: [CON-survival-analysis-overview, CON-censoring, CON-reference-date-study-day, CON-meddra-hierarchy, CON-ae-severity-asev]
-sources: ["Claude 对话（inbox: CDISC_1.md）"]
+related: [CON-survival-analysis-overview, CON-censoring, CON-reference-date-study-day, CON-meddra-hierarchy, CON-ae-severity-asev, CON-ae-causality-arel]
+sources: ["Claude 对话（inbox: CDISC_1.md）", "Claude 对话（inbox: AEREL.md）"]
 status: draft
-updated: 2026-11-19
+updated: 2026-11-20
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: CDISC_1.md），属 AI 生成内容，未引用原始文献。需对照 CDISC SDTMIG、ADaMIG（含 ADaM OCCDS、ADTTE 规范）核实；具体项目以 define.xml 为准。
@@ -153,6 +153,29 @@ updated: 2026-11-19
 > - `DTYPE` 的全称是 Derivation Type（衍生类型），记录这一行是怎么衍生出来的，如 `LOCF`、`AVERAGE`；不只是泛指"类型"。
 > - `ADT` / `ADY` 里的 `A` 是分析版本；研究日 `--DY` 没有第 0 天（第 1 天为参考日期当天，之前一天为 −1）。（这一点后来有了材料支持，算法与例子见 [CON-reference-date-study-day](CON-reference-date-study-day.md)。）
 
+## 八、容易混淆的片段：REL / RF / REAS / RES
+
+> 以下来自 Claude 对话（inbox: AEREL.md），AI 生成，出处待补。`AEREL` 本身见 [CON-ae-causality-arel](CON-ae-causality-arel.md)。
+
+`REL` 不是 Reference，是 **Relationship**（关系）的缩写。Reference 对应的片段是 **`RF`**，比如 `RFSTDTC`、`RFICDT`。
+
+同样的片段还出现在：
+- `AERELNST`：AE + REL + NST（Non-Study Treatment），与非研究药物的关系
+- `AREL`：A（Analysis）+ REL，分析用的因果关系
+
+容易和 REL 混的几个片段：
+
+| 片段 | 全称 | 例子 |
+|---|---|---|
+| `REL` | Relationship | `AEREL`、`AERELNST` |
+| `RF` | Reference | `RFSTDTC`、`RFICDT` |
+| `REAS` | Reason | `DCSREAS` |
+| `RES` | Result | `LBORRES`、`LBSTRESN` |
+
+区分的小窍门：Reference 只用两个字母 `RF`，而且总出现在**开头**；`REL`、`REAS`、`RES` 都是三四个字母，出现在域代码**后面**。
+
+> 补充（Claude）：SDTM DM 里知情同意日期是 `RFICDTC`（ISO 字符型）；`RFICDT` 是 ADaM 中的数值型版本（如 ADSL 中由 sponsor 衍生），材料里的 `RFICDT` 应是指这个。待 Li 核实。
+
 ## 相关卡片
 
 - [CON-censoring](../methods/tte/CON-censoring.md)：ADTTE 中 CNSR / ADT / EVNTDESC / CNSDTDSC 与删失规则
@@ -160,7 +183,9 @@ updated: 2026-11-19
 - [CON-reference-date-study-day](CON-reference-date-study-day.md)：参考日期与研究日的算法
 - [CON-meddra-hierarchy](CON-meddra-hierarchy.md)：MedDRA 层级与 AE 编码变量（AEDECOD、AEBODSYS、AESOC）
 - [CON-ae-severity-asev](CON-ae-severity-asev.md)：`AESEV` 与 `ASEV`，前缀 A 的一个实例
+- [CON-ae-causality-arel](CON-ae-causality-arel.md)：`AEREL` 与 `AREL`
 
 ## 出处
 
 - Claude 对话（inbox: CDISC_1.md；AI 生成，原始出处待补）
+- Claude 对话（inbox: AEREL.md；AI 生成，原始出处待补；第八节）
