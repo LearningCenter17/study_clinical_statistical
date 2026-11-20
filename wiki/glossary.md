@@ -265,6 +265,12 @@ title: 中英术语对照
 | 受试者参考开始日期 † | Subject Reference Start Date | RFSTDTC | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 日期填补标识 † | date imputation flag | --DTF | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
 | 衍生类型 † | derivation type | DTYPE | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 研究阶段 † | epoch | EPOCH | [CON-sdtm-epoch](cards/cdisc/CON-sdtm-epoch.md) |
+| 研究单元 † | element |  | [CON-sdtm-epoch](cards/cdisc/CON-sdtm-epoch.md) |
+| 治疗组路线 † | arm |  | [CON-sdtm-epoch](cards/cdisc/CON-sdtm-epoch.md) |
+| 试验设计域 † | trial design domains | TA / TE | [CON-sdtm-epoch](cards/cdisc/CON-sdtm-epoch.md) |
+| 受试者单元域 † | Subject Elements | SE | [CON-sdtm-epoch](cards/cdisc/CON-sdtm-epoch.md) |
+| 开放标签延长期 † | open-label extension | OLE | [CON-sdtm-epoch](cards/cdisc/CON-sdtm-epoch.md) |
 
 ## 非临床应用
 

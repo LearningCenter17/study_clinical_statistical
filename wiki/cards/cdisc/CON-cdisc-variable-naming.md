@@ -2,7 +2,7 @@
 id: CON-cdisc-variable-naming
 title: "ADaM / SDTM 变量命名规则：把变量名拆成零件（CDISC Variable Naming Conventions）"
 categories: [cdisc, adam, sdtm, variable-naming, adsl, adae, adlb, adtte, bds, define-xml, statistical-programming]
-related: [CON-survival-analysis-overview, CON-censoring, CON-reference-date-study-day, CON-meddra-hierarchy, CON-ae-severity-asev, CON-ae-causality-arel, CON-sae-criteria]
+related: [CON-survival-analysis-overview, CON-censoring, CON-reference-date-study-day, CON-meddra-hierarchy, CON-ae-severity-asev, CON-ae-causality-arel, CON-sae-criteria, CON-sdtm-epoch]
 sources: ["Claude 对话（inbox: CDISC_1.md）", "Claude 对话（inbox: AEREL.md）"]
 status: draft
 updated: 2026-11-20
@@ -185,6 +185,7 @@ updated: 2026-11-20
 - [CON-ae-severity-asev](CON-ae-severity-asev.md)：`AESEV` 与 `ASEV`，前缀 A 的一个实例
 - [CON-ae-causality-arel](CON-ae-causality-arel.md)：`AEREL` 与 `AREL`
 - [CON-sae-criteria](CON-sae-criteria.md)：`AES*` 一组 SAE 标准变量
+- [CON-sdtm-epoch](CON-sdtm-epoch.md)：SDTM 的 EPOCH 与 ADaM 的 `APERIOD` / `APHASE`
 
 ## 出处
 
