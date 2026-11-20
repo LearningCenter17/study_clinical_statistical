@@ -2,10 +2,10 @@
 id: CON-reference-date-study-day
 title: "参考日期与研究日：RFSTDTC、DM 中的 RF 日期、--DY / ADY 的算法（Reference Date and Study Day）"
 categories: [cdisc, sdtm, adam, reference-date, study-day, rfstdtc, trtsdt, dm, adsl, statistical-programming]
-related: [CON-cdisc-variable-naming]
+related: [CON-cdisc-variable-naming, CON-sdtm-epoch]
 sources: ["Claude 对话（inbox: reference date.md）"]
 status: draft
-updated: 2026-11-19
+updated: 2026-11-20
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: reference date.md），属 AI 生成内容，未引用原始文献。需对照 CDISC SDTMIG（DM 域、--DY 定义）与 ADaMIG（ADSL、ADY）核实。变量名里 `RF`、`DY`、`DTC` 等零件的含义见 [CON-cdisc-variable-naming](CON-cdisc-variable-naming.md)。
@@ -51,6 +51,7 @@ RFICDTC         RFXSTDTC          RFXENDTC      RFPENDTC
 ## 相关卡片
 
 - [CON-cdisc-variable-naming](CON-cdisc-variable-naming.md)：RF、DY、DTC 等变量名零件
+- [CON-sdtm-epoch](CON-sdtm-epoch.md)：按阶段划分时间轴的 EPOCH
 
 ## 出处
 
