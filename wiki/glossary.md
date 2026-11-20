@@ -238,6 +238,10 @@ title: 中英术语对照
 | 严重程度（强度） | severity / intensity |  | [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) |
 | 严重不良事件 | serious adverse event | SAE | [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) |
 | 不良事件通用术语标准 † | Common Terminology Criteria for Adverse Events | CTCAE | [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) |
+| 因果关系（与研究药物的相关性） | causality / relationship to study drug |  | [CON-ae-causality-arel](cards/cdisc/CON-ae-causality-arel.md) |
+| 治疗期出现的不良事件 † | treatment-emergent adverse event | TEAE | [CON-ae-causality-arel](cards/cdisc/CON-ae-causality-arel.md) |
+| 药物相关 TEAE / 药物不良反应 † | treatment-related TEAE / adverse drug reaction | ADR | [CON-ae-causality-arel](cards/cdisc/CON-ae-causality-arel.md) |
+| 与非研究药物的关系 † | relationship to non-study treatment | AERELNST | [CON-ae-causality-arel](cards/cdisc/CON-ae-causality-arel.md) |
 | 研究日 † | study day | --DY | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 参考日期 | reference date |  | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 受试者参考开始日期 † | Subject Reference Start Date | RFSTDTC | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
