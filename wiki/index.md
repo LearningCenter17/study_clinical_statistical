@@ -119,6 +119,7 @@ title: 知识库索引
 暂不属于以上 8 章的主题先放这里，后续再决定归属。
 
 - [CON-dose-escalation-design](cards/design/CON-dose-escalation-design.md) — 一期剂量递增设计：MTD 与目标毒性率；3+3（规则）、CRM / BLRM / EWOC（模型）、BOIN（模型辅助，查表执行）对比；Project Optimus；一期其他统计分析与 R 包
+- [WF-pregnancy-reporting](cards/safety/WF-pregnancy-reporting.md) — 妊娠报告与随访：24 小时内填妊娠报告表、随访到妊娠结局、伴侣怀孕需单独知情同意；试验结束 / 锁库后改走药物警戒（安全数据库、快速报告、DSUR / PSUR），EDC 与 SDTM 中可能看不到；报告期（约 5 个半衰期，男性加约 90 天，生物制剂更长）与超出报告期的处理
 
 待建：亚组分析与森林图、计数终点的负二项回归（如呼吸领域急性加重率）、一期 PK 统计（NCA、剂量比例性 power model、浓度-QTc）
 
@@ -131,6 +132,7 @@ SDTM / ADaM 的结构、变量命名规则，以及各分析数据集里与统�
 - [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) — MedDRA 五层（LLT → PT → HLT → HLGT → SOC）与 "feeling sick" 编码示例；SDTM AE 的 12 个编码变量（PT 名称是 `AEDECOD` 而非 AEPT）；多轴与两个 SOC（`AESOC` 主 SOC、`AEBODSYS` 分析用 SOC）；TLF 中 SOC + PT 汇总；每年 3 月 / 9 月更新版本
 - [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) — `AESEV`（SDTM 原始值）与 `ASEV`（ADAE 分析值）的区别；两者不同的情形（缺失按 SEVERE 填补、CTCAE 映射、数据清理）；`ASEVN` 与"按最严重程度汇总"每人每 PT 取最大值；severity（轻 / 中 / 重）≠ seriousness（`AESER`，SAE）
 - [CON-ae-causality-arel](cards/cdisc/CON-ae-causality-arel.md) — `AEREL`（研究者判断的因果关系）与 `AREL`（分析值）；五级 / 二级取值与归并（UNLIKELY RELATED 归哪边看 SAP）、缺失按 RELATED 填补；药物相关 TEAE（ADR）表；`AERELNST`、多药时放 SUPPAE；研究者判断 ≠ 统计结论
+- [CON-sae-criteria](cards/cdisc/CON-sae-criteria.md) — SAE 的六条标准（ICH E2A）与 SDTM 变量 `AESDTH` / `AESLIFE` / `AESHOSP` / `AESDISAB` / `AESCONG` / `AESMIE`，任一为 Y 则 `AESER = Y`；先天异常或出生缺陷的含义（男女受试者均适用）；实际中 `AESCONG` 极少为 Y、SAE listing 的呈现
 
 > ADTTE 的关键变量与 CNSR 方向目前写在 [CON-survival-analysis-overview](cards/methods/tte/CON-survival-analysis-overview.md#6-落到临床编程上)，删失相关的 CNSR / ADT / EVNTDESC / CNSDTDSC 写在 [CON-censoring](cards/methods/tte/CON-censoring.md#在-adtte-里怎么体现)。
 

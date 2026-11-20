@@ -35,12 +35,13 @@ estimand 相关内容不单设前缀，按类型取前缀、放进 `estimand/` �
 | `wiki/cards/missing-data/` | 缺失机制、MI、tipping point、敏感性分析 |
 | `wiki/cards/design/` | 随机化、分层、样本量、非劣效、多重性、剂量递增 |
 | `wiki/cards/regulatory/` | FDA / EMA / ICH guidance 要点（REF- 卡片） |
+| `wiki/cards/safety/` | 安全性：AE / SAE 的报告与随访流程、安全性分析 |
 | `wiki/cards/cdisc/` | CDISC 数据标准：SDTM / ADaM 结构与变量命名、各分析数据集（如 ADSL、ADTTE）的统计相关约定 |
 | `wiki/cards/non-clinical/` | 统计方法在临床试验以外领域（工程、互联网、金融等）的应用，帮助理解方法本身 |
 | `inbox/` | 待收录的原始材料；处理后移到 `inbox/archive/` |
 | `templates/` | 卡片模板 |
 
-- 计划中但还没有卡片的主题（`methods/count/`、`safety/`）等第一张卡出现时再建文件夹。
+- 计划中但还没有卡片的主题（`methods/count/`）等第一张卡出现时再建文件夹。
 - 新建主题文件夹时，同步在 `hooks/card_meta.py` 的 `SECTIONS` 里加中文名和顺序，否则侧边栏显示英文名、排在最后。
 - 一张卡片只放一个文件夹（主题主归属），与它在 index 中的章节可以不同。
 

@@ -218,6 +218,18 @@ title: 中英术语对照
 |---|---|---|---|
 | 意向性治疗 / 全分析集 † | intention-to-treat / full analysis set | ITT / FAS | [CON-null-hypothesis](cards/inference/CON-null-hypothesis.md) |
 
+## 安全性
+
+| 中文 | English | 缩写 | 主卡 |
+|---|---|---|---|
+| 妊娠报告表 | Pregnancy Report Form |  | [WF-pregnancy-reporting](cards/safety/WF-pregnancy-reporting.md) |
+| 药物警戒 | pharmacovigilance |  | [WF-pregnancy-reporting](cards/safety/WF-pregnancy-reporting.md) |
+| 安全数据库 † | safety database |  | [WF-pregnancy-reporting](cards/safety/WF-pregnancy-reporting.md) |
+| 研发期间安全性更新报告 † | Development Safety Update Report | DSUR | [WF-pregnancy-reporting](cards/safety/WF-pregnancy-reporting.md) |
+| 定期安全性更新报告 † | Periodic Safety Update Report | PSUR | [WF-pregnancy-reporting](cards/safety/WF-pregnancy-reporting.md) |
+| 半衰期 | half-life † |  | [WF-pregnancy-reporting](cards/safety/WF-pregnancy-reporting.md) |
+| 高效避孕措施 | highly effective contraception † |  | [WF-pregnancy-reporting](cards/safety/WF-pregnancy-reporting.md) |
+
 ## CDISC 数据标准
 
 | 中文 | English | 缩写 | 主卡 |
@@ -237,6 +249,8 @@ title: 中英术语对照
 | 字典编码术语 | Dictionary-Derived Term |  | [CON-meddra-hierarchy](cards/cdisc/CON-meddra-hierarchy.md) |
 | 严重程度（强度） | severity / intensity |  | [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) |
 | 严重不良事件 | serious adverse event | SAE | [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) |
+| 先天异常或出生缺陷 | congenital anomaly or birth defect | AESCONG | [CON-sae-criteria](cards/cdisc/CON-sae-criteria.md) |
+| 其他重要医学事件 | other medically important serious event | AESMIE | [CON-sae-criteria](cards/cdisc/CON-sae-criteria.md) |
 | 不良事件通用术语标准 † | Common Terminology Criteria for Adverse Events | CTCAE | [CON-ae-severity-asev](cards/cdisc/CON-ae-severity-asev.md) |
 | 因果关系（与研究药物的相关性） | causality / relationship to study drug |  | [CON-ae-causality-arel](cards/cdisc/CON-ae-causality-arel.md) |
 | 治疗期出现的不良事件 † | treatment-emergent adverse event | TEAE | [CON-ae-causality-arel](cards/cdisc/CON-ae-causality-arel.md) |
