@@ -2,7 +2,7 @@
 id: CON-meddra-hierarchy
 title: "MedDRA 五层结构与 SDTM AE 编码变量：LLT / PT / HLT / HLGT / SOC、主 SOC 与 AEBODSYS（MedDRA Hierarchy）"
 categories: [cdisc, sdtm, meddra, adverse-event, coding, soc, pt, aedecod, aebodsys, safety, tlf]
-related: [CON-cdisc-variable-naming, CON-ae-severity-asev, CON-ae-causality-arel]
+related: [CON-cdisc-variable-naming, CON-ae-severity-asev, CON-ae-causality-arel, CON-sae-criteria]
 sources: ["Claude 对话（inbox: medDRA_1.md）"]
 status: draft
 updated: 2026-11-20
@@ -78,6 +78,7 @@ SOC   系统器官分类          Body System or Organ Class   （27 个）
 - [CON-cdisc-variable-naming](CON-cdisc-variable-naming.md)：`--DECOD`、`BODSYS`、`OCC` 等变量名零件
 - [CON-ae-severity-asev](CON-ae-severity-asev.md)：按最严重程度汇总 AE、severity 与 seriousness 的区别
 - [CON-ae-causality-arel](CON-ae-causality-arel.md)：药物相关 TEAE 按 SOC / PT 汇总
+- [CON-sae-criteria](CON-sae-criteria.md)：EMA IME 列表（按 PT 整理）用于判断重要医学事件
 
 ## 出处
 
