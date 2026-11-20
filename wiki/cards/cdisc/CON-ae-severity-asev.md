@@ -2,7 +2,7 @@
 id: CON-ae-severity-asev
 title: "AE 严重程度：AESEV 与 ASEV 的区别、ASEVN，以及 severity ≠ seriousness（AE Severity: AESEV vs ASEV）"
 categories: [cdisc, sdtm, adam, adae, adverse-event, severity, aesev, asev, aeser, sae, ctcae, safety, tlf]
-related: [CON-cdisc-variable-naming, CON-meddra-hierarchy, CON-ordinal-data, CON-ae-causality-arel]
+related: [CON-cdisc-variable-naming, CON-meddra-hierarchy, CON-ordinal-data, CON-ae-causality-arel, CON-sae-criteria, WF-pregnancy-reporting]
 sources: ["Claude 对话（inbox: AESEV_ASEV.md）"]
 status: draft
 updated: 2026-11-20
@@ -43,7 +43,7 @@ updated: 2026-11-20
 
 > 补充（Claude）：
 >
-> - SAE 的标准定义见 ICH E2A，材料列的几项（死亡、危及生命、住院或延长住院、残疾、先天畸形）之外还有"其他重要医学事件"一项。待 Li 核实。
+> - SAE 的标准定义见 ICH E2A，材料列的几项（死亡、危及生命、住院或延长住院、残疾、先天畸形）之外还有"其他重要医学事件"一项。待 Li 核实。（这一点后来有了材料支持，六条标准及对应的 `AES*` 变量见 [CON-sae-criteria](CON-sae-criteria.md)。）
 > - 缺失严重程度填成 `SEVERE` 时的填补标识，常见做法是 sponsor 自定义变量（如 `ASEVF`）或在 spec 中说明，ADaMIG 没有统一的标准变量名，以项目 spec / define.xml 为准。待 Li 核实。
 > - `ASTDT` 是数值型日期，`AESTDTC` 是 ISO 8601 字符型，两者除了"分析版本"之外还有类型的转换（`DTC` → `DT`），见 [CON-cdisc-variable-naming](CON-cdisc-variable-naming.md#二时间相关零件)。
 
@@ -53,6 +53,8 @@ updated: 2026-11-20
 - [CON-meddra-hierarchy](CON-meddra-hierarchy.md)：PT、SOC 与 AE 汇总表
 - [CON-ordinal-data](../methods/ordinal/CON-ordinal-data.md)：CTCAE 分级作为有序分类数据
 - [CON-ae-causality-arel](CON-ae-causality-arel.md)：同样"原始值 vs 分析值"的 `AEREL` / `AREL`
+- [CON-sae-criteria](CON-sae-criteria.md)：SAE 的六条判定标准与 `AES*` 变量
+- [WF-pregnancy-reporting](../safety/WF-pregnancy-reporting.md)：妊娠报告与随访
 
 ## 出处
 
