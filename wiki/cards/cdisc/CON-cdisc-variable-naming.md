@@ -2,10 +2,10 @@
 id: CON-cdisc-variable-naming
 title: "ADaM / SDTM 变量命名规则：把变量名拆成零件（CDISC Variable Naming Conventions）"
 categories: [cdisc, adam, sdtm, variable-naming, adsl, adae, adlb, adtte, bds, define-xml, statistical-programming]
-related: [CON-survival-analysis-overview, CON-censoring, CON-reference-date-study-day, CON-meddra-hierarchy, CON-ae-severity-asev, CON-ae-causality-arel, CON-sae-criteria, CON-sdtm-epoch, CON-partial-date-imputation]
+related: [CON-survival-analysis-overview, CON-censoring, CON-reference-date-study-day, CON-meddra-hierarchy, CON-ae-severity-asev, CON-ae-causality-arel, CON-sae-criteria, CON-sdtm-epoch, CON-partial-date-imputation, CON-locf-nocb]
 sources: ["Claude 对话（inbox: CDISC_1.md）", "Claude 对话（inbox: AEREL.md）"]
 status: draft
-updated: 2026-11-20
+updated: 2026-11-25
 ---
 
 > 出处待补：本卡内容来自 Claude 对话（inbox: CDISC_1.md），属 AI 生成内容，未引用原始文献。需对照 CDISC SDTMIG、ADaMIG（含 ADaM OCCDS、ADTTE 规范）核实；具体项目以 define.xml 为准。
@@ -150,7 +150,7 @@ updated: 2026-11-20
 > 补充（Claude）：以下几处待 Li 对照 ADaMIG 核实：
 >
 > - `FL` 的取值：ADaMIG 中人群标识（如 `SAFFL`、`ITTFL`）一般要求 `Y`/`N`，其他记录级标识（如 `ABLFL`、`ANL01FL`）多为 `Y`/空，即材料说的两种情况分别对应哪类变量。
-> - `DTYPE` 的全称是 Derivation Type（衍生类型），记录这一行是怎么衍生出来的，如 `LOCF`、`AVERAGE`；不只是泛指"类型"。
+> - `DTYPE` 的全称是 Derivation Type（衍生类型），记录这一行是怎么衍生出来的，如 `LOCF`、`AVERAGE`；不只是泛指"类型"。（LOCF 见 [CON-locf-nocb](../missing-data/CON-locf-nocb.md)。）
 > - `ADT` / `ADY` 里的 `A` 是分析版本；研究日 `--DY` 没有第 0 天（第 1 天为参考日期当天，之前一天为 −1）。（这一点后来有了材料支持，算法与例子见 [CON-reference-date-study-day](CON-reference-date-study-day.md)。）
 
 ## 八、容易混淆的片段：REL / RF / REAS / RES
@@ -187,6 +187,7 @@ updated: 2026-11-20
 - [CON-sae-criteria](CON-sae-criteria.md)：`AES*` 一组 SAE 标准变量
 - [CON-sdtm-epoch](CON-sdtm-epoch.md)：SDTM 的 EPOCH 与 ADaM 的 `APERIOD` / `APHASE`
 - [CON-partial-date-imputation](CON-partial-date-imputation.md)：`AESTDTC` → `ASTDT` / `ASTDTF` 的填补
+- [CON-locf-nocb](../missing-data/CON-locf-nocb.md)：`DTYPE = "LOCF"` 的 LOCF 是什么
 
 ## 出处
 

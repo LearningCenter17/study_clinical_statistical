@@ -178,6 +178,9 @@ title: 中英术语对照
 | 模式混合模型 | pattern mixture model | PMM | [CON-sensitivity-analysis](cards/missing-data/CON-sensitivity-analysis.md) |
 | 临界点分析 | tipping point analysis † | | [CON-sensitivity-analysis](cards/missing-data/CON-sensitivity-analysis.md) |
 | 跳至参照组 | jump to reference † | J2R | [CON-sensitivity-analysis](cards/missing-data/CON-sensitivity-analysis.md) |
+| 末次观测值向后结转 | last observation carried forward | LOCF | [CON-locf-nocb](cards/missing-data/CON-locf-nocb.md) |
+| 下次观测值向前回填 | next observation carried backward | NOCB | [CON-locf-nocb](cards/missing-data/CON-locf-nocb.md) |
+| 单一插补 † | single imputation |  | [CON-locf-nocb](cards/missing-data/CON-locf-nocb.md) |
 | 停药后数据 | retrieved dropout data | | [CON-missing-data](cards/missing-data/CON-missing-data.md) |
 | 敏感性分析 / 补充分析 | sensitivity analysis / supplementary analysis | | [CON-sensitivity-analysis](cards/missing-data/CON-sensitivity-analysis.md) |
 
