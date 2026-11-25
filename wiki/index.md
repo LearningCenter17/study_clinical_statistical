@@ -93,6 +93,7 @@ title: 知识库索引
 
 - [CON-missing-data](cards/missing-data/CON-missing-data.md) — MCAR/MAR/MNAR 定义与例子、因 AE 停药的归类、策略与插补方法（J2R、retrieved dropout）
 - [CON-sensitivity-analysis](cards/missing-data/CON-sensitivity-analysis.md) — 敏感性分析的定义、典型组合与各方法说明（J2R / CR、tipping point、模式混合模型），及与补充分析（per-protocol、完成者分析）的区别
+- [CON-locf-nocb](cards/missing-data/CON-locf-nocb.md) — LOCF（以前的值填以后的缺失）与 NOCB（以后的值填以前的缺失）的方向；中文"前 / 后"容易看混
 
 待建：multiple imputation 实现细节、reference-based MI（J2R、CR）独立卡片、tipping point 实现、模式混合模型（pattern mixture model）、retrieved dropout 插补
 
