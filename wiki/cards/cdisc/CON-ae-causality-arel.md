@@ -2,7 +2,7 @@
 id: CON-ae-causality-arel
 title: "AE 因果关系：AEREL 与 AREL、常见取值与归并、药物相关 TEAE 表（AE Causality: AEREL vs AREL）"
 categories: [cdisc, sdtm, adam, adae, adverse-event, causality, aerel, arel, aerelnst, teae, adr, safety, tlf]
-related: [CON-ae-severity-asev, CON-cdisc-variable-naming, CON-meddra-hierarchy]
+related: [CON-ae-severity-asev, CON-cdisc-variable-naming, CON-meddra-hierarchy, CON-partial-date-imputation]
 sources: ["Claude 对话（inbox: AEREL.md）"]
 status: draft
 updated: 2026-11-20
@@ -61,6 +61,7 @@ AEREL = AE + REL（Relationship），意思是"AE 与研究药物的关系"
 - [CON-ae-severity-asev](CON-ae-severity-asev.md)：同样是"原始值 vs 分析值"的 `AESEV` / `ASEV`
 - [CON-cdisc-variable-naming](CON-cdisc-variable-naming.md)：REL、RF 等变量名零件
 - [CON-meddra-hierarchy](CON-meddra-hierarchy.md)：SOC / PT 汇总
+- [CON-partial-date-imputation](CON-partial-date-imputation.md)：日期的保守填补与 TEAE 判定
 
 ## 出处
 

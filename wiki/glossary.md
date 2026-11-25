@@ -263,7 +263,9 @@ title: 中英术语对照
 | 研究日 † | study day | --DY | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 参考日期 | reference date |  | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
 | 受试者参考开始日期 † | Subject Reference Start Date | RFSTDTC | [CON-reference-date-study-day](cards/cdisc/CON-reference-date-study-day.md) |
-| 日期填补标识 † | date imputation flag | --DTF | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
+| 日期填补标识 † | date imputation flag | --DTF | [CON-partial-date-imputation](cards/cdisc/CON-partial-date-imputation.md) |
+| 不完整日期 † | partial date |  | [CON-partial-date-imputation](cards/cdisc/CON-partial-date-imputation.md) |
+| 分析开始日期 † | Analysis Start Date | ASTDT | [CON-partial-date-imputation](cards/cdisc/CON-partial-date-imputation.md) |
 | 衍生类型 † | derivation type | DTYPE | [CON-cdisc-variable-naming](cards/cdisc/CON-cdisc-variable-naming.md) |
 | 研究阶段 † | epoch | EPOCH | [CON-sdtm-epoch](cards/cdisc/CON-sdtm-epoch.md) |
 | 研究单元 † | element |  | [CON-sdtm-epoch](cards/cdisc/CON-sdtm-epoch.md) |
